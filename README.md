@@ -24,7 +24,12 @@ powershell -ExecutionPolicy Bypass -File scripts/validate-jarvis-request.ps1 -Re
 
 ## 상세 매뉴얼 위치
 
-Jarvis 프로젝트의 상세 사용자 매뉴얼은 루트가 아니라 `docs/project-user-manual.html`로 이동해 관리합니다. README는 빠른 구조 안내와 시작점 역할을 맡고, 전체 운영 흐름, 화면별 설명, 검증 절차는 `docs/project-user-manual.html`에서 확인합니다.
+Jarvis 프로젝트의 상세 사용자 매뉴얼은 루트가 아니라 `docs/project-user-manual.html`로 이동해 관리합니다.
+
+- 바로 이동: [상세 사용자 매뉴얼 열기](docs/project-user-manual.html)
+- 파일 위치: `docs/project-user-manual.html`
+
+README는 빠른 구조 안내와 시작점 역할을 맡고, 전체 운영 흐름, 화면별 설명, 검증 절차는 [상세 사용자 매뉴얼](docs/project-user-manual.html)에서 확인합니다.
 
 ## 핵심 아키텍처
 
@@ -82,7 +87,7 @@ Jarvis는 항상 다음 4단계 아키텍처를 보존합니다.
 | 문서 | 용도 |
 | --- | --- |
 | `docs/README.md` | 전체 문서 지도와 기본 실행 순서 |
-| `docs/project-user-manual.html` | 사용자가 읽는 상세 HTML 매뉴얼 |
+| [docs/project-user-manual.html](docs/project-user-manual.html) | 사용자가 읽는 상세 HTML 매뉴얼 |
 | `docs/operating-assets-inventory-65.md` | 운영 자산 인벤토리 |
 | `docs/file-management-policy.md` | 원본, 생성물, 증거, 임시 로그, 아카이브 관리 정책 |
 | `docs/data-research-tooling-guidelines.md` | Data와 EVE의 데이터, 리서치 도구 운영 지침 |

@@ -19,3 +19,4 @@
 - AI툴 브라우저: `iab` 미제공으로 URL 보고 방식 사용
 - 변경 대상: `README.md`
 - 커밋 및 push: README 변경과 작업 메모만 커밋 대상으로 제한
+- 보완 요청: 설명 문구뿐 아니라 [상세 사용자 매뉴얼 열기](../../docs/project-user-manual.html) 형태의 실제 이동 링크를 README에 제공
