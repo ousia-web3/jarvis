@@ -45,4 +45,4 @@
 - 제외 대상: `.env`, `.env.*`, `tmp/`, `.playwright-mcp/`, `test-results/`, 로그, PID/port, SQLite/DB, `node_modules/`, Python 캐시.
 - 중첩 저장소 처리: `setlog-local-first-app`의 내부 `.git` 때문에 서브모듈로 들어가지 않도록 28개 파일을 일반 파일 모드로 인덱스에 등록.
 - 스테이징 검증: staged 파일 531개, 서브모듈 모드 `160000` 없음, 민감 파일명 후보 없음.
-- 커밋 및 push: 진행 중.
+- 커밋 및 push: 완료. 초기 업로드 커밋 `45526c6 Initial Jarvis project upload`를 `origin/main`에 push.
