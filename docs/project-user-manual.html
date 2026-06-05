@@ -1,0 +1,3221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Jarvis AI 에이전트 팀 오케스트레이션 프로젝트 사용 매뉴얼</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --surface: #ffffff;
+      --surface-2: #eef3f1;
+      --ink: #1f2528;
+      --muted: #5d686d;
+      --line: #cbd4d2;
+      --green: #2f6f5e;
+      --blue: #315b7d;
+      --amber: #986c23;
+      --red: #9a463d;
+      --violet: #62518a;
+      --code: #172026;
+      --code-bg: #edf1f0;
+      --shadow: 0 8px 24px rgba(31, 37, 40, 0.08);
+      --radius: 8px;
+      --max: 1480px;
+      --content-gap: 1.5rem;
+      --sticky-bottom-gap: 1.25rem;
+      --sticky-header-height: 132px;
+      --anchor-offset: calc(var(--sticky-header-height) + var(--content-gap));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(49, 91, 125, 0.25);
+    }
+
+    a:hover {
+      border-bottom-color: var(--blue);
+    }
+
+    code,
+    pre,
+    kbd {
+      font-family: "Cascadia Mono", "Consolas", "SFMono-Regular", monospace;
+    }
+
+    code {
+      padding: 0.12rem 0.3rem;
+      border-radius: 4px;
+      background: var(--code-bg);
+      color: var(--code);
+      word-break: break-word;
+    }
+
+    pre {
+      margin: 1rem 0 0;
+      padding: 1rem;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #142026;
+      color: #f0f5f3;
+      line-height: 1.6;
+    }
+
+    pre code {
+      display: block;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #f8fbfa;
+      word-break: normal;
+      white-space: pre;
+    }
+
+    .code-block {
+      position: relative;
+      margin: 1rem 0 0;
+    }
+
+    .code-block pre {
+      margin: 0;
+      padding-right: 3.7rem;
+    }
+
+    .code-block + .timeline {
+      margin-top: 0.75rem;
+    }
+
+    .code-copy-button {
+      position: absolute;
+      top: 0.55rem;
+      right: 0.55rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(240, 245, 243, 0.28);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #f8fbfa;
+      cursor: pointer;
+    }
+
+    .code-copy-button:hover,
+    .code-copy-button:focus-visible {
+      border-color: rgba(240, 245, 243, 0.68);
+      background: rgba(255, 255, 255, 0.15);
+      outline: none;
+    }
+
+    .code-copy-button svg {
+      width: 1rem;
+      height: 1rem;
+      stroke: currentColor;
+    }
+
+    .code-copy-button .copy-check-icon {
+      display: none;
+    }
+
+    .code-copy-button.is-copied .copy-icon {
+      display: none;
+    }
+
+    .code-copy-button.is-copied .copy-check-icon {
+      display: block;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      background: var(--surface);
+    }
+
+    th,
+    td {
+      padding: 0.75rem;
+      border: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface-2);
+      font-weight: 700;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -42px;
+      left: 12px;
+      z-index: 30;
+      padding: 0.5rem 0.75rem;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(246, 247, 244, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .mark {
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: var(--green);
+      background: #fff;
+      flex: 0 0 auto;
+    }
+
+    .brand-title {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-title strong {
+      font-size: 0.98rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-title span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .flow-menubar {
+      border-top: 1px solid rgba(203, 212, 210, 0.72);
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .flow-menubar-inner {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.55rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.42rem;
+      align-items: center;
+      overflow-x: visible;
+      scrollbar-width: none;
+    }
+
+    .flow-menubar-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .flow-label {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .flow-menubar a {
+      flex: 0 1 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.38rem;
+      min-height: 36px;
+      min-width: max-content;
+      padding: 0.38rem 0.58rem;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      background: var(--surface-2);
+      color: var(--ink);
+      font-size: 0.88rem;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .flow-menubar a strong {
+      display: inline-grid;
+      place-items: center;
+      width: 1.55rem;
+      height: 1.55rem;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--green);
+      font-size: 0.78rem;
+      line-height: 1;
+    }
+
+    .flow-menubar a:hover,
+    .flow-menubar a.active {
+      border-color: rgba(47, 111, 94, 0.42);
+      background: #fff;
+      color: var(--green);
+      box-shadow: inset 0 0 0 1px rgba(47, 111, 94, 0.12);
+    }
+
+    .search {
+      width: 240px;
+      max-width: 34vw;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 0.55rem 0.75rem;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .layout {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.5rem 1rem 4rem;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: var(--anchor-offset);
+      align-self: start;
+      max-height: calc(100vh - var(--anchor-offset) - var(--sticky-bottom-gap));
+      overflow: auto;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+    }
+
+    .toc {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .toc a {
+      display: block;
+      padding: 0.42rem 0.5rem;
+      border: 0;
+      border-radius: 6px;
+      color: var(--ink);
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .toc a:hover,
+    .toc a.active {
+      background: var(--surface-2);
+      color: var(--green);
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    .intro {
+      padding: 2rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      scroll-margin-top: var(--anchor-offset);
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.6rem;
+      color: var(--green);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.25;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.25rem;
+    }
+
+    .h1-line {
+      display: inline;
+    }
+
+    .h1-line + .h1-line::before {
+      content: " ";
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.65rem;
+    }
+
+    h3 {
+      margin: 1.2rem 0 0.5rem;
+      font-size: 1.18rem;
+    }
+
+    h4 {
+      margin: 1rem 0 0.4rem;
+      font-size: 1rem;
+    }
+
+    .lead {
+      max-width: 860px;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      overflow-wrap: anywhere;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.4rem;
+      min-width: 0;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.8rem;
+      background: var(--surface-2);
+      min-height: 88px;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.35rem;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .orchestration-note {
+      margin-top: 1.2rem;
+    }
+
+    .keyword-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+
+    .keyword-strip span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0.22rem 0.55rem;
+      border: 1px solid rgba(47, 111, 94, 0.26);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--green);
+      font-size: 0.84rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    section {
+      margin-top: 1.25rem;
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      scroll-margin-top: var(--anchor-offset);
+    }
+
+    .section-note {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: #fff;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .panel h3,
+    .panel h4 {
+      margin-top: 0;
+    }
+
+    .callout {
+      padding: 1rem;
+      border-left: 4px solid var(--green);
+      background: var(--surface-2);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .warning {
+      border-left-color: var(--red);
+      background: #fbefed;
+    }
+
+    .decision {
+      border-left-color: var(--amber);
+      background: #f8f1e5;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .checklist li {
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.18rem 0.45rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      background: #fff;
+      white-space: nowrap;
+    }
+
+    .badge.green {
+      color: var(--green);
+      border-color: rgba(47, 111, 94, 0.35);
+      background: #eef7f2;
+    }
+
+    .badge.blue {
+      color: var(--blue);
+      border-color: rgba(49, 91, 125, 0.35);
+      background: #eef4fa;
+    }
+
+    .badge.red {
+      color: var(--red);
+      border-color: rgba(154, 70, 61, 0.35);
+      background: #fbefed;
+    }
+
+    .badge.amber {
+      color: var(--amber);
+      border-color: rgba(152, 108, 35, 0.35);
+      background: #f8f1e5;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .role {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.9rem;
+      background: #fff;
+    }
+
+    .role header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: start;
+      margin-bottom: 0.5rem;
+    }
+
+    .role strong {
+      font-size: 1.05rem;
+    }
+
+    .role p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .timeline {
+      counter-reset: step;
+      display: grid;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      counter-increment: step;
+      position: relative;
+      padding: 0.85rem 1rem 0.85rem 3.1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .timeline li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0.85rem;
+      top: 0.85rem;
+      width: 1.55rem;
+      height: 1.55rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .flow-diagram {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin: 1rem 0;
+    }
+
+    .flow-step {
+      position: relative;
+      min-height: 158px;
+      padding: 0.85rem;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .flow-step:nth-child(2) {
+      border-top-color: var(--blue);
+    }
+
+    .flow-step:nth-child(3) {
+      border-top-color: var(--violet);
+    }
+
+    .flow-step:nth-child(4) {
+      border-top-color: var(--amber);
+    }
+
+    .flow-step:nth-child(5) {
+      border-top-color: var(--red);
+    }
+
+    .flow-step:nth-child(6) {
+      border-top-color: var(--green);
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -0.55rem;
+      width: 1rem;
+      height: 1rem;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-weight: 800;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .flow-kicker {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.55rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .flow-number {
+      display: inline-grid;
+      place-items: center;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.48;
+    }
+
+    .handoff-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin: 1rem 0;
+    }
+
+    .handoff-item {
+      min-height: 104px;
+      padding: 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+    }
+
+    .handoff-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .handoff-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .figure {
+      margin: 1rem 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .figure img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #e9eeeb;
+    }
+
+    .figure figcaption {
+      padding: 0.75rem 1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .file-list {
+      display: grid;
+      gap: 0.45rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .file-list a {
+      display: block;
+      padding: 0.55rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .file-list a:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .kbd-row {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    kbd {
+      display: inline-block;
+      min-width: 1.8rem;
+      padding: 0.1rem 0.4rem;
+      border: 1px solid var(--line);
+      border-bottom-width: 2px;
+      border-radius: 5px;
+      background: #fff;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .hidden-by-search {
+      display: none !important;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    .doc-modal[hidden] {
+      display: none !important;
+    }
+
+    .doc-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+    }
+
+    .doc-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(23, 32, 38, 0.62);
+    }
+
+    .doc-modal-panel {
+      position: absolute;
+      inset: 4vh 4vw;
+      display: flex;
+      min-height: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 18px 64px rgba(23, 32, 38, 0.32);
+    }
+
+    .doc-modal-header {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-2);
+    }
+
+    .doc-modal-title {
+      min-width: 0;
+    }
+
+    .doc-modal-title .eyebrow {
+      margin: 0 0 0.2rem;
+    }
+
+    .doc-modal-title h2 {
+      margin: 0;
+      font-size: 1.18rem;
+    }
+
+    .doc-modal-path {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+      word-break: break-all;
+    }
+
+    .doc-modal-actions {
+      display: flex;
+      flex: 0 0 auto;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .doc-frame {
+      width: 100%;
+      flex: 1 1 auto;
+      min-height: 360px;
+      border: 0;
+      background: #fff;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+        max-height: none;
+        order: 2;
+      }
+
+      main {
+        order: 1;
+      }
+
+      .meta-grid,
+      .grid.three,
+      .grid.two,
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .top-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .search {
+        width: 100%;
+        max-width: none;
+      }
+
+      .flow-menubar-inner {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .flow-diagram,
+      .handoff-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flow-step:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 15px;
+      }
+
+      .intro,
+      section {
+        width: 100%;
+        max-width: calc(100vw - 5rem);
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.35rem;
+        line-height: 1.32;
+        word-break: break-all;
+      }
+
+      .h1-line {
+        display: block;
+      }
+
+      .h1-line + .h1-line::before {
+        content: "";
+      }
+
+      .lead,
+      .section-note,
+      .metric span,
+      .panel p,
+      .flow-step p,
+      .callout {
+        word-break: break-all;
+      }
+
+      h2 {
+        font-size: 1.38rem;
+      }
+
+      .flow-label {
+        display: none;
+      }
+
+      .flow-diagram,
+      .handoff-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-step,
+      .handoff-item {
+        min-height: 0;
+      }
+
+      th,
+      td {
+        padding: 0.55rem;
+      }
+
+      .doc-modal-panel {
+        inset: 1rem;
+      }
+
+      .doc-modal-header {
+        flex-direction: column;
+      }
+
+      .doc-modal-actions {
+        width: 100%;
+      }
+
+      .doc-modal-actions .btn {
+        flex: 1 1 0;
+        text-align: center;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .flow-menubar,
+      .sidebar,
+      .btn,
+      .search,
+      .doc-modal {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .layout {
+        display: block;
+        max-width: none;
+      }
+
+      .intro,
+      section {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      a {
+        color: #000;
+        border: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 이동</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="Jarvis AI Agent Team Manual">
+        <div class="mark" aria-hidden="true">J</div>
+        <div class="brand-title">
+          <strong>Jarvis AI 에이전트 팀 오케스트레이션 매뉴얼</strong>
+          <span>PRD, TASK, 에이전트 지침, 리스크 게이트 오케스트레이션 운영 안내</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <input class="search" id="manualSearch" type="search" placeholder="섹션 검색" aria-label="매뉴얼 섹션 검색">
+        <button class="btn" type="button" id="expandAll">전체 펼침</button>
+        <button class="btn" type="button" onclick="window.print()">인쇄</button>
+      </div>
+    </div>
+    <nav class="flow-menubar" aria-label="핵심 운영 흐름 바로가기">
+      <div class="flow-menubar-inner">
+        <span class="flow-label">핵심 흐름</span>
+        <a href="#orchestration-status"><strong>1</strong>오케스트레이션</a>
+        <a href="#human-flow"><strong>2</strong>전체 그림</a>
+        <a href="#quickstart"><strong>3</strong>작업 요청</a>
+        <a href="#project-structure"><strong>4</strong>프로젝트 구조</a>
+        <a href="#operating-system"><strong>5</strong>운영 게이트</a>
+        <a href="#architecture"><strong>6</strong>4단계 구조</a>
+        <a href="#agents"><strong>7</strong>역할 배정</a>
+        <a href="#workflow"><strong>8</strong>실행 흐름</a>
+        <a href="#dynamic-workflow"><strong>9</strong>동적 워크플로우</a>
+        <a href="#checklists"><strong>10</strong>완료 체크</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="문서 목차">
+      <h2>목차</h2>
+      <ol class="toc" id="toc">
+        <li><a href="#overview">개요</a></li>
+        <li><a href="#orchestration-status">오케스트레이션 적용 확인</a></li>
+        <li><a href="#human-flow">한눈 흐름도</a></li>
+        <li><a href="#quickstart">빠른 시작</a></li>
+        <li><a href="#auto-rules">자동 적용 규칙</a></li>
+        <li><a href="#map">문서 지도</a></li>
+        <li><a href="#project-structure">프로젝트 폴더 구조</a></li>
+        <li><a href="#operating-system">제품형 운영 시스템</a></li>
+        <li><a href="#architecture">4단계 아키텍처</a></li>
+        <li><a href="#agents">에이전트 운영</a></li>
+        <li><a href="#workflow">표준 업무 흐름</a></li>
+        <li><a href="#dynamic-workflow">Dynamic Workflow</a></li>
+        <li><a href="#design-review">Jarvis 설계 리뷰 모드</a></li>
+        <li><a href="#templates">템플릿 사용법</a></li>
+        <li><a href="#communication">To/CC 커뮤니케이션</a></li>
+        <li><a href="#memory">기억과 망각</a></li>
+        <li><a href="#risk">리스크 쉴드</a></li>
+        <li><a href="#pilot">파일럿 운영</a></li>
+        <li><a href="#maintenance">유지보수</a></li>
+        <li><a href="#troubleshooting">문제 해결</a></li>
+        <li><a href="#checklists">운영 체크리스트</a></li>
+        <li><a href="#references">파일 링크</a></li>
+      </ol>
+    </aside>
+
+    <main id="main">
+      <div class="intro" id="overview">
+        <p class="eyebrow">User Manual</p>
+        <h1><span class="h1-line">AI 에이전트 팀</span><span class="h1-line">오케스트레이션 사용 매뉴얼</span></h1>
+        <p class="lead">
+          이 매뉴얼은 `docs` 폴더에 구축된 Jarvis AI 에이전트 팀 운영 문서를 실제 프로젝트에 적용하는 방법을 설명합니다.
+          정식 운영 구조는 <strong>에이전트 팀 오케스트레이션</strong>(agent-team-orchestration)입니다.
+          목표는 단순히 문서를 읽는 것이 아니라, 인간 대표가 목표를 입력하고 Jarvis, Friday, 실무진, 리스크 쉴드가
+          일관된 절차로 움직이도록 만드는 것입니다.
+        </p>
+        <div class="meta-grid" aria-label="프로젝트 요약">
+          <div class="metric">
+            <strong>4단계 아키텍처</strong>
+            <span>SYS.01-04: Dream Team, Virtual Office, Agent Brain, Human Conductor</span>
+          </div>
+          <div class="metric">
+            <strong>10개</strong>
+            <span>인간 대표 포함 에이전트별 분리 지침</span>
+          </div>
+          <div class="metric">
+            <strong>65개+</strong>
+            <span><a href="operating-assets-inventory-65.md">65개+ 운영 자산 인벤토리</a>, 저장소, 평가 하네스, 설계 리뷰 스킬</span>
+          </div>
+          <div class="metric">
+            <strong>Dynamic Workflow L4</strong>
+            <span>실행 성숙도: Task Graph, Worker Manifest, Parallel Executor, Verifier/Fixer/Aggregator</span>
+          </div>
+        </div>
+        <div class="callout orchestration-note">
+          <strong>적용 상태:</strong> 이 매뉴얼은 Jarvis AI 에이전트 팀 오케스트레이션을 기준으로 작성되었습니다.
+          운영 본체는 Jarvis 전략화, Friday 태스크 분해, 역할별 실행, Risk Shield, Human Conductor 승인으로 이어지는
+          <strong>4단계 아키텍처</strong>입니다. 대시보드와 이벤트 로그는 흐름을 보여주는 <strong>관찰 하네스</strong>이고,
+          Dynamic Workflow는 큰 작업을 task별 worker, verifier, fixer, aggregator로 분리하는 <strong>실행 하네스</strong>입니다.
+          최신 운영 기준에서는
+          <strong>Done = 검증 + Work Log + Episodic Memory + 운영 게이트 통과</strong>로 봅니다.
+        </div>
+      </div>
+
+      <section id="orchestration-status" data-search="오케스트레이션 orchestration agent-team-orchestration 적용 확인 운영 본체 관찰 하네스 실행 하네스 dashboard task events dynamic workflow jarvis friday risk shield human conductor">
+        <h2>오케스트레이션 적용 확인</h2>
+        <p class="section-note">
+          이 프로젝트의 운영 본체는 <strong>에이전트 팀 오케스트레이션</strong>입니다.
+          요청을 전략, 태스크, 실행, 검토, 기억, 승인으로 라우팅하는 다중 에이전트 운영 구조이며,
+          대시보드는 관찰 하네스, Dynamic Workflow는 실행 하네스로 붙습니다.
+        </p>
+
+        <div class="grid three">
+          <div class="panel">
+            <h3>구조명</h3>
+            <p><strong>Jarvis AI 에이전트 팀 오케스트레이션</strong></p>
+            <p>핵심 스킬은 <a href="../skills/agent-team-orchestration/SKILL.md">agent-team-orchestration</a>입니다.</p>
+          </div>
+          <div class="panel">
+            <h3>적용 위치</h3>
+            <p><a href="../AGENTS.md">AGENTS.md</a>, <a href="README.md">docs/README.md</a>, <a href="../templates/simple-start-request.md">Simple Start Request</a>가 같은 운영 흐름을 가리킵니다.</p>
+          </div>
+          <div class="panel">
+            <h3>운영 본체와 하네스</h3>
+            <p><a href="../dashboards/agent-assignment-dashboard.html">대시보드</a>와 <a href="../dashboards/task-events.jsonl">task-events.jsonl</a>은 관찰 하네스입니다. <a href="dynamic-workflow.md">Dynamic Workflow</a>는 실행 하네스입니다. 의사결정 본체는 역할 라우팅과 승인 흐름입니다.</p>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>의미</th>
+              <th>언제 적용하나</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4단계 아키텍처</td>
+              <td>SYS.01 Dream Team, SYS.02 Virtual Office, SYS.03 Agent Brain, SYS.04 Human Conductor</td>
+              <td>모든 Jarvis 작업 요청의 기본 운영 구조</td>
+            </tr>
+            <tr>
+              <td>Dynamic Workflow L1-L4</td>
+              <td>Task Graph, Worker Manifest, Parallel Executor, Verifier/Fixer/Aggregator로 구성된 실행 성숙도</td>
+              <td>큰 작업을 여러 task와 일회성 worker로 나누어 병렬 실행할 때</td>
+            </tr>
+            <tr>
+              <td>관찰 하네스 / 실행 하네스</td>
+              <td>대시보드는 관찰, Dynamic Workflow는 실행을 맡고 운영 본체를 대체하지 않음</td>
+              <td>진행 상황을 보거나 대량 작업을 분산 처리할 때</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="keyword-strip" aria-label="오케스트레이션 확인 키워드">
+          <span>오케스트레이션</span>
+          <span>agent-team-orchestration</span>
+          <span>Jarvis 전략화</span>
+          <span>Friday 태스크 분해</span>
+          <span>Risk Shield</span>
+          <span>Human Conductor 승인</span>
+        </div>
+      </section>
+
+      <section id="human-flow" data-search="한눈 흐름도 human 누구나 직관 운영 흐름 오케스트레이션 orchestration 요청 전략 분해 실행 검토 기억 승인">
+        <h2>한눈에 보는 오케스트레이션 흐름</h2>
+        <p class="section-note">
+          인간 대표는 목표만 말하고, 에이전트 팀은 아래 순서로 일을 나눠 실행합니다. 처음 보는 사람도 왼쪽에서 오른쪽으로 읽으면 전체 운영 구조를 파악할 수 있습니다.
+        </p>
+
+        <div class="flow-diagram" aria-label="Jarvis 에이전트 팀 운영 흐름도">
+          <article class="flow-step">
+            <div class="flow-kicker"><span>Human</span><span class="flow-number">1</span></div>
+            <strong>작업 요청</strong>
+            <p>하고 싶은 일을 짧게 말합니다. 복잡한 양식은 에이전트 팀이 초안으로 바꿉니다.</p>
+          </article>
+          <article class="flow-step">
+            <div class="flow-kicker"><span>Jarvis</span><span class="flow-number">2</span></div>
+            <strong>전략화</strong>
+            <p>목표, 성공 기준, 우선순위, 막히는 리스크를 먼저 정리합니다.</p>
+          </article>
+          <article class="flow-step">
+            <div class="flow-kicker"><span>Friday</span><span class="flow-number">3</span></div>
+            <strong>태스크 분해</strong>
+            <p>Owner(To), CC, 산출물, 완료 기준을 정해 일이 흩어지지 않게 합니다.</p>
+          </article>
+          <article class="flow-step">
+            <div class="flow-kicker"><span>Dream Team</span><span class="flow-number">4</span></div>
+            <strong>실무 실행</strong>
+            <p>EVE, Joi, TARS, C3PO가 리서치, UX, 구현, 카피를 맡습니다.</p>
+          </article>
+          <article class="flow-step">
+            <div class="flow-kicker"><span>Shield</span><span class="flow-number">5</span></div>
+            <strong>검토와 방어</strong>
+            <p>Data, KITT/TRON, Diagnostic Agent가 근거, 보안, 드리프트를 확인합니다.</p>
+          </article>
+          <article class="flow-step">
+            <div class="flow-kicker"><span>Brain</span><span class="flow-number">6</span></div>
+            <strong>기억과 승인</strong>
+            <p>Work Log와 회고를 남기고, 공개나 큰 결정은 Human Conductor가 승인합니다.</p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <strong>읽는 법:</strong> 평상시에는 1번부터 6번까지 자동으로 흐르고, 삭제·배포·개인정보·결제·법무/보안처럼 되돌리기 어려운 결정만 인간 대표에게 멈춰서 확인합니다.
+        </div>
+
+        <h3>PUML 소스 흐름도</h3>
+        <p class="section-note">
+          아래 PlantUML 소스는 문서나 위키에 그대로 붙여 시각 흐름도로 렌더링할 수 있습니다. 핵심은 요청이 전략화, 분해, 실행, 리스크 쉴드, 기억, 승인으로 닫힌다는 점입니다.
+        </p>
+        <pre><code>@startuml
+title Jarvis AI Agent Team Orchestration Flow
+
+start
+:Human Conductor\n작업 요청 또는 Human Brief 입력;
+:Jarvis\n목표, 성공 기준, 우선순위, 차단 리스크 전략화;
+:Friday\nOwner(To), CC, 산출물, 완료 기준 태스크 분해;
+
+partition "SYS.01 Dream Team" {
+  :EVE\n리서치와 자료 수집;
+  :Joi\nUX와 화면 경험 설계;
+  :TARS\n구현과 기술 검증;
+  :C3PO\n카피와 커뮤니케이션 정리;
+}
+
+partition "SYS.02 Virtual Office" {
+  :To/CC 메시지로 진행 상황 공유;
+  :dashboards/task-events.jsonl에 역할별 이벤트 기록;
+}
+
+partition "Risk Shield" {
+  :Data\n정량 근거와 KPI 검토;
+  :KITT/TRON\n법무, 보안, 개인정보, 릴리스 리스크 검토;
+  :Diagnostic Agent\n드리프트와 의심스러운 완료 보고 진단;
+}
+
+if (차단 리스크가 있는가?) then (예)
+  :Human Conductor\n최종 승인 또는 방향 전환;
+else (아니오)
+  :검증 증거 정리;
+endif
+
+partition "SYS.03 Agent Brain" {
+  :Work Log 작성;
+  :Episodic Memory 기록;
+  :반복 가능한 원칙은 Wisdom 후보로 승격;
+}
+
+:close-jarvis-request.ps1\nDone 이벤트와 완료 산출물 정리;
+stop
+@enduml</code></pre>
+      </section>
+
+      <section id="quickstart" data-search="빠른 시작 첫 사용 운영 순서 자동 human brief jarvis friday ide 요청">
+        <h2>1. 빠른 시작</h2>
+        <p class="section-note">
+          사용자는 복잡한 양식을 먼저 채우지 않습니다. 짧은 자연어 요청을 입력하면 Jarvis와 Friday가
+          Human Brief 초안을 자동 생성하고, 오케스트레이션 흐름에 따라 전략화, 태스크 분해, 실무 실행, 리스크 쉴드까지 이어갑니다.
+        </p>
+
+        <h3>IDE 창에 넣는 최소 요청</h3>
+        <pre><code>docs 기준으로 에이전트 팀 모드로 진행해줘.
+요청: [하고 싶은 일 한 줄]</code></pre>
+
+        <h3>더 짧게 쓰는 방식</h3>
+        <pre><code>[하고 싶은 일] 해줘. docs의 에이전트 팀 운영 규칙대로 자동 진행해.</code></pre>
+
+        <ol class="timeline">
+          <li>
+            <strong>짧은 요청 입력</strong><br>
+            인간 대표는 하고 싶은 일을 한 줄로 입력합니다. 자세한 예시는 <a href="../templates/simple-start-request.md">Simple Start Request</a>를 사용합니다.
+          </li>
+          <li>
+            <strong>요청 폴더와 대시보드 이벤트 생성</strong><br>
+            신규 작업이면 <code>work-requests/YYYY-MM-DD-request-slug/</code>를 만들고, <code>scripts/start-jarvis-request.ps1</code>로 첫 이벤트와 로컬 대시보드를 준비합니다.
+          </li>
+          <li>
+            <strong>Human Brief 자동 생성</strong><br>
+            Jarvis와 Friday가 사용자 원문을 <a href="../templates/human-brief-template.md">Human Brief Template</a> 기준으로 프로젝트명, 목표, 성공 기준, 금지 사항, 승인 조건으로 변환합니다.
+          </li>
+          <li>
+            <strong>전략 브리프 생성</strong><br>
+            Jarvis는 <a href="../templates/jarvis-command-protocol.md">Jarvis Command Protocol</a>을 사용해 목표를 전략, 우선순위, 리스크로 변환합니다.
+          </li>
+          <li>
+            <strong>태스크 분해</strong><br>
+            Friday는 <a href="../templates/friday-task-breakdown-template.md">Friday Task Breakdown Template</a>으로 Owner(To), CC, 산출물, 완료 기준을 지정합니다.
+          </li>
+          <li>
+            <strong>실무 실행</strong><br>
+            EVE, Joi, TARS, C3PO가 각자의 <a href="../agents/00-agent-management-index.md">에이전트 지침</a>에 따라 리서치, UX, 개발, 카피를 수행합니다.
+          </li>
+          <li>
+            <strong>분석 및 리스크 쉴드</strong><br>
+            Data, KITT/TRON, 진단 에이전트가 정량 근거, 법무·보안, 드리프트를 검토합니다.
+          </li>
+          <li>
+            <strong>회고와 지혜 승격</strong><br>
+            완료 후 <a href="../templates/work-log-template.md">Work Log</a>와 <a href="../templates/episodic-memory-template.md">Episodic Memory</a>를 남기고, 반복 가능한 원칙은 지혜로 승격합니다. 표준 완료는 <code>scripts/close-jarvis-request.ps1</code>로 닫습니다.
+          </li>
+        </ol>
+
+        <div class="callout">
+          <strong>최초 30분 운영 팁:</strong> 사용자는 요청만 짧게 입력합니다. 에이전트 팀은 Human Brief, Jarvis Command, Friday Task를 먼저 초안으로 만들고, 법무·보안·개인정보·외부 공개·삭제·배포처럼 위험한 항목만 인간 대표에게 되묻습니다.
+        </div>
+
+        <div class="callout decision">
+          <strong>완료 기준:</strong> 작업이 끝났다고 말하기 전에 <code>scripts/validate-jarvis-request.ps1 -RequestId &lt;request-slug&gt; -Strict</code>가 통과해야 합니다. 완료 훅은 Done 이벤트뿐 아니라 Work Log와 Episodic Memory까지 함께 남기는 것을 기본값으로 삼습니다.
+        </div>
+      </section>
+
+      <section id="auto-rules" data-search="ide 자동 적용 규칙 agents cursor copilot windsurf cline clinerule skill">
+        <h2>1-1. IDE 자동 적용 규칙</h2>
+        <p class="section-note">
+          이제 사용자는 매번 “문서 먼저 읽고 4단계 아키텍처와 에이전트 역할대로 움직여라”라고 말하지 않아도 됩니다.
+          프로젝트 루트의 규칙 파일들이 IDE와 에이전트에게 기본 운영 방식을 알려줍니다.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>도구/환경</th>
+              <th>자동 적용 파일</th>
+              <th>역할</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Codex/공통 에이전트</td>
+              <td><a href="../AGENTS.md">AGENTS.md</a></td>
+              <td>프로젝트 전체 기본 규칙과 역할 라우팅을 정의합니다.</td>
+            </tr>
+            <tr>
+              <td>Cursor</td>
+              <td><a href="../.cursor/rules/jarvis-agent-team.mdc">jarvis-agent-team.mdc</a></td>
+              <td><code>alwaysApply: true</code>로 워크스페이스 요청마다 Jarvis 운영 규칙을 적용합니다.</td>
+            </tr>
+            <tr>
+              <td>GitHub Copilot</td>
+              <td><a href="../.github/copilot-instructions.md">copilot-instructions.md</a></td>
+              <td>Copilot Chat 또는 코드 보조가 프로젝트 운영 모델을 참고하도록 합니다.</td>
+            </tr>
+            <tr>
+              <td>Windsurf</td>
+              <td><a href="../.windsurfrules">.windsurfrules</a></td>
+              <td>Windsurf 계열 에이전트가 Human Brief 자동 생성 흐름으로 시작하게 합니다.</td>
+            </tr>
+            <tr>
+              <td>Cline/Roo</td>
+              <td><a href="../.clinerules">.clinerules</a>, <a href="../.clinerule">.clinerule</a></td>
+              <td>복수형과 단수형 규칙 파일을 모두 제공해 도구별 참조 차이를 흡수합니다.</td>
+            </tr>
+            <tr>
+              <td>Jarvis Skill</td>
+              <td><a href="../skills/agent-team-orchestration/SKILL.md">SKILL.md</a></td>
+              <td>한글 워크플로우, 쉬운 시작 규칙, 페르소나 라우팅, 가드레일을 담은 핵심 운영 스킬입니다.</td>
+            </tr>
+            <tr>
+              <td>Jarvis Design Review</td>
+              <td><a href="../skills/jarvis-design-review/SKILL.md">SKILL.md</a></td>
+              <td>신규 MVP, 고위험 기능, 아키텍처 결정, 7개 문서 산출이 필요할 때만 쓰는 전문가용 설계 리뷰 보조 모드입니다.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout decision">
+          <strong>운영 기준:</strong> 사용자가 한 줄로 요청하면 에이전트는 먼저 Human Brief 초안을 만들고, Jarvis 전략화와 Friday 태스크 분해로 넘어갑니다. 일반적인 문서 작업, 내부 기획, 파일 수정, 비파괴 검증은 승인 없이 진행하고, 삭제·외부 배포·개인정보·비밀키·결제·법무/보안 판단만 확인합니다. 새 운영 훅은 시작(<code>start-jarvis-request.ps1</code>), 검증(<code>validate-jarvis-request.ps1</code>), 완료(<code>close-jarvis-request.ps1</code>)를 분리합니다.
+        </div>
+      </section>
+
+      <section id="map" data-search="문서 지도 폴더 구조 readme prd task architecture agents templates 자동 적용 규칙">
+        <h2>2. 문서 지도</h2>
+        <p class="section-note">
+          이 프로젝트의 문서는 역할별로 분리되어 있습니다. 아래 표에서 “무엇을 하려는지”를 기준으로 파일을 찾으면 됩니다.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>목적</th>
+              <th>먼저 볼 파일</th>
+              <th>언제 사용하는가</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>한 줄로 시작</td>
+              <td><a href="../templates/simple-start-request.md">Simple Start Request</a></td>
+              <td>IDE 창에 넣을 최소 요청문이 필요할 때</td>
+            </tr>
+            <tr>
+              <td>IDE 자동 적용 확인</td>
+              <td><a href="../AGENTS.md">AGENTS.md</a>, <a href="../.clinerules">.clinerules</a>, <a href="../skills/agent-team-orchestration/SKILL.md">SKILL.md</a></td>
+              <td>새 세션에서도 Jarvis 운영 규칙이 기본값으로 적용되는지 확인할 때</td>
+            </tr>
+            <tr>
+              <td>전체 구조 이해</td>
+              <td><a href="README.md">README.md</a></td>
+              <td>문서 위치와 운영 순서를 빠르게 파악할 때</td>
+            </tr>
+            <tr>
+              <td>제품 요구사항 확인</td>
+              <td><a href="PRD-ai-agent-collaboration-architecture.md">PRD</a></td>
+              <td>목표, 기능 요구사항, 품질 게이트, 성공 지표를 확인할 때</td>
+            </tr>
+            <tr>
+              <td>구현 및 운영 태스크 확인</td>
+              <td><a href="TASK-ai-agent-collaboration-architecture.md">TASK</a></td>
+              <td>어떤 문서와 운영 체계가 만들어졌는지 추적할 때</td>
+            </tr>
+            <tr>
+              <td>제품형 운영 기준 확인</td>
+              <td><a href="../architecture/operating-principles.md">Operating Principles</a>, <a href="../architecture/contracts.md">Architecture Contracts</a></td>
+              <td>철학을 실제 판단 규칙과 4단계 입출력 계약으로 연결할 때</td>
+            </tr>
+            <tr>
+              <td>요청 완료 가능 여부 확인</td>
+              <td><a href="request-state-machine.md">Request State Machine</a></td>
+              <td>Intake부터 Done까지 어떤 게이트를 통과해야 하는지 확인할 때</td>
+            </tr>
+            <tr>
+              <td>에이전트 배정</td>
+              <td><a href="../agents/00-agent-management-index.md">Agent Management Index</a></td>
+              <td>누구를 To로 둘지, 누구를 CC로 둘지 결정할 때</td>
+            </tr>
+            <tr>
+              <td>기억과 평가 저장소 확인</td>
+              <td><a href="../memory/README.md">Memory Store</a>, <a href="../evals/README.md">Evaluation Harness</a></td>
+              <td>작업 경험, 지혜 후보, 망각 큐, 반복 평가 기준을 확인할 때</td>
+            </tr>
+            <tr>
+              <td>리스크 검토</td>
+              <td><a href="risk-shield.md">Risk Shield</a>, <a href="release-risk-gate.md">Release Risk Gate</a></td>
+              <td>외부 공개, 배포, 개인정보, 보안 이슈가 있을 때</td>
+            </tr>
+            <tr>
+              <td>PDF 추출 근거 확인</td>
+              <td><a href="pdf-extraction-report.md">PDF Extraction Report</a></td>
+              <td>PDF가 어떻게 추출되었고 어떤 제한이 있었는지 확인할 때</td>
+            </tr>
+            <tr>
+              <td>파일 관리 기준 확인</td>
+              <td><a href="file-management-policy.md">File Management Policy</a></td>
+              <td>원본, 생성물, evidence, 임시 로그, 아카이브 기준을 확인할 때</td>
+            </tr>
+            <tr>
+              <td>작업 요청 건강도 확인</td>
+              <td><a href="../scripts/audit-work-requests.ps1">audit-work-requests.ps1</a></td>
+              <td>작업 요청 폴더의 README, evidence, outputs 누락을 점검할 때</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <figure class="figure">
+          <img src="opendataloader-extract/images/imageFile5.png" alt="완벽한 협업을 위한 4단계 아키텍처 PDF 추출 이미지">
+          <figcaption>PDF에서 추출한 4단계 아키텍처 개요. 매뉴얼의 전체 구조는 이 도식을 기준으로 정리되어 있습니다.</figcaption>
+        </figure>
+      </section>
+
+      <section id="project-structure" data-search="프로젝트 폴더 구조 루트 디렉터리 agents architecture docs dashboards scripts memory work requests stock auto trader">
+        <h2>2-1. 프로젝트 폴더 구조</h2>
+        <p class="section-note">
+          2026-05-22 기준으로 루트 폴더를 검토해 운영 원본, 자동화 도구, 작업 보관소, 분리된 하위 프로젝트를 구분했습니다.
+          <code>.playwright-mcp/</code>, <code>tmp/</code>, <code>__pycache__/</code>, 브라우저 캐시, 증거 스크린샷처럼 실행 중 생기는 파일은 신뢰 원본이 아니라 검증 또는 임시 산출물로 봅니다.
+        </p>
+
+        <pre><code>jarvis/
+|-- AGENTS.md
+|-- README.md
+|-- .gitignore
+|-- .cursor/rules/jarvis-agent-team.mdc
+|-- .github/copilot-instructions.md
+|-- .clinerules, .clinerule, .windsurfrules
+|-- .playwright-mcp/      (브라우저 검증 생성물, 추적 제외)
+|-- agents/
+|-- architecture/
+|-- assets/
+|-- dashboards/
+|-- decisions/
+|-- docs/
+|   |-- project-user-manual.html
+|   |-- README.md
+|   |-- PRD-ai-agent-collaboration-architecture.md
+|   |-- TASK-ai-agent-collaboration-architecture.md
+|   `-- opendataloader-extract/
+|-- evals/
+|-- memory/
+|   |-- episodic/
+|   `-- work-logs/
+|-- scripts/
+|-- skills/
+|-- templates/
+|-- tmp/                  (로컬 임시 로그, 추적 제외)
+|-- work-requests/
+`-- stock-auto-trader/</code></pre>
+
+        <h3>폴더별 역할</h3>
+        <div class="grid two">
+          <div class="panel">
+            <h4><code>AGENTS.md</code>와 IDE 규칙</h4>
+            <p>IDE와 에이전트가 Jarvis 운영 규칙을 자동 적용하도록 하는 진입 지침입니다. 새 세션에서 기본값이 작동하는지 확인할 때 봅니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>docs/</code></h4>
+            <p>사용자 매뉴얼, PRD, TASK, 운영 문서, 리스크 게이트, 파일 관리 정책, PDF 추출 보존 자료가 있는 문서 중심 폴더입니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>architecture/</code></h4>
+            <p>SYS.01부터 SYS.04까지의 4단계 아키텍처와 운영 계약을 정의합니다. 역할, 기억, 승인 구조가 충돌할 때 기준점이 됩니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>agents/</code></h4>
+            <p>Human Conductor, Jarvis, Friday, EVE, Joi, TARS, C3PO, Data, KITT/TRON, Diagnostic Agent의 역할 지침입니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>templates/</code></h4>
+            <p>Human Brief, Jarvis Command, Friday Task, Work Log, Episodic Memory 같은 반복 산출물 양식입니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>skills/</code></h4>
+            <p>agent-team-orchestration과 jarvis-design-review처럼 에이전트가 따라야 하는 스킬형 운영 절차입니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>dashboards/</code></h4>
+            <p>Agent Assignment Dashboard, 정적 데이터, 작업 이벤트 JSONL, 이벤트 스키마를 보관합니다. 이벤트 로그가 커지면 아카이브 정책을 검토합니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>scripts/</code></h4>
+            <p>요청 시작, 대시보드 서버 시작, 검증, 완료, 지혜 승격, 메모리 소거, 작업 요청 건강도 점검을 수행하는 PowerShell 훅입니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>work-requests/</code></h4>
+            <p>신규 작업별 Human Brief 초안, 참고 자료, 산출물, 검증 증거를 보관하는 작업 요청 저장소입니다. 각 요청은 최소 README를 갖습니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>memory/</code>, <code>decisions/</code>, <code>evals/</code></h4>
+            <p>Agent Brain의 장기 기억, 결정 로그, 승인 기록, 평가 하네스와 루브릭을 관리합니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>assets/</code></h4>
+            <p>대시보드와 문서에서 쓰는 이미지 자산을 보관합니다. 시각 자료를 갱신할 때 확인합니다.</p>
+          </div>
+          <div class="panel">
+            <h4><code>stock-auto-trader/</code></h4>
+            <p>주식 자동매매 MVP 하위 프로젝트입니다. 코드, 테스트, 설정, 샘플 데이터, 전용 문서를 독립 관리합니다.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>탐색 순서:</strong> 새 작업은 <code>docs/README.md</code>에서 시작하고, 실제 배정은 <code>agents/00-agent-management-index.md</code>, 반복 양식은 <code>templates/</code>, 실행/검증 훅은 <code>scripts/</code>, 요청별 증거는 <code>work-requests/</code>에서 찾습니다. 생성물과 보존 자료 기준은 <a href="file-management-policy.md">file-management-policy.md</a>를 따릅니다.
+        </div>
+      </section>
+
+      <section id="operating-system" data-search="제품형 운영 시스템 상태 머신 운영 원칙 계약 검증 완료 훅 close validate dashboard gate memory eval">
+        <h2>2-2. 제품형 운영 시스템</h2>
+        <p class="section-note">
+          최신 Jarvis 운영 기준은 “좋은 철학과 문서”에서 멈추지 않고, 요청이 실제로 닫힐 수 있는지 확인하는 상태 머신과 게이트를 사용합니다.
+          사용자는 여전히 한 줄로 요청하지만, 내부적으로는 아래 운영 장치가 요청을 추적합니다.
+        </p>
+
+        <div class="grid three">
+          <div class="panel">
+            <h3>운영 원칙</h3>
+            <p><a href="../architecture/operating-principles.md">Operating Principles</a>는 Owner(To), CC, 리스크, 검증, 기억, 로컬 우선 원칙을 판단 규칙으로 고정합니다.</p>
+          </div>
+          <div class="panel">
+            <h3>4단계 계약</h3>
+            <p><a href="../architecture/contracts.md">Architecture Contracts</a>는 Dream Team, Virtual Office, Agent Brain, Human Conductor의 입력과 출력을 연결합니다.</p>
+          </div>
+          <div class="panel">
+            <h3>요청 상태 머신</h3>
+            <p><a href="request-state-machine.md">Request State Machine</a>은 Intake, Strategy, Dispatch, Execution, Review, Verification, Memory, Done을 완료 순서로 둡니다.</p>
+          </div>
+        </div>
+
+        <h3>필수 완료 게이트</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>게이트</th>
+              <th>무엇을 확인하는가</th>
+              <th>주요 증거</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Intake</td>
+              <td>요청 ID와 첫 이벤트가 있는가</td>
+              <td><code>dashboards/task-events.jsonl</code>, 작업 요청 폴더</td>
+            </tr>
+            <tr>
+              <td>Strategy / Dispatch</td>
+              <td>Jarvis 판단과 Friday Owner(To)/CC 배정이 있는가</td>
+              <td>Human Brief, Friday 분해 이벤트</td>
+            </tr>
+            <tr>
+              <td>Execution / Risk</td>
+              <td>실무 실행과 필요한 리스크 검토가 끝났는가</td>
+              <td>역할별 이벤트, KITT/TRON 또는 Data 검토</td>
+            </tr>
+            <tr>
+              <td>Verification</td>
+              <td>테스트, 브라우저 확인, 리뷰 결과 같은 증거가 있는가</td>
+              <td>검증 로그, 스크린샷, 산출물 링크</td>
+            </tr>
+            <tr>
+              <td>Memory / Done</td>
+              <td>Work Log, Episodic Memory, 최신 Done 이벤트가 있는가</td>
+              <td><code>memory/work-logs/</code>, <code>memory/episodic/</code>, Done 이벤트</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>운영 훅</h3>
+        <div class="grid two">
+          <div class="panel">
+            <h3>시작과 검증</h3>
+            <ul>
+              <li><code>scripts/start-jarvis-request.ps1</code>: 대시보드 서버와 첫 이벤트를 준비합니다.</li>
+              <li><code>scripts/validate-jarvis-request.ps1</code>: 요청 상태 머신 게이트 통과 여부를 점검합니다.</li>
+              <li><code>scripts/audit-work-requests.ps1</code>: 작업 요청 폴더의 README, evidence, outputs 상태를 점검합니다.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>완료와 기억</h3>
+            <ul>
+              <li><code>scripts/close-jarvis-request.ps1</code>: Done 이벤트, Work Log, Episodic Memory를 함께 생성합니다.</li>
+              <li><code>scripts/promote-wisdom.ps1</code>, <code>scripts/purge-memory.ps1</code>: 지혜 승격 후보와 망각 큐를 운영합니다.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout decision">
+          <strong>대시보드 운영 게이트:</strong> <a href="../dashboards/agent-assignment-dashboard.html">Agent Assignment Dashboard</a>는 최신 요청 이벤트를 읽고 필수 게이트 통과 수, 경고, 차단 상태를 보여줍니다. Done으로 보이더라도 검증과 메모리가 빠지면 운영상 닫힌 요청으로 보지 않습니다.
+        </div>
+      </section>
+
+      <section id="architecture" data-search="4단계 아키텍처 dream team virtual office agent brain human conductor">
+        <h2>3. 완벽한 협업을 위한 4단계 아키텍처</h2>
+        <p class="section-note">
+          이 프로젝트는 네 개의 시스템 레이어가 동시에 작동해야 완성됩니다. 한 레이어라도 빠지면 협업은 가능해도 안정적인 자율 협업은 어렵습니다.
+          최신 운영 기준에서는 <a href="../architecture/contracts.md">Architecture Contracts</a>가 각 레이어의 입력과 출력을 정의하고, <a href="../architecture/operating-principles.md">Operating Principles</a>가 충돌 상황의 우선순위를 정합니다.
+        </p>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>SYS.01 The Dream Team</h3>
+            <p>역할 기반 에이전트 조직입니다. 인간 대표, Jarvis, Friday, 실무진, 리스크 쉴드를 명확히 나누고 각자의 책임과 권한을 분리합니다.</p>
+            <p><a href="../architecture/sys-01-dream-team.md">상세 문서 열기</a></p>
+          </div>
+          <div class="panel">
+            <h3>SYS.02 The Virtual Office</h3>
+            <p>Discord 같은 가상 사무실입니다. 채널, 로그, To/CC, 승격 규칙을 통해 에이전트가 고립되지 않고 협업하게 합니다.</p>
+            <p><a href="../architecture/sys-02-virtual-office.md">상세 문서 열기</a></p>
+          </div>
+          <div class="panel">
+            <h3>SYS.03 The Agent Brain</h3>
+            <p>기억, 회고, 지혜 승격, 망각을 담당합니다. 단순 로그 누적이 아니라 재사용 가능한 운영 원칙을 만들어냅니다.</p>
+            <p><a href="../architecture/sys-03-agent-brain.md">상세 문서 열기</a></p>
+          </div>
+          <div class="panel">
+            <h3>SYS.04 The Human Conductor</h3>
+            <p>인간 대표의 고유 역할입니다. 비전, 높은 기준, 맥락적 코칭, 최종 승인이라는 인간만의 책임을 보존합니다.</p>
+            <p><a href="../architecture/sys-04-human-conductor.md">상세 문서 열기</a></p>
+          </div>
+        </div>
+
+        <h3>레이어별 실패 징후</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>레이어</th>
+              <th>실패 징후</th>
+              <th>복구 방법</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dream Team</td>
+              <td>모든 태스크가 한 에이전트에게 몰리거나 책임자가 불명확함</td>
+              <td>Friday가 Owner(To)와 CC를 재지정한다.</td>
+            </tr>
+            <tr>
+              <td>Virtual Office</td>
+              <td>결정과 산출물이 흩어져 추적되지 않음</td>
+              <td>채널 구조와 Work Log 템플릿을 강제한다.</td>
+            </tr>
+            <tr>
+              <td>Agent Brain</td>
+              <td>같은 실수 반복, 오래된 컨텍스트로 판단 오염</td>
+              <td>에피소딕 메모리, 지혜 승격, 망각 정책을 적용한다.</td>
+            </tr>
+            <tr>
+              <td>Human Conductor</td>
+              <td>AI가 방향을 과도하게 확정하거나 외부 공개를 독단 판단</td>
+              <td>인간 대표 승인 게이트를 다시 활성화한다.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>4단계 계약 요약</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>레이어</th>
+              <th>반드시 받아야 할 입력</th>
+              <th>반드시 남겨야 할 출력</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SYS.01 Dream Team</td>
+              <td>요청 목표, 리스크, 성공 기준</td>
+              <td>Owner(To), CC, 역할별 산출물 책임</td>
+            </tr>
+            <tr>
+              <td>SYS.02 Virtual Office</td>
+              <td>이벤트, 채널, 상태, 요청 ID</td>
+              <td>추적 가능한 로그와 대시보드 상태</td>
+            </tr>
+            <tr>
+              <td>SYS.03 Agent Brain</td>
+              <td>검증된 Work Log와 회고</td>
+              <td>Episodic Memory, 지혜 후보, 망각 큐</td>
+            </tr>
+            <tr>
+              <td>SYS.04 Human Conductor</td>
+              <td>전략 판단, 리스크 승격, 승인 필요 항목</td>
+              <td>방향 확정, 최종 승인, 중대한 변경 판단</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="agents" data-search="에이전트 운영 역할 지휘부 pm 실무진 쉴드 jarvis friday eve tars data">
+        <h2>4. 에이전트 운영법</h2>
+        <p class="section-note">
+          에이전트는 “능력 목록”이 아니라 “업무 주체”로 다룹니다. 각 에이전트는 담당 업무, 권한, 금지사항, 보고 포맷을 가지고 있습니다.
+        </p>
+
+        <div class="role-grid">
+          <article class="role">
+            <header><strong>Human Conductor</strong><span class="badge green">지휘부</span></header>
+            <p>비전, 목표, 품질 기준, 최종 승인. AI가 욕망하지 못하는 방향성을 정의합니다.</p>
+            <p><a href="../agents/human-conductor.md">지침 보기</a></p>
+          </article>
+          <article class="role">
+            <header><strong>Jarvis</strong><span class="badge green">지휘부</span></header>
+            <p>전략 브리프, 우선순위, 에이전트 간 충돌 조정, 인간 승인 필요 여부 판단. 신규 MVP나 고위험 설계에서는 Design Review Mode를 보조로 호출합니다.</p>
+            <p><a href="../agents/jarvis.md">지침 보기</a></p>
+          </article>
+          <article class="role">
+            <header><strong>Friday</strong><span class="badge blue">PM</span></header>
+            <p>태스크 분해, Owner(To)/CC 지정, 일정과 산출물 취합, 완료 기준 관리.</p>
+            <p><a href="../agents/friday.md">지침 보기</a></p>
+          </article>
+          <article class="role">
+            <header><strong>EVE</strong><span class="badge">실무진</span></header>
+            <p>리서치, 데이터 소스 탐색, yt-dlp 기반 영상 메타데이터 수집 계획, 수집 한계 기록.</p>
+            <p><a href="../agents/eve.md">지침 보기</a> · <a href="data-research-tooling-guidelines.md">데이터·리서치 도구 기준</a></p>
+          </article>
+          <article class="role">
+            <header><strong>Joi</strong><span class="badge">실무진</span></header>
+            <p>UX/UI 흐름, 랜딩 페이지 구조, 전환 경로, 감성 품질 검토.</p>
+            <p><a href="../agents/joi.md">지침 보기</a></p>
+          </article>
+          <article class="role">
+            <header><strong>TARS</strong><span class="badge">실무진</span></header>
+            <p>개발, 테스트, 로컬 검증, Git 변경 요약. 승인 없는 삭제와 배포는 금지.</p>
+            <p><a href="../agents/tars.md">지침 보기</a></p>
+          </article>
+          <article class="role">
+            <header><strong>C3PO</strong><span class="badge">실무진</span></header>
+            <p>마케팅 카피, 고객 심리 메시지, CTA, 페르소나별 설득 구조.</p>
+            <p><a href="../agents/c3po.md">지침 보기</a></p>
+          </article>
+          <article class="role">
+            <header><strong>Data</strong><span class="badge amber">쉴드</span></header>
+            <p>데이터 분석, KPI, 페르소나 분류, Clarity/GTM 행동 태깅, 봇 이벤트 스키마, 정량 근거 검증.</p>
+            <p><a href="../agents/data.md">지침 보기</a> · <a href="data-research-tooling-guidelines.md">데이터·리서치 도구 기준</a></p>
+          </article>
+          <article class="role">
+            <header><strong>KITT/TRON</strong><span class="badge red">쉴드</span></header>
+            <p>법무, 보안, 개인정보, 저작권, 외부 공개 리스크. High 리스크 차단 권한 보유.</p>
+            <p><a href="../agents/kitt-tron.md">지침 보기</a></p>
+          </article>
+          <article class="role">
+            <header><strong>Diagnostic Agent</strong><span class="badge red">쉴드</span></header>
+            <p>드리프트, 과부하, 반복 실패, 거짓 완료 보고, 권한 초과 징후 감지.</p>
+            <p><a href="../agents/diagnostic-agent.md">지침 보기</a></p>
+          </article>
+        </div>
+
+        <h3>에이전트 배정 판단표</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>상황</th>
+              <th>Owner(To)</th>
+              <th>CC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>프로젝트 방향성이 불명확하다</td>
+              <td>Jarvis</td>
+              <td>Friday, Human Conductor</td>
+            </tr>
+            <tr>
+              <td>업무를 쪼개고 담당자를 정해야 한다</td>
+              <td>Friday</td>
+              <td>Jarvis, KITT/TRON</td>
+            </tr>
+            <tr>
+              <td>시장 자료와 외부 데이터를 찾아야 한다</td>
+              <td>EVE</td>
+              <td>Data, KITT/TRON</td>
+            </tr>
+            <tr>
+              <td>사용자 경험과 화면 흐름이 필요하다</td>
+              <td>Joi</td>
+              <td>C3PO, Data, TARS</td>
+            </tr>
+            <tr>
+              <td>코드 구현과 테스트가 필요하다</td>
+              <td>TARS</td>
+              <td>Joi, KITT/TRON, Friday</td>
+            </tr>
+            <tr>
+              <td>전환 카피와 마케팅 문구가 필요하다</td>
+              <td>C3PO</td>
+              <td>Joi, Data, KITT/TRON</td>
+            </tr>
+            <tr>
+              <td>수치, 세그먼트, KPI를 검증해야 한다</td>
+              <td>Data</td>
+              <td>Friday, Jarvis</td>
+            </tr>
+            <tr>
+              <td>외부 공개 또는 보안 이슈가 있다</td>
+              <td>KITT/TRON</td>
+              <td>Jarvis, Friday, Human Conductor</td>
+            </tr>
+            <tr>
+              <td>완료 보고가 수상하거나 실패가 반복된다</td>
+              <td>Diagnostic Agent</td>
+              <td>Friday, Jarvis, KITT/TRON</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="workflow" data-search="표준 업무 흐름 kickoff execution review memory release">
+        <h2>5. 표준 업무 흐름</h2>
+        <p class="section-note">
+          모든 프로젝트는 킥오프, 실행, 검토, 기억, 공개 판단 순서로 운영합니다. 급한 프로젝트라도 이 흐름은 생략하지 않는 것이 좋습니다.
+        </p>
+
+        <div class="handoff-strip" aria-label="표준 업무 단계별 인계 흐름">
+          <div class="handoff-item">
+            <strong>Kickoff</strong>
+            <span>요청을 Human Brief, Jarvis 전략, Friday 태스크로 바꿉니다.</span>
+          </div>
+          <div class="handoff-item">
+            <strong>Execution</strong>
+            <span>역할별 Owner가 실무를 수행하고 CC는 필요한 부분만 검토합니다.</span>
+          </div>
+          <div class="handoff-item">
+            <strong>Review</strong>
+            <span>정량 근거, 보안, 법무, 드리프트를 쉴드 에이전트가 확인합니다.</span>
+          </div>
+          <div class="handoff-item">
+            <strong>Memory and Release</strong>
+            <span>로그와 회고를 남기고 외부 공개는 Human Conductor 승인을 거칩니다.</span>
+          </div>
+        </div>
+
+        <h3>요청 상태 머신</h3>
+        <p>
+          표준 흐름은 <a href="request-state-machine.md">Request State Machine</a>으로도 추적합니다. 운영상 Done은 최신 이벤트 상태만이 아니라, 검증과 메모리 게이트까지 통과한 상태입니다.
+        </p>
+        <pre><code>Intake
+→ Human Brief Draft
+→ Jarvis Strategy
+→ Friday Dispatch
+→ Agent Execution
+→ Review
+→ Verification
+→ Work Log
+→ Episodic Memory
+→ Done</code></pre>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>1단계: Kickoff</h3>
+            <ul>
+              <li>사용자 원문에서 Human Brief 자동 초안 생성</li>
+              <li>Jarvis 전략 브리프 작성</li>
+              <li>Friday 태스크 분해</li>
+              <li>KITT/TRON 초기 리스크 확인</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>2단계: Autonomous Execution</h3>
+            <ul>
+              <li>EVE 리서치</li>
+              <li>Data 분석</li>
+              <li>Joi UX 설계</li>
+              <li>C3PO 카피 작성</li>
+              <li>TARS 구현</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>3단계: Cross Review</h3>
+            <ul>
+              <li>Friday가 산출물 취합</li>
+              <li>Data가 정량 근거 검증</li>
+              <li>KITT/TRON이 법무·보안 검토</li>
+              <li>Diagnostic Agent가 드리프트 점검</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>4단계: Memory and Release</h3>
+            <ul>
+              <li>Work Log 작성</li>
+              <li>Episodic Memory 작성</li>
+              <li>지혜 승격 후보 등록</li>
+              <li><code>validate-jarvis-request.ps1</code> 검증</li>
+              <li><code>close-jarvis-request.ps1</code> 완료 처리</li>
+              <li>Release Risk Gate 통과</li>
+              <li>Human Conductor 최종 승인</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout decision">
+          <strong>운영 원칙:</strong> 빠른 실행이 필요할수록 Friday의 태스크 분해를 더 짧고 명확하게 작성합니다. 문서를 길게 쓰는 것보다 Owner(To), CC, 완료 기준, 리스크 플래그를 빠뜨리지 않는 것이 중요합니다.
+        </div>
+      </section>
+
+      <section id="dynamic-workflow" data-search="dynamic workflow 동적 워크플로우 task graph worker manifest parallel executor verifier fixer aggregator pulM">
+        <h2>5-1. Dynamic Workflow 실행 레벨 L1-L4</h2>
+        <p class="section-note">
+          Dynamic Workflow는 기존 Jarvis, Friday, TARS, Data, KITT/TRON 이름을 바꾸는 방식이 아닙니다.
+          고정 에이전트는 책임과 판단 라인으로 유지하고, 큰 작업을 task 단위로 쪼갠 뒤 일회성 worker를 동적으로 생성해 병렬 실행과 독립 검증을 수행합니다.
+          여기서 L4는 <a href="#architecture">4단계 아키텍처</a>의 네 번째 단계가 아니라, Dynamic Workflow 실행 하네스의 네 번째 성숙도입니다.
+        </p>
+
+        <div class="callout decision">
+          <strong>PULM 표기:</strong> 이 매뉴얼에서는 PULM을 <code>Previous</code>, <code>Upgrade</code>, <code>Latest</code>, <code>Manual</code>의 약자로 씁니다.
+          이전 상태, 이번 업그레이드, 최종 적용 상태, 실제 사용법을 한 표에서 확인하기 위한 운영 표기입니다.
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>PULM</th>
+              <th>쉽게 말하면</th>
+              <th>현재 Jarvis 적용</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P</strong> Previous</td>
+              <td>이전 버전</td>
+              <td>고정 역할 에이전트와 <code>task-events.jsonl</code> 기반 이벤트 시각화 중심</td>
+            </tr>
+            <tr>
+              <td><strong>U</strong> Upgrade</td>
+              <td>이번 레벨업</td>
+              <td>L1 Task Graph, L2 Worker Manifest, L3 Parallel Executor, L4 Verifier/Fixer/Aggregator 추가</td>
+            </tr>
+            <tr>
+              <td><strong>L</strong> Latest</td>
+              <td>최종 적용 상태</td>
+              <td>기존 에이전트 이름은 유지하고, 작업 요청 폴더 안에 동적 worker 실행 결과를 보관</td>
+            </tr>
+            <tr>
+              <td><strong>M</strong> Manual</td>
+              <td>사용법</td>
+              <td><code>new-dynamic-workflow.ps1</code>로 생성하고 <code>run-dynamic-workflow.ps1</code>로 실행/검증/집계</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>Dynamic Workflow L1-L4 실행 레벨</h3>
+            <ol>
+              <li><strong>L1 Task Graph:</strong> 작업을 <code>task-001</code> 단위로 쪼갭니다.</li>
+              <li><strong>L2 Worker Manifest:</strong> 각 task에 worker, context packet, result path를 붙입니다.</li>
+              <li><strong>L3 Parallel Executor:</strong> PowerShell job으로 worker를 병렬 실행합니다.</li>
+              <li><strong>L4 Verifier/Fixer/Aggregator:</strong> Data 검증, TARS 수정 검토, Jarvis 집계를 분리합니다.</li>
+            </ol>
+          </div>
+          <div class="panel">
+            <h3>생성되는 폴더</h3>
+            <pre><code>work-requests/YYYY-MM-DD-request-slug/
+  dynamic-workflow/
+    task-graph.json
+    worker-manifest.json
+    packets/
+    results/
+    verification/
+    fixes/
+    aggregation/</code></pre>
+          </div>
+        </div>
+
+        <h3>이번 검증 결과</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>결과</th>
+              <th>근거</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Request</td>
+              <td><code>dynamic-workflow-level4-upgrade</code></td>
+              <td>작업 요청 폴더에 Dynamic Workflow 산출물 보관</td>
+            </tr>
+            <tr>
+              <td>Worker Count</td>
+              <td>5개 worker 생성 및 병렬 실행</td>
+              <td><code>run-dynamic-workflow.ps1 -MaxParallel 5</code> 실행 결과</td>
+            </tr>
+            <tr>
+              <td>Verification</td>
+              <td><span class="badge green">Pass</span></td>
+              <td><a href="../work-requests/2026-05-29-dynamic-workflow-level4-upgrade/dynamic-workflow/verification/verification-report.md">verification-report.md</a></td>
+            </tr>
+            <tr>
+              <td>Aggregation</td>
+              <td><span class="badge green">Done</span></td>
+              <td><a href="../work-requests/2026-05-29-dynamic-workflow-level4-upgrade/dynamic-workflow/aggregation/aggregate-report.md">aggregate-report.md</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>기본 명령</h3>
+        <pre><code>powershell -ExecutionPolicy Bypass -File scripts/new-dynamic-workflow.ps1 `
+  -RequestId "example-request" `
+  -Goal "큰 작업 목표" `
+  -Task "작업 A,작업 B,작업 C"
+
+powershell -ExecutionPolicy Bypass -File scripts/run-dynamic-workflow.ps1 `
+  -RequestId "example-request" `
+  -MaxParallel 4</code></pre>
+
+        <div class="callout warning">
+          <strong>안전 기준:</strong> 기본 실행은 외부 AI CLI나 임의 명령을 호출하지 않습니다.
+          task 또는 worker에 <code>command</code>를 넣고 실제 명령 실행이 필요할 때만 <code>-AllowCommands</code>를 사용합니다.
+          삭제, 배포, 외부 전송, 개인정보, 비밀키 처리는 여전히 Human Conductor 확인 대상입니다.
+        </div>
+
+        <p>
+          상세 문서는 <a href="dynamic-workflow.md">Dynamic Workflow</a>,
+          템플릿은 <a href="../templates/dynamic-workflow-task-graph.json">Task Graph</a>와
+          <a href="../templates/dynamic-worker-manifest.json">Worker Manifest</a>를 기준으로 합니다.
+        </p>
+      </section>
+
+      <section id="design-review" data-search="jarvis design review decision log ssot mvp capsule stack option prd trd tasks coding convention">
+        <h2>6. Jarvis 설계 리뷰 모드</h2>
+        <p class="section-note">
+          Jarvis 설계 리뷰 모드는 기본 Jarvis 페르소나를 덮어쓰지 않습니다. 짧은 요청을 빠르게 실행하는 기본 흐름은 유지하고,
+          신규 MVP, 고위험 기능, 아키텍처 결정처럼 결정 품질이 중요한 상황에서만 보조 모드로 사용합니다.
+        </p>
+
+        <div class="callout decision">
+          <strong>적용 결정:</strong>
+          <code>{D-01, Jarvis 페르소나 적용, 기본 덮어쓰기 대신 Design Review Mode로 분리, "기존 자동 실행성과 전문가 설계 검증을 둘 다 살릴 수 있음", "대형/고위험 프로젝트에서 문서 품질과 실행 정확도 상승", "대안: Jarvis 기본 페르소나 전체 교체", "단순 작업에는 비활성화"}</code>
+        </div>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>사용할 때</h3>
+            <ul>
+              <li>신규 제품, 신규 MVP, 신규 자동화 시스템 기획</li>
+              <li>PRD를 TRD, TASKS, 데이터 설계까지 확장해야 하는 작업</li>
+              <li>금융, 보안, 개인정보, 결제, 외부 배포가 포함된 고위험 작업</li>
+              <li>기술 스택, 권한 모델, 데이터 수명주기, 운영 구조를 결정해야 하는 작업</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>사용하지 않을 때</h3>
+            <ul>
+              <li>단순 파일 수정</li>
+              <li>작은 버그 수정</li>
+              <li>이미 결정된 스펙의 구현</li>
+              <li>짧은 문서 정리</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>운영 규칙</h3>
+        <ul>
+          <li>라운드는 <code>R#</code>로 표시하고, 전문가 작업에서는 한 번에 6~10개 질문을 배치로 던질 수 있습니다.</li>
+          <li>답변이 모호하면 해당 항목은 단일 질문으로 전환해 확정합니다.</li>
+          <li>2~3라운드마다 결정 요약 5줄, Open Questions 3개, Top Risks 3개를 출력합니다.</li>
+          <li>결정은 <code>{ID, 항목, 선택, 근거, 영향, 대안, 보류안}</code> 형식의 Decision Log로 남깁니다.</li>
+          <li>PRD, TRD, Flow, ERD, TASKS, 테스트 기준에서 <code>EPIC/FEAT/REQ/NFR/RISK</code> 식별자를 동일하게 유지합니다.</li>
+        </ul>
+
+        <h3>MVP 캡슐</h3>
+        <p>
+          MVP 범위가 확정되면 목표, 타깃 사용자, 핵심 가치 제안, EPIC-1, FEAT-1, 노스스타 지표, 입력 지표, Non-goals,
+          NFR, 데이터 민감도, Top 리스크, 다음 7일 액션을 12줄로 고정합니다. 이 캡슐은 PRD/TRD/TASKS 같은 주요 문서 상단에 반복됩니다.
+        </p>
+
+        <h3>7개 문서 산출</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>문서</th>
+              <th>담당 중심</th>
+              <th>핵심 내용</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>PRD</td><td>Jarvis, C3PO</td><td>문제, 목표, Non-goals, EPIC/FEAT/REQ, 성공 지표</td></tr>
+            <tr><td>TRD</td><td>TARS, KITT/TRON</td><td>아키텍처, NFR, 데이터 수명주기, 권한, 연동, 위협 모델</td></tr>
+            <tr><td>User Flow</td><td>Joi</td><td>FEAT 중심 성공/실패/예외 플로우</td></tr>
+            <tr><td>Database Design</td><td>TARS, Data</td><td>ERD, 키, 제약, 민감 데이터 태그, REQ 연결</td></tr>
+            <tr><td>Design System</td><td>Joi</td><td>토큰, 컴포넌트 상태, 접근성 체크</td></tr>
+            <tr><td>TASKS</td><td>Friday, TARS</td><td>마일스톤, 파일 범위, API/DB 변경, 인수 기준</td></tr>
+            <tr><td>Coding Convention & AI Collaboration Guide</td><td>TARS, Diagnostic Agent</td><td>검증 원칙, 레포 구조, 리뷰, 보안, 디버깅 워크플로우</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          상세 지침은 <a href="../skills/jarvis-design-review/SKILL.md">Jarvis Design Review Skill</a>을 사용합니다.
+        </p>
+      </section>
+
+      <section id="templates" data-search="템플릿 human brief jarvis command friday task work log episodic memory">
+        <h2>7. 템플릿 사용법</h2>
+        <p class="section-note">
+          템플릿은 “작성 양식”이면서 동시에 에이전트 팀의 운영 API입니다. 필드를 채우는 방식이 곧 협업 방식입니다.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>템플릿</th>
+              <th>작성자</th>
+              <th>핵심 필드</th>
+              <th>완료 기준</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="../templates/human-brief-template.md">Human Brief</a></td>
+              <td>Jarvis/Friday 자동 초안, Human Conductor 승인/보정</td>
+              <td>프로젝트명, 목표, 성공 기준, 제약, 승인 조건</td>
+              <td>Jarvis가 전략 판단을 시작할 수 있음</td>
+            </tr>
+            <tr>
+              <td><a href="../templates/jarvis-command-protocol.md">Jarvis Command</a></td>
+              <td>Jarvis</td>
+              <td>핵심 목표, 우선순위, 필수 에이전트, 리스크</td>
+              <td>Friday가 태스크 분해 가능</td>
+            </tr>
+            <tr>
+              <td><a href="../templates/friday-task-breakdown-template.md">Friday Task Breakdown</a></td>
+              <td>Friday</td>
+              <td>Task ID, Owner(To), CC, 입력, 산출물, 완료 기준</td>
+              <td>각 에이전트가 실행 가능</td>
+            </tr>
+            <tr>
+              <td><a href="../templates/work-log-template.md">Work Log</a></td>
+              <td>모든 에이전트</td>
+              <td>수행한 일, 사용 도구, 산출물, 검증, 다음 액션</td>
+              <td>Friday와 Data가 추적 가능</td>
+            </tr>
+            <tr>
+              <td><a href="../templates/episodic-memory-template.md">Episodic Memory</a></td>
+              <td>모든 에이전트</td>
+              <td>어려움, 판단 변화, 피드백, 배운 점, 지혜 후보</td>
+              <td>Agent Brain에 학습 재료 제공</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>스크립트 훅과 템플릿의 관계</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>스크립트</th>
+              <th>사용 시점</th>
+              <th>연결되는 템플릿/저장소</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>start-jarvis-request.ps1</code></td>
+              <td>신규 작업 접수 직후</td>
+              <td>Human Brief 초안, <code>dashboards/task-events.jsonl</code></td>
+            </tr>
+            <tr>
+              <td><code>validate-jarvis-request.ps1</code></td>
+              <td>완료 보고 전</td>
+              <td>Request State Machine, 작업 폴더, 이벤트 로그</td>
+            </tr>
+            <tr>
+              <td><code>close-jarvis-request.ps1</code></td>
+              <td>검증 통과 후 요청 닫기</td>
+              <td>Work Log, Episodic Memory, Done 이벤트</td>
+            </tr>
+            <tr>
+              <td><code>new-dynamic-workflow.ps1</code></td>
+              <td>작업이 크거나 병렬 실행 이득이 있을 때</td>
+              <td><code>task-graph.json</code>, <code>worker-manifest.json</code>, context packet</td>
+            </tr>
+            <tr>
+              <td><code>run-dynamic-workflow.ps1</code></td>
+              <td>worker 병렬 실행과 독립 검증이 필요할 때</td>
+              <td><code>results/</code>, <code>verification/</code>, <code>fixes/</code>, <code>aggregation/</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>자동 생성되는 Human Brief 예시</h3>
+        <p>
+          사용자가 “유튜브 쇼핑몰 MVP 기획하고 랜딩 페이지 작업까지 진행해줘”라고만 입력해도 아래와 같은 초안으로 시작합니다.
+        </p>
+        <pre><code>사용자 원문: 유튜브 쇼핑몰 MVP 기획하고 랜딩 페이지 작업까지 진행해줘
+프로젝트명: 유튜브 쇼핑몰 파일럿
+한 줄 목표: 시청자 페르소나별 상품 추천 랜딩 페이지 MVP 구축
+80점 기준: 페르소나 5종, 상품 큐레이션 원칙, 랜딩 흐름, 리스크 검토 완료
+100점 기준: 실제 구현 가능한 MVP, 카피와 UX 검증, 배포 전 쉴드 통과
+금지 사항: 개인정보 무단 수집, 저작권 침해, 검증되지 않은 수익 보장 문구
+가정: 내부 기획 및 로컬 문서 작업은 승인 없이 진행 가능
+확인 필요: 외부 배포, 결제 연동, 실제 개인정보 수집 여부
+최종 승인 기준: KITT/TRON Pass 또는 Pass with Changes, 인간 대표 승인</code></pre>
+      </section>
+
+      <section id="communication" data-search="to cc escalate 커뮤니케이션 메시지 프로토콜 discord">
+        <h2>8. To/CC 커뮤니케이션</h2>
+        <p class="section-note">
+          To/CC는 이 프로젝트의 토큰 비용 절감 장치이자 책임 명확화 장치입니다. 모든 사람에게 모든 맥락을 주지 않습니다.
+        </p>
+
+        <div class="grid three">
+          <div class="panel">
+            <h3>To</h3>
+            <p>실행 책임자입니다. 풀 컨텍스트를 받고 산출물을 만들어야 합니다.</p>
+          </div>
+          <div class="panel">
+            <h3>CC</h3>
+            <p>검토자 또는 감시자입니다. 요약 컨텍스트만 받고 필요한 피드백을 제공합니다.</p>
+          </div>
+          <div class="panel">
+            <h3>Escalate</h3>
+            <p>상위 판단 신호입니다. Friday, Jarvis, Human Conductor 중 누가 결정해야 하는지 지정합니다.</p>
+          </div>
+        </div>
+
+        <h3>표준 메시지 포맷</h3>
+        <pre><code>To:
+CC:
+Escalate:
+Subject:
+Context:
+Task:
+Expected Output:
+Constraints:
+Risk Flags:
+Deadline:</code></pre>
+
+        <h3>리스크 작업 예시</h3>
+        <pre><code>To: KITT/TRON
+CC: Data, Friday, Jarvis
+Escalate: Jarvis
+Subject: 외부 공개 가능성에 따른 법무/보안 검토
+Context: 프로젝트 산출물이 외부 고객에게 공개될 가능성이 있음.
+Task: 저작권, 개인정보, 보안, 고지 문구를 검토.
+Expected Output: Pass / Pass with Changes / Blocked 판정.
+Risk Flags: High
+Deadline: 배포 전</code></pre>
+      </section>
+
+      <section id="memory" data-search="기억 망각 지혜 승격 episodic memory agent brain">
+        <h2>9. 기억, 성찰, 지혜 승격, 망각</h2>
+        <p class="section-note">
+          에이전트 팀은 일을 많이 한다고 자동으로 똑똑해지지 않습니다. 경험을 기록하고, 패턴을 추출하고, 지혜로 승격하고, 불필요한 원자료는 소거해야 합니다.
+          최신 운영 저장소는 <a href="../memory/README.md">memory/</a> 아래에 Work Log, Episodic Memory, 지혜 후보, 망각 큐를 분리해 둡니다.
+        </p>
+
+        <figure class="figure">
+          <img src="opendataloader-extract/images/imageFile18.png" alt="스스로 진화하는 플라이휠 이미지">
+          <figcaption>실행, 성찰, 최적화, 진화가 반복되는 self-improving system 구조입니다.</figcaption>
+        </figure>
+
+        <table>
+          <thead>
+            <tr>
+              <th>단계</th>
+              <th>사용 문서</th>
+              <th>담당</th>
+              <th>목적</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>업무 로그</td>
+              <td><a href="../templates/work-log-template.md">work-log-template.md</a>, <a href="../memory/work-logs/README.md">memory/work-logs/</a></td>
+              <td>모든 에이전트</td>
+              <td>무엇을 했고 무엇이 남았는지 추적</td>
+            </tr>
+            <tr>
+              <td>에피소딕 메모리</td>
+              <td><a href="../templates/episodic-memory-template.md">episodic-memory-template.md</a>, <a href="../memory/episodic/README.md">memory/episodic/</a></td>
+              <td>모든 에이전트</td>
+              <td>어려움, 피드백, 배운 점 기록</td>
+            </tr>
+            <tr>
+              <td>지혜 승격</td>
+              <td><a href="wisdom-promotion-process.md">wisdom-promotion-process.md</a>, <a href="../memory/wisdom-candidates.md">wisdom-candidates.md</a>, <a href="../memory/wisdom-registry.md">wisdom-registry.md</a></td>
+              <td>Data, Jarvis, Friday</td>
+              <td>반복 가능한 원칙으로 추상화</td>
+            </tr>
+            <tr>
+              <td>망각 및 소거</td>
+              <td><a href="forgetting-and-purging-policy.md">forgetting-and-purging-policy.md</a>, <a href="../memory/purge-queue.md">purge-queue.md</a>, <a href="../memory/quarantine.md">quarantine.md</a></td>
+              <td>KITT/TRON, Data</td>
+              <td>오래된 로우 데이터와 민감정보 정리</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>지혜 승격 절차</h3>
+            <p><code>scripts/promote-wisdom.ps1</code>는 반복 가능한 교훈을 지혜 후보 또는 레지스트리에 기록합니다. 단일 작업의 감상은 바로 지혜가 아니라 후보로 둡니다.</p>
+          </div>
+          <div class="panel">
+            <h3>망각 절차</h3>
+            <p><code>scripts/purge-memory.ps1 -Mode Report</code>는 먼저 삭제 없이 점검합니다. 실제 소거는 민감정보와 보존 필요성을 확인한 뒤 진행합니다.</p>
+          </div>
+        </div>
+
+        <div class="callout warning">
+          <strong>주의:</strong> 모든 로그를 영구 보존하면 시스템이 더 똑똑해지는 것이 아니라 오히려 판단이 흐려질 수 있습니다. 핵심 지혜는 보존하고, 로우 데이터와 중복 로그는 요약 후 소거합니다.
+        </div>
+      </section>
+
+      <section id="risk" data-search="리스크 쉴드 release gate drift kitt tron data diagnostic">
+        <h2>10. 리스크 쉴드 운영</h2>
+        <p class="section-note">
+          Risk Shield는 속도를 늦추기 위한 장치가 아니라, 잘못된 자동화가 외부로 나가기 전에 잡는 방어 레이어입니다.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>리스크</th>
+              <th>강제 호출</th>
+              <th>판정 기준</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>개인정보, 계정, API 키, 비밀정보</td>
+              <td>KITT/TRON</td>
+              <td>민감정보가 있으면 외부 공개 금지 또는 수정</td>
+            </tr>
+            <tr>
+              <td>저작권, 플랫폼 정책, 외부 콘텐츠 사용</td>
+              <td>KITT/TRON, EVE</td>
+              <td>출처, 사용 범위, 공개 가능성 확인</td>
+            </tr>
+            <tr>
+              <td>전환율, 수익, KPI 같은 정량 주장</td>
+              <td>Data</td>
+              <td>근거, 한계, 신뢰도 명시</td>
+            </tr>
+            <tr>
+              <td>반복 실패, 거짓 완료 보고, 목표 이탈</td>
+              <td>Diagnostic Agent</td>
+              <td>작업 중지 또는 재검증 승격</td>
+            </tr>
+            <tr>
+              <td>외부 공개, 배포, 고객 전달</td>
+              <td>KITT/TRON, Human Conductor</td>
+              <td>Release Risk Gate 통과</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Release Risk Gate 판정</h3>
+        <div class="grid three">
+          <div class="panel">
+            <h3><span class="badge green">Pass</span></h3>
+            <p>배포 가능. 치명 리스크가 없고 필수 검토가 끝난 상태입니다.</p>
+          </div>
+          <div class="panel">
+            <h3><span class="badge amber">Pass with Changes</span></h3>
+            <p>수정 후 배포 가능. 문구, 보안 설정, 고지 사항 보완이 필요합니다.</p>
+          </div>
+          <div class="panel">
+            <h3><span class="badge red">Blocked</span></h3>
+            <p>배포 금지. 개인정보, 보안, 법무, 저작권 문제가 해소되지 않았습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pilot" data-search="파일럿 유튜브 쇼핑몰 youtube shop 4시간 봇 시뮬레이션 clarity gtm yt-dlp 데이터 리서치 도구">
+        <h2>11. 파일럿 프로젝트 운영 예시</h2>
+        <p class="section-note">
+          유튜브 쇼핑몰 파일럿은 이 시스템을 실제로 굴리는 기준 시나리오입니다. 4시간 안에 리서치, 분석, UX, 카피, 개발, 리스크 검토를 압축해서 실행합니다.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>시간</th>
+              <th>작업</th>
+              <th>Owner(To)</th>
+              <th>CC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0:00-0:20</td>
+              <td>Human Brief와 Jarvis 전략 브리프</td>
+              <td>Human Conductor, Jarvis</td>
+              <td>Friday</td>
+            </tr>
+            <tr>
+              <td>0:20-0:40</td>
+              <td>Friday 태스크 분해</td>
+              <td>Friday</td>
+              <td>Jarvis, KITT/TRON</td>
+            </tr>
+            <tr>
+              <td>0:40-1:40</td>
+              <td>영상 메타데이터 리서치와 1차 분석</td>
+              <td>EVE, Data</td>
+              <td>KITT/TRON</td>
+            </tr>
+            <tr>
+              <td>1:40-2:30</td>
+              <td>UX 흐름과 카피 초안</td>
+              <td>Joi, C3PO</td>
+              <td>Data, Friday</td>
+            </tr>
+            <tr>
+              <td>2:30-3:30</td>
+              <td>MVP 구현</td>
+              <td>TARS</td>
+              <td>Joi, KITT/TRON</td>
+            </tr>
+            <tr>
+              <td>3:30-4:00</td>
+              <td>리스크 검토와 최종 승인 준비</td>
+              <td>KITT/TRON, Friday</td>
+              <td>Jarvis, Human Conductor</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          자세한 파일럿 문서는 <a href="pilot-youtube-shop-kickoff.md">pilot-youtube-shop-kickoff.md</a>,
+          봇 시뮬레이션 설계는 <a href="bot-simulation-design.md">bot-simulation-design.md</a>,
+          데이터·리서치 도구 기준은 <a href="data-research-tooling-guidelines.md">data-research-tooling-guidelines.md</a>,
+          개발 체크리스트는 <a href="development-execution-checklist.md">development-execution-checklist.md</a>를 사용합니다.
+          Clarity/GTM 행동 추적과 yt-dlp 기반 외부 플랫폼 수집은 KITT/TRON 검토 전에는 설계 문서와 로컬 샘플 확인까지만 진행합니다.
+        </p>
+      </section>
+
+      <section id="maintenance" data-search="유지보수 문서 업데이트 에이전트 추가 수정 버전 관리">
+        <h2>12. 유지보수 방법</h2>
+        <p class="section-note">
+          에이전트 팀 문서는 살아 있는 운영 체계입니다. 프로젝트를 진행하면서 역할, 템플릿, 체크리스트를 개선해야 합니다.
+        </p>
+
+        <h3>에이전트 추가 방법</h3>
+        <ol>
+          <li><code>../agents/{agent-name}.md</code> 파일을 새로 만듭니다.</li>
+          <li><code>Identity</code>, <code>Mission</code>, <code>Responsibilities</code>, <code>Authority</code>, <code>Boundaries</code>, <code>To/CC Rules</code>, <code>Output Format</code>을 채웁니다.</li>
+          <li><a href="../agents/00-agent-management-index.md">Agent Management Index</a>에 새 에이전트를 등록합니다.</li>
+          <li>필요하면 <a href="../skills/agent-team-orchestration/SKILL.md">SKILL.md</a>의 Persona References에도 링크를 추가합니다.</li>
+          <li>PRD의 에이전트 분리 구조 또는 TASK 산출물 목록을 갱신합니다.</li>
+        </ol>
+
+        <h3>문서 업데이트 규칙</h3>
+        <ul>
+          <li>운영 규칙을 바꾸면 관련 템플릿도 함께 갱신합니다.</li>
+          <li>상태 머신, 완료 기준, 운영 게이트를 바꾸면 <a href="request-state-machine.md">request-state-machine.md</a>, <a href="../scripts/validate-jarvis-request.ps1">validate 훅</a>, 대시보드 표시를 함께 확인합니다.</li>
+          <li>리스크 정책을 바꾸면 KITT/TRON 지침과 Release Risk Gate를 같이 확인합니다.</li>
+          <li>데이터 분석 기준을 바꾸면 Data 지침과 Data Analysis Pipeline을 같이 확인합니다.</li>
+          <li>파일 배치 기준을 바꾸면 <a href="file-management-policy.md">File Management Policy</a>, 루트 <a href="../.gitignore">.gitignore</a>, 폴더별 README를 함께 확인합니다.</li>
+          <li>실패 사례에서 배운 점은 Wisdom Promotion Process를 통해 지혜 후보로 등록합니다.</li>
+          <li>운영 품질을 올렸다고 판단하면 <a href="../evals/README.md">evals/</a>의 샘플 태스크와 루브릭으로 실제 완성도를 다시 채점합니다.</li>
+        </ul>
+
+        <h3>매뉴얼 버전 관리 Ledger와 PULM</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>PULM</th>
+              <th>보관 대상</th>
+              <th>이번 업데이트 기준</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>P, Previous</td>
+              <td>수정 전 매뉴얼 스냅샷</td>
+              <td><code>project-user-manual.previous-20260529.html</code>, <code>project-user-manual.previous-20260529-dwf-clarified.html</code></td>
+            </tr>
+            <tr>
+              <td>U, Upgrade</td>
+              <td>무엇이 바뀌었는지</td>
+              <td>Dynamic Workflow L1-L4 추가 후, 4단계 아키텍처와 L4 실행 레벨의 구분을 명확화</td>
+            </tr>
+            <tr>
+              <td>L, Latest</td>
+              <td>현재 최종본</td>
+              <td><code>docs/project-user-manual.html</code>, <code>project-user-manual.final-20260529-dwf-clarified.html</code></td>
+            </tr>
+            <tr>
+              <td>M, Manual</td>
+              <td>사람이 따라 할 사용법</td>
+              <td>운영 본체, 관찰 하네스, 실행 하네스, 검증 결과, 생성/실행 명령, 안전 기준을 본문에 함께 표기</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th>버전</th>
+              <th>상태</th>
+              <th>파일</th>
+              <th>설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>manual-20260529-before-dwf</td>
+              <td>Previous</td>
+              <td><code>work-requests/2026-05-29-dynamic-workflow-level4-upgrade/deliverables/manual-versions/project-user-manual.previous-20260529.html</code></td>
+              <td>Dynamic Workflow 섹션 추가 전 매뉴얼</td>
+            </tr>
+            <tr>
+              <td>manual-20260529-dwf-final</td>
+              <td>Final Snapshot</td>
+              <td><code>work-requests/2026-05-29-dynamic-workflow-level4-upgrade/deliverables/manual-versions/project-user-manual.final-20260529.html</code></td>
+              <td>Dynamic Workflow L1-L4와 PULM을 처음 추가한 최종 스냅샷</td>
+            </tr>
+            <tr>
+              <td>manual-20260529-dwf-clarified-previous</td>
+              <td>Previous</td>
+              <td><code>work-requests/2026-05-29-dynamic-workflow-level4-upgrade/deliverables/manual-versions/project-user-manual.previous-20260529-dwf-clarified.html</code></td>
+              <td>4단계/L4/하네스 표현 보정 직전 스냅샷</td>
+            </tr>
+            <tr>
+              <td>manual-20260529-dwf-clarified-final</td>
+              <td>Latest Snapshot</td>
+              <td><code>work-requests/2026-05-29-dynamic-workflow-level4-upgrade/deliverables/manual-versions/project-user-manual.final-20260529-dwf-clarified.html</code></td>
+              <td>운영 본체, 관찰 하네스, 실행 하네스와 5-worker Pass/Done 검증 결과를 반영한 최신 스냅샷</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>파일 관리 유지보수</h3>
+        <ul>
+          <li><code>.playwright-mcp/</code>와 <code>tmp/</code>는 원본이 아니라 생성물 또는 임시 로그로 다룹니다.</li>
+          <li>보존할 브라우저 스냅샷과 로그만 작업 요청의 <code>evidence/</code>로 복사합니다.</li>
+          <li><code>docs/opendataloader-extract/</code>는 PDF 추출 보존 자료이며, 최신 설명은 상위 운영 문서에 작성합니다.</li>
+          <li>작업 요청 건강도는 <code>scripts/audit-work-requests.ps1 -Markdown</code>으로 점검합니다.</li>
+          <li>삭제, 이동, 대량 이름 변경은 Human Conductor 승인 후 별도 작업 요청으로 진행합니다.</li>
+        </ul>
+      </section>
+
+      <section id="troubleshooting" data-search="문제 해결 troubleshooting 오류 누락 드리프트 권한 과부하">
+        <h2>13. 문제 해결</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>문제</th>
+              <th>가능한 원인</th>
+              <th>해결 방법</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>에이전트가 무엇을 해야 할지 모른다</td>
+              <td>Human Brief 또는 Friday 태스크가 모호함</td>
+              <td>목표, 산출물, 완료 기준을 다시 작성하고 Owner(To)를 명확히 지정합니다.</td>
+            </tr>
+            <tr>
+              <td>모든 에이전트가 너무 많은 정보를 받는다</td>
+              <td>CC에게 풀 컨텍스트를 전달함</td>
+              <td>To/CC 규칙을 적용해 CC에게는 요약 컨텍스트만 전달합니다.</td>
+            </tr>
+            <tr>
+              <td>외부 공개 직전 문제가 발견된다</td>
+              <td>Release Risk Gate를 늦게 호출함</td>
+              <td>기획 단계부터 KITT/TRON을 CC에 넣고, High 리스크는 즉시 승격합니다.</td>
+            </tr>
+            <tr>
+              <td>같은 실수가 반복된다</td>
+              <td>에피소딕 메모리와 지혜 승격이 누락됨</td>
+              <td>Work Log와 Episodic Memory를 작성하고 Data가 반복 패턴을 분석합니다.</td>
+            </tr>
+            <tr>
+              <td>완료 보고가 실제 산출물과 다르다</td>
+              <td>드리프트 또는 검증 누락</td>
+              <td>Diagnostic Agent를 To로 호출하고 Friday, Jarvis, KITT/TRON을 CC에 둡니다.</td>
+            </tr>
+            <tr>
+              <td>대시보드에서 Done인데 운영 게이트가 막힌다</td>
+              <td>검증 증거, Work Log, Episodic Memory 중 하나가 누락됨</td>
+              <td><code>validate-jarvis-request.ps1 -RequestId &lt;request-slug&gt; -Strict</code>로 누락 게이트를 확인한 뒤 <code>close-jarvis-request.ps1</code>로 닫습니다.</td>
+            </tr>
+            <tr>
+              <td>검색 결과에 브라우저 스냅샷이나 임시 복사본이 섞인다</td>
+              <td><code>.playwright-mcp/</code>, <code>tmp/</code>, evidence 덤프가 원본 문서와 함께 검색됨</td>
+              <td><code>.gitignore</code>와 <a href="file-management-policy.md">파일 관리 정책</a>을 따르고, 필요하면 <code>rg "검색어" -g "!work-requests/**/evidence/**"</code>처럼 제외 검색을 사용합니다.</td>
+            </tr>
+            <tr>
+              <td>과거 작업 요청 폴더가 비어 보인다</td>
+              <td>README, evidence, outputs 설명이 누락됨</td>
+              <td><code>scripts/audit-work-requests.ps1 -Markdown</code>으로 건강도를 확인하고, README 또는 안내 파일을 보강합니다.</td>
+            </tr>
+            <tr>
+              <td>같은 판단 기준을 매번 다시 설명해야 한다</td>
+              <td>지혜 후보가 레지스트리로 승격되지 않음</td>
+              <td><code>promote-wisdom.ps1</code>로 후보를 등록하고 Data/Jarvis/Friday가 반복 가능성을 확인합니다.</td>
+            </tr>
+            <tr>
+              <td>문서가 너무 많아 어디서 시작할지 모르겠다</td>
+              <td>문서 구조만 보고 업무 흐름을 보지 않음</td>
+              <td>작업 요청을 먼저 입력합니다. 에이전트 팀이 Human Brief, Jarvis Command, Friday Task 순서로 자동 초안을 만듭니다.</td>
+            </tr>
+            <tr>
+              <td>IDE가 매번 “문서를 먼저 읽으라”는 지시를 요구한다</td>
+              <td>새 세션에서 프로젝트 규칙 파일을 로드하지 못했거나 워크스페이스 루트가 다름</td>
+              <td>워크스페이스 루트가 <code>jarvis</code>인지 확인하고, <code>AGENTS.md</code>, <code>.cursor/rules/jarvis-agent-team.mdc</code>, <code>.clinerules</code>, <code>.clinerule</code>이 있는지 확인한 뒤 세션을 새로 시작합니다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="checklists" data-search="체크리스트 운영 시작 완료 배포 승인">
+        <h2>14. 운영 체크리스트</h2>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>프로젝트 시작 전</h3>
+            <ul class="checklist">
+              <li>요청 슬러그와 작업 폴더가 정해졌는가?</li>
+              <li><code>start-jarvis-request.ps1</code>로 대시보드 첫 이벤트를 남겼는가?</li>
+              <li>사용자 원문에서 Human Brief 초안이 생성되었는가?</li>
+              <li>Jarvis 전략 브리프가 있는가?</li>
+              <li>Friday 태스크 분해에 Owner(To)와 CC가 있는가?</li>
+              <li>KITT/TRON 초기 리스크 확인이 필요한가?</li>
+              <li>Data가 검증해야 할 수치 주장이 있는가?</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>실행 중</h3>
+            <ul class="checklist">
+              <li>각 에이전트가 자기 지침 파일을 기준으로 일하는가?</li>
+              <li>CC에게 필요한 요약만 전달했는가?</li>
+              <li>우회 또는 피봇이 기록되었는가?</li>
+              <li>반복 실패가 3회 이상 발생하지 않았는가?</li>
+              <li>리스크 플래그가 Friday에게 보고되었는가?</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>완료 후</h3>
+            <ul class="checklist">
+              <li><code>validate-jarvis-request.ps1 -Strict</code>가 통과했는가?</li>
+              <li>대시보드 운영 게이트가 차단 없이 통과했는가?</li>
+              <li>Work Log가 작성되었는가?</li>
+              <li>Episodic Memory가 작성되었는가?</li>
+              <li>지혜 승격 후보가 있는가?</li>
+              <li>로우 데이터 소거 또는 보존 정책을 적용했는가?</li>
+              <li><code>close-jarvis-request.ps1</code>로 Done 이벤트를 남겼는가?</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>외부 공개 전</h3>
+            <ul class="checklist">
+              <li>Release Risk Gate가 작성되었는가?</li>
+              <li>KITT/TRON 판정이 Pass 또는 Pass with Changes인가?</li>
+              <li>개인정보와 비밀정보가 제거되었는가?</li>
+              <li>검증되지 않은 수익·성과 보장이 없는가?</li>
+              <li>Human Conductor 최종 승인이 있는가?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="references" data-search="파일 링크 references 산출물 링크 레이어 팝업 미리보기 65개+ 운영 자산 인벤토리">
+        <h2>15. 주요 파일 링크</h2>
+        <p class="section-note">
+          매뉴얼에서 자주 여는 파일을 한곳에 모았습니다. 내부 문서 링크는 페이지를 이동하지 않고 레이어 팝업으로 열립니다.
+        </p>
+
+        <div class="grid three">
+          <div class="panel">
+            <h3>시작 문서</h3>
+            <ul class="file-list">
+              <li><a href="../README.md">루트 README</a></li>
+              <li><a href="README.md">README.md</a></li>
+              <li><a href="operating-assets-inventory-65.md">65개+ 운영 자산 인벤토리</a></li>
+              <li><a href="file-management-policy.md">파일 관리 정책</a></li>
+              <li><a href="../templates/simple-start-request.md">Simple Start Request</a></li>
+              <li><a href="completion-report.md">completion-report.md</a></li>
+              <li><a href="PRD-ai-agent-collaboration-architecture.md">PRD</a></li>
+              <li><a href="TASK-ai-agent-collaboration-architecture.md">TASK</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>자동 적용 규칙</h3>
+            <ul class="file-list">
+              <li><a href="../AGENTS.md">AGENTS.md</a></li>
+              <li><a href="../.cursor/rules/jarvis-agent-team.mdc">Cursor Rule</a></li>
+              <li><a href="../.github/copilot-instructions.md">Copilot Instructions</a></li>
+              <li><a href="../.windsurfrules">Windsurf Rules</a></li>
+              <li><a href="../.clinerules">Cline Rules</a></li>
+              <li><a href="../.clinerule">Cline Rule</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>운영 대시보드</h3>
+            <ul class="file-list">
+              <li><a href="../dashboards/agent-assignment-dashboard.html">에이전트 배정 대시보드</a></li>
+              <li><a href="../dashboards/agent-assignment-dashboard.md">대시보드 가이드</a></li>
+              <li><a href="../dashboards/agent-assignment-data.json">대시보드 데이터</a></li>
+              <li><a href="../dashboards/task-events.jsonl">작업 이벤트 로그</a></li>
+              <li><a href="../dashboards/task-event-schema.md">작업 이벤트 스키마</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>운영 시스템</h3>
+            <ul class="file-list">
+              <li><a href="../architecture/operating-principles.md">운영 원칙</a></li>
+              <li><a href="../architecture/contracts.md">아키텍처 계약</a></li>
+              <li><a href="dynamic-workflow.md">Dynamic Workflow</a></li>
+              <li><a href="request-state-machine.md">요청 상태 머신</a></li>
+              <li><a href="../scripts/new-dynamic-workflow.ps1">Dynamic Workflow 생성 스크립트</a></li>
+              <li><a href="../scripts/run-dynamic-workflow.ps1">Dynamic Workflow 실행 스크립트</a></li>
+              <li><a href="../scripts/validate-jarvis-request.ps1">요청 검증 스크립트</a></li>
+              <li><a href="../scripts/close-jarvis-request.ps1">요청 완료 스크립트</a></li>
+              <li><a href="../scripts/audit-work-requests.ps1">작업 요청 건강도 점검 스크립트</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>설계 리뷰</h3>
+            <ul class="file-list">
+              <li><a href="../skills/jarvis-design-review/SKILL.md">Jarvis 설계 리뷰 스킬</a></li>
+              <li><a href="../agents/jarvis.md">Jarvis 에이전트</a></li>
+              <li><a href="../skills/agent-team-orchestration/SKILL.md">에이전트 팀 오케스트레이션</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>아키텍처</h3>
+            <ul class="file-list">
+              <li><a href="../architecture/sys-01-dream-team.md">SYS.01 Dream Team</a></li>
+              <li><a href="../architecture/sys-02-virtual-office.md">SYS.02 Virtual Office</a></li>
+              <li><a href="../architecture/sys-03-agent-brain.md">SYS.03 Agent Brain</a></li>
+              <li><a href="../architecture/sys-04-human-conductor.md">SYS.04 Human Conductor</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>에이전트</h3>
+            <ul class="file-list">
+              <li><a href="../agents/00-agent-management-index.md">에이전트 관리 인덱스</a></li>
+              <li><a href="../agents/jarvis.md">Jarvis</a></li>
+              <li><a href="../agents/friday.md">Friday</a></li>
+              <li><a href="../agents/kitt-tron.md">KITT/TRON</a></li>
+              <li><a href="../agents/diagnostic-agent.md">Diagnostic Agent</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>템플릿</h3>
+            <ul class="file-list">
+              <li><a href="../templates/human-brief-template.md">Human Brief</a></li>
+              <li><a href="../templates/jarvis-command-protocol.md">Jarvis Command</a></li>
+              <li><a href="../templates/friday-task-breakdown-template.md">Friday Task</a></li>
+              <li><a href="../templates/dynamic-workflow-task-graph.json">Dynamic Workflow Task Graph</a></li>
+              <li><a href="../templates/dynamic-worker-manifest.json">Dynamic Worker Manifest</a></li>
+              <li><a href="../templates/work-log-template.md">Work Log</a></li>
+              <li><a href="../templates/episodic-memory-template.md">Episodic Memory</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>리스크와 데이터</h3>
+            <ul class="file-list">
+              <li><a href="risk-shield.md">리스크 쉴드</a></li>
+              <li><a href="drift-diagnosis-checklist.md">드리프트 진단</a></li>
+              <li><a href="release-risk-gate.md">릴리스 리스크 게이트</a></li>
+              <li><a href="data-analysis-pipeline.md">데이터 분석 파이프라인</a></li>
+              <li><a href="data-research-tooling-guidelines.md">Data/EVE 데이터·리서치 도구 운영 지침</a></li>
+              <li><a href="forgetting-and-purging-policy.md">망각 및 소거 정책</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>기억과 평가</h3>
+            <ul class="file-list">
+              <li><a href="../memory/README.md">기억 저장소</a></li>
+              <li><a href="../memory/wisdom-candidates.md">지혜 후보</a></li>
+              <li><a href="../memory/purge-queue.md">소거 대기열</a></li>
+              <li><a href="../evals/README.md">평가 하네스</a></li>
+              <li><a href="../decisions/README.md">결정 기록</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>파일럿과 추출</h3>
+            <ul class="file-list">
+              <li><a href="pilot-youtube-shop-kickoff.md">YouTube Shop Kickoff</a></li>
+              <li><a href="bot-simulation-design.md">Bot Simulation</a></li>
+              <li><a href="development-execution-checklist.md">Development Checklist</a></li>
+              <li><a href="pdf-extraction-report.md">PDF Extraction Report</a></li>
+              <li><a href="opendataloader-extract/README.md">PDF 추출 보존 자료 안내</a></li>
+              <li><a href="opendataloader-extract/AI_에이전트_팀_아키텍처.md">Extracted PDF Markdown</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>
+      이 HTML 매뉴얼은 `docs` 폴더의 PRD, TASK, 에이전트 지침, 운영 템플릿을 기반으로 만든 정적 문서입니다.
+      별도 서버 없이 `project-user-manual.html` 파일을 브라우저에서 열어 사용할 수 있습니다.
+    </p>
+  </footer>
+
+  <div class="doc-modal" id="docModal" hidden aria-hidden="true">
+    <div class="doc-modal-backdrop" data-doc-close></div>
+    <section class="doc-modal-panel" role="dialog" aria-modal="true" aria-labelledby="docModalTitle">
+      <header class="doc-modal-header">
+        <div class="doc-modal-title">
+          <p class="eyebrow">Linked Content</p>
+          <h2 id="docModalTitle">문서 미리보기</h2>
+          <span class="doc-modal-path" id="docModalPath"></span>
+        </div>
+        <div class="doc-modal-actions">
+          <a class="btn" id="docModalOpen" href="#" target="_blank" rel="noopener">새 탭에서 열기</a>
+          <button class="btn" type="button" data-doc-close>닫기</button>
+        </div>
+      </header>
+      <iframe class="doc-frame" id="docModalFrame" title="링크 문서 미리보기"></iframe>
+    </section>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('manualSearch');
+    const root = document.documentElement;
+    const sections = Array.from(document.querySelectorAll('main section, main .intro'));
+    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+    const flowLinks = Array.from(document.querySelectorAll('.flow-menubar a'));
+    const anchorLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
+    const stickyHeader = document.querySelector('.topbar');
+    const docModal = document.getElementById('docModal');
+    const docModalTitle = document.getElementById('docModalTitle');
+    const docModalPath = document.getElementById('docModalPath');
+    const docModalFrame = document.getElementById('docModalFrame');
+    const docModalOpen = document.getElementById('docModalOpen');
+    let lastFocusedElement = null;
+    let activeLockUntil = 0;
+
+    function normalize(value) {
+      return value.toLowerCase().replace(/\s+/g, ' ').trim();
+    }
+
+    function fallbackCopyText(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '-9999px';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+      } finally {
+        textarea.remove();
+      }
+    }
+
+    async function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      fallbackCopyText(text);
+    }
+
+    function createCopyIcon() {
+      return `
+        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="9" y="9" width="10" height="10" rx="2"></rect>
+          <path d="M5 15V7a2 2 0 0 1 2-2h8"></path>
+        </svg>
+        <svg class="copy-check-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20 6 9 17l-5-5"></path>
+        </svg>
+      `;
+    }
+
+    function setActiveSection(id) {
+      tocLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', isActive);
+        link.toggleAttribute('aria-current', isActive);
+      });
+      flowLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', isActive);
+        link.toggleAttribute('aria-current', isActive);
+      });
+    }
+
+    function syncStickyHeaderMetrics() {
+      const height = stickyHeader?.getBoundingClientRect().height || 0;
+      root.style.setProperty('--sticky-header-height', Math.ceil(height) + 'px');
+    }
+
+    function getStickyOffset() {
+      syncStickyHeaderMetrics();
+      const offset = Number.parseFloat(getComputedStyle(root).getPropertyValue('--anchor-offset'));
+      if (Number.isFinite(offset) && offset > 0) return Math.ceil(offset);
+      return Math.ceil((stickyHeader?.getBoundingClientRect().height || 0) + 24);
+    }
+
+    function scrollToManualTarget(target, updateHistory = false) {
+      const top = target.getBoundingClientRect().top + window.scrollY - getStickyOffset();
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      if (updateHistory && target.id) {
+        history.replaceState(null, '', '#' + target.id);
+      }
+    }
+
+    function setupCodeCopyButtons() {
+      document.querySelectorAll('main pre').forEach((pre) => {
+        if (pre.closest('.code-block')) return;
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+
+        const button = document.createElement('button');
+        button.className = 'code-copy-button';
+        button.type = 'button';
+        button.title = '코드 복사';
+        button.setAttribute('aria-label', '코드 복사');
+        button.innerHTML = createCopyIcon();
+
+        button.addEventListener('click', async () => {
+          const text = pre.innerText.replace(/\n$/, '');
+          try {
+            await copyTextToClipboard(text);
+            button.classList.add('is-copied');
+            button.title = '복사됨';
+            button.setAttribute('aria-label', '코드 복사됨');
+            window.setTimeout(() => {
+              button.classList.remove('is-copied');
+              button.title = '코드 복사';
+              button.setAttribute('aria-label', '코드 복사');
+            }, 1400);
+          } catch (error) {
+            button.title = '복사 실패';
+            button.setAttribute('aria-label', '코드 복사 실패');
+          }
+        });
+
+        wrapper.appendChild(button);
+      });
+    }
+
+    setupCodeCopyButtons();
+    syncStickyHeaderMetrics();
+    window.addEventListener('resize', syncStickyHeaderMetrics);
+
+    searchInput.addEventListener('input', () => {
+      const query = normalize(searchInput.value);
+      sections.forEach((section) => {
+        if (!query) {
+          section.classList.remove('hidden-by-search');
+          return;
+        }
+        const haystack = normalize(section.textContent + ' ' + (section.dataset.search || ''));
+        section.classList.toggle('hidden-by-search', !haystack.includes(query));
+      });
+    });
+
+    anchorLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.getElementById(decodeURIComponent(href.slice(1)));
+        if (!target) return;
+
+        event.preventDefault();
+        searchInput.value = '';
+        sections.forEach((section) => section.classList.remove('hidden-by-search'));
+        activeLockUntil = performance.now() + 900;
+        if (target.matches('section, .intro')) {
+          setActiveSection(target.id);
+        }
+        scrollToManualTarget(target, true);
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      if (performance.now() < activeLockUntil) return;
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      setActiveSection(visible.target.id);
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: [0.1, 0.2, 0.5] });
+
+    sections.forEach((section) => observer.observe(section));
+
+    document.getElementById('expandAll').addEventListener('click', () => {
+      searchInput.value = '';
+      sections.forEach((section) => section.classList.remove('hidden-by-search'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function isPreviewableLink(link) {
+      const href = link.getAttribute('href');
+      if (!href) return false;
+      if (href.startsWith('#')) return false;
+      if (/^(https?:|mailto:|tel:|javascript:)/i.test(href)) return false;
+      if (link.hasAttribute('download')) return false;
+      return true;
+    }
+
+    function openDocModal(link) {
+      const href = link.getAttribute('href');
+      const absoluteHref = new URL(href, window.location.href).href;
+      const title = link.textContent.trim() || href;
+
+      lastFocusedElement = document.activeElement;
+      docModalTitle.textContent = title;
+      docModalPath.textContent = href;
+      docModalFrame.src = absoluteHref;
+      docModalOpen.href = absoluteHref;
+      docModal.hidden = false;
+      docModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      docModal.querySelector('button[data-doc-close]').focus();
+    }
+
+    function closeDocModal() {
+      docModal.hidden = true;
+      docModal.setAttribute('aria-hidden', 'true');
+      docModalFrame.removeAttribute('src');
+      document.body.classList.remove('modal-open');
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    }
+
+    document.querySelectorAll('a[href]').forEach((link) => {
+      if (!isPreviewableLink(link)) return;
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        openDocModal(link);
+      });
+    });
+
+    document.querySelectorAll('[data-doc-close]').forEach((button) => {
+      button.addEventListener('click', closeDocModal);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !docModal.hidden) {
+        closeDocModal();
+      }
+    });
+  </script>
+</body>
+</html>

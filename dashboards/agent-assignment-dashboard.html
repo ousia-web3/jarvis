@@ -1,0 +1,2527 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jarvis Agent Assignment Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23128c8c'/%3E%3Ccircle cx='8' cy='8' r='4' fill='white'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f4f7f8;
+      --surface: #ffffff;
+      --surface-2: #edf2f4;
+      --ink: #1e2529;
+      --muted: #627078;
+      --line: #cfdae0;
+      --green: #258061;
+      --blue: #315f8f;
+      --amber: #a56d1e;
+      --red: #b2483d;
+      --violet: #6b54a3;
+      --teal: #128c8c;
+      --coral: #d96b59;
+      --radius: 8px;
+      --shadow: 0 10px 26px rgba(30, 37, 41, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    header.page-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(244, 247, 248, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: grid;
+      grid-template-columns: minmax(360px, max-content) minmax(520px, 1fr);
+      gap: 16px 24px;
+      align-items: center;
+    }
+
+    .topbar > * {
+      min-width: 0;
+    }
+
+    .controls > input,
+    .controls > select,
+    .controls > .request-label {
+      min-width: 0;
+    }
+
+    #search {
+      flex: 1 1 190px;
+      max-width: 260px;
+    }
+
+    #groupFilter {
+      flex: 0 1 180px;
+    }
+
+    #requestSelect,
+    #requestLabel {
+      flex: 1 1 360px;
+      max-width: min(100%, 720px);
+    }
+
+    #resetBtn {
+      flex: 0 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+    h3 { font-size: 15px; }
+
+    .topbar h1,
+    .subtle {
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .subtle {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .controls,
+    .event-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+      align-items: center;
+      min-width: 0;
+    }
+
+    input, select, button, textarea {
+      font: inherit;
+    }
+
+    input, select,
+    .request-label {
+      height: 38px;
+      min-width: 138px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 0 10px;
+    }
+
+    .request-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 320px;
+      max-width: 420px;
+      color: var(--muted);
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .request-label.status-done {
+      border-color: rgba(107, 84, 163, 0.38);
+      background: rgba(107, 84, 163, 0.1);
+      color: var(--violet);
+    }
+
+    .request-label.status-in-progress {
+      border-color: rgba(37, 128, 97, 0.38);
+      background: rgba(37, 128, 97, 0.1);
+      color: var(--green);
+    }
+
+    .request-label.status-review {
+      border-color: rgba(165, 109, 30, 0.38);
+      background: rgba(165, 109, 30, 0.1);
+      color: var(--amber);
+    }
+
+    .request-label.status-blocked {
+      border-color: rgba(178, 72, 61, 0.38);
+      background: rgba(178, 72, 61, 0.1);
+      color: var(--red);
+    }
+
+    button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 0 12px;
+      cursor: pointer;
+    }
+
+    button:hover,
+    button:focus-visible {
+      border-color: var(--teal);
+      color: var(--teal);
+      outline: none;
+    }
+
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 18px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .metric,
+    section,
+    .agent-card,
+    .event-row,
+    .activity-row {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .metric {
+      min-height: 92px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    section {
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel-title {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      max-width: 100%;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .badge.green { color: var(--green); background: #e8f6ef; border-color: rgba(37, 128, 97, 0.35); }
+    .badge.blue { color: var(--blue); background: #edf4fb; border-color: rgba(49, 95, 143, 0.35); }
+    .badge.amber { color: var(--amber); background: #f8f0df; border-color: rgba(165, 109, 30, 0.35); }
+    .badge.red { color: var(--red); background: #fbefed; border-color: rgba(178, 72, 61, 0.35); }
+    .badge.violet { color: var(--violet); background: #f2eff9; border-color: rgba(107, 84, 163, 0.35); }
+    .badge.teal { color: var(--teal); background: #e8f7f6; border-color: rgba(18, 140, 140, 0.35); }
+
+    .office-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .office-stage {
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      min-height: 0;
+      max-height: min(78vh, 820px);
+      --office-card-inset: clamp(14px, 1.55vw, 22px);
+      --office-card-width: min(384px, calc(100% - var(--office-card-inset) - var(--office-card-inset)));
+      --office-card-height: clamp(124px, 25%, 190px);
+      --office-card-pad-y: 12px;
+      --office-card-pad-x: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #dfe8eb;
+      aspect-ratio: 16 / 9;
+      isolation: isolate;
+    }
+
+    .office-stage img.office-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .office-stage::before {
+      content: "";
+      position: absolute;
+      right: var(--office-card-inset);
+      top: var(--office-card-inset);
+      z-index: 2;
+      width: var(--office-card-width);
+      height: var(--office-card-height);
+      pointer-events: none;
+      border: 1px solid rgba(106, 226, 232, 0.58);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(6, 36, 46, 0.94), rgba(13, 79, 91, 0.76)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 6px);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.18),
+        0 0 28px rgba(29, 190, 198, 0.28),
+        0 14px 26px rgba(4, 23, 29, 0.24);
+    }
+
+    .office-stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 42%, rgba(7,21,31,0.18) 100%),
+        radial-gradient(circle at 50% 54%, rgba(255,255,255,0.14), transparent 42%);
+    }
+
+    .office-agents {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+    }
+
+    .office-focus-panel,
+    .office-stage-legend {
+      position: absolute;
+      z-index: 4;
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: 0 12px 28px rgba(18, 31, 38, 0.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .office-focus-panel {
+      right: var(--office-card-inset);
+      top: var(--office-card-inset);
+      z-index: 5;
+      width: var(--office-card-width);
+      max-height: calc(100% - var(--office-card-inset) - var(--office-card-inset));
+      overflow: hidden;
+      border-color: rgba(106, 226, 232, 0.62);
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(8, 35, 45, 0.94), rgba(11, 77, 88, 0.84)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 5px);
+      color: #eafbff;
+      padding: var(--office-card-pad-y) var(--office-card-pad-x);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.13),
+        0 0 26px rgba(18, 174, 184, 0.24),
+        0 13px 28px rgba(6, 28, 36, 0.26);
+    }
+
+    .office-focus-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255,255,255,0.18), transparent 28%),
+        linear-gradient(90deg, rgba(255,255,255,0.05), transparent 24%, transparent 76%, rgba(255,255,255,0.05));
+      mix-blend-mode: screen;
+    }
+
+    .office-focus-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .office-focus-panel.review {
+      border-color: rgba(255, 191, 86, 0.7);
+    }
+
+    .office-focus-panel.blocked {
+      border-color: rgba(255, 119, 98, 0.72);
+    }
+
+    .office-focus-panel.done {
+      border-color: rgba(170, 150, 224, 0.76);
+    }
+
+    .office-focus-panel .badge {
+      border-color: rgba(255,255,255,0.36);
+      background: rgba(255,255,255,0.12);
+      color: #f5fdff;
+    }
+
+    .office-focus-kicker {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: #b7e8ed;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .office-focus-agent {
+      margin-top: 5px;
+      font-size: clamp(24px, 3vw, 40px);
+      line-height: 1.05;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 0 0 16px rgba(55, 218, 226, 0.34);
+    }
+
+    .office-focus-task {
+      margin-top: 7px;
+      color: #f5fbff;
+      font-weight: 800;
+    }
+
+    .office-focus-detail {
+      margin: 5px 0 0;
+      color: #c6d8dc;
+      font-size: 13px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .office-stage-legend {
+      left: 14px;
+      top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 430px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      padding: 7px 9px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: var(--dot);
+      box-shadow: 0 0 0 3px var(--halo);
+    }
+
+    .office-agent {
+      position: absolute;
+      left: calc(var(--x) * 1%);
+      top: calc(var(--y) * 1%);
+      width: clamp(54px, 7.2vw, 96px);
+      min-height: 96px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      transform: translate(-50%, -50%);
+      transform-origin: 50% 100%;
+      color: var(--ink);
+      cursor: pointer;
+      opacity: 0.94;
+      transition: opacity 160ms ease, width 160ms ease, filter 160ms ease;
+    }
+
+    .office-agent .sprite-wrap {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      gap: 4px;
+    }
+
+    .office-agent .sprite-wrap::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      width: 118%;
+      height: 34%;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.22);
+      transform: translateX(-50%);
+      z-index: -1;
+      opacity: 0;
+    }
+
+    .office-agent img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter:
+        hue-rotate(calc(var(--hue) * 1deg))
+        drop-shadow(0 0 2px rgba(255,255,255,0.92))
+        drop-shadow(0 0 8px rgba(194,242,255,0.34))
+        drop-shadow(0 11px 14px rgba(0,0,0,0.42));
+    }
+
+    .office-agent .agent-name {
+      display: inline-flex;
+      max-width: 98px;
+      min-height: 22px;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 7px;
+      border: 1px solid rgba(255,255,255,0.74);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.88);
+      color: #1d2a2f;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.14);
+    }
+
+    .office-agent .status-dot {
+      position: absolute;
+      right: 6px;
+      top: 8px;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: var(--status-color, var(--accent));
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.25);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 9px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .office-agent .status-dot::before {
+      content: attr(data-status-icon);
+    }
+
+    .work-ribbon {
+      position: absolute;
+      left: 50%;
+      top: -18px;
+      display: none;
+      min-height: 24px;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 9px;
+      border: 2px solid #fff;
+      border-radius: 999px;
+      background: var(--status-color);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+      transform: translateX(-50%);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+    }
+
+    .agent-task-label {
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 4px);
+      display: none;
+      width: max-content;
+      max-width: 190px;
+      padding: 5px 8px;
+      border: 1px solid rgba(255,255,255,0.86);
+      border-radius: 7px;
+      background: rgba(24, 35, 39, 0.88);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.25;
+      transform: translateX(-50%);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+    }
+
+    .office-agent.is-working,
+    .office-agent.is-blocked,
+    .office-agent.is-reviewing {
+      opacity: 1;
+      z-index: 5;
+    }
+
+    .office-agent.is-working,
+    .office-agent.is-blocked {
+      width: clamp(72px, 8.7vw, 122px);
+      z-index: 7;
+    }
+
+    .office-agent.is-latest {
+      z-index: 9;
+    }
+
+    .office-agent.is-done {
+      opacity: 0.78;
+      filter: saturate(0.9);
+    }
+
+    .office-agent.is-working .sprite-wrap::before,
+    .office-agent.is-blocked .sprite-wrap::before,
+    .office-agent.is-reviewing .sprite-wrap::before {
+      opacity: 1;
+      border: 3px solid var(--status-color);
+      background: color-mix(in srgb, var(--status-color) 24%, white 76%);
+      box-shadow:
+        0 0 0 8px rgba(255,255,255,0.55),
+        0 0 26px var(--status-color);
+      animation: active-halo 1.45s ease-in-out infinite;
+    }
+
+    .office-agent.is-working .work-ribbon,
+    .office-agent.is-blocked .work-ribbon,
+    .office-agent.is-reviewing .work-ribbon {
+      display: inline-flex;
+    }
+
+    .office-agent.is-latest .agent-task-label {
+      display: block;
+    }
+
+    .office-agent.assignment-to .agent-name {
+      border-color: rgba(37, 128, 97, 0.42);
+    }
+
+    .office-agent.assignment-cc .agent-name {
+      border-color: rgba(165, 109, 30, 0.42);
+    }
+
+    .office-agent.status-in-progress .sprite-wrap {
+      animation: office-walk 4.8s ease-in-out infinite;
+      animation-delay: calc(var(--delay) * -1s);
+    }
+
+    .office-agent.status-review .sprite-wrap {
+      animation: office-review 2.8s ease-in-out infinite;
+      animation-delay: calc(var(--delay) * -1s);
+    }
+
+    .office-agent.status-blocked .sprite-wrap {
+      animation: office-blocked 1.15s ease-in-out infinite;
+    }
+
+    .office-agent.status-done .sprite-wrap {
+      animation: office-done 3.8s ease-in-out infinite;
+      animation-delay: calc(var(--delay) * -1s);
+    }
+
+    @keyframes active-halo {
+      0%, 100% { transform: translateX(-50%) scale(0.96); opacity: 0.78; }
+      50% { transform: translateX(-50%) scale(1.08); opacity: 1; }
+    }
+
+    @keyframes office-walk {
+      0%, 100% { transform: translate(0, 0); }
+      30% { transform: translate(9px, -5px); }
+      62% { transform: translate(-7px, 4px); }
+    }
+
+    @keyframes office-review {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    @keyframes office-blocked {
+      0%, 100% { transform: rotate(0); }
+      25% { transform: rotate(-2deg); }
+      75% { transform: rotate(2deg); }
+    }
+
+    @keyframes office-done {
+      0%, 100% { transform: translateY(0); }
+      42% { transform: translateY(-7px); }
+    }
+
+    .office-sidebar {
+      display: block;
+      min-height: unset;
+    }
+
+    .station-list {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 12px;
+      display: grid;
+      align-content: start;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px;
+      overflow: auto;
+      max-height: 240px;
+    }
+
+    .station-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 8px;
+      align-items: center;
+      min-height: 48px;
+      padding: 8px;
+      border: 1px solid #edf2f4;
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    .station-row.is-working { border-color: rgba(37, 128, 97, 0.32); background: #f1fbf6; }
+    .station-row.is-reviewing { border-color: rgba(165, 109, 30, 0.32); background: #fff8e9; }
+    .station-row.is-blocked { border-color: rgba(178, 72, 61, 0.32); background: #fff1ef; }
+    .station-row.is-done { opacity: 0.72; }
+
+    .station-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .flow-step {
+      min-height: 82px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      padding: 10px;
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .decision-log {
+      border-left: 4px solid var(--amber);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: #f8f0df;
+      padding: 12px;
+      margin-top: 12px;
+    }
+
+    .gate-board {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .gate-item {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      border-radius: 6px;
+      background: #fff;
+      padding: 10px;
+      min-height: 86px;
+    }
+
+    .gate-item.pass { border-left-color: var(--green); background: #f1fbf6; }
+    .gate-item.warn { border-left-color: var(--amber); background: #fff8e8; }
+    .gate-item.block { border-left-color: var(--red); background: #fff1ef; }
+
+    .gate-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .gate-item span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .live-status {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .dwf-panel {
+      border-top: 4px solid var(--teal);
+    }
+
+    .dwf-summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .dwf-summary-card,
+    .dwf-stage,
+    .dwf-worker {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .dwf-summary-card {
+      min-height: 82px;
+      padding: 12px;
+    }
+
+    .dwf-summary-card strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+
+    .dwf-summary-card span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .dwf-stage-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .dwf-stage {
+      min-height: 78px;
+      padding: 10px;
+      border-left: 4px solid var(--line);
+    }
+
+    .dwf-stage.blue { border-left-color: var(--blue); background: #edf4fb; }
+    .dwf-stage.green { border-left-color: var(--green); background: #f1fbf6; }
+    .dwf-stage.amber { border-left-color: var(--amber); background: #fff8e8; }
+    .dwf-stage.red { border-left-color: var(--red); background: #fff1ef; }
+    .dwf-stage.violet { border-left-color: var(--violet); background: #f6f2ff; }
+    .dwf-stage.teal { border-left-color: var(--teal); background: #e8f7f6; }
+
+    .dwf-stage strong,
+    .dwf-worker strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .dwf-stage span,
+    .dwf-worker span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .dwf-worker-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .dwf-worker {
+      min-height: 92px;
+      padding: 10px;
+      border-left: 4px solid var(--blue);
+    }
+
+    .dwf-worker.green { border-left-color: var(--green); }
+    .dwf-worker.amber { border-left-color: var(--amber); }
+    .dwf-worker.red { border-left-color: var(--red); }
+    .dwf-worker.violet { border-left-color: var(--violet); }
+    .dwf-worker.teal { border-left-color: var(--teal); }
+
+    .dwf-worker-meta {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .live-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .event-stream,
+    .agent-activity {
+      display: grid;
+      gap: 10px;
+      max-height: 460px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .event-row,
+    .activity-row {
+      border-left: 4px solid var(--blue);
+      padding: 12px;
+    }
+
+    .event-row.green,
+    .activity-row.green { border-left-color: var(--green); }
+    .event-row.amber,
+    .activity-row.amber { border-left-color: var(--amber); }
+    .event-row.red,
+    .activity-row.red { border-left-color: var(--red); }
+    .event-row.violet,
+    .activity-row.violet { border-left-color: var(--violet); }
+    .event-row.teal,
+    .activity-row.teal { border-left-color: var(--teal); }
+
+    .event-head,
+    .event-meta,
+    .activity-head {
+      display: flex;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .event-detail {
+      margin: 8px 0;
+    }
+
+    .event-time,
+    .activity-note {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .empty-state {
+      border: 1px dashed var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--muted);
+      padding: 14px;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.65fr);
+      gap: 16px;
+    }
+
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .agent-card {
+      min-height: 286px;
+      padding: 14px;
+      box-shadow: none;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .agent-card header {
+      position: static;
+      border: 0;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .agent-title { min-width: 0; }
+
+    .agent-title p {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    dl {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+    }
+
+    dt {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    dd { margin: 2px 0 0; }
+
+    ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+    }
+
+    .preview-box {
+      width: 100%;
+      min-height: 360px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #182327;
+      color: #eef8f5;
+      padding: 12px;
+      line-height: 1.55;
+      white-space: pre;
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 1100px) {
+      header.page-header {
+        position: static;
+      }
+
+      .topbar {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .controls,
+      .event-controls {
+        justify-content: flex-start;
+      }
+
+      .dashboard-grid,
+      .live-layout,
+      .dwf-summary,
+      .dwf-stage-grid,
+      .dwf-worker-list {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .topbar h1 {
+        font-size: 20px;
+      }
+
+      .controls,
+      .event-controls {
+        justify-content: flex-start;
+      }
+
+      .metrics,
+      .agent-grid,
+      .flow,
+      .gate-board,
+      .dwf-summary,
+      .dwf-stage-grid,
+      .dwf-worker-list {
+        grid-template-columns: 1fr;
+      }
+
+      .office-stage {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        min-height: 300px;
+        --office-card-inset: 10px;
+        --office-card-width: calc(100% - var(--office-card-inset) - var(--office-card-inset));
+        --office-card-height: 122px;
+        --office-card-pad-y: 9px;
+        --office-card-pad-x: 11px;
+        overflow: hidden;
+      }
+
+      .office-stage::before {
+        width: var(--office-card-width);
+        height: var(--office-card-height);
+      }
+
+      .office-agent {
+        width: clamp(42px, 13vw, 72px);
+      }
+
+      .office-agent .agent-name {
+        max-width: 72px;
+        font-size: 10px;
+      }
+
+      .office-focus-panel {
+        width: var(--office-card-width);
+        max-height: min(var(--office-card-height), calc(100% - var(--office-card-inset) - var(--office-card-inset)));
+      }
+
+      .office-focus-agent {
+        font-size: clamp(20px, 6vw, 28px);
+      }
+
+      .office-focus-task,
+      .office-focus-detail {
+        font-size: 12px;
+      }
+
+      .office-focus-detail {
+        -webkit-line-clamp: 2;
+      }
+
+      .office-stage-legend {
+        left: 8px;
+        right: auto;
+        top: auto;
+        bottom: 8px;
+        max-width: calc(100% - 16px);
+        padding: 5px 7px;
+      }
+
+      .legend-item {
+        font-size: 11px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .office-agent .sprite-wrap {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <div class="topbar">
+      <div>
+        <h1>Jarvis Agent Assignment Dashboard</h1>
+      </div>
+      <div class="controls">
+        <input id="search" type="search" placeholder="에이전트/역할 검색" aria-label="에이전트 검색">
+        <select id="groupFilter" aria-label="그룹 필터">
+          <option value="all">전체 그룹</option>
+        </select>
+        <select id="requestSelect" aria-label="샘플 요청 선택"></select>
+        <span id="requestLabel" class="request-label hidden" aria-label="현재 작업 요청"></span>
+        <button id="resetBtn" type="button">초기화</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="metrics" aria-label="대시보드 요약">
+      <div class="metric"><strong id="agentCount">0</strong><span>등록 에이전트</span></div>
+      <div class="metric"><strong id="toCount">0</strong><span>현재 To 배정</span></div>
+      <div class="metric"><strong id="ccCount">0</strong><span>현재 CC 배정</span></div>
+      <div class="metric"><strong id="riskCount">0</strong><span>리스크 플래그</span></div>
+      <div class="metric"><strong id="eventCount">0</strong><span>작업 이벤트</span></div>
+      <div class="metric"><strong id="requestStatus">대기</strong><span>요청 상태</span></div>
+      <div class="metric"><strong id="blockedCount">0</strong><span>현재 검토/차단</span></div>
+    </div>
+
+    <section>
+      <div class="panel-title">
+        <div>
+          <h2>운영 게이트</h2>
+          <p class="live-status" id="gateSummary">요청 상태 머신을 확인하는 중입니다.</p>
+        </div>
+        <span class="badge amber">Request State Machine</span>
+      </div>
+      <div class="gate-board" id="gateBoard" aria-label="요청 완료 게이트"></div>
+    </section>
+
+    <section>
+      <div class="panel-title">
+        <div>
+          <h2>Virtual Office</h2>
+          <p class="live-status" id="officeStatus">오피스 상태를 준비하는 중입니다.</p>
+        </div>
+        <span class="badge teal">SYS.02 Virtual Office</span>
+      </div>
+      <div class="office-layout">
+        <div class="office-stage" id="officeStage" aria-label="에이전트 가상 사무실">
+          <img class="office-bg" id="officeBg" src="../assets/dashboard/virtual-office-robot-coworking.png" alt="">
+          <div class="office-focus-panel" id="officeFocusPanel"></div>
+          <div class="office-stage-legend" id="officeStageLegend" aria-label="활동 상태 범례"></div>
+          <div class="office-agents" id="officeAgents"></div>
+        </div>
+        <aside class="office-sidebar" aria-label="오피스 스테이션 상태">
+          <div class="station-list" id="stationList"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="dwf-panel" id="dynamicWorkflowPanel">
+      <div class="panel-title">
+        <div>
+          <h2>Dynamic Workflow</h2>
+          <p class="live-status" id="dynamicWorkflowStatus">동적 워크플로우 이벤트를 확인하는 중입니다.</p>
+        </div>
+        <span class="badge teal" id="dynamicWorkflowLevel">L4</span>
+      </div>
+      <div class="dwf-summary" id="dynamicWorkflowSummary"></div>
+      <div class="dwf-stage-grid" id="dynamicWorkflowStages" aria-label="Dynamic Workflow stage 상태"></div>
+      <div class="dwf-worker-list" id="dynamicWorkflowWorkers" aria-label="Dynamic Workflow worker 상태"></div>
+    </section>
+
+    <section>
+      <div class="panel-title">
+        <div>
+          <h2>실시간 작업 이벤트 로그</h2>
+          <p class="live-status" id="liveStatus">task-events.jsonl 확인 대기 중</p>
+        </div>
+        <div class="event-controls">
+          <select id="eventAgentFilter" aria-label="이벤트 에이전트 필터">
+            <option value="all">전체 에이전트</option>
+          </select>
+          <select id="eventStatusFilter" aria-label="이벤트 상태 필터">
+            <option value="all">전체 상태</option>
+            <option value="Todo">대기</option>
+            <option value="In Progress">진행</option>
+            <option value="Review">검토</option>
+            <option value="Blocked">차단</option>
+            <option value="Done">완료</option>
+          </select>
+          <button id="refreshEventsBtn" type="button">새로고침</button>
+        </div>
+      </div>
+      <div class="live-layout">
+        <div class="event-stream" id="eventStream" aria-live="polite"></div>
+        <div class="agent-activity" id="agentActivity" aria-label="에이전트별 최신 작업 상태"></div>
+      </div>
+    </section>
+
+    <div class="dashboard-grid">
+      <section>
+        <div class="panel-title">
+          <h2>에이전트 배정</h2>
+          <span class="badge green">To / CC 기준</span>
+        </div>
+        <div class="agent-grid" id="agentGrid"></div>
+      </section>
+
+      <section>
+        <div class="panel-title">
+          <h2>작업 내용 텍스트 안내</h2>
+          <button id="copyBtn" type="button">복사</button>
+        </div>
+        <textarea class="preview-box" id="assignmentPreview" readonly></textarea>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const statusMeta = {
+      "Todo": { tone: "blue", label: "대기", icon: "대", color: "#315f8f" },
+      "In Progress": { tone: "green", label: "진행", icon: "진", color: "#258061" },
+      "Review": { tone: "amber", label: "검토", icon: "검", color: "#a56d1e" },
+      "Blocked": { tone: "red", label: "차단", icon: "!", color: "#b2483d" },
+      "Done": { tone: "violet", label: "완료", icon: "완", color: "#6b54a3" }
+    };
+
+    const statusClass = Object.fromEntries(
+      Object.entries(statusMeta).map(([status, meta]) => [status, meta.tone])
+    );
+
+    const assignmentLabels = {
+      "To": "담당",
+      "CC": "검토",
+      "Standby": "대기"
+    };
+
+    const riskLabels = {
+      "Low": "낮음",
+      "Medium": "중간",
+      "High": "높음",
+      "Critical": "심각"
+    };
+
+    const koreanTextMap = {
+      "Human Brief Draft": "Human Brief 초안",
+      "Reset Strategy": "리셋 전략",
+      "Parse Warning": "파싱 경고",
+      "Dashboard Auto Start": "대시보드 자동 시작",
+      "AI Tool Browser Open": "AI툴 브라우저 열기",
+      "Realtime Append Probe": "실시간 추가 기록 확인",
+      "Realtime Reset Verification": "실시간 리셋 검증",
+      "Final Realtime Probe": "최종 실시간 확인",
+      "Final Realtime Reset Verification": "최종 실시간 리셋 검증",
+      "Browser Verification Pending": "브라우저 검증 대기",
+      "Metric Check": "지표 확인",
+      "Risk Shield Check": "리스크 쉴드 확인",
+      "AI tool browser dashboard auto start": "AI툴 브라우저 대시보드 자동 시작",
+      "AI tool browser dashboard auto start implementation": "AI툴 브라우저 대시보드 자동 실행 구현",
+      "Dashboard request completion state": "대시보드 요청 완료 상태",
+      "Dashboard request completion state implemented": "대시보드 요청 완료 상태 구현",
+      "Realtime append probe": "실시간 추가 기록 확인",
+      "Realtime reset verification complete": "실시간 리셋 검증 완료",
+      "Final realtime probe": "최종 실시간 확인",
+      "Prepared the local Jarvis dashboard for a new IDE work request.": "새 IDE 작업 요청용 로컬 Jarvis 대시보드 준비",
+      "Verifies the new request-start hook prepares the dashboard and returns a URL for the active AI tool browser.": "새 요청 시작 훅의 대시보드 준비와 활성 AI툴 브라우저용 URL 반환 확인",
+      "Implemented the local dashboard start scripts, AI-tool-browser start rule, dynamic event request detection, and browser verification evidence.": "로컬 대시보드 시작 스크립트, AI툴 브라우저 시작 규칙, 동적 요청 감지, 브라우저 검증 증거 구현",
+      "Ensure the dashboard marks the current work request group as completed when the group work is done.": "현재 작업 그룹 완료 시 대시보드 요청 단위 완료 처리 보정",
+      "Request-level status now follows the latest appended event for the selected work request and shows Done in the dashboard summary and labels.": "선택 요청의 요청 단위 상태를 timestamp 기준 최신 이벤트와 대시보드 완료 라벨에 연결",
+      "The browser is already open; this event verifies 2-second polling updates the log and Virtual Office.": "브라우저 열린 상태에서 2초 폴링의 로그와 Virtual Office 갱신 확인",
+      "The dashboard picked up the appended event while open and cleared active visual states after completion.": "대시보드 열린 상태에서 추가 이벤트 반영과 완료 후 활성 시각 상태 정리",
+      "After reset, this verifies a new active event appears without resurrecting stale review states.": "리셋 후 오래된 검토 상태 재등장 없이 새 활성 이벤트 표시 확인",
+      "The event stream, metrics, Virtual Office, station grid, and console state passed the reset realtime test.": "이벤트 스트림, 지표, Virtual Office, 스테이션 그리드, 콘솔 상태 리셋 실시간 테스트 통과"
+    };
+
+    const fallbackData = {
+      generatedFor: "Jarvis Agent Team",
+      decisionLog: {
+        id: "D-04",
+        item: "Virtual Office Agent Visualization",
+        choice: "텍스트 중심 실시간 이벤트 로그 위에 2D 오피스 배경과 움직이는 에이전트 캐릭터 레이어 추가",
+        rationale: "이벤트 로그를 캐릭터 상태, 위치, 활동 뱃지로 변환해 장시간 관찰 피로도 감소",
+        impact: "역할 분담과 작업 진행 상태를 첫 화면에서 즉시 파악",
+        deferred: "원격 이벤트 수집과 인증 기반 알림은 별도 결정으로 보류"
+      },
+      liveEventLog: { path: "dashboards/task-events.jsonl", pollingMs: 2000, localOnly: true },
+      visualOffice: {
+        backgroundImage: "../assets/dashboard/virtual-office-robot-coworking.png",
+        agentSprite: "../assets/dashboard/agent-bot.png",
+        humanSprite: "../assets/dashboard/human-conductor.png",
+        agentJitter: 0,
+        stations: {
+          research: { x: 12.5, y: 43, label: "EVE 리서치 콘솔" },
+          diagnostic: { x: 18, y: 66, label: "Diagnostic 점검 포드" },
+          implementation: { x: 31.5, y: 41, label: "TARS 개발 콘솔" },
+          ops: { x: 39.5, y: 27, label: "Friday 운영 플로어" },
+          strategy: { x: 51, y: 43, label: "Jarvis 중앙 전략 플로어" },
+          design: { x: 47, y: 66, label: "Joi 디자인 테이블" },
+          analysis: { x: 64, y: 66, label: "Data 분석 데스크" },
+          copy: { x: 74, y: 48, label: "C3PO 커뮤니케이션 테이블" },
+          human: { x: 84.5, y: 67, label: "Human 승인 콘솔" },
+          risk: { x: 90.5, y: 46, label: "KITT/TRON 리스크 콘솔" }
+        },
+        channelStationMap: {
+          approval: "human",
+          strategy: "strategy",
+          ops: "ops",
+          research: "research",
+          design: "design",
+          implementation: "implementation",
+          docs: "copy",
+          copy: "copy",
+          analysis: "analysis",
+          risk: "risk",
+          diagnostic: "diagnostic"
+        }
+      },
+      statuses: ["Todo", "In Progress", "Review", "Blocked", "Done"],
+      agents: [
+        ["human-conductor","Human Conductor","Human","지휘부","비전, 최종 승인, 중대한 전략 결정","human","#ff8a65",25,"Review"],
+        ["jarvis","Jarvis","Jarvis","지휘부","전략 브리프, 우선순위, 에이전트 간 충돌 조정","strategy","#13a8a8",0,"In Progress"],
+        ["friday","Friday","Friday","프로젝트 매니저","태스크 분해, Owner/CC 배정, 일정과 산출물 취합","ops","#7a9f35",68,"In Progress"],
+        ["eve","EVE","EVE","기획 및 실행진","리서치, 탐색, 자료 수집","research","#37a2ff",185,"Todo"],
+        ["joi","Joi","Joi","기획 및 실행진","디자인, UX, 프론트엔드 경험","design","#f2769b",310,"Todo"],
+        ["tars","TARS","TARS","기획 및 실행진","엔지니어링, 구현, 기술 검증","implementation","#4c6fff",215,"Todo"],
+        ["c3po","C3PO","C3PO","기획 및 실행진","카피, 커뮤니케이션, 현지화","copy","#f2a93b",36,"Todo"],
+        ["data","Data","Data","분석 및 리스크 가드","정량 분석, 세그먼트, 시뮬레이션, KPI 검증","analysis","#00a878",115,"Review"],
+        ["kitt-tron","KITT/TRON","Risk","분석 및 리스크 가드","법무, 보안, 개인정보, 릴리스 리스크 검토","risk","#d94b3d",330,"Review"],
+        ["diagnostic-agent","Diagnostic Agent","Diag","분석 및 리스크 가드","드리프트, 반복 실패, 의심스러운 완료 보고 진단","diagnostic","#7c5cc4",265,"Todo"]
+      ].map(([id, name, shortName, group, defaultRole, homeStation, accent, hue, status]) => ({
+        id, name, shortName, group, defaultRole, homeStation, accent, hue, status,
+        toWhen: defaultRole,
+        ccWhen: "관련 작업 리뷰와 리스크 확인",
+        outputs: ["작업 산출물", "검증 결과"],
+        riskFlags: ["Scope", "Quality"]
+      })),
+      sampleRequests: [
+        {
+          id: "visual-office-dashboard",
+          title: "Virtual Office 시각화 확장",
+        request: "실시간 작업 이벤트 로그를 2D 에이전트 캐릭터와 오피스 이미지 위에서 동적으로 반영",
+          to: ["Jarvis", "Friday", "Joi", "TARS"],
+          cc: ["Data", "KITT/TRON", "Diagnostic Agent"],
+          risk: ["외부 배포 없음", "로컬 정적 자산", "개인정보/비밀키 기록 금지"],
+          outputs: ["agent-assignment-dashboard.html", "agent-assignment-data.json", "assets/dashboard/agent-bot.png", "assets/dashboard/virtual-office-robot-coworking.png"]
+        }
+      ]
+    };
+
+    const fallbackEvents = [
+      {
+        timestamp: "2026-05-21T11:10:00+09:00",
+        eventId: "EVT-FALLBACK-001",
+        requestId: "visual-office-dashboard",
+        agent: "Jarvis",
+        role: "전략 지휘",
+        assignment: "To",
+        status: "In Progress",
+        task: "Virtual Office 시각화 전략화",
+        detail: "오피스 배경과 에이전트 캐릭터를 실시간 이벤트 상태와 연결",
+        riskLevel: "Low",
+        outputs: ["D-04 Decision Log"],
+        channel: "strategy"
+      }
+    ];
+
+    let state = fallbackData;
+    let events = fallbackEvents;
+    let eventTimer = null;
+    let lastDashboardDataText = "";
+    let lastEventsText = "";
+    let lastWorkRequestDirectoryText = "";
+    let workRequestFolderIds = null;
+    let userSelectedRequest = false;
+
+    const agentGrid = document.getElementById("agentGrid");
+    const search = document.getElementById("search");
+    const groupFilter = document.getElementById("groupFilter");
+    const requestSelect = document.getElementById("requestSelect");
+    const requestLabel = document.getElementById("requestLabel");
+    const preview = document.getElementById("assignmentPreview");
+    const eventAgentFilter = document.getElementById("eventAgentFilter");
+    const eventStatusFilter = document.getElementById("eventStatusFilter");
+    const eventStream = document.getElementById("eventStream");
+    const agentActivity = document.getElementById("agentActivity");
+    const liveStatus = document.getElementById("liveStatus");
+    const officeStatus = document.getElementById("officeStatus");
+    const officeAgents = document.getElementById("officeAgents");
+    const officeFocusPanel = document.getElementById("officeFocusPanel");
+    const officeStageLegend = document.getElementById("officeStageLegend");
+    const officeStage = document.getElementById("officeStage");
+    const officeBg = document.getElementById("officeBg");
+    const stationList = document.getElementById("stationList");
+    const dynamicWorkflowStatus = document.getElementById("dynamicWorkflowStatus");
+    const dynamicWorkflowLevel = document.getElementById("dynamicWorkflowLevel");
+    const dynamicWorkflowSummary = document.getElementById("dynamicWorkflowSummary");
+    const dynamicWorkflowStages = document.getElementById("dynamicWorkflowStages");
+    const dynamicWorkflowWorkers = document.getElementById("dynamicWorkflowWorkers");
+    const refreshEventsBtn = document.getElementById("refreshEventsBtn");
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      })[char]);
+    }
+
+    function list(items) {
+      const safeItems = Array.isArray(items) ? items : [];
+      return `<ul>${safeItems.map((item) => `<li>${escapeHtml(localizeText(item))}</li>`).join("")}</ul>`;
+    }
+
+    function localizeText(value) {
+      const text = String(value ?? "");
+      return koreanTextMap[text] || text;
+    }
+
+    function eventDetailText(value) {
+      const text = localizeText(value).trim();
+      return text
+        .replace(/했습니다\.\s*/gu, ", ")
+        .replace(/하였습니다\.\s*/gu, ", ")
+        .replace(/하였다\.\s*/gu, ", ")
+        .replace(/했다\.\s*/gu, ", ")
+        .replace(/합니다\.\s*/gu, ", ")
+        .replace(/한다\.\s*/gu, ", ")
+        .replace(/됩니다\.\s*/gu, "됨, ")
+        .replace(/된다\.\s*/gu, "됨, ")
+        .replace(/입니다\.\s*/gu, "임, ")
+        .replace(/없습니다\.\s*/gu, "없음, ")
+        .replace(/없었다\.\s*/gu, "없음, ")
+        .replace(/없다\.\s*/gu, "없음, ")
+        .replace(/없습니다\.?$/u, "없음")
+        .replace(/없었다\.?$/u, "없음")
+        .replace(/없다\.?$/u, "없음")
+        .replace(/했습니다\.?$/u, "")
+        .replace(/하였습니다\.?$/u, "")
+        .replace(/하였다\.?$/u, "")
+        .replace(/했다\.?$/u, "")
+        .replace(/합니다\.?$/u, "")
+        .replace(/한다\.?$/u, "")
+        .replace(/됩니다\.?$/u, "됨")
+        .replace(/된다\.?$/u, "됨")
+        .replace(/입니다\.?$/u, "임")
+        .replace(/\.$/u, "")
+        .replace(/,\s*$/u, "")
+        .trim();
+    }
+
+    function localizeList(items) {
+      return (Array.isArray(items) ? items : []).map(localizeText);
+    }
+
+    function normalizeAgent(agent) {
+      return {
+        outputs: [],
+        riskFlags: [],
+        hue: 0,
+        accent: "#128c8c",
+        shortName: agent.name,
+        ...agent
+      };
+    }
+
+    async function loadDashboardData({ shouldRender = false } = {}) {
+      try {
+        const response = await fetch(`agent-assignment-data.json?ts=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = await response.text();
+        if (text === lastDashboardDataText) return false;
+        lastDashboardDataText = text;
+        const loaded = JSON.parse(text);
+        state = {
+          ...fallbackData,
+          ...loaded,
+          visualOffice: {
+            ...fallbackData.visualOffice,
+            ...(loaded.visualOffice || {}),
+            stations: {
+              ...fallbackData.visualOffice.stations,
+              ...(loaded.visualOffice?.stations || {})
+            },
+            channelStationMap: {
+              ...fallbackData.visualOffice.channelStationMap,
+              ...(loaded.visualOffice?.channelStationMap || {})
+            }
+          },
+          agents: (loaded.agents || fallbackData.agents).map(normalizeAgent)
+        };
+        if (shouldRender) {
+          renderGroups();
+          renderRequests();
+          render();
+        }
+        return true;
+      } catch (error) {
+        if (!lastDashboardDataText) {
+          state = {
+            ...fallbackData,
+            agents: fallbackData.agents.map(normalizeAgent)
+          };
+          if (shouldRender) {
+            renderGroups();
+            renderRequests();
+            render();
+          }
+        }
+        return false;
+      }
+    }
+
+    function requestIdFromWorkFolderName(folderName) {
+      return String(folderName || "").replace(/^\d{4}-\d{2}-\d{2}-/, "");
+    }
+
+    function requestHasWorkFolder(requestId) {
+      if (!workRequestFolderIds) return true;
+      return workRequestFolderIds.has(requestId);
+    }
+
+    async function loadWorkRequestFolders() {
+      try {
+        const directoryUrl = new URL("../work-requests/", window.location.href);
+        const response = await fetch(`${directoryUrl.href}?ts=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = await response.text();
+        if (text === lastWorkRequestDirectoryText) return false;
+        lastWorkRequestDirectoryText = text;
+
+        const parsed = new DOMParser().parseFromString(text, "text/html");
+        const folderIds = new Set();
+        parsed.querySelectorAll("a[href]").forEach((link) => {
+          const href = link.getAttribute("href") || "";
+          if (!href.endsWith("/")) return;
+          const url = new URL(href, directoryUrl);
+          const parts = url.pathname.split("/").filter(Boolean);
+          const folderName = decodeURIComponent(parts[parts.length - 1] || "");
+          if (!/^\d{4}-\d{2}-\d{2}-/.test(folderName)) return;
+          folderIds.add(folderName);
+          folderIds.add(requestIdFromWorkFolderName(folderName));
+        });
+        workRequestFolderIds = folderIds;
+        return true;
+      } catch (error) {
+        const changed = workRequestFolderIds !== null;
+        workRequestFolderIds = null;
+        return changed;
+      }
+    }
+
+    function renderGroups() {
+      const currentValue = groupFilter.value || "all";
+      const groups = Array.from(new Set(state.agents.map((agent) => agent.group))).sort();
+      groupFilter.innerHTML = `<option value="all">전체 그룹</option>` + groups.map((group) => `<option value="${escapeHtml(group)}">${escapeHtml(group)}</option>`).join("");
+      groupFilter.value = groups.includes(currentValue) ? currentValue : "all";
+    }
+
+    function renderRequests() {
+      syncRequestsFromEvents();
+      const currentValue = requestSelect.value;
+      const latestValue = latestRequestIdFromEvents();
+      const preferredValue = userSelectedRequest && state.sampleRequests.some((request) => request.id === currentValue)
+        ? currentValue
+        : latestValue || currentValue;
+
+      requestSelect.innerHTML = state.sampleRequests.map((request) => `<option value="${escapeHtml(request.id)}">${escapeHtml(request.title)}</option>`).join("");
+      if (state.sampleRequests.some((request) => request.id === preferredValue)) requestSelect.value = preferredValue;
+      const singleRequest = state.sampleRequests.length <= 1;
+      requestSelect.classList.toggle("hidden", singleRequest);
+      requestSelect.disabled = singleRequest;
+      requestLabel.classList.toggle("hidden", !singleRequest);
+      const request = selectedRequest();
+      const status = requestStatusFor(request?.id);
+      requestLabel.className = `request-label ${singleRequest ? "" : "hidden"} status-${statusSlug(status)}`;
+      requestLabel.textContent = request?.title || "현재 작업 없음";
+    }
+
+    function renderEventAgentFilter() {
+      const currentValue = eventAgentFilter.value || "all";
+      const agents = Array.from(new Set([
+        ...state.agents.map((agent) => agent.name),
+        ...events.map((event) => event.agent).filter(Boolean)
+      ])).sort();
+      eventAgentFilter.innerHTML = `<option value="all">전체 에이전트</option>` + agents.map((agent) => `<option value="${escapeHtml(agent)}">${escapeHtml(agent)}</option>`).join("");
+      eventAgentFilter.value = agents.includes(currentValue) ? currentValue : "all";
+    }
+
+    function selectedRequest() {
+      return state.sampleRequests.find((request) => request.id === requestSelect.value) || state.sampleRequests[0];
+    }
+
+    function requestEventsByAppend(requestId) {
+      return requestId ? events.filter((event) => event.requestId === requestId) : [];
+    }
+
+    function eventTimeValue(event) {
+      const time = new Date(event?.timestamp || 0).getTime();
+      return Number.isNaN(time) ? 0 : time;
+    }
+
+    function eventAppendIndex(event) {
+      const parsedIndex = Number(event?._appendIndex);
+      return Number.isFinite(parsedIndex) ? parsedIndex : events.indexOf(event);
+    }
+
+    function compareEventRecency(a, b) {
+      const timeDiff = eventTimeValue(a) - eventTimeValue(b);
+      if (timeDiff !== 0) return timeDiff;
+      return eventAppendIndex(a) - eventAppendIndex(b);
+    }
+
+    function latestRequestEventFor(requestId) {
+      return requestEventsByAppend(requestId).reduce((latest, event) => {
+        if (!latest) return event;
+        return compareEventRecency(event, latest) >= 0 ? event : latest;
+      }, null);
+    }
+
+    function requestStatusFor(requestId) {
+      if (!requestId) return "Todo";
+      const latest = latestRequestEventFor(requestId);
+      return latest?.status || "Todo";
+    }
+
+    function renderDecision() {
+      const decisionLog = document.getElementById("decisionLog");
+      if (!decisionLog) return;
+      const d = state.decisionLog;
+      decisionLog.innerHTML = `<strong>${escapeHtml(d.id)}. ${escapeHtml(d.item)}</strong><br>선택: ${escapeHtml(d.choice)}<br>근거: ${escapeHtml(d.rationale)}<br>영향: ${escapeHtml(d.impact)}<br>보류: ${escapeHtml(d.deferred)}`;
+    }
+
+    function assignmentFor(agent, request = selectedRequest()) {
+      if (!request) return "Standby";
+      if ((request.to || []).includes(agent.name)) return "To";
+      if ((request.cc || []).includes(agent.name)) return "CC";
+      return "Standby";
+    }
+
+    function renderAgents() {
+      const query = search.value.trim().toLowerCase();
+      const group = groupFilter.value;
+      const current = selectedRequest();
+      const filtered = state.agents.filter((agent) => {
+        const haystack = `${agent.name} ${agent.group} ${agent.defaultRole} ${agent.toWhen} ${agent.ccWhen}`.toLowerCase();
+        return (group === "all" || agent.group === group) && (!query || haystack.includes(query));
+      });
+
+      agentGrid.innerHTML = filtered.map((agent) => {
+        const assignment = assignmentFor(agent, current);
+        const assignmentClass = assignment === "To" ? "green" : assignment === "CC" ? "amber" : "blue";
+        const status = agent.status || "Todo";
+        return `
+          <article class="agent-card">
+            <header>
+              <div class="agent-title">
+                <h3>${escapeHtml(agent.name)}</h3>
+                <p>${escapeHtml(agent.defaultRole)}</p>
+              </div>
+              <div class="badges">
+                <span class="badge ${assignmentClass}">${escapeHtml(assignmentLabel(assignment))}</span>
+                <span class="badge ${statusClass[status] || "blue"}">${escapeHtml(statusLabel(status))}</span>
+              </div>
+            </header>
+            <dl>
+              <div><dt>Group</dt><dd>${escapeHtml(agent.group)}</dd></div>
+              <div><dt>To When</dt><dd>${escapeHtml(agent.toWhen)}</dd></div>
+              <div><dt>CC When</dt><dd>${escapeHtml(agent.ccWhen)}</dd></div>
+              <div><dt>Outputs</dt><dd>${list(agent.outputs)}</dd></div>
+              <div><dt>Risk Flags</dt><dd>${(agent.riskFlags || []).map((risk) => `<span class="badge red">${escapeHtml(risk)}</span>`).join(" ")}</dd></div>
+            </dl>
+          </article>`;
+      }).join("");
+
+      document.getElementById("agentCount").textContent = state.agents.length;
+      document.getElementById("toCount").textContent = (current?.to || []).length;
+      document.getElementById("ccCount").textContent = (current?.cc || []).length;
+      document.getElementById("riskCount").textContent = (current?.risk || []).length;
+    }
+
+    function renderPreview() {
+      const request = selectedRequest();
+      if (!request) {
+        preview.value = "";
+        return;
+      }
+      const requestStatus = requestStatusFor(request.id);
+
+      preview.value = `에이전트 작업 배정 미리보기
+
+요청:
+${localizeText(request.request)}
+
+요청 상태:
+- ${statusLabel(requestStatus)}
+
+담당(To):
+${(request.to || []).map((agent) => `- ${agent}`).join("\n")}
+
+검토(CC):
+${(request.cc || []).map((agent) => `- ${agent}`).join("\n")}
+
+리스크:
+${(request.risk || []).map((risk) => `- ${risk}`).join("\n")}
+
+예상 산출물:
+${localizeList(request.outputs || []).map((output) => `- ${output}`).join("\n")}
+
+결정:
+- ${state.decisionLog.id}: ${state.decisionLog.choice}
+
+Virtual Office:
+- 배경 이미지: ${state.visualOffice.backgroundImage}
+- AI 에이전트 캐릭터: ${state.visualOffice.agentSprite}
+- Human Conductor 캐릭터: ${state.visualOffice.humanSprite || "../assets/dashboard/human-conductor.png"}
+- 이벤트 channel/status를 위치, 움직임, 상태 아이콘으로 반영
+
+실시간 이벤트 로그:
+- dashboards/task-events.jsonl에 역할별 이벤트를 JSONL로 append
+- 대시보드는 로컬 HTTP 서버에서 2초 간격으로 갱신
+
+다음 액션:
+- Friday가 태스크를 분해
+- Owner(To)가 실행하고 CC가 요약 컨텍스트만 검토
+- 완료 후 Work Log와 Episodic Memory 반영`;
+    }
+
+    function parseJsonLines(text) {
+      return text
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter(Boolean)
+        .reduce((acc, line, index) => {
+          try {
+            acc.push({ ...JSON.parse(line), _appendIndex: index });
+          } catch (error) {
+            acc.push({
+              timestamp: new Date().toISOString(),
+              eventId: "EVT-PARSE-WARN",
+              _appendIndex: index,
+              agent: "Diagnostic Agent",
+              assignment: "CC",
+              status: "Review",
+              task: "이벤트 로그 파싱 경고",
+              detail: `JSONL 한 줄을 읽지 못했습니다: ${line.slice(0, 88)}`,
+              riskLevel: "Medium",
+              outputs: ["Parse Warning"],
+              channel: "diagnostic"
+            });
+          }
+          return acc;
+        }, []);
+    }
+
+    function sortedEvents() {
+      return [...events].sort((a, b) => compareEventRecency(b, a));
+    }
+
+    function uniqueValues(values) {
+      return Array.from(new Set(values.filter(Boolean)));
+    }
+
+    function workflowEventsFor(requestId) {
+      return scopedEvents(requestId).filter((event) => event.workflowId);
+    }
+
+    function latestWorkflowEvents(requestId) {
+      const workflowEvents = workflowEventsFor(requestId);
+      const latestWorkflowId = workflowEvents[0]?.workflowId || "";
+      return latestWorkflowId
+        ? workflowEvents.filter((event) => event.workflowId === latestWorkflowId)
+        : [];
+    }
+
+    function workflowStageLabel(stage) {
+      return {
+        "task-graph": "Task Graph",
+        "worker-manifest": "Worker Manifest",
+        "parallel-execution": "Parallel Executor",
+        "verification": "Verifier",
+        "fixer": "Fixer",
+        "aggregation": "Aggregator"
+      }[stage] || stage || "Workflow";
+    }
+
+    function workerTypeRank(type) {
+      return {
+        "Executor": 0,
+        "Implementer": 1,
+        "Verifier": 2,
+        "Fixer": 3,
+        "Aggregator": 4
+      }[type] ?? 5;
+    }
+
+    function latestEventByWorker(workflowEvents) {
+      return workflowEvents.reduce((acc, event) => {
+        const workerId = event.workerId || event.taskId;
+        if (!workerId) return acc;
+        if (!acc[workerId]) acc[workerId] = event;
+        return acc;
+      }, {});
+    }
+
+    function latestRequestIdFromEvents() {
+      return [...events].reverse().find((event) => event.requestId && requestHasWorkFolder(event.requestId))?.requestId || "";
+    }
+
+    function requestFromEvents(requestId, requestEvents) {
+      const ordered = [...requestEvents].sort((a, b) => compareEventRecency(b, a));
+      // JSONL can contain backfilled rows appended later, so request labels use event time.
+      const latest = latestRequestEventFor(requestId) || ordered[0] || {};
+      const requestStatus = latest.status || "Todo";
+      const to = uniqueValues(ordered.filter((event) => event.assignment === "To").map((event) => event.agent));
+      const cc = uniqueValues(ordered.filter((event) => event.assignment === "CC").map((event) => event.agent));
+      const riskLevels = uniqueValues(ordered.map((event) => event.riskLevel));
+      const outputs = uniqueValues(ordered.flatMap((event) => Array.isArray(event.outputs) ? event.outputs.map(localizeText) : []));
+
+      return {
+        id: requestId,
+        title: latest.task ? `${statusLabel(requestStatus)}: ${localizeText(latest.task)}` : `${statusLabel(requestStatus)}: ${requestId}`,
+        request: eventDetailText(latest.detail || latest.task || `이벤트 로그에서 감지한 작업 요청(${requestId})`),
+        to: to.length ? to : ["Jarvis"],
+        cc: cc.length ? cc : ["Friday", "KITT/TRON", "Diagnostic Agent"],
+        risk: [
+          ...(riskLevels.length ? [`감지 리스크: ${riskLevels.join(", ")}`] : []),
+          "이벤트 로그 기반 자동 요청",
+          "민감 정보 기록 금지"
+        ],
+        outputs: outputs.length ? outputs.slice(0, 8) : ["dashboards/task-events.jsonl"],
+        status: requestStatus,
+        generatedFromEvents: true
+      };
+    }
+
+    function syncRequestsFromEvents() {
+      const baseRequests = (state.sampleRequests || [])
+        .filter((request) => !request.generatedFromEvents)
+        .filter((request) => requestHasWorkFolder(request.id));
+      const existingIds = new Set(baseRequests.map((request) => request.id));
+      const grouped = events.reduce((acc, event) => {
+        if (!event.requestId) return acc;
+        if (!requestHasWorkFolder(event.requestId)) return acc;
+        acc[event.requestId] = acc[event.requestId] || [];
+        acc[event.requestId].push(event);
+        return acc;
+      }, {});
+      const generatedRequests = Object.entries(grouped)
+        .filter(([requestId]) => !existingIds.has(requestId))
+        .map(([requestId, requestEvents]) => requestFromEvents(requestId, requestEvents));
+      const latestIndexFor = (requestId) => events.reduce((latest, event, index) => event.requestId === requestId ? index : latest, -1);
+      const latestTimeFor = (requestId) => eventTimeValue(latestRequestEventFor(requestId));
+      state.sampleRequests = [...baseRequests, ...generatedRequests]
+        .sort((a, b) => latestIndexFor(b.id) - latestIndexFor(a.id) || latestTimeFor(b.id) - latestTimeFor(a.id));
+    }
+
+    function formatTime(value) {
+      if (!value) return "-";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return date.toLocaleString("ko-KR", {
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      });
+    }
+
+    function eventMatchesFilter(event) {
+      const agentMatch = eventAgentFilter.value === "all" || event.agent === eventAgentFilter.value;
+      const statusMatch = eventStatusFilter.value === "all" || event.status === eventStatusFilter.value;
+      return agentMatch && statusMatch;
+    }
+
+    function eventSearchText(event) {
+      return [
+        event?.agent,
+        event?.role,
+        event?.assignment,
+        event?.status,
+        event?.task,
+        event?.detail,
+        event?.channel,
+        event?.workflowId,
+        event?.workflowStage,
+        event?.dynamicLevel,
+        event?.taskId,
+        event?.workerId,
+        event?.workerType,
+        ...(Array.isArray(event?.outputs) ? event.outputs : [])
+      ].filter(Boolean).join(" ");
+    }
+
+    function requestNeedsRiskReview(request, ordered) {
+      const requestRisk = (request?.risk || []).join(" ");
+      return ordered.some((event) => ["High", "Critical"].includes(event.riskLevel))
+        || /High|Critical|외부|배포|공개|개인정보|비밀|보안|결제|법무/.test(requestRisk);
+    }
+
+    function gateItem(id, label, passed, required, evidence) {
+      const mode = passed ? "pass" : required ? "block" : "warn";
+      return { id, label, passed, required, evidence, mode };
+    }
+
+    function analyzeOperationalGates(request, ordered, requestStatus) {
+      const riskRequired = requestNeedsRiskReview(request, ordered);
+      const hasEvent = ordered.length > 0;
+      const hasStrategy = ordered.some((event) => event.agent === "Jarvis" || event.channel === "strategy");
+      const hasDispatch = ordered.some((event) => event.agent === "Friday" || event.channel === "ops")
+        || (request?.to || []).length > 0 && (request?.cc || []).length > 0;
+      const hasExecution = ordered.some((event) => ["implementation", "research", "design", "copy", "docs", "analysis"].includes(event.channel)
+        || ["TARS", "EVE", "Joi", "C3PO", "Data"].includes(event.agent));
+      const hasRiskReview = ordered.some((event) => event.agent === "KITT/TRON" || event.channel === "risk");
+      const hasVerification = ordered.some((event) => /검증|확인|테스트|test|browser|브라우저|evidence|스크린샷|pass|passed/i.test(eventSearchText(event)));
+      const hasMemory = ordered.some((event) => /Work Log|Episodic|에피소딕|업무 로그|memory\/|memory\\/i.test(eventSearchText(event)));
+      const isDone = requestStatus === "Done";
+
+      return [
+        gateItem("intake", "요청 접수", hasEvent, true, hasEvent ? "이벤트 로그 있음" : "requestId 이벤트 없음"),
+        gateItem("strategy", "Jarvis 전략", hasStrategy, true, hasStrategy ? "전략 이벤트 감지" : "Jarvis/strategy 이벤트 필요"),
+        gateItem("dispatch", "Friday/To-CC", hasDispatch, true, hasDispatch ? "Owner/CC 신호 있음" : "Friday dispatch 또는 To/CC 필요"),
+        gateItem("execution", "실행", hasExecution, true, hasExecution ? "실무 이벤트 감지" : "실행 이벤트 필요"),
+        gateItem("risk", "리스크 검토", hasRiskReview || !riskRequired, riskRequired, riskRequired ? (hasRiskReview ? "Risk Shield 신호 있음" : "KITT/TRON 검토 필요") : "High/Critical 아님"),
+        gateItem("verification", "검증", hasVerification, true, hasVerification ? "검증/증거 신호 있음" : "검증 결과 또는 evidence 필요"),
+        gateItem("memory", "메모리", hasMemory, true, hasMemory ? "Work Log/Episodic 신호 있음" : "완료 훅 또는 메모리 기록 필요"),
+        gateItem("done", "완료", isDone, true, isDone ? "최신 요청 상태 Done" : "Done 이벤트 필요")
+      ];
+    }
+
+    function renderOperationalGates(request, ordered, requestStatus) {
+      const board = document.getElementById("gateBoard");
+      const summary = document.getElementById("gateSummary");
+      if (!board || !summary) return;
+      const gates = analyzeOperationalGates(request, ordered, requestStatus);
+      const blocking = gates.filter((gate) => gate.required && !gate.passed);
+      const passed = gates.filter((gate) => gate.passed).length;
+      summary.textContent = blocking.length
+        ? `${blocking.length}개 필수 게이트가 남았습니다. 완료 전 확인 필요.`
+        : `필수 게이트 통과: ${passed}/${gates.length}. 요청을 닫을 수 있습니다.`;
+      board.innerHTML = gates.map((gate) => `
+        <article class="gate-item ${gate.mode}">
+          <strong>${escapeHtml(gate.label)}</strong>
+          <span>${escapeHtml(gate.passed ? "통과" : gate.required ? "필수 미완료" : "권장 미완료")}</span><br>
+          <span>${escapeHtml(gate.evidence)}</span>
+        </article>
+      `).join("");
+    }
+
+    function scopedEvents(requestId) {
+      const ordered = sortedEvents();
+      return requestId ? ordered.filter((event) => event.requestId === requestId) : ordered;
+    }
+
+    function latestDoneEventByRequest(requestId = null) {
+      return scopedEvents(requestId).reduce((acc, event) => {
+        if (event.requestId && event.status === "Done" && !acc[event.requestId]) acc[event.requestId] = event;
+        return acc;
+      }, {});
+    }
+
+    function completeStaleRequestEvent(event, latestDoneRequests) {
+      if (!event?.requestId) return event;
+      const requestLatestDone = latestDoneRequests[event.requestId];
+      const requestHasLaterDone = requestLatestDone && compareEventRecency(requestLatestDone, event) > 0;
+      const staleActive = ["In Progress", "Review", "Blocked"].includes(event.status);
+      if (!requestHasLaterDone || !staleActive) return event;
+      return {
+        ...event,
+        status: "Done",
+        detail: `${event.detail || event.task || ""} 같은 요청의 완료 이벤트(${requestLatestDone.eventId || "완료"}) 이후 기록으로 화면 상태 완료 정리`
+      };
+    }
+
+    function latestEventByAgent(requestId = null) {
+      const latestDoneRequests = latestDoneEventByRequest(requestId);
+      return scopedEvents(requestId).reduce((acc, event) => {
+        if (event.agent && !acc[event.agent]) acc[event.agent] = completeStaleRequestEvent(event, latestDoneRequests);
+        return acc;
+      }, {});
+    }
+
+    function applyEventStatuses() {
+      const latest = latestEventByAgent(selectedRequest()?.id);
+      state.agents = state.agents.map((agent) => {
+        const event = latest[agent.name];
+        return { ...agent, status: event?.status || "Todo" };
+      });
+    }
+
+    function hashString(value) {
+      return String(value).split("").reduce((hash, char) => ((hash << 5) - hash + char.charCodeAt(0)) | 0, 0);
+    }
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function statusSlug(status) {
+      return String(status || "Todo").toLowerCase().replace(/\s+/g, "-");
+    }
+
+    function statusInfo(status) {
+      return statusMeta[status] || statusMeta.Todo;
+    }
+
+    function statusLabel(status) {
+      return statusInfo(status).label;
+    }
+
+    function statusIcon(status) {
+      return statusInfo(status).icon;
+    }
+
+    function statusColor(status) {
+      return statusInfo(status).color;
+    }
+
+    function assignmentLabel(assignment) {
+      return assignmentLabels[assignment] || assignment || "검토";
+    }
+
+    function riskLabel(riskLevel) {
+      return riskLabels[riskLevel] || riskLevel || "낮음";
+    }
+
+    function stationFor(agent, event) {
+      const map = state.visualOffice.channelStationMap || {};
+      return map[event?.channel] || agent.homeStation || "strategy";
+    }
+
+    function statusTone(eventOrStatus, riskLevel) {
+      const status = typeof eventOrStatus === "string" ? eventOrStatus : eventOrStatus?.status;
+      const risk = riskLevel || eventOrStatus?.riskLevel;
+      if (risk === "Critical" || risk === "High") return "red";
+      return statusClass[status] || "blue";
+    }
+
+    function activityClass(status) {
+      if (status === "In Progress") return "is-working";
+      if (status === "Review") return "is-reviewing";
+      if (status === "Blocked") return "is-blocked";
+      if (status === "Done") return "is-done";
+      return "is-idle";
+    }
+
+    function activityRank(status) {
+      return {
+        "Blocked": 0,
+        "In Progress": 1,
+        "Review": 2,
+        "Done": 3,
+        "Todo": 4
+      }[status] ?? 5;
+    }
+
+    function focusMode(status) {
+      if (status === "Blocked") return "blocked";
+      if (status === "Review") return "review";
+      if (status === "Done") return "done";
+      return "active";
+    }
+
+    function focusKicker(status) {
+      if (status === "In Progress") return "지금 작업 중";
+      if (status === "Blocked") return "차단 확인";
+      if (status === "Review") return "검토 필요";
+      if (status === "Done") return "최근 완료";
+      return "최근 활동";
+    }
+
+    function dynamicWorkflowBadges(event) {
+      if (!event?.workflowId) return "";
+      const items = [
+        event.dynamicLevel,
+        event.workflowStage ? workflowStageLabel(event.workflowStage) : "",
+        event.workerType,
+        event.workerId || event.taskId
+      ].filter(Boolean);
+      return items.map((item) => `<span class="badge teal">${escapeHtml(item)}</span>`).join("");
+    }
+
+    function renderDynamicWorkflowPanel() {
+      const request = selectedRequest();
+      const workflowEvents = latestWorkflowEvents(request?.id);
+
+      if (!workflowEvents.length) {
+        dynamicWorkflowStatus.textContent = "선택한 요청에 Dynamic Workflow 이벤트가 없습니다.";
+        dynamicWorkflowLevel.textContent = "대기";
+        dynamicWorkflowSummary.innerHTML = `
+          <div class="dwf-summary-card"><strong>0</strong><span>workflow event</span></div>
+          <div class="dwf-summary-card"><strong>0</strong><span>worker</span></div>
+          <div class="dwf-summary-card"><strong>-</strong><span>latest stage</span></div>
+          <div class="dwf-summary-card"><strong>대기</strong><span>status</span></div>`;
+        dynamicWorkflowStages.innerHTML = `<div class="empty-state">Dynamic Workflow가 시작되면 stage 상태가 여기에 표시됩니다.</div>`;
+        dynamicWorkflowWorkers.innerHTML = `<div class="empty-state">worker 이벤트 대기 중</div>`;
+        return;
+      }
+
+      const latest = workflowEvents[0];
+      const workflowId = latest.workflowId || "workflow";
+      const level = latest.dynamicLevel || "L?";
+      const workersById = latestEventByWorker(workflowEvents);
+      const workers = Object.values(workersById).sort((a, b) => {
+        const rank = workerTypeRank(a.workerType) - workerTypeRank(b.workerType);
+        if (rank !== 0) return rank;
+        return String(a.taskId || a.workerId || "").localeCompare(String(b.taskId || b.workerId || ""));
+      });
+      const implementerCount = uniqueValues(workflowEvents
+        .filter((event) => event.workerType === "Implementer")
+        .map((event) => event.workerId || event.taskId)
+      ).length;
+      const doneWorkers = workers.filter((event) => event.status === "Done").length;
+      const latestStage = workflowStageLabel(latest.workflowStage);
+
+      dynamicWorkflowLevel.textContent = level;
+      dynamicWorkflowStatus.textContent = `${workflowId} · ${workflowEvents.length} events · ${latestStage} · ${statusLabel(latest.status || "Todo")} · ${formatTime(latest.timestamp)}`;
+      dynamicWorkflowSummary.innerHTML = `
+        <div class="dwf-summary-card"><strong>${escapeHtml(level)}</strong><span>dynamic level</span></div>
+        <div class="dwf-summary-card"><strong>${escapeHtml(String(implementerCount || workers.length))}</strong><span>worker count</span></div>
+        <div class="dwf-summary-card"><strong>${escapeHtml(latestStage)}</strong><span>latest stage</span></div>
+        <div class="dwf-summary-card"><strong>${escapeHtml(statusLabel(latest.status || "Todo"))}</strong><span>${escapeHtml(doneWorkers)} done / ${escapeHtml(workers.length)} tracked</span></div>`;
+
+      const stageOrder = ["task-graph", "worker-manifest", "parallel-execution", "verification", "fixer", "aggregation"];
+      dynamicWorkflowStages.innerHTML = stageOrder.map((stage) => {
+        const stageEvents = workflowEvents.filter((event) => event.workflowStage === stage);
+        const stageEvent = stageEvents[0];
+        const derivedDone = stage === "worker-manifest" && workers.length > 0;
+        const derivedSkipped = stage === "fixer" && !stageEvent && latest.workflowStage === "aggregation";
+        const status = stageEvent?.status || (derivedDone ? "Done" : derivedSkipped ? "Todo" : "Todo");
+        const tone = stageEvent ? statusTone(stageEvent) : derivedDone ? "green" : derivedSkipped ? "blue" : "blue";
+        const label = derivedSkipped ? "Skipped" : statusLabel(status);
+        const evidence = stageEvents.length
+          ? `${stageEvents.length} event · ${formatTime(stageEvent.timestamp)}`
+          : derivedDone
+            ? "worker manifest detected"
+            : derivedSkipped
+              ? "no fixer needed"
+              : "waiting";
+        return `
+          <article class="dwf-stage ${tone}">
+            <strong>${escapeHtml(workflowStageLabel(stage))}</strong>
+            <span>${escapeHtml(label)}</span><br>
+            <span>${escapeHtml(evidence)}</span>
+          </article>`;
+      }).join("");
+
+      dynamicWorkflowWorkers.innerHTML = workers.length
+        ? workers.slice(0, 12).map((event) => {
+          const tone = statusTone(event);
+          const name = event.workerId || event.taskId || event.agent || "worker";
+          const task = event.taskId ? `${event.taskId} · ${workflowStageLabel(event.workflowStage)}` : workflowStageLabel(event.workflowStage);
+          return `
+            <article class="dwf-worker ${tone}">
+              <strong>${escapeHtml(name)}</strong>
+              <span>${escapeHtml(task)}</span>
+              <div class="dwf-worker-meta">
+                <span class="badge ${tone}">${escapeHtml(statusLabel(event.status || "Todo"))}</span>
+                <span class="badge blue">${escapeHtml(event.workerType || event.role || "Worker")}</span>
+                <span class="badge amber">${escapeHtml(event.agent || "Agent")}</span>
+              </div>
+            </article>`;
+        }).join("")
+        : `<div class="empty-state">worker 이벤트 대기 중</div>`;
+    }
+
+    function renderOffice() {
+      const request = selectedRequest();
+      const latest = latestEventByAgent(request?.id);
+      const stations = state.visualOffice.stations || {};
+      const sprite = state.visualOffice.agentSprite || "../assets/dashboard/agent-bot.png";
+      const humanSprite = state.visualOffice.humanSprite || "../assets/dashboard/human-conductor.png";
+      officeBg.src = state.visualOffice.backgroundImage || "../assets/dashboard/virtual-office-robot-coworking.png";
+
+      const ordered = scopedEvents(request?.id);
+      const lastEvent = ordered[0];
+      const requestStatus = requestStatusFor(request?.id);
+      const roster = state.agents.map((agent, index) => {
+        const event = latest[agent.name];
+        const status = event?.status || agent.status || "Todo";
+        return { agent, event, status, index };
+      }).sort((a, b) => {
+        const rank = activityRank(a.status) - activityRank(b.status);
+        if (rank !== 0) return rank;
+        return new Date(b.event?.timestamp || 0) - new Date(a.event?.timestamp || 0);
+      });
+      const focus = roster.find((item) => item.status === "In Progress" || item.status === "Blocked")
+        || roster.find((item) => item.status === "Review")
+        || roster[0];
+      const workingCount = roster.filter((item) => item.status === "In Progress").length;
+      const reviewCount = roster.filter((item) => item.status === "Review").length;
+      const blockedCount = roster.filter((item) => item.status === "Blocked").length;
+      const doneCount = roster.filter((item) => item.status === "Done").length;
+
+      officeFocusPanel.className = `office-focus-panel ${focusMode(focus?.status)}`;
+      officeFocusPanel.innerHTML = focus
+        ? `<div class="office-focus-kicker">
+            <span class="badge ${statusTone(focus.status)}">${escapeHtml(statusLabel(focus.status))}</span>
+            <span>${escapeHtml(focusKicker(focus.status))}</span>
+            <span>${escapeHtml(formatTime(focus.event?.timestamp))}</span>
+          </div>
+          <div class="office-focus-agent">${escapeHtml(focus.agent.name)}</div>
+          <div class="office-focus-task">${escapeHtml(localizeText(focus.event?.task || focus.agent.defaultRole))}</div>
+          <p class="office-focus-detail">${escapeHtml(eventDetailText(focus.event?.detail || "최근 작업 이벤트가 아직 없습니다."))}</p>`
+        : `<div class="office-focus-kicker"><span>활동 대기</span></div><div class="office-focus-agent">대기 중</div>`;
+
+      officeStageLegend.innerHTML = `
+        <span class="legend-item"><span class="legend-dot" style="--dot:${statusMeta["In Progress"].color}; --halo:rgba(37,128,97,0.18)"></span>작업중 ${workingCount}</span>
+        <span class="legend-item"><span class="legend-dot" style="--dot:${statusMeta.Review.color}; --halo:rgba(165,109,30,0.18)"></span>검토 ${reviewCount}</span>
+        <span class="legend-item"><span class="legend-dot" style="--dot:${statusMeta.Blocked.color}; --halo:rgba(178,72,61,0.18)"></span>차단 ${blockedCount}</span>
+        <span class="legend-item"><span class="legend-dot" style="--dot:${statusMeta.Done.color}; --halo:rgba(107,84,163,0.16)"></span>완료 ${doneCount}</span>`;
+
+      const rawPlacements = state.agents.map((agent, index) => {
+        const event = latest[agent.name];
+        const stationKey = stationFor(agent, event);
+        const station = stations[stationKey] || stations[agent.homeStation] || { x: 50, y: 50, label: "Office" };
+        const seed = Math.abs(hashString(`${agent.id}:${event?.eventId || "idle"}`));
+        const jitter = Number(state.visualOffice.agentJitter || 0);
+        const dx = ((seed % 7) - 3) * jitter;
+        const dy = (((seed >> 3) % 7) - 3) * jitter * 0.75;
+        const status = event?.status || agent.status || "Todo";
+        const x = clamp(station.x + dx, 5, 95);
+        const y = clamp(station.y + dy, 9, 90);
+        return { agent, event, station, status, index, x, y };
+      });
+      const placedAgents = rawPlacements.reduce((placed, item) => {
+        let x = item.x;
+        let y = item.y;
+        for (let attempt = 0; attempt < 8; attempt += 1) {
+          const hit = placed.find((other) => Math.abs(other.x - x) < 9 && Math.abs(other.y - y) < 14);
+          if (!hit) break;
+          const direction = item.index % 2 === 0 ? 1 : -1;
+          x = clamp(x + direction * (11 - Math.abs(hit.x - x)), 6, 94);
+          y = clamp(y + 16 - Math.abs(hit.y - y), 11, 89);
+          if (y > 87) y = clamp(y - 24, 11, 89);
+        }
+        placed.push({ ...item, x, y });
+        return placed;
+      }, []);
+
+      officeAgents.innerHTML = placedAgents.map(({ agent, event, station, status, index, x, y }) => {
+        const assignment = assignmentFor(agent, request);
+        const avatar = agent.id === "human-conductor" ? humanSprite : sprite;
+        const title = `${agent.name} | ${statusLabel(status)} | ${localizeText(event?.task || station.label)}`;
+        const latestClass = focus?.agent.name === agent.name ? "is-latest" : "";
+        const activeClass = activityClass(status);
+        return `
+          <button class="office-agent status-${statusSlug(status)} assignment-${assignment.toLowerCase()} ${activeClass} ${latestClass}" type="button"
+            style="--x:${x}; --y:${y}; --hue:${Number(agent.hue || 0)}; --accent:${escapeHtml(agent.accent || "#128c8c")}; --status-color:${escapeHtml(statusColor(status))}; --delay:${(index % 6) * 0.45};"
+            title="${escapeHtml(title)}" aria-label="${escapeHtml(title)}" data-agent="${escapeHtml(agent.name)}">
+            <span class="sprite-wrap">
+              <span class="work-ribbon">${escapeHtml(status === "In Progress" ? "작업중" : statusLabel(status))}</span>
+              <span class="status-dot" data-status-icon="${escapeHtml(statusIcon(status))}" aria-hidden="true"></span>
+              <img src="${escapeHtml(avatar)}" alt="">
+              <span class="agent-name">${escapeHtml(agent.shortName || agent.name)}</span>
+              <span class="agent-task-label">${escapeHtml(localizeText(event?.task || station.label))}</span>
+            </span>
+          </button>`;
+      }).join("");
+
+      const focusLabel = focus?.status === "In Progress"
+        ? "현재 작업자"
+        : focus?.status === "Blocked"
+          ? "차단 확인"
+          : focus?.status === "Review"
+            ? "검토 중"
+            : focus?.status === "Done"
+              ? "최근 완료"
+              : "최근 활동";
+      officeStatus.textContent = requestStatus === "Done" && lastEvent
+        ? `요청 완료: ${localizeText(lastEvent.task || request?.title || request?.id)} · ${formatTime(lastEvent.timestamp)}`
+        : focus
+        ? `${focusLabel}: ${focus.agent.name} · ${statusLabel(focus.status)} · ${formatTime(focus.event?.timestamp)}`
+        : "이벤트 대기 중";
+
+      stationList.innerHTML = roster.map(({ agent, event, status }) => {
+        const stationKey = stationFor(agent, event);
+        const station = stations[stationKey] || stations[agent.homeStation] || { label: "Office" };
+        return `
+          <div class="station-row ${activityClass(status)}">
+            <span class="station-swatch" style="--accent:${escapeHtml(agent.accent || "#128c8c")}"></span>
+            <span>${escapeHtml(agent.name)}<br><span class="event-time">${escapeHtml(station.label)}</span></span>
+            <span class="badge ${statusTone(status)}">${escapeHtml(statusLabel(status))}</span>
+          </div>`;
+      }).join("");
+    }
+
+    function renderEvents() {
+      renderEventAgentFilter();
+      applyEventStatuses();
+
+      const request = selectedRequest();
+      const requestId = request?.id || null;
+      const latest = latestEventByAgent(requestId);
+      const ordered = scopedEvents(requestId);
+      const visible = ordered.filter(eventMatchesFilter).slice(0, 80);
+      const lastEvent = ordered[0];
+      const latestRequestEvent = latestRequestEventFor(requestId);
+      const requestStatus = requestStatusFor(requestId);
+      const reviewOrBlockedCount = state.agents.filter((agent) => agent.status === "Blocked" || agent.status === "Review").length;
+
+      document.getElementById("eventCount").textContent = ordered.length;
+      document.getElementById("requestStatus").textContent = statusLabel(requestStatus);
+      document.getElementById("blockedCount").textContent = reviewOrBlockedCount;
+      liveStatus.textContent = latestRequestEvent
+        ? `${requestStatus === "Done" ? "요청 완료" : "마지막 이벤트"} ${formatTime(latestRequestEvent.timestamp)} · ${latestRequestEvent.agent || "Unknown"} · ${statusLabel(latestRequestEvent.status || "Todo")}`
+        : "이벤트가 아직 없습니다.";
+      renderOperationalGates(request, ordered, requestStatus);
+
+      eventStream.innerHTML = visible.length
+        ? visible.map((event) => {
+          const tone = statusTone(event);
+          const outputs = localizeList(event.outputs);
+          return `
+            <article class="event-row ${tone}">
+              <div class="event-head">
+                <strong>${escapeHtml(event.eventId || "EVT")} · ${escapeHtml(event.agent || "Unknown")}</strong>
+                <span class="event-time">${escapeHtml(formatTime(event.timestamp))}</span>
+              </div>
+              <p class="event-detail">${escapeHtml(eventDetailText(event.detail || event.task || ""))}</p>
+              <div class="event-meta">
+                <div class="badges">
+                  <span class="badge ${tone}">${escapeHtml(statusLabel(event.status || "Todo"))}</span>
+                  <span class="badge blue">${escapeHtml(assignmentLabel(event.assignment || "CC"))}</span>
+                  <span class="badge amber">${escapeHtml(riskLabel(event.riskLevel || "Low"))}</span>
+                  ${dynamicWorkflowBadges(event)}
+                </div>
+                <span class="event-time">${escapeHtml(localizeText(event.task || ""))}</span>
+              </div>
+              ${outputs.length ? `<div class="event-time">산출물: ${outputs.map(escapeHtml).join(", ")}</div>` : ""}
+            </article>`;
+        }).join("")
+        : `<div class="empty-state">선택한 필터에 맞는 작업 이벤트가 없습니다.</div>`;
+
+      agentActivity.innerHTML = state.agents.map((agent) => {
+        const event = latest[agent.name];
+        const status = event?.status || agent.status || "Todo";
+        const tone = statusTone(status);
+        return `
+          <article class="activity-row ${tone}">
+            <div class="activity-head">
+              <strong>${escapeHtml(agent.name)}</strong>
+              <span class="badge ${tone}">${escapeHtml(statusLabel(status))}</span>
+            </div>
+            <div class="activity-note">${escapeHtml(agent.group)}</div>
+            <p class="event-detail">${escapeHtml(localizeText(event?.task || agent.defaultRole))}</p>
+            <div class="event-time">${event ? escapeHtml(formatTime(event.timestamp)) : "이벤트 대기"}</div>
+          </article>`;
+      }).join("") || `<div class="empty-state">에이전트 활동 데이터가 없습니다.</div>`;
+
+      renderDynamicWorkflowPanel();
+      renderOffice();
+      renderAgents();
+    }
+
+    async function loadEvents({ forceRender = false } = {}) {
+      try {
+        const response = await fetch(`task-events.jsonl?ts=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = await response.text();
+        if (text === lastEventsText) {
+          if (forceRender) {
+            renderRequests();
+            renderPreview();
+            renderEvents();
+          }
+          const requestId = selectedRequest()?.id;
+          const lastEvent = latestRequestEventFor(requestId) || sortedEvents()[0];
+          const requestStatus = requestStatusFor(requestId);
+          liveStatus.textContent = lastEvent
+            ? `${requestStatus === "Done" ? "요청 완료" : "마지막 이벤트"} ${formatTime(lastEvent.timestamp)} · ${lastEvent.agent || "Unknown"} · ${statusLabel(lastEvent.status || "Todo")} · task-events.jsonl 2초 주기 갱신 중`
+            : "이벤트가 아직 없습니다. · task-events.jsonl 2초 주기 갱신 중";
+          return false;
+        }
+        lastEventsText = text;
+        const loaded = parseJsonLines(text);
+        events = loaded;
+        renderRequests();
+        renderPreview();
+        renderEvents();
+        liveStatus.textContent += " · task-events.jsonl 2초 주기 갱신 중";
+        return true;
+      } catch (error) {
+        renderRequests();
+        renderEvents();
+        liveStatus.textContent += " · 내장 샘플 표시 중";
+        return false;
+      }
+    }
+
+    async function refreshLiveData({ manual = false } = {}) {
+      if (manual) {
+        refreshEventsBtn.disabled = true;
+        refreshEventsBtn.textContent = "새로고침 중";
+        liveStatus.textContent = "대시보드 데이터 새로고침 중...";
+      }
+      try {
+        const foldersChanged = await loadWorkRequestFolders();
+        const dashboardChanged = await loadDashboardData({ shouldRender: true });
+        const eventsChanged = await loadEvents({ forceRender: manual || foldersChanged });
+        if (manual) {
+          const lastEvent = sortedEvents()[0];
+          const result = dashboardChanged || eventsChanged ? "새로고침 완료" : "새로운 변경 없음";
+          liveStatus.textContent = lastEvent
+            ? `${result} · 마지막 이벤트 ${formatTime(lastEvent.timestamp)} · ${lastEvent.agent || "Unknown"} · ${statusLabel(lastEvent.status || "Todo")}`
+            : `${result} · 이벤트가 아직 없습니다.`;
+        }
+      } finally {
+        if (manual) {
+          refreshEventsBtn.disabled = false;
+          refreshEventsBtn.textContent = "새로고침";
+        }
+      }
+    }
+
+    function render() {
+      renderDecision();
+      renderAgents();
+      renderPreview();
+      renderEvents();
+    }
+
+    async function init() {
+      await loadDashboardData();
+      await loadWorkRequestFolders();
+      renderGroups();
+      renderRequests();
+      render();
+      await loadEvents();
+      eventTimer = window.setInterval(refreshLiveData, state.liveEventLog?.pollingMs || 2000);
+    }
+
+    search.addEventListener("input", renderAgents);
+    groupFilter.addEventListener("change", renderAgents);
+    requestSelect.addEventListener("change", () => {
+      userSelectedRequest = true;
+      renderRequests();
+      render();
+    });
+    eventAgentFilter.addEventListener("change", renderEvents);
+    eventStatusFilter.addEventListener("change", renderEvents);
+    refreshEventsBtn.addEventListener("click", () => refreshLiveData({ manual: true }));
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      search.value = "";
+      groupFilter.value = "all";
+      requestSelect.selectedIndex = 0;
+      render();
+    });
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(preview.value);
+      } catch (error) {
+        preview.select();
+        document.execCommand("copy");
+      }
+    });
+    officeAgents.addEventListener("click", (event) => {
+      const button = event.target.closest(".office-agent");
+      if (!button) return;
+      eventAgentFilter.value = button.dataset.agent || "all";
+      renderEvents();
+      document.getElementById("eventStream").scrollIntoView({ block: "nearest", behavior: "smooth" });
+    });
+
+    init();
+    window.addEventListener("beforeunload", () => {
+      if (eventTimer) window.clearInterval(eventTimer);
+    });
+  </script>
+</body>
+</html>

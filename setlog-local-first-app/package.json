@@ -1,0 +1,33 @@
+{
+  "name": "setlog-local-first-app",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@hono/node-server": "^2.0.3",
+    "expo": "~56.0.3",
+    "expo-camera": "~56.0.7",
+    "expo-crypto": "~56.0.3",
+    "expo-file-system": "~56.0.7",
+    "expo-media-library": "~56.0.6",
+    "expo-sqlite": "~56.0.4",
+    "expo-status-bar": "~56.0.4",
+    "hono": "^4.12.21",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@types/react": "~19.2.2",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.22.3",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "private": true
+}

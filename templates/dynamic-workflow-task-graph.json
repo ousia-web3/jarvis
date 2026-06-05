@@ -1,0 +1,42 @@
+{
+  "workflowId": "DWF-example-request",
+  "workflowVersion": "1.0",
+  "dynamicLevel": "L4",
+  "mode": "local-dynamic-workflow",
+  "requestId": "example-request",
+  "goal": "작업 목표를 한 문장으로 적는다.",
+  "createdAt": "2026-05-29T00:00:00+09:00",
+  "planner": {
+    "agent": "Jarvis",
+    "role": "Master Planner / Aggregator"
+  },
+  "taskManager": {
+    "agent": "Friday",
+    "role": "Task Graph Manager"
+  },
+  "tasks": [
+    {
+      "taskId": "task-001",
+      "title": "작은 실행 단위",
+      "stage": "implement",
+      "ownerAgent": "TARS",
+      "workerType": "Implementer",
+      "dependencies": [],
+      "contextPacket": "packets/task-001.context.md",
+      "expectedOutputs": [],
+      "command": "",
+      "fixerCommand": "",
+      "status": "Ready"
+    }
+  ],
+  "verification": {
+    "leadAgent": "Data",
+    "riskAgent": "KITT/TRON",
+    "diagnosticAgent": "Diagnostic Agent",
+    "policy": "worker result와 expectedOutputs를 독립 검증한다."
+  },
+  "aggregation": {
+    "agent": "Jarvis",
+    "report": "aggregation/aggregate-report.md"
+  }
+}

@@ -1,0 +1,31 @@
+---
+description: Default Jarvis AI Agent Team workflow for this project
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Jarvis AI Agent Team Rule
+
+Do not require the user to repeat "read the docs first" or "follow the 4-stage architecture" on every request. In this project, that is the default.
+
+For any user work request:
+
+1. Start with `docs/README.md`.
+2. Apply `templates/simple-start-request.md`.
+3. Apply `skills/agent-team-orchestration/SKILL.md`.
+4. Use `agents/00-agent-management-index.md` for role routing.
+5. For a new work request, choose a request slug and immediately run `powershell -ExecutionPolicy Bypass -File scripts/start-jarvis-request.ps1 -RequestId <request-slug> -Task "<request summary>"`.
+6. Open the returned `url` in the active AI tool browser or preview surface, such as Cursor browser/preview. Do not use the OS default browser as the primary path.
+7. For a new work request, create `work-requests/YYYY-MM-DD-request-slug/` before execution and store the Human Brief draft, references, deliverables, and verification evidence there.
+8. If no Human Brief exists, create a Human Brief draft from the raw user request.
+9. Continue through Jarvis strategy, Friday task breakdown, execution, Risk Shield review, and completion report.
+
+Always preserve:
+
+- SYS.01 Dream Team
+- SYS.02 Virtual Office
+- SYS.03 Agent Brain
+- SYS.04 Human Conductor
+
+Ask the user only for blocking risks: deletion, external release, public deployment, data transfer, secrets, payments, personal data, legal/security exposure, or major strategy changes.

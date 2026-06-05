@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "DaySlot Local",
+    "slug": "setlog-local-first-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.localfirst.dayslot"
+    },
+    "android": {
+      "package": "com.localfirst.dayslot",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow DaySlot Local to use the camera for 2-4 second clips.",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": false
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow DaySlot Local to index clips you choose from your library.",
+          "savePhotosPermission": "Allow DaySlot Local to save clips to your phone gallery.",
+          "granularPermissions": [
+            "video"
+          ]
+        }
+      ],
+      "expo-sqlite"
+    ]
+  }
+}

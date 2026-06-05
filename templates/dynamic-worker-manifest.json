@@ -1,0 +1,44 @@
+{
+  "workflowId": "DWF-example-request",
+  "requestId": "example-request",
+  "createdAt": "2026-05-29T00:00:00+09:00",
+  "maxParallel": 4,
+  "workers": [
+    {
+      "workerId": "worker-task-001",
+      "taskId": "task-001",
+      "workerType": "Implementer",
+      "agent": "TARS",
+      "status": "Ready",
+      "inputContext": "packets/task-001.context.md",
+      "resultPath": "results/task-001.result.json",
+      "command": "",
+      "allowExternalCommand": false
+    }
+  ],
+  "verifiers": [
+    {
+      "workerId": "verifier-data",
+      "workerType": "Verifier",
+      "agent": "Data",
+      "status": "Ready",
+      "resultPath": "verification/verification-report.json"
+    }
+  ],
+  "fixers": [
+    {
+      "workerId": "fixer-tars",
+      "workerType": "Fixer",
+      "agent": "TARS",
+      "status": "Ready",
+      "resultPath": "fixes/fixer-report.md"
+    }
+  ],
+  "aggregator": {
+    "workerId": "aggregator-jarvis",
+    "workerType": "Aggregator",
+    "agent": "Jarvis",
+    "status": "Ready",
+    "resultPath": "aggregation/aggregate-report.md"
+  }
+}

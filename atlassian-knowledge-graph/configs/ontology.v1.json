@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "classes": [
+    {
+      "id": "Page",
+      "label": "위키 페이지",
+      "description": "Confluence 원문 페이지"
+    },
+    {
+      "id": "Category",
+      "label": "카테고리",
+      "description": "폴더, 데이터베이스, 화이트보드, 임베드 같은 하위 컨테이너"
+    },
+    {
+      "id": "Concept",
+      "label": "개념",
+      "description": "문서에서 반복적으로 등장하는 핵심 용어"
+    },
+    {
+      "id": "Process",
+      "label": "업무 절차",
+      "description": "실무자가 따라야 하는 절차, 점검, 운영 흐름"
+    },
+    {
+      "id": "DataAsset",
+      "label": "데이터 자산",
+      "description": "데이터, 로그, 테이블, API, 지표 산출 원천"
+    },
+    {
+      "id": "System",
+      "label": "시스템/도구",
+      "description": "업무를 지원하는 시스템, 서비스, 자동화 도구"
+    },
+    {
+      "id": "Metric",
+      "label": "지표",
+      "description": "품질, 성과, 성공 기준, KPI"
+    },
+    {
+      "id": "Risk",
+      "label": "리스크",
+      "description": "보안, 권한, 개인정보, 품질, 외부 전송 리스크"
+    },
+    {
+      "id": "TrainingModule",
+      "label": "교육 모듈",
+      "description": "신규 담당자나 AI가 학습해야 할 교육 단위"
+    },
+    {
+      "id": "WorkIdea",
+      "label": "업무 아이디어",
+      "description": "자동화, 개선, 점검, 템플릿화 후보"
+    }
+  ],
+  "relations": [
+    { "id": "CONTAINS", "label": "포함" },
+    { "id": "DEFINES", "label": "정의" },
+    { "id": "USES_DATA", "label": "데이터 사용" },
+    { "id": "SUPPORTED_BY_SYSTEM", "label": "시스템 지원" },
+    { "id": "HAS_METRIC", "label": "지표 보유" },
+    { "id": "HAS_RISK", "label": "리스크 보유" },
+    { "id": "SUGGESTS_IDEA", "label": "아이디어 제안" },
+    { "id": "REQUIRES_APPROVAL", "label": "승인 필요" },
+    { "id": "EVIDENCED_BY", "label": "근거" },
+    { "id": "MENTIONS", "label": "언급" }
+  ]
+}

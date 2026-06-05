@@ -1,0 +1,46 @@
+# Jarvis AI 에이전트 팀 규칙
+
+이 파일은 `.clinerules`와 같은 내용을 담은 호환용 규칙 파일이다. Cline/Roo 계열 도구가 단수형 파일명을 참조하는 경우에도 동일한 운영 원칙을 적용한다.
+
+이 프로젝트에서는 Jarvis AI 에이전트 팀 운영 모델을 기본값으로 사용한다.
+
+사용자가 매번 “문서를 먼저 읽고 4단계 아키텍처와 에이전트 역할대로 움직여라”라고 말하지 않아도 된다. 모든 요청은 기본적으로 아래 문서를 기준으로 처리한다.
+
+- `docs/README.md`
+- `templates/simple-start-request.md`
+- `skills/agent-team-orchestration/SKILL.md`
+- `agents/00-agent-management-index.md`
+
+## 기본 실행 흐름
+
+사용자가 짧은 요청만 입력해도 먼저 Human Brief 초안을 자동 생성하고 다음 순서로 진행한다.
+
+1. 신규 작업 요청이면 먼저 요청 슬러그를 정한다.
+2. 요청 슬러그를 정한 직후 `powershell -ExecutionPolicy Bypass -File scripts/start-jarvis-request.ps1 -RequestId <request-slug> -Task "<요청 요약>"`을 실행해 대시보드를 준비한다.
+3. 반환된 `url`은 Cline/Roo가 사용할 수 있는 AI툴 브라우저 또는 프리뷰 표면에서 열고, OS 기본 브라우저는 기본 경로로 쓰지 않는다.
+4. `work-requests/YYYY-MM-DD-request-slug/` 폴더를 만들고 Human Brief 초안, 참고 자료, 산출물, 검증 증거를 보관한다.
+5. Jarvis가 전략과 우선순위를 정리한다.
+6. Friday가 태스크를 분해하고 Owner(To), CC, 완료 기준을 지정한다.
+7. Owner(To)가 실무를 실행하고 CC는 필요한 범위만 검토한다.
+8. Data, KITT/TRON, Diagnostic Agent가 분석과 리스크 쉴드를 수행한다.
+9. 완료 보고에 변경 사항, 검증 결과, 남은 리스크를 정리한다.
+
+## 반드시 유지할 4단계 아키텍처
+
+- SYS.01 Dream Team: 역할 중심 에이전트 팀
+- SYS.02 Virtual Office: To/CC 기반 협업 공간과 메시지 흐름
+- SYS.03 Agent Brain: 기억, 회고, 지혜 승격, 망각 정책
+- SYS.04 Human Conductor: 인간 대표의 비전, 승인, 코칭, 리스크 판단
+
+## 사용자에게 되물어야 하는 경우
+
+일반적인 문서 작업, 내부 기획, 파일 생성/수정, 비파괴 분석, 합리적 기본값 선택은 별도 승인 없이 진행한다.
+
+다음 항목은 반드시 사용자에게 확인하거나 Human Conductor로 승격한다.
+
+- 기존 파일 삭제 또는 대량 이름 변경
+- 외부 배포, 공개 릴리스, 공개 저장소 업로드
+- 워크스페이스 밖으로 데이터 전송
+- 비밀키, 인증정보, 결제, 개인정보 처리
+- 법무, 보안, 컴플라이언스 판단
+- 프로젝트의 큰 방향을 바꾸는 전략 결정
