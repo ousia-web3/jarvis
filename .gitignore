@@ -1,3 +1,6 @@
+# Local-only packages (not published to GitHub)
+packages/
+
 # Jarvis local/generated artifacts
 .playwright-mcp/
 tmp/

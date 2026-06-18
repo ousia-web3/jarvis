@@ -11,6 +11,7 @@ Intake
 → Human Brief Draft
 → Jarvis Strategy
 → Friday Dispatch
+→ IA Draft
 → Agent Execution
 → Review
 → Verification
@@ -27,6 +28,7 @@ Intake
 | Human Brief Draft | 작업 요청 README 또는 브리프 템플릿 | Jarvis, Friday | Medium 이상 작업 |
 | Jarvis Strategy | 전략 이벤트 또는 전략 브리프 | Jarvis | 예 |
 | Friday Dispatch | Owner(To), CC, 산출물, DoD | Friday | 예 |
+| IA Draft | `ia-brief.md` 또는 IA Brief 섹션, Joi design/IA 이벤트 | Joi, Friday | Medium 이상 **웹서비스** 작업 |
 | Agent Execution | 구현/리서치/디자인/카피/분석 이벤트 | 배정된 Owner | 예 |
 | Review | 필수 CC 검토 이벤트 | Friday | 리스크에 따라 다름 |
 | Verification | 테스트, 브라우저 확인, 스크린샷, 서면 검증 | TARS/Data/Joi | 예 |
@@ -40,6 +42,24 @@ Intake
 - Medium: Friday와 관련 쉴드 검토자 1명이 필요하다.
 - High: Jarvis 승격과 KITT/TRON 검토가 필요하다.
 - Critical: 작업을 멈추고 Human Conductor 승인 후에만 계속한다.
+
+## IA Draft 게이트
+
+**적용 대상:** Risk `Medium` 이상이면서 웹 UI, 랜딩, 소개 사이트, 다페이지, 공개 내비게이션이 포함된 요청.
+
+**필수 증거 (하나 이상):**
+
+- 작업 폴더의 `ia-brief.md` 또는 `artifacts/ia-brief.md`
+- 작업 README의 `IA Brief` / `정보설계` 섹션(사이트맵·내비 모델 포함)
+- Joi의 `design` 채널 이벤트와 IA 산출물 링크
+
+**생략 가능:**
+
+- Low 리스크 단일 화면 수정
+- 기존 IA Brief·사이트맵이 이미 승인된 후속 구현
+- API-only, CLI, 배치, 단일 업무 화면 목업(포털 1화면)
+
+**차단 규칙:** IA Draft 미충족 상태에서 TARS `implementation` 이벤트만으로 웹 구조를 확정하면 `Blocked`로 표시하고 Friday가 TASK-IA를 재배정한다.
 
 ## 상태 규칙
 

@@ -12,6 +12,7 @@
 | 태스크 분해 | Friday | Jarvis, KITT/TRON |
 | 영상 메타데이터 수집 | EVE | Data, KITT/TRON |
 | 페르소나 분석 | Data | Friday, Joi |
+| IA(정보설계) | Joi | TARS, Jarvis |
 | UX 설계 | Joi | C3PO, TARS |
 | 카피 작성 | C3PO | Joi, KITT/TRON |
 | 구현 | TARS | Joi, KITT/TRON |
@@ -23,13 +24,15 @@
 1. 0:00-0:20 Human Brief와 Jarvis 전략 브리프
 2. 0:20-0:40 Friday 태스크 분해
 3. 0:40-1:40 EVE 리서치와 Data 1차 분석
-4. 1:40-2:30 Joi UX 흐름과 C3PO 카피
-5. 2:30-3:30 TARS MVP 구현
-6. 3:30-4:00 Data/KITT/TRON 검토와 인간 대표 승인 준비
+4. 1:40-2:00 Joi IA Brief(사이트맵, 내비, 라벨)
+5. 2:00-2:30 Joi UX 흐름과 C3PO 카피
+6. 2:30-3:30 TARS MVP 구현
+7. 3:30-4:00 Data/KITT/TRON 검토와 인간 대표 승인 준비
 
 ## 완료 기준
 
 - 페르소나 5종 정의
+- IA Brief(사이트맵, 내비 모델) 초안
 - 상품 큐레이션 원칙 명시
 - 랜딩 흐름 초안
 - 카피 초안

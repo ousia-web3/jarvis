@@ -93,6 +93,16 @@ $hasIntake = $requestEvents.Count -gt 0
 $hasHumanBrief = $readme.Contains("Human Brief") -or $readme.Contains("Human Brief Draft")
 $hasStrategy = @($requestEvents | Where-Object { $_.agent -eq "Jarvis" -or $_.channel -eq "strategy" }).Count -gt 0
 $hasDispatch = @($requestEvents | Where-Object { $_.agent -eq "Friday" -or $_.channel -eq "ops" }).Count -gt 0 -or $readme -match "Owner|To:|CC:|Agent Assignment"
+$isWebProject = $readme -match "web|IA Brief|landing|Site Map|ia-brief|TASK-IA|TASK-WEB|Navigation Model"
+$isMediumPlusWeb = (@($requestEvents | Where-Object { $_.riskLevel -in @("Medium", "High", "Critical") }).Count -gt 0) -and $isWebProject
+$iaBriefInWorkFolder = $false
+if ($workFolder) {
+  $iaBriefInWorkFolder = (Test-Path -LiteralPath (Join-Path $workFolder.FullName "ia-brief.md")) -or
+    (Test-Path -LiteralPath (Join-Path $workFolder.FullName "artifacts/ia-brief.md"))
+}
+$hasIADraft = ($iaBriefInWorkFolder) -or
+  ($readme -match "IA Brief|Site Map|Navigation Model|ia-brief") -or
+  (Test-AnyText $requestEvents "IA Brief|information architecture|ia-brief|Site Map")
 $hasSpecializedDelegation = @($requestEvents | Where-Object {
   $_.PSObject.Properties["delegationType"] -and
   $_.delegationType -eq "specialized-agent-call"
@@ -116,6 +126,7 @@ $gates = @(
   (New-Gate "human-brief" "Human Brief draft" $hasHumanBrief $false "work request README or brief"),
   (New-Gate "strategy" "Jarvis strategy" $hasStrategy $true "Jarvis or strategy channel event"),
   (New-Gate "dispatch" "Friday dispatch / To-CC" $hasDispatch $true "Friday event or assignment section"),
+  (New-Gate "ia-draft" "IA Draft for Medium+ web projects" ($hasIADraft -or -not $isMediumPlusWeb) $isMediumPlusWeb "ia-brief.md, IA Brief section, or Joi IA/design event"),
   (New-Gate "specialized-delegation" "Specialized delegation for High/Critical risk" ($hasSpecializedDelegation -or -not $highRisk) $highRisk "delegationType=specialized-agent-call required for High/Critical risk"),
   (New-Gate "execution" "Agent execution" $hasExecution $true "implementation/research/design/copy/analysis event"),
   (New-Gate "risk-review" "Risk review" ($hasRiskReview -or -not $highRisk) $highRisk "required only for High/Critical risk"),

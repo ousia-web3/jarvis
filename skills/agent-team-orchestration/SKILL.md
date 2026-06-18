@@ -65,7 +65,7 @@ description: Jarvis AI 에이전트 팀을 역할 중심 다중 에이전트 협
 ## 역할별 라우팅
 
 - 전략, 우선순위, 전체 방향: Jarvis
-- 신규 MVP, 고위험 기능, 아키텍처 결정, 7개 문서 산출: Jarvis Design Review Mode (`../jarvis-design-review/SKILL.md`)
+- 신규 MVP, 고위험 기능, 아키텍처 결정, 8개 문서 산출: Jarvis Design Review Mode (`../jarvis-design-review/SKILL.md`)
 - 일정, 태스크 분해, 담당자 지정, 진행 관리: Friday
 - 시장 조사, 자료 수집, 벤치마킹: EVE
 - UX/UI, 프론트엔드 경험, 감성 품질: Joi
@@ -99,7 +99,7 @@ description: Jarvis AI 에이전트 팀을 역할 중심 다중 에이전트 협
 
 기본 에이전트 팀 모드는 사용자의 짧은 요청을 빠르게 실행 가능한 태스크로 바꾸는 흐름을 유지한다. 다만 신규 MVP, 금융/보안/개인정보/결제 같은 고위험 프로젝트, 기술 스택과 데이터 모델을 확정해야 하는 작업은 `skills/jarvis-design-review/SKILL.md`를 보조 모드로 사용한다.
 
-이 모드는 Jarvis 기본 페르소나를 교체하지 않는다. Decision Log, SSOT 식별자, MVP 캡슐, 스택 Option A/B/C 비교, PRD/TRD/User Flow/ERD/Design System/TASKS/Coding Convention 산출을 필요할 때만 적용한다.
+이 모드는 Jarvis 기본 페르소나를 교체하지 않는다. Decision Log, SSOT 식별자, MVP 캡슐, 스택 Option A/B/C 비교, PRD/TRD/IA/User Flow/ERD/Design System/TASKS/Coding Convention 산출을 필요할 때만 적용한다.
 
 ## 완료 보고 형식
 

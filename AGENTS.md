@@ -19,7 +19,7 @@
 
 완료된 대화창이나 완료된 작업 요청에서 사용자가 추가 작업을 요청하면 가능한 한 기존 `requestId`를 재사용합니다. 이때 `scripts/start-jarvis-request.ps1`를 다시 실행해 최신 이벤트를 `In Progress`로 기록하고, 완료 상태였던 요청을 진행 상태로 되돌린 뒤 대시보드/Virtual Office 시각화를 다시 보여줍니다. 기존 요청 식별자를 알 수 없을 때만 새 요청 슬러그를 만듭니다.
 
-신규 MVP, 고위험 기능, 아키텍처 결정, PRD/TRD/TASKS 등 7개 문서 산출이 필요한 작업은 `skills/jarvis-design-review/SKILL.md`를 보조 모드로 사용합니다. 이 모드는 Jarvis 기본 역할을 덮어쓰지 않고 Decision Log, SSOT 식별자, MVP 캡슐, 스택 결정 프로토콜을 추가합니다. 단순 파일 수정, 작은 버그 수정, 이미 결정된 구현 작업에는 적용하지 않습니다.
+신규 MVP, 고위험 기능, 아키텍처 결정, PRD/TRD/TASKS 등 8개 문서 산출이 필요한 작업은 `skills/jarvis-design-review/SKILL.md`를 보조 모드로 사용합니다. 이 모드는 Jarvis 기본 역할을 덮어쓰지 않고 Decision Log, SSOT 식별자, MVP 캡슐, IA(정보설계), 스택 결정 프로토콜을 추가합니다. 단순 파일 수정, 작은 버그 수정, 이미 결정된 구현 작업에는 적용하지 않습니다.
 
 의미 있는 작업 요청에서는 필요 시 `dashboards/agent-assignment-dashboard.html` 기준으로 Agent Assignment Preview를 텍스트로 안내합니다. 이 안내에는 요청 요약, To, CC, Risk, Expected Outputs, 다음 액션이 포함됩니다.
 

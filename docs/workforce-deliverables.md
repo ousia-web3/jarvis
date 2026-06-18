@@ -10,13 +10,17 @@
 - 핵심 관찰
 - Data에게 전달할 분석 가능한 구조
 
-## Joi 에이전트: UX/UI
+## Joi 에이전트: UX/UI · IA
 
+- 정보설계(IA) Brief (`templates/ia-brief-template.md`)
+- 사이트맵(Site Map)과 콘텐츠 계층
+- 내비게이션 모델(GNB, LNB, Footer, 앵커, 검색)
+- 라벨 사전(메뉴·CTA 표준 명칭)
 - 사용자 페르소나별 흐름
 - 핵심 화면 구조
 - CTA 위치와 전환 순간
-- 사용성 리스크
-- TARS 구현 검토 기준
+- IA·사용성 리스크
+- TARS 구현 검토 기준(IA·UX Brief 준수)
 
 ## TARS 에이전트: 개발
 

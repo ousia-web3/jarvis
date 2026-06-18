@@ -129,7 +129,7 @@
 
 - 에이전트 팀 오케스트레이션: `../skills/agent-team-orchestration/SKILL.md`
 - Jarvis Design Review Mode: `../skills/jarvis-design-review/SKILL.md`
-  - 신규 MVP, 고위험 기능, 아키텍처 결정, 7개 문서 산출이 필요한 경우에만 사용한다.
+  - 신규 MVP, 고위험 기능, 아키텍처 결정, 8개 문서(PRD, TRD, IA, User Flow, ERD, Design System, TASKS, Coding Convention) 산출이 필요한 경우에만 사용한다.
   - Jarvis 기본 역할을 덮어쓰지 않고 Decision Log, SSOT, MVP 캡슐, 스택 결정 프로토콜을 보조 모드로 제공한다.
 
 ## 기본 실행 순서

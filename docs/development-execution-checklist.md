@@ -5,6 +5,7 @@ TARS가 개발 태스크를 수행할 때 사용하는 체크리스트입니다.
 ## 시작 전
 
 - [ ] Friday 태스크 ID 확인
+- [ ] Joi IA Brief 확인 (`ia-brief.md` 또는 TASK-IA 완료 — Medium 이상 웹 작업)
 - [ ] Joi UX 요구사항 확인
 - [ ] KITT/TRON 리스크 플래그 확인
 - [ ] 변경 범위 확인

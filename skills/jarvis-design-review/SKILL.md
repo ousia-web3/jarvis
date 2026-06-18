@@ -1,6 +1,6 @@
 ---
 name: jarvis-design-review
-description: Jarvis가 신규 MVP, 고위험 기능, 아키텍처 결정, 대규모 문서화 작업을 설계 인터뷰/리뷰 모드로 진행할 때 사용한다. 기본 Jarvis 지휘 역할을 대체하지 않고 보조 모드로 작동하며, Decision Log, SSOT 식별자, MVP 캡슐, 스택 결정 프로토콜, 7개 문서 산출을 다룬다.
+description: Jarvis가 신규 MVP, 고위험 기능, 아키텍처 결정, 대규모 문서화 작업을 설계 인터뷰/리뷰 모드로 진행할 때 사용한다. 기본 Jarvis 지휘 역할을 대체하지 않고 보조 모드로 작동하며, Decision Log, SSOT 식별자, MVP 캡슐, 스택 결정 프로토콜, 8개 문서 산출을 다룬다.
 ---
 
 # Jarvis 설계 리뷰 모드
@@ -23,7 +23,7 @@ description: Jarvis가 신규 MVP, 고위험 기능, 아키텍처 결정, 대규
 - PRD를 TRD, TASKS, 데이터 설계까지 확장해야 하는 작업
 - 보안, 개인정보, 결제, 금융, 법무, 외부 배포가 포함된 고위험 작업
 - 기술 스택, 아키텍처, 권한 모델, 데이터 수명주기를 결정해야 하는 작업
-- 사용자가 명시적으로 "설계 리뷰", "Design Review", "7개 문서", "MVP 캡슐", "Decision Log"를 요청한 경우
+- 사용자가 명시적으로 "설계 리뷰", "Design Review", "8개 문서", "7개 문서", "MVP 캡슐", "Decision Log"를 요청한 경우
 
 ## 비트리거
 
@@ -49,7 +49,7 @@ description: Jarvis가 신규 MVP, 고위험 기능, 아키텍처 결정, 대규
 - TARS: TRD, 아키텍처, 모듈 경계, 구현 가능성 검토
 - Data: 지표, 실험 설계, 데이터 품질, KPI 검증
 - KITT/TRON: 보안, 개인정보, 법무, API 약관, 외부 공개 리스크
-- Joi: User Flow, Design System, UX 리스크
+- Joi: Information Architecture(IA), User Flow, Design System, UX·IA 리스크
 - C3PO: PRD 문장, 사용자 커뮤니케이션, 오해 방지 표현
 - Human Conductor: 최종 스택, MVP 범위, 고위험 승격 승인
 
@@ -68,7 +68,7 @@ description: Jarvis가 신규 MVP, 고위험 기능, 아키텍처 결정, 대규
 - `RISK-#`: 리스크 항목
 - `TASK-###`: 실행 태스크
 
-같은 식별자는 PRD, TRD, User Flow, ERD, TASKS, 테스트/인수 기준에서 동일하게 사용한다.
+같은 식별자는 PRD, TRD, IA, User Flow, ERD, TASKS, 테스트/인수 기준에서 동일하게 사용한다.
 
 ## MVP 캡슐
 
@@ -93,7 +93,8 @@ MVP가 확정되면 아래 12줄을 모든 주요 문서 상단에 반복한다.
 
 - 프로젝트 이름, 한 줄 설명, 배경
 - 타깃 사용자와 시나리오 Top 3
-- MVP must-have와 Non-goals
+- MVP must-have 페이지/섹션과 Non-goals
+- 초기 사이트맵 초안과 내비게이션 우선순위(탐색 vs 검색)
 - 노스스타와 입력 지표
 - 경쟁/레퍼런스/피하고 싶은 것
 - 출시 목표일, 기간, 예산, 인력 제약
@@ -125,16 +126,19 @@ MVP가 확정되면 아래 12줄을 모든 주요 문서 상단에 반복한다.
 - PR 리뷰와 브랜치 전략
 - 릴리스/버전 정책
 
-## 7개 산출 문서
+## 8개 산출 문서
 
 설계 라운드가 완료되면 필요에 따라 아래 문서를 생성한다.
 
 1. PRD
 2. TRD
-3. User Flow(Mermaid)
-4. Database Design(Mermaid ERD)
-5. Design System
-6. TASKS
-7. Coding Convention & AI Collaboration Guide
+3. Information Architecture (`templates/ia-brief-template.md` — Site Map, Content Hierarchy, Navigation Model, Label Dictionary)
+4. User Flow(Mermaid)
+5. Database Design(Mermaid ERD)
+6. Design System
+7. TASKS
+8. Coding Convention & AI Collaboration Guide
+
+웹 UI·다페이지·공개 서비스가 포함되면 3번 IA는 생략하지 않는다. API-only·CLI·단일 배치 작업처럼 사용자 탐색 구조가 없으면 IA 문서를 축약하거나 `N/A`로 표시한다.
 
 젬스 또는 기존 지식 샘플이 제공되면 우선 반영하고, 없으면 일반 모범 사례 기반으로 작성했다고 명시한다.

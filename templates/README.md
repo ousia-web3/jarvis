@@ -7,7 +7,8 @@
 - `simple-start-request.md`: 사용자가 짧은 요청만 입력해도 시작할 수 있는 규칙
 - `human-brief-template.md`: Human Brief 초안 양식
 - `jarvis-command-protocol.md`: Jarvis 전략 브리프 양식
-- `friday-task-breakdown-template.md`: Friday 태스크 분해 양식
+- `friday-task-breakdown-template.md`: Friday 태스크 분해 양식(웹서비스 TASK-IA 체인 포함)
+- `ia-brief-template.md`: 웹서비스 정보설계(IA) Brief 양식
 - `specialized-agent-call-card.md`: 전문 스킬/에이전트 호출 카드
 - `risk-shield-review-template.md`: KITT/TRON, Data, Diagnostic Agent의 독립 리스크 검토 양식
 - `evidence-manifest-template.md`: 산출물, 실행 명령, 검증 결과, 한계와 리스크 목록
