@@ -1,6 +1,6 @@
 # Jarvis AI 에이전트 팀 문서
 
-이 폴더는 AI 에이전트 팀 기반 자율 협업 시스템을 설명하는 PRD, TASK, 운영 문서, 리스크 게이트, 원본/추출 리소스를 담고 있습니다. 아키텍처, 에이전트 지침, 템플릿, 스킬형 지침은 프로젝트 루트의 `architecture/`, `agents/`, `templates/`, `skills/`에서 관리합니다.
+이 폴더는 AI 에이전트 팀 기반 자율 협업 시스템을 설명하는 PRD, TASK, 운영 문서, 리스크 게이트, 원본/추출 리소스를 담고 있습니다. 아키텍처, 에이전트 지침, 템플릿, 스킬형 지침은 프로젝트 루트의 `architecture/`, `agents/`, `templates/`, `skills/`, `.agents/skills/`에서 관리합니다.
 
 ## 시작점
 
@@ -98,9 +98,14 @@
 
 ## 분리된 하위 프로젝트
 
+다음 폴더는 Jarvis 운영체계와 분리된 **로컬 전용** 제품·실험 워크스페이스입니다. `ousia-web3/jarvis`에는 올리지 않으며 `.gitignore`로 제외합니다.
+
 - 주식 자동매매 MVP: `../stock-auto-trader/`
   - 코드, 테스트, 설정, 샘플 데이터, 전용 문서는 이 폴더 안에서 독립 관리한다.
   - 실거래, 인증 정보, 계좌 접근은 Human Conductor 승인 전까지 차단한다.
+- 코브랜드 매출 대시보드: `../hnt_cob-brand/`
+- catbook·온톨로지·웹: `../catbook/` (작업 기록은 `../catbook/project-records/work-requests/`)
+- 로컬 전용 패키지: `../packages/`
 
 ## 템플릿
 
