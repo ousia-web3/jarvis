@@ -39,8 +39,10 @@ Jarvis가 직접 처리한다.
 | 태스크 분해, 일정, 책임 배정 | Friday | Jarvis | `friday-task-breakdown-template.md` | `ops` |
 | 시장/고객/경쟁 리서치 | EVE | Data, KITT/TRON | 리서치 브리프, 출처 기록 | `research` |
 | 데이터 분석, 시뮬레이션, KPI | Data | Jarvis, KITT/TRON | `data-analysis-pipeline.md` | `analysis` |
-| 구현, 테스트, 스크립트 | TARS | Data, KITT/TRON | 개발 체크리스트, 테스트 로그 | `implementation` |
-| UX/UI/프론트엔드 경험 | Joi | C3PO, TARS | 디자인 시스템, 사용자 흐름 | `design` |
+| 구현, 테스트, 스크립트, 랜딩·포트폴리오 시각 구현 | TARS | Data, KITT/TRON, Joi | 개발 체크리스트, `docs/design-taste-skill-guide.md`, `.agents/skills/design-taste-frontend/SKILL.md` | `implementation` |
+| UX/UI/프론트엔드 경험, IA, Design QA | Joi | C3PO, TARS | `templates/ia-brief-template.md`, `docs/design-taste-skill-guide.md`, 사용자 흐름 | `design` |
+| 기존 화면 시각 리디자인 | Joi | TARS, C3PO | `.agents/skills/redesign-existing-projects/SKILL.md` | `design` |
+| 브랜드 키트·아이덴티티 보드 | Joi | C3PO | `.agents/skills/brandkit/SKILL.md` | `design` |
 | 문구, 보고, 현지화 | C3PO | Jarvis, KITT/TRON | 완료 보고, 카피 템플릿 | `copy` |
 | 보안, 개인정보, 금융 리스크 | KITT/TRON | Human Conductor | `risk-shield.md` | `risk` |
 | 반복 실패, 과신, 완료 보고 의심 | Diagnostic Agent | Jarvis | `drift-diagnosis-checklist.md` | `diagnostic` |

@@ -39,7 +39,7 @@ cd c:\Users\HANA\Desktop\gemini\jarvis
 powershell -ExecutionPolicy Bypass -File scripts/start-jarvis-request.ps1 -RequestId <request-slug> -Task "<요청 요약>"
 ```
 
-반환된 `url`을 현재 AI툴 브라우저 또는 프리뷰 표면에서 엽니다. 예: Codex Browser `iab`, Cursor 브라우저/프리뷰, Antigravity 브라우저, VS Code Simple Browser/Webview. OS 기본 브라우저 자동 실행은 기본 경로가 아닙니다.
+반환된 `url`을 현재 AI툴 브라우저 또는 프리뷰 표면에서 바로 엽니다. 가능하면 선택된 기존 탭/프리뷰를 재사용하고 별도 `about:blank` 창이나 탭을 먼저 만들지 않습니다. OS 기본 브라우저 자동 실행은 기본 경로가 아닙니다.
 
 수동으로 서버만 켤 때는 프로젝트 루트에서 로컬 HTTP 서버를 실행합니다.
 

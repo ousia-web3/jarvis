@@ -1,0 +1,71 @@
+{
+  "url": "file:///C:/Users/HANA/Desktop/gemini/jarvis/work-requests/2026-06-19-korea-travel-content-service-planning/web/responsive-prototype/index.html",
+  "checks": [
+    {
+      "width": 360,
+      "homeNoHorizontalScroll": true,
+      "exploreNoHorizontalScroll": true,
+      "detailNoHorizontalScroll": true,
+      "filterWorks": true,
+      "homeBarHidden": true,
+      "exploreBarVisible": true,
+      "detailBarHidden": true,
+      "detailHeroHeight": 249
+    },
+    {
+      "width": 390,
+      "homeNoHorizontalScroll": true,
+      "exploreNoHorizontalScroll": true,
+      "detailNoHorizontalScroll": true,
+      "filterWorks": true,
+      "homeBarHidden": true,
+      "exploreBarVisible": true,
+      "detailBarHidden": true,
+      "detailHeroHeight": 272
+    },
+    {
+      "width": 430,
+      "homeNoHorizontalScroll": true,
+      "exploreNoHorizontalScroll": true,
+      "detailNoHorizontalScroll": true,
+      "filterWorks": true,
+      "homeBarHidden": true,
+      "exploreBarVisible": true,
+      "detailBarHidden": true,
+      "detailHeroHeight": 302
+    },
+    {
+      "width": 768,
+      "homeNoHorizontalScroll": true,
+      "exploreNoHorizontalScroll": true,
+      "detailNoHorizontalScroll": true,
+      "filterWorks": true,
+      "homeBarHidden": true,
+      "exploreBarVisible": true,
+      "detailBarHidden": true,
+      "detailHeroHeight": 397
+    },
+    {
+      "width": 1024,
+      "homeNoHorizontalScroll": true,
+      "exploreNoHorizontalScroll": true,
+      "detailNoHorizontalScroll": true,
+      "filterWorks": true,
+      "homeBarHidden": true,
+      "exploreBarVisible": true,
+      "detailBarHidden": true,
+      "detailHeroHeight": 530
+    },
+    {
+      "width": 1280,
+      "homeNoHorizontalScroll": true,
+      "exploreNoHorizontalScroll": true,
+      "detailNoHorizontalScroll": true,
+      "filterWorks": true,
+      "homeBarHidden": true,
+      "exploreBarVisible": true,
+      "detailBarHidden": true,
+      "detailHeroHeight": 666
+    }
+  ]
+}

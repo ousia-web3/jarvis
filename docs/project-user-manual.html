@@ -1439,7 +1439,7 @@ stop
         </div>
       </section>
 
-      <section id="auto-rules" data-search="ide 자동 적용 규칙 agents cursor copilot windsurf cline clinerule skill">
+      <section id="auto-rules" data-search="ide 자동 적용 규칙 agents cursor antigravity codex copilot windsurf cline clinerule skill">
         <h2>1-1. IDE 자동 적용 규칙</h2>
         <p class="section-note">
           이제 사용자는 매번 “문서 먼저 읽고 4단계 아키텍처와 에이전트 역할대로 움직여라”라고 말하지 않아도 됩니다.
@@ -1458,12 +1458,17 @@ stop
             <tr>
               <td>Codex/공통 에이전트</td>
               <td><a href="../AGENTS.md">AGENTS.md</a></td>
-              <td>프로젝트 전체 기본 규칙과 역할 라우팅을 정의합니다.</td>
+              <td>프로젝트 전체 기본 규칙, L0/L1/L2 실행 트랙, 역할 라우팅을 정의하는 SSOT입니다.</td>
             </tr>
             <tr>
               <td>Cursor</td>
               <td><a href="../.cursor/rules/jarvis-agent-team.mdc">jarvis-agent-team.mdc</a></td>
-              <td><code>alwaysApply: true</code>로 워크스페이스 요청마다 Jarvis 운영 규칙을 적용합니다.</td>
+              <td><code>alwaysApply: true</code>로 <code>AGENTS.md</code>와 실행 모드 가이드를 참조합니다.</td>
+            </tr>
+            <tr>
+              <td>Antigravity</td>
+              <td><a href="../.agents/rules/jarvis-agent-team.md">jarvis-agent-team.md</a></td>
+              <td>Always On 규칙으로 <code>AGENTS.md</code>를 SSOT로 참조하고 Antigravity 브라우저/프리뷰 규칙을 적용합니다.</td>
             </tr>
             <tr>
               <td>GitHub Copilot</td>
@@ -1519,8 +1524,13 @@ stop
               <td>IDE 창에 넣을 최소 요청문이 필요할 때</td>
             </tr>
             <tr>
+              <td>실행 모드 선택</td>
+              <td><a href="execution-mode-guide.md">Execution Mode Guide</a></td>
+              <td>L0/L1/L2, Design Review, IA Draft, SI 리서치 깊이를 고를 때</td>
+            </tr>
+            <tr>
               <td>IDE 자동 적용 확인</td>
-              <td><a href="../AGENTS.md">AGENTS.md</a>, <a href="../.clinerules">.clinerules</a>, <a href="../skills/agent-team-orchestration/SKILL.md">SKILL.md</a></td>
+              <td><a href="../AGENTS.md">AGENTS.md</a>, <a href="../.cursor/rules/jarvis-agent-team.mdc">Cursor Rule</a>, <a href="../.agents/rules/jarvis-agent-team.md">Antigravity Rule</a>, <a href="../skills/agent-team-orchestration/SKILL.md">SKILL.md</a></td>
               <td>새 세션에서도 Jarvis 운영 규칙이 기본값으로 적용되는지 확인할 때</td>
             </tr>
             <tr>
@@ -1599,6 +1609,7 @@ stop
 |-- README.md
 |-- .gitignore
 |-- .cursor/rules/jarvis-agent-team.mdc
+|-- .agents/rules/jarvis-agent-team.md
 |-- .github/copilot-instructions.md
 |-- .clinerules, .clinerule, .windsurfrules
 |-- .playwright-mcp/      (브라우저 검증 생성물, 추적 제외)
@@ -2773,7 +2784,7 @@ Deadline: 배포 전</code></pre>
             <tr>
               <td>IDE가 매번 “문서를 먼저 읽으라”는 지시를 요구한다</td>
               <td>새 세션에서 프로젝트 규칙 파일을 로드하지 못했거나 워크스페이스 루트가 다름</td>
-              <td>워크스페이스 루트가 <code>jarvis</code>인지 확인하고, <code>AGENTS.md</code>, <code>.cursor/rules/jarvis-agent-team.mdc</code>, <code>.clinerules</code>, <code>.clinerule</code>이 있는지 확인한 뒤 세션을 새로 시작합니다.</td>
+              <td>워크스페이스 루트가 <code>jarvis</code>인지 확인하고, <code>AGENTS.md</code>, <code>.cursor/rules/jarvis-agent-team.mdc</code>, <code>.agents/rules/jarvis-agent-team.md</code>, <code>.clinerules</code>, <code>.clinerule</code>이 있는지 확인한 뒤 세션을 새로 시작합니다.</td>
             </tr>
           </tbody>
         </table>
@@ -2855,6 +2866,7 @@ Deadline: 배포 전</code></pre>
             <ul class="file-list">
               <li><a href="../AGENTS.md">AGENTS.md</a></li>
               <li><a href="../.cursor/rules/jarvis-agent-team.mdc">Cursor Rule</a></li>
+              <li><a href="../.agents/rules/jarvis-agent-team.md">Antigravity Rule</a></li>
               <li><a href="../.github/copilot-instructions.md">Copilot Instructions</a></li>
               <li><a href="../.windsurfrules">Windsurf Rules</a></li>
               <li><a href="../.clinerules">Cline Rules</a></li>

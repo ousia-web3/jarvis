@@ -1,0 +1,47 @@
+{
+  "url": "file:///C:/Users/HANA/Desktop/gemini/jarvis/work-requests/2026-06-19-korea-travel-content-service-planning/web/responsive-prototype/index.html",
+  "checks": [
+    {
+      "width": 390,
+      "home": {
+        "cards": 6,
+        "sourceCount": "80",
+        "contentCount": "80",
+        "noHorizontalScroll": true
+      },
+      "explore": {
+        "cards": 80,
+        "countText": "메타 기반 콘텐츠 후보 80개 / 원천 영상 80개",
+        "firstTitle": "전소미 동생 에블린과 아빠 메튜의 부산 힐링 코스 ㅎㅎ 원각사 녹차 밭에서 채엽하고 공양 먹…",
+        "noHorizontalScroll": true
+      },
+      "detail": {
+        "title": "크 이거지~ 아빠랑 아들 데칼코마니 리액션 절로 나오는 지리산 토종닭 먹방!",
+        "facts": 6,
+        "sourceHref": "https://www.youtube.com/watch?v=yGQOXeXdUgU",
+        "noHorizontalScroll": true
+      }
+    },
+    {
+      "width": 1280,
+      "home": {
+        "cards": 6,
+        "sourceCount": "80",
+        "contentCount": "80",
+        "noHorizontalScroll": true
+      },
+      "explore": {
+        "cards": 80,
+        "countText": "메타 기반 콘텐츠 후보 80개 / 원천 영상 80개",
+        "firstTitle": "전소미 동생 에블린과 아빠 메튜의 부산 힐링 코스 ㅎㅎ 원각사 녹차 밭에서 채엽하고 공양 먹…",
+        "noHorizontalScroll": true
+      },
+      "detail": {
+        "title": "크 이거지~ 아빠랑 아들 데칼코마니 리액션 절로 나오는 지리산 토종닭 먹방!",
+        "facts": 6,
+        "sourceHref": "https://www.youtube.com/watch?v=yGQOXeXdUgU",
+        "noHorizontalScroll": true
+      }
+    }
+  ]
+}

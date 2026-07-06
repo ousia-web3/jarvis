@@ -1,0 +1,4123 @@
+window.TRIP_ATLAS_DB = {
+  "meta": {
+    "requestId": "2026-06-19-korea-travel-content-service-planning",
+    "source": "https://www.youtube.com/@hello1stkorea/videos",
+    "extractor": "python -m yt_dlp --flat-playlist --playlist-end 80 --dump-json",
+    "rawVideoCount": 80,
+    "contentItemCount": 80,
+    "queryObservationCount": 1,
+    "thumbnailPolicy": "reference-only; UI uses placeholder only"
+  },
+  "sourceVideos": [
+    {
+      "sourceVideoId": "23PwuVVjUSw",
+      "episode": "EP.265",
+      "playlistIndex": 1,
+      "title": "우리 소고기는 안 이런데 ㅠㅠ 기깔나는 마블링의 투쁠 한우 먹고 충격 먹은 뉴질랜드인들",
+      "rawTitle": "우리 소고기는 안 이런데 ㅠㅠ 🥩 기깔나는 마블링의 투쁠 한우 먹고 충격 먹은 뉴질랜드인들😲 | #어서와한국은처음이지 | EP.265",
+      "sourceUrl": "https://www.youtube.com/watch?v=23PwuVVjUSw",
+      "durationSeconds": 749.0,
+      "durationString": "12:29",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/23PwuVVjUSw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAacRv3dFdtsDM7oQGGxChLB1Bicw",
+        "https://i.ytimg.com/vi/23PwuVVjUSw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD9Uw7YYUo7acc93cFhQtMOANLnzQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "n57JCWygjpE",
+      "episode": "EP.210",
+      "playlistIndex": 2,
+      "title": "통닭 트럭 사장님 초상화전기 통닭 선물 교환!? 진짜 한국을 포착하는 K-초상화가 아론과 치킨맨의 이야기",
+      "rawTitle": "🍗통닭 트럭 사장님 초상화🔁전기 통닭 선물 교환!?🎨 진짜 한국을 포착하는 K-초상화가 아론과 치킨맨의 이야기 | #어서와한국은처음이지 | EP.210",
+      "sourceUrl": "https://www.youtube.com/watch?v=n57JCWygjpE",
+      "durationSeconds": 1177.0,
+      "durationString": "19:37",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/n57JCWygjpE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0RhJ8Oa3LFzrocYmcMd2cgO3MnQ",
+        "https://i.ytimg.com/vi/n57JCWygjpE/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAGjcs2S27LygsDaYmGjuidEuM3zQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "P6X-bqdFVFM",
+      "episode": "EP.217",
+      "playlistIndex": 3,
+      "title": "주모~ 나 오늘 집 못 가! 직접 담근 막걸리에 퓨전 안주 한상차림 (by. 미쉐* 셰프)",
+      "rawTitle": "주모~ 나 오늘 집 못 가!🥴 직접 담근 막걸리에 퓨전 안주 한상차림💦 (by. 미쉐* 셰프) | #어서와한국은처음이지 | EP.217",
+      "sourceUrl": "https://www.youtube.com/watch?v=P6X-bqdFVFM",
+      "durationSeconds": 1427.0,
+      "durationString": "23:47",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/P6X-bqdFVFM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCUZe_xoGNOW8_ZhaEFY4IR5mTZqg",
+        "https://i.ytimg.com/vi/P6X-bqdFVFM/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAhfmpmBz3F1QU6rrqDJMqLP5xa_g"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "APv9NSAcqpY",
+      "episode": "EP.434",
+      "playlistIndex": 4,
+      "title": "어디서도 못 듣는 역사 강의부터 먹방 팁까지 ㅋㅋ 한국학 피터슨 교수의 썸머스쿨 조회수 TOP3",
+      "rawTitle": "[하이라이트] 어디서도 못 듣는 역사 강의부터 먹방 팁까지 ㅋㅋ 한국학 피터슨 교수의 썸머스쿨 조회수 TOP3♥ | #어서와한국은처음이지 | EP.434",
+      "sourceUrl": "https://www.youtube.com/watch?v=APv9NSAcqpY",
+      "durationSeconds": 1631.0,
+      "durationString": "27:11",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/APv9NSAcqpY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDKEBZZtOvcKAWdt3Idxn5nf05ibw",
+        "https://i.ytimg.com/vi/APv9NSAcqpY/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBhqA0zp0bOL14Y1ybYlPal009xzw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "FADpCjHSRuM",
+      "episode": "EP.434",
+      "playlistIndex": 5,
+      "title": "한국학 전공자들은 쌈 먹방도 다르다? 5종 김치와 함께하는 ㄹㅈㄷ 보쌈 먹방! (+원쌈 원바이트)",
+      "rawTitle": "[하이라이트] 한국학 전공자들은 쌈 먹방도 다르다?🤩 5종 김치와 함께하는 ㄹㅈㄷ 보쌈 먹방! (+원쌈 원바이트) | #어서와한국은처음이지 | EP.434",
+      "sourceUrl": "https://www.youtube.com/watch?v=FADpCjHSRuM",
+      "durationSeconds": 911.0,
+      "durationString": "15:11",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/FADpCjHSRuM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBPh836t3it66RVdTw8MTE7HQQaTA",
+        "https://i.ytimg.com/vi/FADpCjHSRuM/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC_g8AV7oB4reVZ9fY9jfvUiueFvQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "JrzgxThoW4c",
+      "episode": "EP.434",
+      "playlistIndex": 6,
+      "title": "K-전문가 피터슨 교수의 서울 도슨트~ 청계천의 변천사까지 투어버스로 서울 나들이!",
+      "rawTitle": "[하이라이트] K-전문가 피터슨 교수의 서울 도슨트~ 청계천의 변천사까지 투어버스로 서울 나들이!🚌 | #어서와한국은처음이지 | EP.434",
+      "sourceUrl": "https://www.youtube.com/watch?v=JrzgxThoW4c",
+      "durationSeconds": 1465.0,
+      "durationString": "24:25",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/JrzgxThoW4c/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAEZEZTESZv7jZU1TLAds8pOcqtJw",
+        "https://i.ytimg.com/vi/JrzgxThoW4c/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAZFZwcEpB7Xe26paLEiDxUzCtGXQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "rUzkUn7GX1Y",
+      "episode": "EP.246",
+      "playlistIndex": 7,
+      "title": "누구보다 학생들을 사랑하는 참스승 제임스! 탈북민 영어 교사 제임스의 하루~",
+      "rawTitle": "💌누구보다 학생들을 사랑하는 참스승 제임스!💌 탈북민 영어 교사 제임스의 하루~ | #어서와한국은처음이지 | EP.246",
+      "sourceUrl": "https://www.youtube.com/watch?v=rUzkUn7GX1Y",
+      "durationSeconds": 1618.0,
+      "durationString": "26:58",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/rUzkUn7GX1Y/hqdefault_custom_2.jpg?sqp=CNi1kdIG-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBK8793iuB-33eogRMxC9SRjafM_g",
+        "https://i.ytimg.com/vi/rUzkUn7GX1Y/hqdefault_custom_2.jpg?sqp=CNi1kdIG-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDFjCmI2-7f_aNLCYbHmQuLRbcJCQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "PZHYBCahhng",
+      "episode": "EP.92",
+      "playlistIndex": 8,
+      "title": "'이게 10분 만에 된다고?' 외국인들 한국와서 깜짝 놀란 K-초스피드 모음집| EP.92외",
+      "rawTitle": "'이게 10분 만에 된다고?' 외국인들 한국와서 깜짝 놀란 K-초스피드 모음집 | #어서와한국은처음이지 | EP.92외",
+      "sourceUrl": "https://www.youtube.com/watch?v=PZHYBCahhng",
+      "durationSeconds": 1151.0,
+      "durationString": "19:11",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/PZHYBCahhng/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBLCgyg7oUw_k4byCSrI96bcvcArw",
+        "https://i.ytimg.com/vi/PZHYBCahhng/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDxpfHRm6bpbJPLrJBputgtzkzSZw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "qd-NiT8AAR0",
+      "episode": "EP.434",
+      "playlistIndex": 9,
+      "title": "뼈가 통째로 들어가 있네?? 국적 불문 아재들 입맛 저격 ㅋㅋㅋ 뼈해장국 X 순대국 먹방!",
+      "rawTitle": "[하이라이트] 뼈가 통째로 들어가 있네??😳 국적 불문 아재들 입맛 저격 ㅋㅋㅋ 뼈해장국 X 순대국 먹방! | #어서와한국은처음이지 | EP.434",
+      "sourceUrl": "https://www.youtube.com/watch?v=qd-NiT8AAR0",
+      "durationSeconds": 1116.0,
+      "durationString": "18:36",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/qd-NiT8AAR0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAuk38m2jrJlSve_2oPAFdRnWjPOQ",
+        "https://i.ytimg.com/vi/qd-NiT8AAR0/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDXc_XBN0XWj_qDfuAWOaF3-4W7pA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "PgZPx3aF9AI",
+      "episode": "EP.215",
+      "playlistIndex": 10,
+      "title": "캬~ 족발은 이렇게 뜯어야지 ㅋㅋ 직접 장 봐서 푹 삶은 쫄깃 한방 통족발 먹방! (ft. 돼지꼬리, 부속고기, 매운 김치)",
+      "rawTitle": "캬~ 족발은 이렇게 뜯어야지 ㅋㅋ 😆 직접 장 봐서 푹 삶은 쫄깃 한방 통족발 먹방!🐖 (ft. 돼지꼬리, 부속고기, 매운 김치) | #어서와한국은처음이지 | EP.215",
+      "sourceUrl": "https://www.youtube.com/watch?v=PgZPx3aF9AI",
+      "durationSeconds": 1990.0,
+      "durationString": "33:10",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/PgZPx3aF9AI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCFM7T99Z9elrs2QzmMX887K9CHpg",
+        "https://i.ytimg.com/vi/PgZPx3aF9AI/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD9qgv9ne6z_3kfUI0N2VmTDAzwwg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "KF_U3hWV1Ds",
+      "episode": "EP.8",
+      "playlistIndex": 11,
+      "title": "경주에서 만난 독일 음식~? 'K-카레소시지'를 맛본 독일인의 반응은??",
+      "rawTitle": "경주에서 만난 독일 음식~?😮 'K-카레소시지'를 맛본 독일인의 반응은?? | #어서와한국은처음이지 | EP.8",
+      "sourceUrl": "https://www.youtube.com/watch?v=KF_U3hWV1Ds",
+      "durationSeconds": 895.0,
+      "durationString": "14:55",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/KF_U3hWV1Ds/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDCqSem_6U_hz-q2PnDNLNdOB3V1g",
+        "https://i.ytimg.com/vi/KF_U3hWV1Ds/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAX9CchZ5hw0gxnersnnis3MkjivA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "Uhztkt9kwfw",
+      "episode": "EP.434",
+      "playlistIndex": 12,
+      "title": "일제강점기부터 6.25 속 감동적인 일화들 피터슨 교수 전쟁기념관 특강",
+      "rawTitle": "[하이라이트] 🥺일제강점기부터 6.25 속 감동적인 일화들🥺 피터슨 교수 전쟁기념관 특강 | #어서와한국은처음이지 | EP.434",
+      "sourceUrl": "https://www.youtube.com/watch?v=Uhztkt9kwfw",
+      "durationSeconds": 1302.0,
+      "durationString": "21:42",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/Uhztkt9kwfw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCiqKN2bxftGtFehF1rh6hzjJ342A",
+        "https://i.ytimg.com/vi/Uhztkt9kwfw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDD_bVKrrLuwHcCgbbyuhoMUzuVxw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "463mYYx4Oo4",
+      "episode": "EP.434",
+      "playlistIndex": 13,
+      "title": "[요약] 한국학 연구 60년 피터슨 교수가 전쟁기념관에서 들려주는 6.25 이야기! (ft. 먹방+시티투어) 피터슨 교수 2편 요약︎",
+      "rawTitle": "[요약] 한국학 연구 60년 피터슨 교수가 전쟁기념관에서 들려주는 6.25 이야기! (ft. 먹방+시티투어) 피터슨 교수 2편 요약♥︎ | #어서와한국은처음이지 | EP.434",
+      "sourceUrl": "https://www.youtube.com/watch?v=463mYYx4Oo4",
+      "durationSeconds": 2826.0,
+      "durationString": "47:06",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/463mYYx4Oo4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBhvQw-PnRrw_f2_tHPgN2PLffZFw",
+        "https://i.ytimg.com/vi/463mYYx4Oo4/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC3mw35pb3fC97_W88bGO9KWZ0tEw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "yTBZQXgxoZQ",
+      "episode": "",
+      "playlistIndex": 14,
+      "title": "[미방분] '13척으로 133척 격파요?' 가슴이 웅장해지는 피터슨 교수의 이순신 특강",
+      "rawTitle": "[미방분] '13척으로 133척 격파요?😲' 가슴이 웅장해지는 피터슨 교수의 이순신 특강",
+      "sourceUrl": "https://www.youtube.com/watch?v=yTBZQXgxoZQ",
+      "durationSeconds": 223.0,
+      "durationString": "3:43",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/yTBZQXgxoZQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAPNJuh5Rw7d-Qj2jFbST1Y8sT-iA",
+        "https://i.ytimg.com/vi/yTBZQXgxoZQ/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBxpTzqxxjPg48hA5FPSIHDN91fGw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "yNUrZFtsYq4",
+      "episode": "EP.419",
+      "playlistIndex": 15,
+      "title": "네팔 순수 청년 라이&타망 영혼 탈탈 털어버린 K-놀이동산",
+      "rawTitle": "네팔 순수 청년 라이&타망 영혼 탈탈 털어버린 K-놀이동산 | #어서와한국은처음이지 | EP.419",
+      "sourceUrl": "https://www.youtube.com/watch?v=yNUrZFtsYq4",
+      "durationSeconds": 1472.0,
+      "durationString": "24:32",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/yNUrZFtsYq4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCDbRRBSCOcA8Eg2ti7hglhVaKSyg",
+        "https://i.ytimg.com/vi/yNUrZFtsYq4/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCn03xpLIkcIMcWnVKmHfyHwmwQxg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "-ruU9IkAxCw",
+      "episode": "EP.353",
+      "playlistIndex": 16,
+      "title": "6.25 특집 형제의 나라 그리스, 한국 전쟁을 기리기 위해 대한민국 방문한 그리스인 (+참전 용사가 들려주는 그날)",
+      "rawTitle": "🌺6.25 특집🌺 형제의 나라 그리스, 한국 전쟁을 기리기 위해 대한민국 방문한 그리스인 (+참전 용사가 들려주는 그날) | #어서와한국은처음이지 | EP.353",
+      "sourceUrl": "https://www.youtube.com/watch?v=-ruU9IkAxCw",
+      "durationSeconds": 2798.0,
+      "durationString": "46:38",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/-ruU9IkAxCw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBMp4gJb6gASdSiYINQ3XtY8ukFhA",
+        "https://i.ytimg.com/vi/-ruU9IkAxCw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAjyVewoOCyonN43-jtUihkTcp3eA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "CCZwfQ37Ba8",
+      "episode": "EP.56",
+      "playlistIndex": 17,
+      "title": "잊어선 안 되는 형제의 나라 터키와 6.25, UN 추모 공원을 찾은 터키인들",
+      "rawTitle": "잊어선 안 되는 형제의 나라 터키와 6.25, UN 추모 공원을 찾은 터키인들 | #어서와한국은처음이지 | EP.56",
+      "sourceUrl": "https://www.youtube.com/watch?v=CCZwfQ37Ba8",
+      "durationSeconds": 657.0,
+      "durationString": "10:57",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/CCZwfQ37Ba8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCZqZ0b6Lq_H-6K-SGb-Fo1NO2FZw",
+        "https://i.ytimg.com/vi/CCZwfQ37Ba8/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAY_oKaHAGS6DNIYcULuOA9PRlBeA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "nxN4MjN3lpA",
+      "episode": "EP.89",
+      "playlistIndex": 18,
+      "title": "'생각보다 평범한데?' 닭한마리 필살 양념에 푹 찍어 먹고 바로 장화 신은 고양이로 돌변한 남아공 사람들 ㅋㅋ",
+      "rawTitle": "'생각보다 평범한데?🤔' 닭한마리 필살 양념에 푹 찍어 먹고 바로 장화 신은 고양이로 돌변한 남아공 사람들 ㅋㅋ😻 | #어서와한국은처음이지 | EP.89",
+      "sourceUrl": "https://www.youtube.com/watch?v=nxN4MjN3lpA",
+      "durationSeconds": 1060.0,
+      "durationString": "17:40",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/nxN4MjN3lpA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDeDLRgTbyICdZJhzlYV9Ih_VmKIQ",
+        "https://i.ytimg.com/vi/nxN4MjN3lpA/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDBX5UEXTzmVfNpOCyvKjW7Ry0TXw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864846
+    },
+    {
+      "sourceVideoId": "aNZ3oQPsjW8",
+      "episode": "EP.136",
+      "playlistIndex": 19,
+      "title": "'한국살이란 말이야~' 후배들 기강 제대로 잡는 스윗한 외국인 선배",
+      "rawTitle": "'한국살이란 말이야~' 후배들 기강 제대로 잡는 스윗한 외국인 선배💌 | #어서와한국은처음이지 | EP.136",
+      "sourceUrl": "https://www.youtube.com/watch?v=aNZ3oQPsjW8",
+      "durationSeconds": 659.0,
+      "durationString": "10:59",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/aNZ3oQPsjW8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCBfv_M79DGVobLxvore9WKnaQnLA",
+        "https://i.ytimg.com/vi/aNZ3oQPsjW8/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC87QgyUjvNxu12VDnra5ajPfJKHg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "amdRhCahnEQ",
+      "episode": "EP.371",
+      "playlistIndex": 20,
+      "title": "슈퍼P 외국인 유학생들끼리 떠난 즉흥 김해 여행 우여곡절 끝에 먹는 김해 뒷고기의 맛은?",
+      "rawTitle": "🚌슈퍼P 외국인 유학생들끼리 떠난 즉흥 김해 여행🚌 우여곡절 끝에 먹는 김해 뒷고기의 맛은🐽? | #어서와한국은처음이지 | EP.371",
+      "sourceUrl": "https://www.youtube.com/watch?v=amdRhCahnEQ",
+      "durationSeconds": 1568.0,
+      "durationString": "26:08",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/amdRhCahnEQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB2lz_4VJ3_iAP8HOjmfs5wN4Xg6w",
+        "https://i.ytimg.com/vi/amdRhCahnEQ/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCeLdoSdUAQyumeC9BQ6R6F4fI45g"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "VX8NiqSO22Y",
+      "episode": "EP.231",
+      "playlistIndex": 21,
+      "title": "미국 브랜든 가족의 첫 K-돌잔치 준비! 과연 돌잡이 결과는 ??",
+      "rawTitle": "미국 브랜든 가족의 첫 K-돌잔치 준비!👶 과연 돌잡이 결과는 ?? | #어서와한국은처음이지 | EP.231",
+      "sourceUrl": "https://www.youtube.com/watch?v=VX8NiqSO22Y",
+      "durationSeconds": 1581.0,
+      "durationString": "26:21",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/VX8NiqSO22Y/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBxvgKsX8sVKnjcKuh48oMM18KyOg",
+        "https://i.ytimg.com/vi/VX8NiqSO22Y/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC1bvVWrqrwmKb9XtADhB4KIb_AyA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "3E2H1zeccwA",
+      "episode": "EP.233",
+      "playlistIndex": 22,
+      "title": "뭐 만 원으로 서울에서 세 끼 해결하기?? S대 외국인들의 만 원 세 끼!",
+      "rawTitle": "뭐 만 원으로 서울에서 세 끼 해결하기??😲 S대 외국인들의 만 원 세 끼! | #어서와한국은처음이지 | EP.233",
+      "sourceUrl": "https://www.youtube.com/watch?v=3E2H1zeccwA",
+      "durationSeconds": 1598.0,
+      "durationString": "26:38",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/3E2H1zeccwA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAf1Tt2xm2C91e7Izb1ySesKCyQyw",
+        "https://i.ytimg.com/vi/3E2H1zeccwA/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAVsPsHBnOJPR2zHbrQDf-OlNTt8w"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "S0Jn_RM0zOE",
+      "episode": "EP.432",
+      "playlistIndex": 23,
+      "title": "제작진에게 직접 연락 한 하버드 박사?? 한국학 피터슨 교수의 썸머스쿨 조회수 TOP3",
+      "rawTitle": "[하이라이트] 제작진에게 직접 연락 한 하버드 박사??  한국학 피터슨 교수의 썸머스쿨 조회수 TOP3♥ | #어서와한국은처음이지 | EP.432",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0Jn_RM0zOE",
+      "durationSeconds": 2282.0,
+      "durationString": "38:02",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/S0Jn_RM0zOE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA1LuuolA52GjvRkv0vNBcJLVEQMw",
+        "https://i.ytimg.com/vi/S0Jn_RM0zOE/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCblr1kxsYQsGb-pvlt9s52ONUZ3Q"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "ay6WBc2hfJA",
+      "episode": "EP.433",
+      "playlistIndex": 24,
+      "title": "한국인들도 잘 모르는 걸ㄷㄷ‍ 하버드 한국학 교수에게 듣는 한국 알쓸신잡! 피터슨 교수님의 K-변천사 특강!",
+      "rawTitle": "[하이라이트] 한국인들도 잘 모르는 걸ㄷㄷ👨‍🏫 하버드 한국학 교수에게 듣는 한국 알쓸신잡! 피터슨 교수님의 K-변천사 특강! | #어서와한국은처음이지 | EP.433",
+      "sourceUrl": "https://www.youtube.com/watch?v=ay6WBc2hfJA",
+      "durationSeconds": 1139.0,
+      "durationString": "18:59",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/ay6WBc2hfJA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBBQ409jzJJcHG1ivhxTlSaqzdApQ",
+        "https://i.ytimg.com/vi/ay6WBc2hfJA/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB-8YRqLzrBKK2TXU1aoXYx5ODfrA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "V_KGifdiXrE",
+      "episode": "EP.433",
+      "playlistIndex": 25,
+      "title": "\"게장 젓가락으로 먹으면 위반?\" 한국 연구한 세월만 60년, 처음으로 게장 제대로 먹는 법 전수받은 피터슨 교수 ㅋㅋ",
+      "rawTitle": "[하이라이트] \"게장 젓가락으로 먹으면 위반?😳\" 한국 연구한 세월만 60년, 처음으로 게장 제대로 먹는 법 전수받은 피터슨 교수 ㅋㅋ | #어서와한국은처음이지 | EP.433",
+      "sourceUrl": "https://www.youtube.com/watch?v=V_KGifdiXrE",
+      "durationSeconds": 1323.0,
+      "durationString": "22:03",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/V_KGifdiXrE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC-zDkoP4bykTbNas15IxAh8W04Gw",
+        "https://i.ytimg.com/vi/V_KGifdiXrE/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDBauEEHHpZT2mfM8ZkGn9s3l8Q7Q"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "-w9FdEdffxA",
+      "episode": "EP.66",
+      "playlistIndex": 26,
+      "title": "\"왜 한국인들은 한 줄로 안 기다려??\" 반달 모양의 K-대기줄에 숨겨진 비밀을 알아버린 스웨덴 삼총사 ㅋㅋ",
+      "rawTitle": "\"왜 한국인들은 한 줄로 안 기다려??🤨\" 반달 모양의 K-대기줄에 숨겨진 비밀을 알아버린 스웨덴 삼총사 ㅋㅋ | #어서와한국은처음이지 | EP.66",
+      "sourceUrl": "https://www.youtube.com/watch?v=-w9FdEdffxA",
+      "durationSeconds": 803.0,
+      "durationString": "13:23",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/-w9FdEdffxA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAVTEOmw_5NQB1dKHAuxbm_Yo7A4g",
+        "https://i.ytimg.com/vi/-w9FdEdffxA/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCLtYZOytUEuaSHUfVe7Gny2NAVvA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "fGMTI1TcNm4",
+      "episode": "EP.261",
+      "playlistIndex": 27,
+      "title": "오동통 살이 꽉~ 찬 K-대게찜에 제대로 반해 버린 외국인들",
+      "rawTitle": "오동통 살이 꽉~ 찬 K-대게찜에 제대로 반해 버린 외국인들🦀🔥| #어서와한국은처음이지 | EP.261",
+      "sourceUrl": "https://www.youtube.com/watch?v=fGMTI1TcNm4",
+      "durationSeconds": 945.0,
+      "durationString": "15:45",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/fGMTI1TcNm4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBpAygB7XzWTuIafP5sKrLrOZbanQ",
+        "https://i.ytimg.com/vi/fGMTI1TcNm4/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLANH5-NTU-mt4Y613Dfh0QWR7GUxg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "z_bAltbrBJY",
+      "episode": "EP.433",
+      "playlistIndex": 28,
+      "title": "\"여기 한국 맞아?\" 27년 후 다시 찾은 한국, 근데 달라도 너무 다르다?! 인천 공항 보고 놀란 피터슨 교수와 제자들",
+      "rawTitle": "[하이라이트] \"여기 한국 맞아?😱\" 27년 후 다시 찾은 한국, 근데 달라도 너무 다르다?! 인천 공항 보고 놀란 피터슨 교수와 제자들 | #어서와한국은처음이지 | EP.433",
+      "sourceUrl": "https://www.youtube.com/watch?v=z_bAltbrBJY",
+      "durationSeconds": 778.0,
+      "durationString": "12:58",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/z_bAltbrBJY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCE-rGqHyhE7lOsKQ5jMWVgMGyreA",
+        "https://i.ytimg.com/vi/z_bAltbrBJY/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBQCzRxUGukmrxOjPf9RgIwQfUvJw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "fGDRHl8kH3s",
+      "episode": "EP.233",
+      "playlistIndex": 29,
+      "title": "5년간 몸담았던 한국 안녕 K-이웃에게 작별 선물 주려고 백김치 직접 담근 다섯 가족 (+자필 편지)",
+      "rawTitle": "5년간 몸담았던 한국 안녕🥺 K-이웃에게 작별 선물 주려고 백김치 직접 담근 다섯 가족 (+자필 편지) | #어서와한국은처음이지 | EP.233",
+      "sourceUrl": "https://www.youtube.com/watch?v=fGDRHl8kH3s",
+      "durationSeconds": 1459.0,
+      "durationString": "24:19",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/fGDRHl8kH3s/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAT76EU82lEHf2RXKHzy4lApYLVqw",
+        "https://i.ytimg.com/vi/fGDRHl8kH3s/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCbi97VAiKJhe0YQUIwTbOKSBEMyw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "B0TbO0FYg6Q",
+      "episode": "EP.136",
+      "playlistIndex": 30,
+      "title": "\"능력 있으면 넷은 낳아야 애국자야~\" 장인어른 말에 힘입은 크리스!!",
+      "rawTitle": "\"능력 있으면 넷은 낳아야 애국자야~\" 장인어른 말에 힘입은 크리스!! | #어서와한국은처음이지 | EP.136",
+      "sourceUrl": "https://www.youtube.com/watch?v=B0TbO0FYg6Q",
+      "durationSeconds": 577.0,
+      "durationString": "9:37",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/B0TbO0FYg6Q/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAenXi6BDUDfmHT0kwd549CwL6Urg",
+        "https://i.ytimg.com/vi/B0TbO0FYg6Q/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCnEjVamKY6WTCu2Ojy2cePNpoc6g"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "dnukVTMP_lQ",
+      "episode": "EP.433",
+      "playlistIndex": 31,
+      "title": "다시 1999년 썸머스쿨 그때로! 27년 만에 만나 한국 여행을 떠나는 피터슨 교수와 애제자 트리오!",
+      "rawTitle": "[하이라이트] 다시 1999년 썸머스쿨 그때로!🌴🎒 27년 만에 만나 한국 여행을 떠나는 피터슨 교수와 애제자 트리오! | #어서와한국은처음이지 | EP.433",
+      "sourceUrl": "https://www.youtube.com/watch?v=dnukVTMP_lQ",
+      "durationSeconds": 1484.0,
+      "durationString": "24:44",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/dnukVTMP_lQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBbZbwe4C4B346MiZCtrWzn8PC_NQ",
+        "https://i.ytimg.com/vi/dnukVTMP_lQ/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAWOLpFe8G7GBHStbQ_7IK63mo50Q"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "WLmHxs0cTCw",
+      "episode": "EP.433",
+      "playlistIndex": 32,
+      "title": "[요약] 하버드 석박사, 한국학 교수 피터슨! 27년 만에 한국에서 애제자들과 다시 한번 썸머스쿨 ~ 피터슨 교수 1편 요약︎",
+      "rawTitle": "[요약] 하버드 석박사, 한국학 교수 피터슨! 27년 만에 한국에서 애제자들과 다시 한번 썸머스쿨 ~🌴🎒 피터슨 교수 1편 요약♥︎ | #어서와한국은처음이지 | EP.433",
+      "sourceUrl": "https://www.youtube.com/watch?v=WLmHxs0cTCw",
+      "durationSeconds": 2999.0,
+      "durationString": "49:59",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/WLmHxs0cTCw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDKuXnOpV9KMkXgoP7NcXJRJnOlUw",
+        "https://i.ytimg.com/vi/WLmHxs0cTCw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD4KO-0BCSWRzbIaQiQaw6c34neJA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "Cuqb0mphhvU",
+      "episode": "EP.419",
+      "playlistIndex": 33,
+      "title": "K-돼지 정복하다! 라이&타망 제육·매운갈비찜·불고기와 함께 밥 3공기 흡입한 사연",
+      "rawTitle": "K-돼지 정복하다! 라이&타망 제육·매운갈비찜·불고기와 함께 밥 3공기 흡입한 사연 | #어서와한국은처음이지 | EP.419",
+      "sourceUrl": "https://www.youtube.com/watch?v=Cuqb0mphhvU",
+      "durationSeconds": 712.0,
+      "durationString": "11:52",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/Cuqb0mphhvU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCSke1vSUZi968EPuave0IRWRsYWQ",
+        "https://i.ytimg.com/vi/Cuqb0mphhvU/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDp0VEcEURkDJ-I-QfYE1T6AlqsFA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "r-5LvAn3zC8",
+      "episode": "EP.297",
+      "playlistIndex": 34,
+      "title": "\"흥이 난다 흥이 나~\" 찐 멕시칸들 아침으로 K-타코 먹으면서 K-드라마 과몰입하기 ㅋㅋ (+ 냅다 길거리 공연)",
+      "rawTitle": "\"흥이 난다 흥이 나~♬🌮\" 찐 멕시칸들 아침으로 K-타코 먹으면서 K-드라마 과몰입하기 ㅋㅋ (+ 냅다 길거리 공연) | #어서와한국은처음이지 | EP.297",
+      "sourceUrl": "https://www.youtube.com/watch?v=r-5LvAn3zC8",
+      "durationSeconds": 1254.0,
+      "durationString": "20:54",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/r-5LvAn3zC8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCwEmNMlpLUTAfnOScZP9-5fdv1tg",
+        "https://i.ytimg.com/vi/r-5LvAn3zC8/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCZ-rkMm8TbhhyeT2mjcNR52zjTAA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "GbX_b2MACEY",
+      "episode": "EP.231",
+      "playlistIndex": 35,
+      "title": "※감동주의※ 2년 만에 한국에서 부녀 상봉! 아빠를 위한 스페인 효녀의 K-효도관광 코스",
+      "rawTitle": "※감동주의※ 2년 만에 한국에서 부녀 상봉!💓 아빠를 위한 스페인 효녀의 K-효도관광 코스 | #어서와한국은처음이지 | EP.231",
+      "sourceUrl": "https://www.youtube.com/watch?v=GbX_b2MACEY",
+      "durationSeconds": 2435.0,
+      "durationString": "40:35",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/GbX_b2MACEY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCIGWO6-9e3yfQmstfjZZHMXaR70Q",
+        "https://i.ytimg.com/vi/GbX_b2MACEY/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCKlMth_QZHRaypO5mlE8upVKKWuQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "4smgvUe10FY",
+      "episode": "EP.368",
+      "playlistIndex": 36,
+      "title": "너무 잘 먹어서 CF 들어오는 거 아냐?? 비주얼 끝판왕 우대 소갈비찜과 3인 3색 퓨전 한식 먹방",
+      "rawTitle": "너무 잘 먹어서 CF 들어오는 거 아냐??🤣 비주얼 끝판왕 우대 소갈비찜과 3인 3색 퓨전 한식 먹방 | #어서와한국은처음이지 | EP.368",
+      "sourceUrl": "https://www.youtube.com/watch?v=4smgvUe10FY",
+      "durationSeconds": 1097.0,
+      "durationString": "18:17",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/4smgvUe10FY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA4GMtyxPH7sVckd1S6QESCDiI0mg",
+        "https://i.ytimg.com/vi/4smgvUe10FY/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDgVPkJ7RldbetY5m4dTE5qNDOYlQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "qk86W8SWJak",
+      "episode": "EP.37",
+      "playlistIndex": 37,
+      "title": "네프탈리가 한국에 미용 도구를 챙겨온 이유는?? (친구들 감동)",
+      "rawTitle": "네프탈리가 한국에 미용 도구를 챙겨온 이유는?? (친구들 감동🥲) | #어서와한국은처음이지 | EP.37",
+      "sourceUrl": "https://www.youtube.com/watch?v=qk86W8SWJak",
+      "durationSeconds": 525.0,
+      "durationString": "8:45",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/qk86W8SWJak/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAhNcIKe8QnXEDeF-OWd0sNNy-tiQ",
+        "https://i.ytimg.com/vi/qk86W8SWJak/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCsMhvh_KuR043XgvG_eMgTQuzI8g"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "2wP6EIoFE0U",
+      "episode": "EP.280",
+      "playlistIndex": 38,
+      "title": "이탈리아 미슐랭 셰프도 반함ㅋㅋ \"게장 맘마미아!\" 포항에서 간장게장부터 양념 게장까지 제대로 즐기기",
+      "rawTitle": "이탈리아 미슐랭 셰프도 반함ㅋㅋ \"게장 맘마미아!😘\" 포항에서 간장게장부터 양념 게장까지 제대로 즐기기🦀 | #어서와한국은처음이지 | EP.280",
+      "sourceUrl": "https://www.youtube.com/watch?v=2wP6EIoFE0U",
+      "durationSeconds": 1017.0,
+      "durationString": "16:57",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/2wP6EIoFE0U/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDzTbPdaMqqU-OaoxRQil6mW7bU4g",
+        "https://i.ytimg.com/vi/2wP6EIoFE0U/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAf1_VUJ0HKTk5x1b7Gy3eeWOFfXQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "nAsIEE--Lr4",
+      "episode": "EP.372",
+      "playlistIndex": 39,
+      "title": "️K-매운맛에 도전하러 온 체코인들 ㅋㅋ \"와 죽겠다\" 그런데도 계속 손이 가는 중독성 갑! 맛있게 매운 닭발 먹방",
+      "rawTitle": "🌶️K-매운맛에 도전하러 온 체코인들 ㅋㅋ \"와 죽겠다\" 그런데도 계속 손이 가는 중독성 갑!🥵🔥 맛있게 매운 닭발 먹방 | #어서와한국은처음이지 | EP.372",
+      "sourceUrl": "https://www.youtube.com/watch?v=nAsIEE--Lr4",
+      "durationSeconds": 1022.0,
+      "durationString": "17:02",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/nAsIEE--Lr4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDH26nWIHpqqBRPdHhUn-aTWAvy1A",
+        "https://i.ytimg.com/vi/nAsIEE--Lr4/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAPPyOiJqKIp6LMbmCMUi0ItdHm9w"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "9F-paeOGAcY",
+      "episode": "EP.429",
+      "playlistIndex": 40,
+      "title": "(3시간) K-열풍의 주역 아들의 한국 정체성을 찾으러 온 '케이팝 데몬 헌터스' 감독 크리스! 케데헌 감독 편 몰아보기| EP.429~432",
+      "rawTitle": "(3시간) K-열풍의 주역🥇 아들의 한국 정체성을 찾으러 온 '케이팝 데몬 헌터스' 감독 크리스! 케데헌 감독 편 몰아보기♥ | #어서와한국은처음이지 | EP.429~432",
+      "sourceUrl": "https://www.youtube.com/watch?v=9F-paeOGAcY",
+      "durationSeconds": 11676.0,
+      "durationString": "3:14:36",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/9F-paeOGAcY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAuDX-zDmwuxQJy-TeoxGel17k_4g",
+        "https://i.ytimg.com/vi/9F-paeOGAcY/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDwG_cx-o8juFUWCvvdlQaxhKOZHg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "2Q5KTYzIUbo",
+      "episode": "EP.432",
+      "playlistIndex": 41,
+      "title": "\"제가 한국인이라서 행운이에요!\" 아들에게 한국 정체성을 일깨워 준 여행의 끝 케데헌 감독 크리스의 내한 조회수 TOP3",
+      "rawTitle": "[하이라이트] \"제가 한국인이라서 행운이에요!\" 아들에게 한국 정체성을 일깨워 준 여행의 끝🥺 케데헌 감독 크리스의 내한 조회수 TOP3♥ | #어서와한국은처음이지 | EP.432",
+      "sourceUrl": "https://www.youtube.com/watch?v=2Q5KTYzIUbo",
+      "durationSeconds": 1476.0,
+      "durationString": "24:36",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/2Q5KTYzIUbo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCYjYQnfiS6QBiGS_ZA3j4roCtOjA",
+        "https://i.ytimg.com/vi/2Q5KTYzIUbo/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAq5SsUwOpKXl64AnEfjzOIyd4AsA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "8OkLcj--qkE",
+      "episode": "EP.432",
+      "playlistIndex": 42,
+      "title": "\"이 까만 걸 먹어요?\" 한 입만 잡숴봐ㅋㅋ 외국 애기들 극혐에서 극호! K-짜장면 먹방!",
+      "rawTitle": "[하이라이트] \"이 까만 걸 먹어요?😨\" 한 입만 잡숴봐ㅋㅋ 외국 애기들 극혐에서 극호! K-짜장면 먹방! | #어서와한국은처음이지 | EP.432",
+      "sourceUrl": "https://www.youtube.com/watch?v=8OkLcj--qkE",
+      "durationSeconds": 987.0,
+      "durationString": "16:27",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/8OkLcj--qkE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCt7CSQKEgei710QLScTLgN4IlNiA",
+        "https://i.ytimg.com/vi/8OkLcj--qkE/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDRTZes3DF5g-rH9ejQabHiECGcIg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "ISYl4gl9usE",
+      "episode": "EP.432",
+      "playlistIndex": 43,
+      "title": "직접 딴 녹차로 다도 체험! 크리스 감독, 아들이랑 오붓한 하동 녹차밭 데이트",
+      "rawTitle": "[하이라이트] 직접 딴 녹차로 다도 체험!🍵 크리스 감독, 아들이랑 오붓한 하동 녹차밭 데이트♥ | #어서와한국은처음이지 | EP.432",
+      "sourceUrl": "https://www.youtube.com/watch?v=ISYl4gl9usE",
+      "durationSeconds": 1414.0,
+      "durationString": "23:34",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/ISYl4gl9usE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBSerDgXWygDMDWcnWas6aD03IPgA",
+        "https://i.ytimg.com/vi/ISYl4gl9usE/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBfVGAe9L3tMQ0S3B4o3tnqkxUwKg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "FlgkHAaPZzc",
+      "episode": "EP.251",
+      "playlistIndex": 44,
+      "title": "\"다리 지나는데 돈을 세 번이나 낸다고?\" ️ 돌발 상황! K-톨게이트 처음 보고 멘붕 제대로 온 독일인들ㅋㅋ",
+      "rawTitle": "\"다리 지나는데 돈을 세 번이나 낸다고?\" ☠️ 돌발 상황! K-톨게이트 처음 보고 멘붕 제대로 온 독일인들ㅋㅋ | #어서와한국은처음이지 | EP.251",
+      "sourceUrl": "https://www.youtube.com/watch?v=FlgkHAaPZzc",
+      "durationSeconds": 1841.0,
+      "durationString": "30:41",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/FlgkHAaPZzc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDTuVc7i30fWaLHJASYTHD1TcaSig",
+        "https://i.ytimg.com/vi/FlgkHAaPZzc/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA2k09TvXMy1zZl5DNqkXOXdzqksQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "59OGGsO952E",
+      "episode": "EP.419",
+      "playlistIndex": 45,
+      "title": "책에서만 봤던 바다를 만나다! 네팔 순수청년 라이&타망 강릉 여행기!",
+      "rawTitle": "책에서만 봤던 바다를 만나다! 네팔 순수청년 라이&타망 강릉 여행기! | #어서와한국은처음이지 | EP.419",
+      "sourceUrl": "https://www.youtube.com/watch?v=59OGGsO952E",
+      "durationSeconds": 916.0,
+      "durationString": "15:16",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/59OGGsO952E/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCSayC-L0nFM6IZAmMIkBElwlOD5Q",
+        "https://i.ytimg.com/vi/59OGGsO952E/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDe0CQBlW3LFQtYsH7Azej6_3NVOQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "7yHfVwjF7Zw",
+      "episode": "EP.432",
+      "playlistIndex": 46,
+      "title": "\"나 안 먹어요!!...라면은 말이 달라지지\" 아침 투정 싹 고치는 S라면 먹방 (+케데헌 라면 먹는 케데헌 감독ㅋㅋ)",
+      "rawTitle": "[하이라이트] \"나 안 먹어요!!👿...라면은 말이 달라지지👼\" 아침 투정 싹 고치는 S라면 먹방 (+케데헌 라면 먹는 케데헌 감독ㅋㅋ) | #어서와한국은처음이지 | EP.432",
+      "sourceUrl": "https://www.youtube.com/watch?v=7yHfVwjF7Zw",
+      "durationSeconds": 596.0,
+      "durationString": "9:56",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/7yHfVwjF7Zw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB7cvqtEO39ZOBesYpzXW7eYmQVyg",
+        "https://i.ytimg.com/vi/7yHfVwjF7Zw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBV-aR8t49y7naYyrOJEpjN10kBxw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "w-Ulms8qVVM",
+      "episode": "EP.142",
+      "playlistIndex": 47,
+      "title": "전소미 동생 에블린과 아빠 메튜의 부산 힐링 코스 ㅎㅎ 원각사 녹차 밭에서 채엽하고 공양 먹방까지",
+      "rawTitle": "전소미 동생 에블린과 아빠 메튜의 부산 힐링 코스 ㅎㅎ🍃 원각사 녹차 밭에서 채엽하고 공양 먹방까지  | #어서와한국은처음이지 | EP.142",
+      "sourceUrl": "https://www.youtube.com/watch?v=w-Ulms8qVVM",
+      "durationSeconds": 1150.0,
+      "durationString": "19:10",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/w-Ulms8qVVM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDGZkpdGe6pZ7paDsDMJj-L1-ODHQ",
+        "https://i.ytimg.com/vi/w-Ulms8qVVM/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB6pZXsaT3eFUoeyJo3X6KKvWvHYg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "LCq87RifpLs",
+      "episode": "EP.141",
+      "playlistIndex": 48,
+      "title": "이 재료까지 넣어요?! 기력 충전 삼계탕 만들기!!",
+      "rawTitle": "이 재료까지 넣어요?!😮 기력 충전★ 삼계탕 만들기!! | #어서와한국은처음이지 | EP.141",
+      "sourceUrl": "https://www.youtube.com/watch?v=LCq87RifpLs",
+      "durationSeconds": 815.0,
+      "durationString": "13:35",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/LCq87RifpLs/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDbO5vRafU2f-zZu1hWgNuHSRJoAQ",
+        "https://i.ytimg.com/vi/LCq87RifpLs/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCe4B8mcwYSjD_J5r-JXUhFUN2Aug"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "yGQOXeXdUgU",
+      "episode": "EP.432",
+      "playlistIndex": 49,
+      "title": "크 이거지~ 아빠랑 아들 데칼코마니 리액션 절로 나오는 지리산 토종닭 먹방!",
+      "rawTitle": "[하이라이트] 크 이거지~😆 아빠랑 아들 데칼코마니 리액션 절로 나오는 지리산 토종닭 먹방!🐔 | #어서와한국은처음이지 | EP.432",
+      "sourceUrl": "https://www.youtube.com/watch?v=yGQOXeXdUgU",
+      "durationSeconds": 1008.0,
+      "durationString": "16:48",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/yGQOXeXdUgU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAkMAqwHvdKfhI_j8q_yyzcLpyqQA",
+        "https://i.ytimg.com/vi/yGQOXeXdUgU/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAakVCc8c0DxWQMj8fFhQBIuR4XWA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "z-hQCmTFvUE",
+      "episode": "EP.432",
+      "playlistIndex": 50,
+      "title": "[요약] \"이제 눈 감아도 한국이 보여요\" 굿바이 크리스 ㅠㅠ 한국에서의 추억 듬뿍 쌓은 크리스 가족 마지막 편 요약",
+      "rawTitle": "[요약] \"이제 눈 감아도 한국이 보여요\" 🥺 굿바이 크리스 ㅠㅠ 한국에서의 추억 듬뿍 쌓은 크리스 가족 마지막 편 요약 ♥ | #어서와한국은처음이지 | EP.432",
+      "sourceUrl": "https://www.youtube.com/watch?v=z-hQCmTFvUE",
+      "durationSeconds": 2908.0,
+      "durationString": "48:28",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/z-hQCmTFvUE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAS2dNdGot5v_HvLqqdtzOHK-Go-w",
+        "https://i.ytimg.com/vi/z-hQCmTFvUE/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDjab25v0dBf6As09TnPdHdt8UOEg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "k9yoHcI-pWo",
+      "episode": "EP.131",
+      "playlistIndex": 51,
+      "title": "이렇게 귀여운 먹방은 처음봐요 벨기에 아기 우리스의 양념갈비 먹방!| EP.131회",
+      "rawTitle": "이렇게 귀여운 먹방은 처음봐요🥹 벨기에 아기 우리스의 양념갈비 먹방! | #어서와한국은처음이지 | EP.131회",
+      "sourceUrl": "https://www.youtube.com/watch?v=k9yoHcI-pWo",
+      "durationSeconds": 554.0,
+      "durationString": "9:14",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/k9yoHcI-pWo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCsUHaiTyleeQHourpud7_w4yvomg",
+        "https://i.ytimg.com/vi/k9yoHcI-pWo/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAlkJvUPs-7Zf0c2WMjWilvQ0NLug"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "IwbDGC4W-ec",
+      "episode": "EP.47",
+      "playlistIndex": 52,
+      "title": "(1시간) 월드컵 시즌 시작 팀코리아 모여라! 거리 응원부터 축덕들 스타디움 투어까지 월드컵 특집!| EP.47 외",
+      "rawTitle": "(1시간) ⚽월드컵 시즌 시작⚽ 팀코리아 모여라! 거리 응원부터 축덕들 스타디움 투어까지 월드컵 특집! | #어서와한국은처음이지 | EP.47 외",
+      "sourceUrl": "https://www.youtube.com/watch?v=IwbDGC4W-ec",
+      "durationSeconds": 3121.0,
+      "durationString": "52:01",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/IwbDGC4W-ec/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCzBoMU4nK9CqUEdHELTnaKj2Y0DA",
+        "https://i.ytimg.com/vi/IwbDGC4W-ec/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLATqGWUlxIedvD1luXnfg39pAbsDQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "HmFUiUoQl74",
+      "episode": "EP.251",
+      "playlistIndex": 53,
+      "title": "\"너무 움직이는데??\" 산낙지 충격도 잠시... 입가에 소스 범벅! 독일 3인방 여수 낙지 호롱이 먹방",
+      "rawTitle": "\"너무 움직이는데??\" 🙀 산낙지 충격도 잠시... 입가에 소스 범벅! 독일 3인방 여수 낙지 호롱이 먹방💦 | #어서와한국은처음이지 | EP.251",
+      "sourceUrl": "https://www.youtube.com/watch?v=HmFUiUoQl74",
+      "durationSeconds": 811.0,
+      "durationString": "13:31",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/HmFUiUoQl74/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDm6Cq3HihkuJD9KVKr6hWb72oXqg",
+        "https://i.ytimg.com/vi/HmFUiUoQl74/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCWQUeUavxC4FwLJZBxgLVKZUwgxQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "ALprSlcHpEw",
+      "episode": "EP.371",
+      "playlistIndex": 54,
+      "title": "(1시간) 외국인 둘이 시골 가면 생기는 일?? 이장님 집부터 마을회관까지ㅋㅋ 시골 인심 두둑한 밥상으로 세끼 먹방!",
+      "rawTitle": "(1시간) 외국인 둘이 시골 가면 생기는 일??😲 이장님 집부터 마을회관까지ㅋㅋ 시골 인심 두둑한 밥상으로 세끼 먹방!😋 | #어서와한국은처음이지 | EP.371",
+      "sourceUrl": "https://www.youtube.com/watch?v=ALprSlcHpEw",
+      "durationSeconds": 3019.0,
+      "durationString": "50:19",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/ALprSlcHpEw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCjEfK7fByoj2Rux-UuDYR71INOkw",
+        "https://i.ytimg.com/vi/ALprSlcHpEw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCI8rhy8kBkZVxPPHiUyvpe9B4EIw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "kNJiEdZFADI",
+      "episode": "EP.1",
+      "playlistIndex": 55,
+      "title": "물 건너온 축구팬도 환호성 터진 짜릿한 승부 그 결과는??",
+      "rawTitle": "물 건너온 축구팬도 환호성 터진 짜릿한 승부⚽ 그 결과는?? | #어서와한국은처음이지 | EP.1",
+      "sourceUrl": "https://www.youtube.com/watch?v=kNJiEdZFADI",
+      "durationSeconds": 719.0,
+      "durationString": "11:59",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/kNJiEdZFADI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAGDQZ9gYYhq0iCSooTbG-Gc4-SSw",
+        "https://i.ytimg.com/vi/kNJiEdZFADI/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCRrJKsZBqzI6LPa-UkTZ10hlmH9w"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "e1D0Xh4dYwM",
+      "episode": "EP.161",
+      "playlistIndex": 56,
+      "title": "게임하랴 먹으랴;; 모니터에 시선 고정하고 바쁘다 바빠! e-스포츠 광팬들이 시간 보내는 법 ㅋㅋ",
+      "rawTitle": "게임하랴 먹으랴;; 모니터에 시선 고정하고 바쁘다 바빠!😵 e-스포츠 광팬들이 시간 보내는 법 ㅋㅋ | #어서와한국은처음이지 | EP.161",
+      "sourceUrl": "https://www.youtube.com/watch?v=e1D0Xh4dYwM",
+      "durationSeconds": 735.0,
+      "durationString": "12:15",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/e1D0Xh4dYwM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDS4MIqw-3Z49zAVlFMmJI_J949LQ",
+        "https://i.ytimg.com/vi/e1D0Xh4dYwM/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCmiQCeqbfAjuG1Ig-GL6dy9Ya4Jw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "yeIN-s696KA",
+      "episode": "EP.272",
+      "playlistIndex": 57,
+      "title": "화제의 K-젠슨 삼소회동! (삼겹살+소주) 실패 없는 조합 ㅋㅋ️ 외국인 먹방 모음~| EP.272 외",
+      "rawTitle": "화제의 K-젠슨 삼소회동! (삼겹살+소주) 실패 없는 조합 ㅋㅋ🥩♾️🍺 외국인 먹방 모음~ | #어서와한국은처음이지 | EP.272 외",
+      "sourceUrl": "https://www.youtube.com/watch?v=yeIN-s696KA",
+      "durationSeconds": 2042.0,
+      "durationString": "34:02",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/yeIN-s696KA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBhAMSL-SAO598X7feCZJVUOgtquA",
+        "https://i.ytimg.com/vi/yeIN-s696KA/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAjwQ1makoiWl7JfZuaR3Dd3flctQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "HrqWciz3VuI",
+      "episode": "EP.392",
+      "playlistIndex": 58,
+      "title": "'역시 e-스포츠의 성지 한국 ' 홍대 T1 베이스캠프 방문한 외국인들! K-피시방에 잔뜩 흥분!",
+      "rawTitle": "'역시 e-스포츠의 성지 한국 🤩' 홍대 T1 베이스캠프 방문한 외국인들! K-피시방에 잔뜩 흥분! | #어서와한국은처음이지 | EP.392",
+      "sourceUrl": "https://www.youtube.com/watch?v=HrqWciz3VuI",
+      "durationSeconds": 621.0,
+      "durationString": "10:21",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/HrqWciz3VuI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCyDps0EISG6HdPvwgIF-P2WGBWvw",
+        "https://i.ytimg.com/vi/HrqWciz3VuI/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCgN7AyKAHt7JO-iiTx2vWiH9utKQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "55PGasIizrM",
+      "episode": "EP.431",
+      "playlistIndex": 59,
+      "title": "크감독 가족들 하동에 떴다! 하동에서도 교진이 껌딱지 아빠 케데헌 감독 크리스의 내한 조회수 TOP3",
+      "rawTitle": "[하이라이트] 크감독 가족들 하동에 떴다! 하동에서도 교진이 껌딱지 아빠👪 케데헌 감독 크리스의 내한 조회수 TOP3♥ | #어서와한국은처음이지 | EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=55PGasIizrM",
+      "durationSeconds": 1487.0,
+      "durationString": "24:47",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/55PGasIizrM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDKj0Bz_oZiGCUeeu921orkqEaGYg",
+        "https://i.ytimg.com/vi/55PGasIizrM/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCkPrtFOJ95XcCbiHHrrjCFy3lYXg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "UE65iftCZN4",
+      "episode": "EP.431",
+      "playlistIndex": 60,
+      "title": "소설 '토지' 속 대자연에 압도! 최참판댁에서 진정한 한국을 느낀 크리스 감독과 가족들 (+ 케데헌2 자료 조사?) l #어서와한국은처음이지 l EP.431",
+      "rawTitle": "[하이라이트] 소설 '토지' 속 대자연에 압도! 🌄 최참판댁에서 진정한 한국을 느낀 크리스 감독과 가족들 (+ 케데헌2 자료 조사?) l #어서와한국은처음이지 l EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=UE65iftCZN4",
+      "durationSeconds": 1152.0,
+      "durationString": "19:12",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/UE65iftCZN4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBpaXxBy5qSg20Ll-Efr-y2j7BItg",
+        "https://i.ytimg.com/vi/UE65iftCZN4/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDsRslKtwUqdSovQinFbcm-B1JXlw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "CTA-qTspySo",
+      "episode": "EP.431",
+      "playlistIndex": 61,
+      "title": "하동 별미 벚굴부터 재첩 파전 그중 크부자가 푹 빠진 메뉴는?? 크리스 감독 화개 장터 먹방! l #어서와한국은처음이지 l EP.431",
+      "rawTitle": "[하이라이트] 하동 별미 벚굴부터 재첩 파전😋🥢 그중 크부자가 푹 빠진 메뉴는?? 크리스 감독 화개 장터 먹방! l #어서와한국은처음이지 l EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=CTA-qTspySo",
+      "durationSeconds": 1139.0,
+      "durationString": "18:59",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/CTA-qTspySo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBH07sKEBebHI1pXkt_9t7Egzy9Qg",
+        "https://i.ytimg.com/vi/CTA-qTspySo/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDjYOQ4-mD7wc0CozNs4aTux86zAg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "P5MT7nTwz8o",
+      "episode": "EP.223",
+      "playlistIndex": 62,
+      "title": "'내가 한국에 있다니!!' 드라마부터 뷰티까지 K-홀릭! 흥부자 한국 덕후의 문어 순두부찌개 먹방",
+      "rawTitle": "'내가 한국에 있다니!!🤩' 드라마부터 뷰티까지 K-홀릭! ♬ 흥부자 한국 덕후의 문어 순두부찌개 먹방 | #어서와한국은처음이지 | EP.223",
+      "sourceUrl": "https://www.youtube.com/watch?v=P5MT7nTwz8o",
+      "durationSeconds": 1488.0,
+      "durationString": "24:48",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/P5MT7nTwz8o/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCOIXdPBoAzOr4T9VRl4HD65SvABA",
+        "https://i.ytimg.com/vi/P5MT7nTwz8o/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA9MzyXS6ulFx0cpRmQ621ICDRWRg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "bPQX7LGKsko",
+      "episode": "EP.134",
+      "playlistIndex": 63,
+      "title": "2미터가 넘는 대나무찜을 보고 깜짝 놀란 외국인들! 과연 그 맛은?",
+      "rawTitle": "2미터가 넘는 대나무찜을 보고 깜짝 놀란 외국인들! 과연 그 맛은? | #어서와한국은처음이지 | EP.134",
+      "sourceUrl": "https://www.youtube.com/watch?v=bPQX7LGKsko",
+      "durationSeconds": 801.0,
+      "durationString": "13:21",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/bPQX7LGKsko/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDlOBUKVvf2ysBPzuNcCC5PjOZXuQ",
+        "https://i.ytimg.com/vi/bPQX7LGKsko/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLByKz62DzBqok4m8qwqu5XKKHEXtQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "Uzs4clulqIs",
+      "episode": "EP.431",
+      "playlistIndex": 64,
+      "title": "볼거리 먹거리 천국 화개 장터!근데 만나는 사장님들마다 뭘 자꾸 준다?? 전통시장 인기스타가 된 교진이 l #어서와한국은처음이지 l EP.431",
+      "rawTitle": "[하이라이트] 볼거리 먹거리 천국 화개 장터!✨근데 만나는 사장님들마다 뭘 자꾸 준다??😲 전통시장 인기스타가 된 교진이 l #어서와한국은처음이지 l EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=Uzs4clulqIs",
+      "durationSeconds": 758.0,
+      "durationString": "12:38",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/Uzs4clulqIs/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBZsvfFVm1PE2oFXWrm8iCRb6MW7Q",
+        "https://i.ytimg.com/vi/Uzs4clulqIs/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCVAfpOsI4-YfmyoieTqNaXlMfEmw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "vp8UjdWQhPw",
+      "episode": "",
+      "playlistIndex": 65,
+      "title": "\"얘 취한 거 같은데ㅋㅋ?\" 앉자마자 소주 시키고 구수한 능이오리백숙 흡입! 한국 여행에 소주는 선택이 아닌 필수",
+      "rawTitle": "\"얘 취한 거 같은데ㅋㅋ?\"🤣 앉자마자 소주 시키고 구수한 능이오리백숙 흡입! 한국 여행에 소주는 선택이 아닌 필수",
+      "sourceUrl": "https://www.youtube.com/watch?v=vp8UjdWQhPw",
+      "durationSeconds": 746.0,
+      "durationString": "12:26",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/vp8UjdWQhPw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCCa6RzmizlhOmzYm_t51qOcMqucQ",
+        "https://i.ytimg.com/vi/vp8UjdWQhPw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBDxy5iHzfChtzxm0JMaa9sZxLr9g"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "Ore4J7x5DiY",
+      "episode": "EP.136",
+      "playlistIndex": 66,
+      "title": "\"돈을 아껴야 해!!\" 미국에서 온 대학생 민규 씨의 만 원의 행복️",
+      "rawTitle": "\"돈을 아껴야 해!!\" 미국에서 온 대학생 민규 씨의 만 원의 행복☘️ | #어서와한국은처음이지 | EP.136",
+      "sourceUrl": "https://www.youtube.com/watch?v=Ore4J7x5DiY",
+      "durationSeconds": 592.0,
+      "durationString": "9:52",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/Ore4J7x5DiY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAZVU-S0UmEJjQbk5DS2pv-YCt7XA",
+        "https://i.ytimg.com/vi/Ore4J7x5DiY/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDYFHW9rqe11AQmx6rqapujEC2ypQ"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "B3BIaaiuP88",
+      "episode": "EP.431",
+      "playlistIndex": 67,
+      "title": "인생 첫 기차 KTX! 마냥 좋은 교진이와 흐뭇한 크감독의 목적지는 하동~ (+기차에서 먹는 K-별미) l #어서와한국은처음이지 l EP.431",
+      "rawTitle": "인생 첫 기차 KTX!👀 마냥 좋은 교진이와 흐뭇한 크감독의 목적지는 하동~🚄 (+기차에서 먹는 K-별미)  l #어서와한국은처음이지 l EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=B3BIaaiuP88",
+      "durationSeconds": 1094.0,
+      "durationString": "18:14",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/B3BIaaiuP88/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBNEeZUpPoZUQOUJCatJBQ7CRG2Tg",
+        "https://i.ytimg.com/vi/B3BIaaiuP88/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLArHJgiOeaIiT3J3GOWa-lSpRv67A"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "F4tVLdwBuKQ",
+      "episode": "EP.431",
+      "playlistIndex": 68,
+      "title": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에 더 깊게 빠지다 크리스 가족 3편 요약",
+      "rawTitle": "[요약] 입이 떡 벌어지는 경치!😲 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에 더 깊게 빠지다💘 크리스 가족 3편 요약 ♥ | #어서와한국은처음이지 | EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=F4tVLdwBuKQ",
+      "durationSeconds": 2995.0,
+      "durationString": "49:55",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/F4tVLdwBuKQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBeeljAhIBHZNIQjKpgu-THR33PiQ",
+        "https://i.ytimg.com/vi/F4tVLdwBuKQ/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAHB5_UZxbkd4hg91XiBCVO_XHFUA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "aIVONjLmmT4",
+      "episode": "EP.417",
+      "playlistIndex": 69,
+      "title": "처음으로 가본 호텔! 엘리베이터, 가운 모든 게 신기한 라이&타망| EP.417외",
+      "rawTitle": "처음으로 가본 호텔! 엘리베이터, 가운 모든 게 신기한 라이&타망 | #어서와한국은처음이지 | EP.417외",
+      "sourceUrl": "https://www.youtube.com/watch?v=aIVONjLmmT4",
+      "durationSeconds": 1038.0,
+      "durationString": "17:18",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/aIVONjLmmT4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCTTztFb1uyd-uwvMcvzX5zh4prRA",
+        "https://i.ytimg.com/vi/aIVONjLmmT4/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAXj1yVJA6_FrZLaIUk8UPNss9y9A"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "m4pqwiOeTKs",
+      "episode": "EP.229",
+      "playlistIndex": 70,
+      "title": "쉽지 않지만... 막상 먹어보면 맛있죠? 꼬들꼬들 돼지 특수부위 처음 접한 외국인들! 돼지껍데기+막창+볼살 먹방!",
+      "rawTitle": "쉽지 않지만... 막상 먹어보면 맛있죠?😯 꼬들꼬들 돼지 특수부위 처음 접한 외국인들! 돼지껍데기+막창+볼살 먹방! | #어서와한국은처음이지 | EP.229",
+      "sourceUrl": "https://www.youtube.com/watch?v=m4pqwiOeTKs",
+      "durationSeconds": 1043.0,
+      "durationString": "17:23",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/m4pqwiOeTKs/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDblE891b-2UhbcSrk_Te0VXPAQuQ",
+        "https://i.ytimg.com/vi/m4pqwiOeTKs/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDAPyXiJnByqtT201XTXzvpLSpEfw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "FsfqJoGsnaI",
+      "episode": "EP.225",
+      "playlistIndex": 71,
+      "title": "'생선 먹기 도전!' 평생 못 먹던 생선 이젠 먹고 싶어요 K-생선구이로 극복 가능?! (feat. 생선구이 4총사)",
+      "rawTitle": "'생선 먹기 도전!'😤 평생 못 먹던 생선 이젠 먹고 싶어요🐟 K-생선구이로 극복 가능?! (feat. 생선구이 4총사) | #어서와한국은처음이지 | EP.225",
+      "sourceUrl": "https://www.youtube.com/watch?v=FsfqJoGsnaI",
+      "durationSeconds": 885.0,
+      "durationString": "14:45",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/FsfqJoGsnaI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCLxdibcUzDEOXOrD6W_ij8QoTxhQ",
+        "https://i.ytimg.com/vi/FsfqJoGsnaI/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCIMVGz0rsImIxft9NbaEP_wpG2Sg"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "TsWQz1xDvek",
+      "episode": "EP.177",
+      "playlistIndex": 72,
+      "title": "이 조합...진짜 맛있다외국인이 만든 신박한 불고기 요리",
+      "rawTitle": "이 조합...진짜 맛있다🔥외국인이 만든 신박한 불고기 요리 | #어서와한국은처음이지 | EP.177",
+      "sourceUrl": "https://www.youtube.com/watch?v=TsWQz1xDvek",
+      "durationSeconds": 486.0,
+      "durationString": "8:06",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/TsWQz1xDvek/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAbeDlJ8Y8rOvoyNrKP_VsyJsh_UA",
+        "https://i.ytimg.com/vi/TsWQz1xDvek/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBrxqnvPflE138vfr5eDj0BoEaV_A"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "8LMDotp2Xhw",
+      "episode": "EP.222",
+      "playlistIndex": 73,
+      "title": "날 것 그 자체, 숯불 돈마호크부터 부대찌개! 남자 넷이서 하는 와일드 캠핑 먹방! (+우정템 K-깔깔이)",
+      "rawTitle": "날 것 그 자체, 숯불 돈마호크부터 부대찌개!🔥 남자 넷이서 하는 와일드 캠핑 먹방! (+우정템 K-깔깔이)| #어서와한국은처음이지 | EP.222",
+      "sourceUrl": "https://www.youtube.com/watch?v=8LMDotp2Xhw",
+      "durationSeconds": 1234.0,
+      "durationString": "20:34",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/8LMDotp2Xhw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBYx5AkS8nRknSBmVg2EWi6680xPw",
+        "https://i.ytimg.com/vi/8LMDotp2Xhw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCpf9CsVIU8AuN97UX3lUWkniTJ1A"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "589GXrjS5ec",
+      "episode": "EP.229",
+      "playlistIndex": 74,
+      "title": "새벽 배송은 혁명이죠 삶의 질 수직 상승! K-스피드에 중독된 브라질 친구 ㅋㅋㅋ (+심상치 않은 냉장고와 직업)",
+      "rawTitle": "🚀새벽 배송은 혁명이죠🚀 삶의 질 수직 상승! 📈 K-스피드에 중독된 브라질 친구 ㅋㅋㅋ (+심상치 않은 냉장고와 직업) | #어서와한국은처음이지 | EP.229",
+      "sourceUrl": "https://www.youtube.com/watch?v=589GXrjS5ec",
+      "durationSeconds": 808.0,
+      "durationString": "13:28",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/589GXrjS5ec/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAogEOgv_u4gvVo5fHOC_WrTpVkFQ",
+        "https://i.ytimg.com/vi/589GXrjS5ec/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB5PPy6IhKmCuxzeauxXaAMd7-w8A"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "B-epfmMYMZE",
+      "episode": "EP.430",
+      "playlistIndex": 75,
+      "title": "'이게 내 나라??' 본격 한국 여행에 잔뜩 신난 교진이 케데헌 감독 크리스의 내한 조회수 TOP3",
+      "rawTitle": "[하이라이트] '이게 내 나라??' 본격 한국 여행에 잔뜩 신난 교진이😁 케데헌 감독 크리스의 내한 조회수 TOP3♥ | #어서와한국은처음이지 | EP.430",
+      "sourceUrl": "https://www.youtube.com/watch?v=B-epfmMYMZE",
+      "durationSeconds": 1911.0,
+      "durationString": "31:51",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/B-epfmMYMZE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAHfFrK-naysch1IqEW8c5-UixYPw",
+        "https://i.ytimg.com/vi/B-epfmMYMZE/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA3biuv7uiMYqGceek7Z7agssd7lA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "kbHKvaatoFM",
+      "episode": "EP.430",
+      "playlistIndex": 76,
+      "title": "케데헌 회식에서도 아들 자랑 ㅋㅋ 크리스 감독과 제작진들의 진솔 토크 (※ 최초 공개 썰들※ )",
+      "rawTitle": "[하이라이트] 케데헌 회식에서도 아들 자랑 ㅋㅋ 😻 크리스 감독과 제작진들의 진솔 토크 (※ 최초 공개 썰들※ )| #어서와한국은처음이지 | EP.430",
+      "sourceUrl": "https://www.youtube.com/watch?v=kbHKvaatoFM",
+      "durationSeconds": 1189.0,
+      "durationString": "19:49",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/kbHKvaatoFM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBy6jgf5oRfRirCoNQS1-RCZSpMyw",
+        "https://i.ytimg.com/vi/kbHKvaatoFM/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCVV17iwrIGBtEkFRn9_TSXAwvZVw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "a05KsJKzdrc",
+      "episode": "EP.430",
+      "playlistIndex": 77,
+      "title": "부전자전 새콤달콤 냉면+국수 홀릭! 크리스 감독의 최애 한식 냉면 먹방",
+      "rawTitle": "[하이라이트] 부전자전 새콤달콤 냉면+국수 홀릭!🤤 크리스 감독의 최애 한식 냉면 먹방🥢| #어서와한국은처음이지 | EP.430",
+      "sourceUrl": "https://www.youtube.com/watch?v=a05KsJKzdrc",
+      "durationSeconds": 977.0,
+      "durationString": "16:17",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/a05KsJKzdrc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD2jIszywJdskfqHjV6wTMvNfkWzg",
+        "https://i.ytimg.com/vi/a05KsJKzdrc/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB6cFW6N5uLP9_Kky9-cUU6VNGEKA"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "y0aezh9hIFw",
+      "episode": "EP.292",
+      "playlistIndex": 78,
+      "title": "세상에 이건 꿈? 페이커 때문에 유럽에서 날아왔는데 팬미팅 당첨까지?! E-스포츠 덕후들의 소원 성취",
+      "rawTitle": "세상에 이건 꿈?🙀 페이커 때문에 유럽에서 날아왔는데 팬미팅 당첨까지?! E-스포츠 덕후들의 소원 성취🙏 | #어서와한국은처음이지 | EP.292",
+      "sourceUrl": "https://www.youtube.com/watch?v=y0aezh9hIFw",
+      "durationSeconds": 953.0,
+      "durationString": "15:53",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/y0aezh9hIFw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAUF4PdH8T5PpKDCLhYSqf0i7hHrw",
+        "https://i.ytimg.com/vi/y0aezh9hIFw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCbndaW_vM4S77jv_E7MD2ZMxO98Q"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "l-ut8Fw5ll0",
+      "episode": "EP.134",
+      "playlistIndex": 79,
+      "title": "검정색 국수는 뭐야? 고춧가루 팍팍 넣어서 먹는 윤기 좔좔 짜장면 먹방!",
+      "rawTitle": "검정색 국수는 뭐야? 고춧가루 팍팍 넣어서 먹는 윤기 좔좔 짜장면 먹방! | #어서와한국은처음이지 | EP.134",
+      "sourceUrl": "https://www.youtube.com/watch?v=l-ut8Fw5ll0",
+      "durationSeconds": 519.0,
+      "durationString": "8:39",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/l-ut8Fw5ll0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAFeEXzlQy5rD_of351IY7l7BG1eQ",
+        "https://i.ytimg.com/vi/l-ut8Fw5ll0/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBfy9viZ9dNw1LvSo1eZXVKkZ2J2g"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    },
+    {
+      "sourceVideoId": "OZdDiSKxdPE",
+      "episode": "EP.430",
+      "playlistIndex": 80,
+      "title": "'이거 케데헌에서 봤어요!' 모든 게 처음인 내 나라! 5살 인생 첫 한국에서 민속촌 즐기기~!",
+      "rawTitle": "[하이라이트] '이거 케데헌에서 봤어요!' 😲 모든 게 처음인 내 나라! 5살 인생 첫 한국에서 민속촌 즐기기~!| #어서와한국은처음이지 | EP.430",
+      "sourceUrl": "https://www.youtube.com/watch?v=OZdDiSKxdPE",
+      "durationSeconds": 1245.0,
+      "durationString": "20:45",
+      "channel": "어서와 한국은 처음이지",
+      "channelId": "UC4i1qf8CUH93DLSbD9efqig",
+      "thumbnailPolicy": "reference-only",
+      "thumbnailRefs": [
+        "https://i.ytimg.com/vi/OZdDiSKxdPE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDqag7d118K4TVYDn9mvYsc4yPl1A",
+        "https://i.ytimg.com/vi/OZdDiSKxdPE/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCpFkA4IqA8LNsSvDRarr6IR4yKXw"
+      ],
+      "rightsPolicy": "link-only",
+      "extractedAtEpoch": 1782864847
+    }
+  ],
+  "contentItems": [
+    {
+      "id": "yt-w-Ulms8qVVM",
+      "sourceVideoId": "w-Ulms8qVVM",
+      "episode": "EP.142",
+      "contentType": "지역",
+      "title": "전소미 동생 에블린과 아빠 메튜의 부산 힐링 코스 ㅎㅎ 원각사 녹차 밭에서 채엽하고 공양 먹…",
+      "fullTitle": "전소미 동생 에블린과 아빠 메튜의 부산 힐링 코스 ㅎㅎ 원각사 녹차 밭에서 채엽하고 공양 먹방까지",
+      "sourceUrl": "https://www.youtube.com/watch?v=w-Ulms8qVVM",
+      "durationString": "19:10",
+      "regions": [
+        "하동",
+        "부산"
+      ],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "자연"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "하동",
+        "부산",
+        "시장 음식",
+        "미식",
+        "자연",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가가 하동의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-nature",
+      "qualityScore": 98,
+      "sourceRank": 47
+    },
+    {
+      "id": "yt-yGQOXeXdUgU",
+      "sourceVideoId": "yGQOXeXdUgU",
+      "episode": "EP.432",
+      "contentType": "음식",
+      "title": "크 이거지~ 아빠랑 아들 데칼코마니 리액션 절로 나오는 지리산 토종닭 먹방!",
+      "fullTitle": "크 이거지~ 아빠랑 아들 데칼코마니 리액션 절로 나오는 지리산 토종닭 먹방!",
+      "sourceUrl": "https://www.youtube.com/watch?v=yGQOXeXdUgU",
+      "durationString": "16:48",
+      "regions": [
+        "하동"
+      ],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "자연",
+        "가족"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "가족 여행자",
+        "친구 여행자"
+      ],
+      "tags": [
+        "하동",
+        "시장 음식",
+        "미식",
+        "자연",
+        "가족",
+        "미식가",
+        "가족 여행자",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-nature",
+      "qualityScore": 96,
+      "sourceRank": 49
+    },
+    {
+      "id": "yt-F4tVLdwBuKQ",
+      "sourceVideoId": "F4tVLdwBuKQ",
+      "episode": "EP.431",
+      "contentType": "음식",
+      "title": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에…",
+      "fullTitle": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에 더 깊게 빠지다 크리스 가족 3편 요약",
+      "sourceUrl": "https://www.youtube.com/watch?v=F4tVLdwBuKQ",
+      "durationString": "49:55",
+      "regions": [
+        "하동"
+      ],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "지역문화",
+        "가족"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "가족 여행자",
+        "친구 여행자"
+      ],
+      "tags": [
+        "하동",
+        "시장 음식",
+        "미식",
+        "지역문화",
+        "가족",
+        "미식가",
+        "가족 여행자",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 96,
+      "sourceRank": 68
+    },
+    {
+      "id": "yt-HmFUiUoQl74",
+      "sourceVideoId": "HmFUiUoQl74",
+      "episode": "EP.251",
+      "contentType": "음식",
+      "title": "\"너무 움직이는데??\" 산낙지 충격도 잠시... 입가에 소스 범벅! 독일 3인방 여수 낙지…",
+      "fullTitle": "\"너무 움직이는데??\" 산낙지 충격도 잠시... 입가에 소스 범벅! 독일 3인방 여수 낙지 호롱이 먹방",
+      "sourceUrl": "https://www.youtube.com/watch?v=HmFUiUoQl74",
+      "durationString": "13:31",
+      "regions": [
+        "여수"
+      ],
+      "foods": [
+        "해산물",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "여수",
+        "해산물",
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 해산물의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 91,
+      "sourceRank": 53
+    },
+    {
+      "id": "yt-CTA-qTspySo",
+      "sourceVideoId": "CTA-qTspySo",
+      "episode": "EP.431",
+      "contentType": "음식",
+      "title": "하동 별미 벚굴부터 재첩 파전 그중 크부자가 푹 빠진 메뉴는?? 크리스 감독 화개 장터 먹방…",
+      "fullTitle": "하동 별미 벚굴부터 재첩 파전 그중 크부자가 푹 빠진 메뉴는?? 크리스 감독 화개 장터 먹방! l #어서와한국은처음이지 l EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=CTA-qTspySo",
+      "durationString": "18:59",
+      "regions": [
+        "하동"
+      ],
+      "foods": [
+        "해산물",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "하동",
+        "해산물",
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 해산물의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 91,
+      "sourceRank": 61
+    },
+    {
+      "id": "yt-PgZPx3aF9AI",
+      "sourceVideoId": "PgZPx3aF9AI",
+      "episode": "EP.215",
+      "contentType": "음식",
+      "title": "캬~ 족발은 이렇게 뜯어야지 ㅋㅋ 직접 장 봐서 푹 삶은 쫄깃 한방 통족발 먹방! (ft.…",
+      "fullTitle": "캬~ 족발은 이렇게 뜯어야지 ㅋㅋ 직접 장 봐서 푹 삶은 쫄깃 한방 통족발 먹방! (ft. 돼지꼬리, 부속고기, 매운 김치)",
+      "sourceUrl": "https://www.youtube.com/watch?v=PgZPx3aF9AI",
+      "durationString": "33:10",
+      "regions": [],
+      "foods": [
+        "보쌈",
+        "고기",
+        "시장 음식",
+        "매운 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "보쌈",
+        "고기",
+        "시장 음식",
+        "매운 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 보쌈의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 90,
+      "sourceRank": 10
+    },
+    {
+      "id": "yt-FADpCjHSRuM",
+      "sourceVideoId": "FADpCjHSRuM",
+      "episode": "EP.434",
+      "contentType": "음식",
+      "title": "한국학 전공자들은 쌈 먹방도 다르다? 5종 김치와 함께하는 ㄹㅈㄷ 보쌈 먹방! (+원쌈 원바…",
+      "fullTitle": "한국학 전공자들은 쌈 먹방도 다르다? 5종 김치와 함께하는 ㄹㅈㄷ 보쌈 먹방! (+원쌈 원바이트)",
+      "sourceUrl": "https://www.youtube.com/watch?v=FADpCjHSRuM",
+      "durationString": "15:11",
+      "regions": [],
+      "foods": [
+        "보쌈",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "교육"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "문화 탐방자",
+        "친구 여행자"
+      ],
+      "tags": [
+        "보쌈",
+        "시장 음식",
+        "미식",
+        "교육",
+        "미식가",
+        "문화 탐방자",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 보쌈의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 89,
+      "sourceRank": 5
+    },
+    {
+      "id": "yt-Cuqb0mphhvU",
+      "sourceVideoId": "Cuqb0mphhvU",
+      "episode": "EP.419",
+      "contentType": "음식",
+      "title": "K-돼지 정복하다! 라이&타망 제육·매운갈비찜·불고기와 함께 밥 3공기 흡입한 사연",
+      "fullTitle": "K-돼지 정복하다! 라이&타망 제육·매운갈비찜·불고기와 함께 밥 3공기 흡입한 사연",
+      "sourceUrl": "https://www.youtube.com/watch?v=Cuqb0mphhvU",
+      "durationString": "11:52",
+      "regions": [],
+      "foods": [
+        "고기",
+        "매운 음식"
+      ],
+      "styles": [
+        "미식",
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "고기",
+        "매운 음식",
+        "미식",
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬에게 고기의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 89,
+      "sourceRank": 33
+    },
+    {
+      "id": "yt-nAsIEE--Lr4",
+      "sourceVideoId": "nAsIEE--Lr4",
+      "episode": "EP.372",
+      "contentType": "음식",
+      "title": "️K-매운맛에 도전하러 온 체코인들 ㅋㅋ \"와 죽겠다\" 그런데도 계속 손이 가는 중독성 갑!…",
+      "fullTitle": "️K-매운맛에 도전하러 온 체코인들 ㅋㅋ \"와 죽겠다\" 그런데도 계속 손이 가는 중독성 갑! 맛있게 매운 닭발 먹방",
+      "sourceUrl": "https://www.youtube.com/watch?v=nAsIEE--Lr4",
+      "durationString": "17:02",
+      "regions": [],
+      "foods": [
+        "시장 음식",
+        "매운 음식"
+      ],
+      "styles": [
+        "미식",
+        "한류"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "매운 음식",
+        "미식",
+        "한류",
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 89,
+      "sourceRank": 39
+    },
+    {
+      "id": "yt-8OkLcj--qkE",
+      "sourceVideoId": "8OkLcj--qkE",
+      "episode": "EP.432",
+      "contentType": "음식",
+      "title": "\"이 까만 걸 먹어요?\" 한 입만 잡숴봐ㅋㅋ 외국 애기들 극혐에서 극호! K-짜장면 먹방!",
+      "fullTitle": "\"이 까만 걸 먹어요?\" 한 입만 잡숴봐ㅋㅋ 외국 애기들 극혐에서 극호! K-짜장면 먹방!",
+      "sourceUrl": "https://www.youtube.com/watch?v=8OkLcj--qkE",
+      "durationString": "16:27",
+      "regions": [],
+      "foods": [
+        "면",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "한류"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "tags": [
+        "면",
+        "시장 음식",
+        "미식",
+        "한류",
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 면의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 89,
+      "sourceRank": 42
+    },
+    {
+      "id": "yt-yeIN-s696KA",
+      "sourceVideoId": "yeIN-s696KA",
+      "episode": "EP.272",
+      "contentType": "음식",
+      "title": "화제의 K-젠슨 삼소회동! (삼겹살+소주) 실패 없는 조합 ㅋㅋ️ 외국인 먹방 모음~| EP…",
+      "fullTitle": "화제의 K-젠슨 삼소회동! (삼겹살+소주) 실패 없는 조합 ㅋㅋ️ 외국인 먹방 모음~| EP.272 외",
+      "sourceUrl": "https://www.youtube.com/watch?v=yeIN-s696KA",
+      "durationString": "34:02",
+      "regions": [],
+      "foods": [
+        "고기",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "한류"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "tags": [
+        "고기",
+        "시장 음식",
+        "미식",
+        "한류",
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 고기의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 89,
+      "sourceRank": 57
+    },
+    {
+      "id": "yt-OZdDiSKxdPE",
+      "sourceVideoId": "OZdDiSKxdPE",
+      "episode": "EP.430",
+      "contentType": "지역",
+      "title": "'이거 케데헌에서 봤어요!' 모든 게 처음인 내 나라! 5살 인생 첫 한국에서 민속촌 즐기기…",
+      "fullTitle": "'이거 케데헌에서 봤어요!' 모든 게 처음인 내 나라! 5살 인생 첫 한국에서 민속촌 즐기기~!",
+      "sourceUrl": "https://www.youtube.com/watch?v=OZdDiSKxdPE",
+      "durationString": "20:45",
+      "regions": [
+        "용인"
+      ],
+      "foods": [],
+      "styles": [
+        "지역문화",
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자",
+        "문화 탐방자"
+      ],
+      "tags": [
+        "용인",
+        "지역문화",
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자",
+        "문화 탐방자"
+      ],
+      "recommendationReason": "한류 팬가 용인의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 89,
+      "sourceRank": 80
+    },
+    {
+      "id": "yt-n57JCWygjpE",
+      "sourceVideoId": "n57JCWygjpE",
+      "episode": "EP.210",
+      "contentType": "음식",
+      "title": "통닭 트럭 사장님 초상화전기 통닭 선물 교환!? 진짜 한국을 포착하는 K-초상화가 아론과 치…",
+      "fullTitle": "통닭 트럭 사장님 초상화전기 통닭 선물 교환!? 진짜 한국을 포착하는 K-초상화가 아론과 치킨맨의 이야기",
+      "sourceUrl": "https://www.youtube.com/watch?v=n57JCWygjpE",
+      "durationString": "19:37",
+      "regions": [],
+      "foods": [
+        "치킨"
+      ],
+      "styles": [
+        "미식",
+        "지역문화",
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "문화 탐방자"
+      ],
+      "tags": [
+        "치킨",
+        "미식",
+        "지역문화",
+        "한류",
+        "한류 팬",
+        "문화 탐방자"
+      ],
+      "recommendationReason": "한류 팬에게 치킨의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 88,
+      "sourceRank": 2
+    },
+    {
+      "id": "yt-APv9NSAcqpY",
+      "sourceVideoId": "APv9NSAcqpY",
+      "episode": "EP.434",
+      "contentType": "음식",
+      "title": "어디서도 못 듣는 역사 강의부터 먹방 팁까지 ㅋㅋ 한국학 피터슨 교수의 썸머스쿨 조회수 TO…",
+      "fullTitle": "어디서도 못 듣는 역사 강의부터 먹방 팁까지 ㅋㅋ 한국학 피터슨 교수의 썸머스쿨 조회수 TOP3",
+      "sourceUrl": "https://www.youtube.com/watch?v=APv9NSAcqpY",
+      "durationString": "27:11",
+      "regions": [],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "지역문화",
+        "교육"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "문화 탐방자",
+        "친구 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "미식",
+        "지역문화",
+        "교육",
+        "미식가",
+        "문화 탐방자",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 88,
+      "sourceRank": 4
+    },
+    {
+      "id": "yt-V_KGifdiXrE",
+      "sourceVideoId": "V_KGifdiXrE",
+      "episode": "EP.433",
+      "contentType": "음식",
+      "title": "\"게장 젓가락으로 먹으면 위반?\" 한국 연구한 세월만 60년, 처음으로 게장 제대로 먹는 법…",
+      "fullTitle": "\"게장 젓가락으로 먹으면 위반?\" 한국 연구한 세월만 60년, 처음으로 게장 제대로 먹는 법 전수받은 피터슨 교수 ㅋㅋ",
+      "sourceUrl": "https://www.youtube.com/watch?v=V_KGifdiXrE",
+      "durationString": "22:03",
+      "regions": [
+        "포항"
+      ],
+      "foods": [
+        "해산물"
+      ],
+      "styles": [
+        "교육"
+      ],
+      "travelerSegments": [
+        "미식가"
+      ],
+      "tags": [
+        "포항",
+        "해산물",
+        "교육",
+        "미식가"
+      ],
+      "recommendationReason": "미식가에게 해산물의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 84,
+      "sourceRank": 25
+    },
+    {
+      "id": "yt-23PwuVVjUSw",
+      "sourceVideoId": "23PwuVVjUSw",
+      "episode": "EP.265",
+      "contentType": "음식",
+      "title": "우리 소고기는 안 이런데 ㅠㅠ 기깔나는 마블링의 투쁠 한우 먹고 충격 먹은 뉴질랜드인들",
+      "fullTitle": "우리 소고기는 안 이런데 ㅠㅠ 기깔나는 마블링의 투쁠 한우 먹고 충격 먹은 뉴질랜드인들",
+      "sourceUrl": "https://www.youtube.com/watch?v=23PwuVVjUSw",
+      "durationString": "12:29",
+      "regions": [],
+      "foods": [
+        "한우",
+        "고기"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가"
+      ],
+      "tags": [
+        "한우",
+        "고기",
+        "미식",
+        "미식가"
+      ],
+      "recommendationReason": "미식가에게 한우의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 83,
+      "sourceRank": 1
+    },
+    {
+      "id": "yt-P6X-bqdFVFM",
+      "sourceVideoId": "P6X-bqdFVFM",
+      "episode": "EP.217",
+      "contentType": "음식",
+      "title": "주모~ 나 오늘 집 못 가! 직접 담근 막걸리에 퓨전 안주 한상차림 (by. 미쉐* 셰프)",
+      "fullTitle": "주모~ 나 오늘 집 못 가! 직접 담근 막걸리에 퓨전 안주 한상차림 (by. 미쉐* 셰프)",
+      "sourceUrl": "https://www.youtube.com/watch?v=P6X-bqdFVFM",
+      "durationString": "23:47",
+      "regions": [],
+      "foods": [
+        "막걸리",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가"
+      ],
+      "tags": [
+        "막걸리",
+        "시장 음식",
+        "미식",
+        "미식가"
+      ],
+      "recommendationReason": "미식가에게 막걸리의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 83,
+      "sourceRank": 3
+    },
+    {
+      "id": "yt-JrzgxThoW4c",
+      "sourceVideoId": "JrzgxThoW4c",
+      "episode": "EP.434",
+      "contentType": "지역",
+      "title": "K-전문가 피터슨 교수의 서울 도슨트~ 청계천의 변천사까지 투어버스로 서울 나들이!",
+      "fullTitle": "K-전문가 피터슨 교수의 서울 도슨트~ 청계천의 변천사까지 투어버스로 서울 나들이!",
+      "sourceUrl": "https://www.youtube.com/watch?v=JrzgxThoW4c",
+      "durationString": "24:25",
+      "regions": [
+        "서울"
+      ],
+      "foods": [],
+      "styles": [
+        "한류",
+        "교육"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "서울",
+        "한류",
+        "교육",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 서울의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 83,
+      "sourceRank": 6
+    },
+    {
+      "id": "yt-4smgvUe10FY",
+      "sourceVideoId": "4smgvUe10FY",
+      "episode": "EP.368",
+      "contentType": "음식",
+      "title": "너무 잘 먹어서 CF 들어오는 거 아냐?? 비주얼 끝판왕 우대 소갈비찜과 3인 3색 퓨전 한…",
+      "fullTitle": "너무 잘 먹어서 CF 들어오는 거 아냐?? 비주얼 끝판왕 우대 소갈비찜과 3인 3색 퓨전 한식 먹방",
+      "sourceUrl": "https://www.youtube.com/watch?v=4smgvUe10FY",
+      "durationString": "18:17",
+      "regions": [],
+      "foods": [
+        "고기",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "고기",
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 고기의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 83,
+      "sourceRank": 36
+    },
+    {
+      "id": "yt-ISYl4gl9usE",
+      "sourceVideoId": "ISYl4gl9usE",
+      "episode": "EP.432",
+      "contentType": "지역",
+      "title": "직접 딴 녹차로 다도 체험! 크리스 감독, 아들이랑 오붓한 하동 녹차밭 데이트",
+      "fullTitle": "직접 딴 녹차로 다도 체험! 크리스 감독, 아들이랑 오붓한 하동 녹차밭 데이트",
+      "sourceUrl": "https://www.youtube.com/watch?v=ISYl4gl9usE",
+      "durationString": "23:34",
+      "regions": [
+        "하동"
+      ],
+      "foods": [],
+      "styles": [
+        "자연",
+        "가족"
+      ],
+      "travelerSegments": [
+        "가족 여행자"
+      ],
+      "tags": [
+        "하동",
+        "자연",
+        "가족",
+        "가족 여행자"
+      ],
+      "recommendationReason": "가족 여행자가 하동의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-nature",
+      "qualityScore": 83,
+      "sourceRank": 43
+    },
+    {
+      "id": "yt-k9yoHcI-pWo",
+      "sourceVideoId": "k9yoHcI-pWo",
+      "episode": "EP.131",
+      "contentType": "음식",
+      "title": "이렇게 귀여운 먹방은 처음봐요 벨기에 아기 우리스의 양념갈비 먹방!| EP.131회",
+      "fullTitle": "이렇게 귀여운 먹방은 처음봐요 벨기에 아기 우리스의 양념갈비 먹방!| EP.131회",
+      "sourceUrl": "https://www.youtube.com/watch?v=k9yoHcI-pWo",
+      "durationString": "9:14",
+      "regions": [],
+      "foods": [
+        "고기",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "고기",
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 고기의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 83,
+      "sourceRank": 51
+    },
+    {
+      "id": "yt-55PGasIizrM",
+      "sourceVideoId": "55PGasIizrM",
+      "episode": "EP.431",
+      "contentType": "지역",
+      "title": "크감독 가족들 하동에 떴다! 하동에서도 교진이 껌딱지 아빠 케데헌 감독 크리스의 내한 조회수…",
+      "fullTitle": "크감독 가족들 하동에 떴다! 하동에서도 교진이 껌딱지 아빠 케데헌 감독 크리스의 내한 조회수 TOP3",
+      "sourceUrl": "https://www.youtube.com/watch?v=55PGasIizrM",
+      "durationString": "24:47",
+      "regions": [
+        "하동"
+      ],
+      "foods": [],
+      "styles": [
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "tags": [
+        "하동",
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "recommendationReason": "한류 팬가 하동의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 83,
+      "sourceRank": 59
+    },
+    {
+      "id": "yt-UE65iftCZN4",
+      "sourceVideoId": "UE65iftCZN4",
+      "episode": "EP.431",
+      "contentType": "지역",
+      "title": "소설 '토지' 속 대자연에 압도! 최참판댁에서 진정한 한국을 느낀 크리스 감독과 가족들 (+…",
+      "fullTitle": "소설 '토지' 속 대자연에 압도! 최참판댁에서 진정한 한국을 느낀 크리스 감독과 가족들 (+ 케데헌2 자료 조사?) l #어서와한국은처음이지 l EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=UE65iftCZN4",
+      "durationString": "19:12",
+      "regions": [
+        "하동"
+      ],
+      "foods": [],
+      "styles": [
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "tags": [
+        "하동",
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "recommendationReason": "한류 팬가 하동의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 83,
+      "sourceRank": 60
+    },
+    {
+      "id": "yt-m4pqwiOeTKs",
+      "sourceVideoId": "m4pqwiOeTKs",
+      "episode": "EP.229",
+      "contentType": "음식",
+      "title": "쉽지 않지만... 막상 먹어보면 맛있죠? 꼬들꼬들 돼지 특수부위 처음 접한 외국인들! 돼지껍…",
+      "fullTitle": "쉽지 않지만... 막상 먹어보면 맛있죠? 꼬들꼬들 돼지 특수부위 처음 접한 외국인들! 돼지껍데기+막창+볼살 먹방!",
+      "sourceUrl": "https://www.youtube.com/watch?v=m4pqwiOeTKs",
+      "durationString": "17:23",
+      "regions": [],
+      "foods": [
+        "고기",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "고기",
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 고기의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 83,
+      "sourceRank": 70
+    },
+    {
+      "id": "yt-a05KsJKzdrc",
+      "sourceVideoId": "a05KsJKzdrc",
+      "episode": "EP.430",
+      "contentType": "음식",
+      "title": "부전자전 새콤달콤 냉면+국수 홀릭! 크리스 감독의 최애 한식 냉면 먹방",
+      "fullTitle": "부전자전 새콤달콤 냉면+국수 홀릭! 크리스 감독의 최애 한식 냉면 먹방",
+      "sourceUrl": "https://www.youtube.com/watch?v=a05KsJKzdrc",
+      "durationString": "16:17",
+      "regions": [],
+      "foods": [
+        "면",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "면",
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 면의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 83,
+      "sourceRank": 77
+    },
+    {
+      "id": "yt-l-ut8Fw5ll0",
+      "sourceVideoId": "l-ut8Fw5ll0",
+      "episode": "EP.134",
+      "contentType": "음식",
+      "title": "검정색 국수는 뭐야? 고춧가루 팍팍 넣어서 먹는 윤기 좔좔 짜장면 먹방!",
+      "fullTitle": "검정색 국수는 뭐야? 고춧가루 팍팍 넣어서 먹는 윤기 좔좔 짜장면 먹방!",
+      "sourceUrl": "https://www.youtube.com/watch?v=l-ut8Fw5ll0",
+      "durationString": "8:39",
+      "regions": [],
+      "foods": [
+        "면",
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "면",
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 면의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 83,
+      "sourceRank": 79
+    },
+    {
+      "id": "yt-463mYYx4Oo4",
+      "sourceVideoId": "463mYYx4Oo4",
+      "episode": "EP.434",
+      "contentType": "음식",
+      "title": "[요약] 한국학 연구 60년 피터슨 교수가 전쟁기념관에서 들려주는 6.25 이야기! (ft.…",
+      "fullTitle": "[요약] 한국학 연구 60년 피터슨 교수가 전쟁기념관에서 들려주는 6.25 이야기! (ft. 먹방+시티투어) 피터슨 교수 2편 요약︎",
+      "sourceUrl": "https://www.youtube.com/watch?v=463mYYx4Oo4",
+      "durationString": "47:06",
+      "regions": [],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "교육"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "문화 탐방자",
+        "친구 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "미식",
+        "교육",
+        "미식가",
+        "문화 탐방자",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 82,
+      "sourceRank": 13
+    },
+    {
+      "id": "yt-fGDRHl8kH3s",
+      "sourceVideoId": "fGDRHl8kH3s",
+      "episode": "EP.233",
+      "contentType": "음식",
+      "title": "5년간 몸담았던 한국 안녕 K-이웃에게 작별 선물 주려고 백김치 직접 담근 다섯 가족 (+자…",
+      "fullTitle": "5년간 몸담았던 한국 안녕 K-이웃에게 작별 선물 주려고 백김치 직접 담근 다섯 가족 (+자필 편지)",
+      "sourceUrl": "https://www.youtube.com/watch?v=fGDRHl8kH3s",
+      "durationString": "24:19",
+      "regions": [],
+      "foods": [
+        "보쌈"
+      ],
+      "styles": [
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "tags": [
+        "보쌈",
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "recommendationReason": "한류 팬에게 보쌈의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 82,
+      "sourceRank": 29
+    },
+    {
+      "id": "yt-7yHfVwjF7Zw",
+      "sourceVideoId": "7yHfVwjF7Zw",
+      "episode": "EP.432",
+      "contentType": "음식",
+      "title": "\"나 안 먹어요!!...라면은 말이 달라지지\" 아침 투정 싹 고치는 S라면 먹방 (+케데헌…",
+      "fullTitle": "\"나 안 먹어요!!...라면은 말이 달라지지\" 아침 투정 싹 고치는 S라면 먹방 (+케데헌 라면 먹는 케데헌 감독ㅋㅋ)",
+      "sourceUrl": "https://www.youtube.com/watch?v=7yHfVwjF7Zw",
+      "durationString": "9:56",
+      "regions": [],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "한류"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "미식",
+        "한류",
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 82,
+      "sourceRank": 46
+    },
+    {
+      "id": "yt-P5MT7nTwz8o",
+      "sourceVideoId": "P5MT7nTwz8o",
+      "episode": "EP.223",
+      "contentType": "음식",
+      "title": "'내가 한국에 있다니!!' 드라마부터 뷰티까지 K-홀릭! 흥부자 한국 덕후의 문어 순두부찌개…",
+      "fullTitle": "'내가 한국에 있다니!!' 드라마부터 뷰티까지 K-홀릭! 흥부자 한국 덕후의 문어 순두부찌개 먹방",
+      "sourceUrl": "https://www.youtube.com/watch?v=P5MT7nTwz8o",
+      "durationString": "24:48",
+      "regions": [],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "한류"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "미식",
+        "한류",
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 82,
+      "sourceRank": 62
+    },
+    {
+      "id": "yt-8LMDotp2Xhw",
+      "sourceVideoId": "8LMDotp2Xhw",
+      "episode": "EP.222",
+      "contentType": "음식",
+      "title": "날 것 그 자체, 숯불 돈마호크부터 부대찌개! 남자 넷이서 하는 와일드 캠핑 먹방! (+우정…",
+      "fullTitle": "날 것 그 자체, 숯불 돈마호크부터 부대찌개! 남자 넷이서 하는 와일드 캠핑 먹방! (+우정템 K-깔깔이)",
+      "sourceUrl": "https://www.youtube.com/watch?v=8LMDotp2Xhw",
+      "durationString": "20:34",
+      "regions": [],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식",
+        "한류"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "미식",
+        "한류",
+        "미식가",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 82,
+      "sourceRank": 73
+    },
+    {
+      "id": "yt-2wP6EIoFE0U",
+      "sourceVideoId": "2wP6EIoFE0U",
+      "episode": "EP.280",
+      "contentType": "음식",
+      "title": "이탈리아 미슐랭 셰프도 반함ㅋㅋ \"게장 맘마미아!\" 포항에서 간장게장부터 양념 게장까지 제대…",
+      "fullTitle": "이탈리아 미슐랭 셰프도 반함ㅋㅋ \"게장 맘마미아!\" 포항에서 간장게장부터 양념 게장까지 제대로 즐기기",
+      "sourceUrl": "https://www.youtube.com/watch?v=2wP6EIoFE0U",
+      "durationString": "16:57",
+      "regions": [
+        "포항"
+      ],
+      "foods": [
+        "해산물"
+      ],
+      "styles": [],
+      "travelerSegments": [
+        "미식가"
+      ],
+      "tags": [
+        "포항",
+        "해산물",
+        "미식가"
+      ],
+      "recommendationReason": "미식가에게 해산물의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 78,
+      "sourceRank": 38
+    },
+    {
+      "id": "yt-59OGGsO952E",
+      "sourceVideoId": "59OGGsO952E",
+      "episode": "EP.419",
+      "contentType": "지역",
+      "title": "책에서만 봤던 바다를 만나다! 네팔 순수청년 라이&타망 강릉 여행기!",
+      "fullTitle": "책에서만 봤던 바다를 만나다! 네팔 순수청년 라이&타망 강릉 여행기!",
+      "sourceUrl": "https://www.youtube.com/watch?v=59OGGsO952E",
+      "durationString": "15:16",
+      "regions": [
+        "강릉"
+      ],
+      "foods": [],
+      "styles": [
+        "자연"
+      ],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "강릉",
+        "자연",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 강릉의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-nature",
+      "qualityScore": 77,
+      "sourceRank": 45
+    },
+    {
+      "id": "yt-HrqWciz3VuI",
+      "sourceVideoId": "HrqWciz3VuI",
+      "episode": "EP.392",
+      "contentType": "지역",
+      "title": "'역시 e-스포츠의 성지 한국 ' 홍대 T1 베이스캠프 방문한 외국인들! K-피시방에 잔뜩…",
+      "fullTitle": "'역시 e-스포츠의 성지 한국 ' 홍대 T1 베이스캠프 방문한 외국인들! K-피시방에 잔뜩 흥분!",
+      "sourceUrl": "https://www.youtube.com/watch?v=HrqWciz3VuI",
+      "durationString": "10:21",
+      "regions": [
+        "서울"
+      ],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "서울",
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 서울의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 77,
+      "sourceRank": 58
+    },
+    {
+      "id": "yt-B3BIaaiuP88",
+      "sourceVideoId": "B3BIaaiuP88",
+      "episode": "EP.431",
+      "contentType": "지역",
+      "title": "인생 첫 기차 KTX! 마냥 좋은 교진이와 흐뭇한 크감독의 목적지는 하동~ (+기차에서 먹는…",
+      "fullTitle": "인생 첫 기차 KTX! 마냥 좋은 교진이와 흐뭇한 크감독의 목적지는 하동~ (+기차에서 먹는 K-별미) l #어서와한국은처음이지 l EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=B3BIaaiuP88",
+      "durationString": "18:14",
+      "regions": [
+        "하동"
+      ],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "하동",
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 하동의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 77,
+      "sourceRank": 67
+    },
+    {
+      "id": "yt-qd-NiT8AAR0",
+      "sourceVideoId": "qd-NiT8AAR0",
+      "episode": "EP.434",
+      "contentType": "음식",
+      "title": "뼈가 통째로 들어가 있네?? 국적 불문 아재들 입맛 저격 ㅋㅋㅋ 뼈해장국 X 순대국 먹방!",
+      "fullTitle": "뼈가 통째로 들어가 있네?? 국적 불문 아재들 입맛 저격 ㅋㅋㅋ 뼈해장국 X 순대국 먹방!",
+      "sourceUrl": "https://www.youtube.com/watch?v=qd-NiT8AAR0",
+      "durationString": "18:36",
+      "regions": [],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 76,
+      "sourceRank": 9
+    },
+    {
+      "id": "yt-amdRhCahnEQ",
+      "sourceVideoId": "amdRhCahnEQ",
+      "episode": "EP.371",
+      "contentType": "음식",
+      "title": "슈퍼P 외국인 유학생들끼리 떠난 즉흥 김해 여행 우여곡절 끝에 먹는 김해 뒷고기의 맛은?",
+      "fullTitle": "슈퍼P 외국인 유학생들끼리 떠난 즉흥 김해 여행 우여곡절 끝에 먹는 김해 뒷고기의 맛은?",
+      "sourceUrl": "https://www.youtube.com/watch?v=amdRhCahnEQ",
+      "durationString": "26:08",
+      "regions": [],
+      "foods": [
+        "고기"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "고기",
+        "미식",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자에게 고기의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 76,
+      "sourceRank": 20
+    },
+    {
+      "id": "yt-ALprSlcHpEw",
+      "sourceVideoId": "ALprSlcHpEw",
+      "episode": "EP.371",
+      "contentType": "음식",
+      "title": "(1시간) 외국인 둘이 시골 가면 생기는 일?? 이장님 집부터 마을회관까지ㅋㅋ 시골 인심 두…",
+      "fullTitle": "(1시간) 외국인 둘이 시골 가면 생기는 일?? 이장님 집부터 마을회관까지ㅋㅋ 시골 인심 두둑한 밥상으로 세끼 먹방!",
+      "sourceUrl": "https://www.youtube.com/watch?v=ALprSlcHpEw",
+      "durationString": "50:19",
+      "regions": [],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "미식가",
+        "친구 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "미식",
+        "미식가",
+        "친구 여행자"
+      ],
+      "recommendationReason": "미식가에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 76,
+      "sourceRank": 54
+    },
+    {
+      "id": "yt-Uzs4clulqIs",
+      "sourceVideoId": "Uzs4clulqIs",
+      "episode": "EP.431",
+      "contentType": "음식",
+      "title": "볼거리 먹거리 천국 화개 장터!근데 만나는 사장님들마다 뭘 자꾸 준다?? 전통시장 인기스타가…",
+      "fullTitle": "볼거리 먹거리 천국 화개 장터!근데 만나는 사장님들마다 뭘 자꾸 준다?? 전통시장 인기스타가 된 교진이 l #어서와한국은처음이지 l EP.431",
+      "sourceUrl": "https://www.youtube.com/watch?v=Uzs4clulqIs",
+      "durationString": "12:38",
+      "regions": [],
+      "foods": [
+        "시장 음식"
+      ],
+      "styles": [
+        "지역문화"
+      ],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "시장 음식",
+        "지역문화",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자에게 시장 음식의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 76,
+      "sourceRank": 64
+    },
+    {
+      "id": "yt-TsWQz1xDvek",
+      "sourceVideoId": "TsWQz1xDvek",
+      "episode": "EP.177",
+      "contentType": "음식",
+      "title": "이 조합...진짜 맛있다외국인이 만든 신박한 불고기 요리",
+      "fullTitle": "이 조합...진짜 맛있다외국인이 만든 신박한 불고기 요리",
+      "sourceUrl": "https://www.youtube.com/watch?v=TsWQz1xDvek",
+      "durationString": "8:06",
+      "regions": [],
+      "foods": [
+        "고기"
+      ],
+      "styles": [
+        "미식"
+      ],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "고기",
+        "미식",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자에게 고기의 맛, 먹는 상황, 주문 난이도를 설명할 수 있는 영상 기반 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 76,
+      "sourceRank": 72
+    },
+    {
+      "id": "yt-KF_U3hWV1Ds",
+      "sourceVideoId": "KF_U3hWV1Ds",
+      "episode": "EP.8",
+      "contentType": "영상 영감",
+      "title": "경주에서 만난 독일 음식~? 'K-카레소시지'를 맛본 독일인의 반응은??",
+      "fullTitle": "경주에서 만난 독일 음식~? 'K-카레소시지'를 맛본 독일인의 반응은??",
+      "sourceUrl": "https://www.youtube.com/watch?v=KF_U3hWV1Ds",
+      "durationString": "14:55",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "미식",
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "미식",
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-food",
+      "qualityScore": 75,
+      "sourceRank": 11
+    },
+    {
+      "id": "yt-VX8NiqSO22Y",
+      "sourceVideoId": "VX8NiqSO22Y",
+      "episode": "EP.231",
+      "contentType": "영상 영감",
+      "title": "미국 브랜든 가족의 첫 K-돌잔치 준비! 과연 돌잡이 결과는 ??",
+      "fullTitle": "미국 브랜든 가족의 첫 K-돌잔치 준비! 과연 돌잡이 결과는 ??",
+      "sourceUrl": "https://www.youtube.com/watch?v=VX8NiqSO22Y",
+      "durationString": "26:21",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "tags": [
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 75,
+      "sourceRank": 21
+    },
+    {
+      "id": "yt-ay6WBc2hfJA",
+      "sourceVideoId": "ay6WBc2hfJA",
+      "episode": "EP.433",
+      "contentType": "영상 영감",
+      "title": "한국인들도 잘 모르는 걸ㄷㄷ‍ 하버드 한국학 교수에게 듣는 한국 알쓸신잡! 피터슨 교수님의…",
+      "fullTitle": "한국인들도 잘 모르는 걸ㄷㄷ‍ 하버드 한국학 교수에게 듣는 한국 알쓸신잡! 피터슨 교수님의 K-변천사 특강!",
+      "sourceUrl": "https://www.youtube.com/watch?v=ay6WBc2hfJA",
+      "durationString": "18:59",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류",
+        "교육"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "문화 탐방자"
+      ],
+      "tags": [
+        "한류",
+        "교육",
+        "한류 팬",
+        "문화 탐방자"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 75,
+      "sourceRank": 24
+    },
+    {
+      "id": "yt-GbX_b2MACEY",
+      "sourceVideoId": "GbX_b2MACEY",
+      "episode": "EP.231",
+      "contentType": "영상 영감",
+      "title": "※감동주의※ 2년 만에 한국에서 부녀 상봉! 아빠를 위한 스페인 효녀의 K-효도관광 코스",
+      "fullTitle": "※감동주의※ 2년 만에 한국에서 부녀 상봉! 아빠를 위한 스페인 효녀의 K-효도관광 코스",
+      "sourceUrl": "https://www.youtube.com/watch?v=GbX_b2MACEY",
+      "durationString": "40:35",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "tags": [
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 75,
+      "sourceRank": 35
+    },
+    {
+      "id": "yt-9F-paeOGAcY",
+      "sourceVideoId": "9F-paeOGAcY",
+      "episode": "EP.429",
+      "contentType": "영상 영감",
+      "title": "(3시간) K-열풍의 주역 아들의 한국 정체성을 찾으러 온 '케이팝 데몬 헌터스' 감독 크리…",
+      "fullTitle": "(3시간) K-열풍의 주역 아들의 한국 정체성을 찾으러 온 '케이팝 데몬 헌터스' 감독 크리스! 케데헌 감독 편 몰아보기| EP.429~432",
+      "sourceUrl": "https://www.youtube.com/watch?v=9F-paeOGAcY",
+      "durationString": "3:14:36",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "tags": [
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 75,
+      "sourceRank": 40
+    },
+    {
+      "id": "yt-2Q5KTYzIUbo",
+      "sourceVideoId": "2Q5KTYzIUbo",
+      "episode": "EP.432",
+      "contentType": "영상 영감",
+      "title": "\"제가 한국인이라서 행운이에요!\" 아들에게 한국 정체성을 일깨워 준 여행의 끝 케데헌 감독…",
+      "fullTitle": "\"제가 한국인이라서 행운이에요!\" 아들에게 한국 정체성을 일깨워 준 여행의 끝 케데헌 감독 크리스의 내한 조회수 TOP3",
+      "sourceUrl": "https://www.youtube.com/watch?v=2Q5KTYzIUbo",
+      "durationString": "24:36",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "tags": [
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 75,
+      "sourceRank": 41
+    },
+    {
+      "id": "yt-kbHKvaatoFM",
+      "sourceVideoId": "kbHKvaatoFM",
+      "episode": "EP.430",
+      "contentType": "영상 영감",
+      "title": "케데헌 회식에서도 아들 자랑 ㅋㅋ 크리스 감독과 제작진들의 진솔 토크 (※ 최초 공개 썰들※…",
+      "fullTitle": "케데헌 회식에서도 아들 자랑 ㅋㅋ 크리스 감독과 제작진들의 진솔 토크 (※ 최초 공개 썰들※ )",
+      "sourceUrl": "https://www.youtube.com/watch?v=kbHKvaatoFM",
+      "durationString": "19:49",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류",
+        "가족"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "가족 여행자",
+        "친구 여행자"
+      ],
+      "tags": [
+        "한류",
+        "가족",
+        "한류 팬",
+        "가족 여행자",
+        "친구 여행자"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 75,
+      "sourceRank": 76
+    },
+    {
+      "id": "yt-3E2H1zeccwA",
+      "sourceVideoId": "3E2H1zeccwA",
+      "episode": "EP.233",
+      "contentType": "지역",
+      "title": "뭐 만 원으로 서울에서 세 끼 해결하기?? S대 외국인들의 만 원 세 끼!",
+      "fullTitle": "뭐 만 원으로 서울에서 세 끼 해결하기?? S대 외국인들의 만 원 세 끼!",
+      "sourceUrl": "https://www.youtube.com/watch?v=3E2H1zeccwA",
+      "durationString": "26:38",
+      "regions": [
+        "서울"
+      ],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "서울",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 서울의 이동 동선과 주변 경험을 함께 파악하기 좋은 후보입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 71,
+      "sourceRank": 22
+    },
+    {
+      "id": "yt-PZHYBCahhng",
+      "sourceVideoId": "PZHYBCahhng",
+      "episode": "EP.92",
+      "contentType": "영상 영감",
+      "title": "'이게 10분 만에 된다고?' 외국인들 한국와서 깜짝 놀란 K-초스피드 모음집| EP.92외",
+      "fullTitle": "'이게 10분 만에 된다고?' 외국인들 한국와서 깜짝 놀란 K-초스피드 모음집| EP.92외",
+      "sourceUrl": "https://www.youtube.com/watch?v=PZHYBCahhng",
+      "durationString": "19:11",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 8
+    },
+    {
+      "id": "yt-Uhztkt9kwfw",
+      "sourceVideoId": "Uhztkt9kwfw",
+      "episode": "EP.434",
+      "contentType": "관광지",
+      "title": "일제강점기부터 6.25 속 감동적인 일화들 피터슨 교수 전쟁기념관 특강",
+      "fullTitle": "일제강점기부터 6.25 속 감동적인 일화들 피터슨 교수 전쟁기념관 특강",
+      "sourceUrl": "https://www.youtube.com/watch?v=Uhztkt9kwfw",
+      "durationString": "21:42",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "교육"
+      ],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "교육",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 한국 문화와 배경지식을 여행 전후로 이해하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 69,
+      "sourceRank": 12
+    },
+    {
+      "id": "yt-yNUrZFtsYq4",
+      "sourceVideoId": "yNUrZFtsYq4",
+      "episode": "EP.419",
+      "contentType": "영상 영감",
+      "title": "네팔 순수 청년 라이&타망 영혼 탈탈 털어버린 K-놀이동산",
+      "fullTitle": "네팔 순수 청년 라이&타망 영혼 탈탈 털어버린 K-놀이동산",
+      "sourceUrl": "https://www.youtube.com/watch?v=yNUrZFtsYq4",
+      "durationString": "24:32",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 15
+    },
+    {
+      "id": "yt-S0Jn_RM0zOE",
+      "sourceVideoId": "S0Jn_RM0zOE",
+      "episode": "EP.432",
+      "contentType": "관광지",
+      "title": "제작진에게 직접 연락 한 하버드 박사?? 한국학 피터슨 교수의 썸머스쿨 조회수 TOP3",
+      "fullTitle": "제작진에게 직접 연락 한 하버드 박사?? 한국학 피터슨 교수의 썸머스쿨 조회수 TOP3",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0Jn_RM0zOE",
+      "durationString": "38:02",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "교육"
+      ],
+      "travelerSegments": [
+        "문화 탐방자"
+      ],
+      "tags": [
+        "교육",
+        "문화 탐방자"
+      ],
+      "recommendationReason": "문화 탐방자가 한국 문화와 배경지식을 여행 전후로 이해하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 69,
+      "sourceRank": 23
+    },
+    {
+      "id": "yt--w9FdEdffxA",
+      "sourceVideoId": "-w9FdEdffxA",
+      "episode": "EP.66",
+      "contentType": "영상 영감",
+      "title": "\"왜 한국인들은 한 줄로 안 기다려??\" 반달 모양의 K-대기줄에 숨겨진 비밀을 알아버린 스…",
+      "fullTitle": "\"왜 한국인들은 한 줄로 안 기다려??\" 반달 모양의 K-대기줄에 숨겨진 비밀을 알아버린 스웨덴 삼총사 ㅋㅋ",
+      "sourceUrl": "https://www.youtube.com/watch?v=-w9FdEdffxA",
+      "durationString": "13:23",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 26
+    },
+    {
+      "id": "yt-fGMTI1TcNm4",
+      "sourceVideoId": "fGMTI1TcNm4",
+      "episode": "EP.261",
+      "contentType": "영상 영감",
+      "title": "오동통 살이 꽉~ 찬 K-대게찜에 제대로 반해 버린 외국인들",
+      "fullTitle": "오동통 살이 꽉~ 찬 K-대게찜에 제대로 반해 버린 외국인들",
+      "sourceUrl": "https://www.youtube.com/watch?v=fGMTI1TcNm4",
+      "durationString": "15:45",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 27
+    },
+    {
+      "id": "yt-z_bAltbrBJY",
+      "sourceVideoId": "z_bAltbrBJY",
+      "episode": "EP.433",
+      "contentType": "관광지",
+      "title": "\"여기 한국 맞아?\" 27년 후 다시 찾은 한국, 근데 달라도 너무 다르다?! 인천 공항 보…",
+      "fullTitle": "\"여기 한국 맞아?\" 27년 후 다시 찾은 한국, 근데 달라도 너무 다르다?! 인천 공항 보고 놀란 피터슨 교수와 제자들",
+      "sourceUrl": "https://www.youtube.com/watch?v=z_bAltbrBJY",
+      "durationString": "12:58",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "교육"
+      ],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "교육",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 한국 문화와 배경지식을 여행 전후로 이해하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 69,
+      "sourceRank": 28
+    },
+    {
+      "id": "yt-dnukVTMP_lQ",
+      "sourceVideoId": "dnukVTMP_lQ",
+      "episode": "EP.433",
+      "contentType": "관광지",
+      "title": "다시 1999년 썸머스쿨 그때로! 27년 만에 만나 한국 여행을 떠나는 피터슨 교수와 애제자…",
+      "fullTitle": "다시 1999년 썸머스쿨 그때로! 27년 만에 만나 한국 여행을 떠나는 피터슨 교수와 애제자 트리오!",
+      "sourceUrl": "https://www.youtube.com/watch?v=dnukVTMP_lQ",
+      "durationString": "24:44",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "교육"
+      ],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "교육",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 한국 문화와 배경지식을 여행 전후로 이해하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 69,
+      "sourceRank": 31
+    },
+    {
+      "id": "yt-WLmHxs0cTCw",
+      "sourceVideoId": "WLmHxs0cTCw",
+      "episode": "EP.433",
+      "contentType": "관광지",
+      "title": "[요약] 하버드 석박사, 한국학 교수 피터슨! 27년 만에 한국에서 애제자들과 다시 한번 썸…",
+      "fullTitle": "[요약] 하버드 석박사, 한국학 교수 피터슨! 27년 만에 한국에서 애제자들과 다시 한번 썸머스쿨 ~ 피터슨 교수 1편 요약︎",
+      "sourceUrl": "https://www.youtube.com/watch?v=WLmHxs0cTCw",
+      "durationString": "49:59",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "교육"
+      ],
+      "travelerSegments": [
+        "문화 탐방자"
+      ],
+      "tags": [
+        "교육",
+        "문화 탐방자"
+      ],
+      "recommendationReason": "문화 탐방자가 한국 문화와 배경지식을 여행 전후로 이해하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 69,
+      "sourceRank": 32
+    },
+    {
+      "id": "yt-r-5LvAn3zC8",
+      "sourceVideoId": "r-5LvAn3zC8",
+      "episode": "EP.297",
+      "contentType": "영상 영감",
+      "title": "\"흥이 난다 흥이 나~\" 찐 멕시칸들 아침으로 K-타코 먹으면서 K-드라마 과몰입하기 ㅋㅋ…",
+      "fullTitle": "\"흥이 난다 흥이 나~\" 찐 멕시칸들 아침으로 K-타코 먹으면서 K-드라마 과몰입하기 ㅋㅋ (+ 냅다 길거리 공연)",
+      "sourceUrl": "https://www.youtube.com/watch?v=r-5LvAn3zC8",
+      "durationString": "20:54",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 34
+    },
+    {
+      "id": "yt-FlgkHAaPZzc",
+      "sourceVideoId": "FlgkHAaPZzc",
+      "episode": "EP.251",
+      "contentType": "영상 영감",
+      "title": "\"다리 지나는데 돈을 세 번이나 낸다고?\" ️ 돌발 상황! K-톨게이트 처음 보고 멘붕 제대…",
+      "fullTitle": "\"다리 지나는데 돈을 세 번이나 낸다고?\" ️ 돌발 상황! K-톨게이트 처음 보고 멘붕 제대로 온 독일인들ㅋㅋ",
+      "sourceUrl": "https://www.youtube.com/watch?v=FlgkHAaPZzc",
+      "durationString": "30:41",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 44
+    },
+    {
+      "id": "yt-z-hQCmTFvUE",
+      "sourceVideoId": "z-hQCmTFvUE",
+      "episode": "EP.432",
+      "contentType": "영상 영감",
+      "title": "[요약] \"이제 눈 감아도 한국이 보여요\" 굿바이 크리스 ㅠㅠ 한국에서의 추억 듬뿍 쌓은 크…",
+      "fullTitle": "[요약] \"이제 눈 감아도 한국이 보여요\" 굿바이 크리스 ㅠㅠ 한국에서의 추억 듬뿍 쌓은 크리스 가족 마지막 편 요약",
+      "sourceUrl": "https://www.youtube.com/watch?v=z-hQCmTFvUE",
+      "durationString": "48:28",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "가족"
+      ],
+      "travelerSegments": [
+        "가족 여행자"
+      ],
+      "tags": [
+        "가족",
+        "가족 여행자"
+      ],
+      "recommendationReason": "가족 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 69,
+      "sourceRank": 50
+    },
+    {
+      "id": "yt-e1D0Xh4dYwM",
+      "sourceVideoId": "e1D0Xh4dYwM",
+      "episode": "EP.161",
+      "contentType": "영상 영감",
+      "title": "게임하랴 먹으랴;; 모니터에 시선 고정하고 바쁘다 바빠! e-스포츠 광팬들이 시간 보내는 법…",
+      "fullTitle": "게임하랴 먹으랴;; 모니터에 시선 고정하고 바쁘다 바빠! e-스포츠 광팬들이 시간 보내는 법 ㅋㅋ",
+      "sourceUrl": "https://www.youtube.com/watch?v=e1D0Xh4dYwM",
+      "durationString": "12:15",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 56
+    },
+    {
+      "id": "yt-FsfqJoGsnaI",
+      "sourceVideoId": "FsfqJoGsnaI",
+      "episode": "EP.225",
+      "contentType": "영상 영감",
+      "title": "'생선 먹기 도전!' 평생 못 먹던 생선 이젠 먹고 싶어요 K-생선구이로 극복 가능?! (f…",
+      "fullTitle": "'생선 먹기 도전!' 평생 못 먹던 생선 이젠 먹고 싶어요 K-생선구이로 극복 가능?! (feat. 생선구이 4총사)",
+      "sourceUrl": "https://www.youtube.com/watch?v=FsfqJoGsnaI",
+      "durationString": "14:45",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 71
+    },
+    {
+      "id": "yt-589GXrjS5ec",
+      "sourceVideoId": "589GXrjS5ec",
+      "episode": "EP.229",
+      "contentType": "영상 영감",
+      "title": "새벽 배송은 혁명이죠 삶의 질 수직 상승! K-스피드에 중독된 브라질 친구 ㅋㅋㅋ (+심상치…",
+      "fullTitle": "새벽 배송은 혁명이죠 삶의 질 수직 상승! K-스피드에 중독된 브라질 친구 ㅋㅋㅋ (+심상치 않은 냉장고와 직업)",
+      "sourceUrl": "https://www.youtube.com/watch?v=589GXrjS5ec",
+      "durationString": "13:28",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 74
+    },
+    {
+      "id": "yt-B-epfmMYMZE",
+      "sourceVideoId": "B-epfmMYMZE",
+      "episode": "EP.430",
+      "contentType": "영상 영감",
+      "title": "'이게 내 나라??' 본격 한국 여행에 잔뜩 신난 교진이 케데헌 감독 크리스의 내한 조회수…",
+      "fullTitle": "'이게 내 나라??' 본격 한국 여행에 잔뜩 신난 교진이 케데헌 감독 크리스의 내한 조회수 TOP3",
+      "sourceUrl": "https://www.youtube.com/watch?v=B-epfmMYMZE",
+      "durationString": "31:51",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 75
+    },
+    {
+      "id": "yt-y0aezh9hIFw",
+      "sourceVideoId": "y0aezh9hIFw",
+      "episode": "EP.292",
+      "contentType": "영상 영감",
+      "title": "세상에 이건 꿈? 페이커 때문에 유럽에서 날아왔는데 팬미팅 당첨까지?! E-스포츠 덕후들의…",
+      "fullTitle": "세상에 이건 꿈? 페이커 때문에 유럽에서 날아왔는데 팬미팅 당첨까지?! E-스포츠 덕후들의 소원 성취",
+      "sourceUrl": "https://www.youtube.com/watch?v=y0aezh9hIFw",
+      "durationString": "15:53",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "한류"
+      ],
+      "travelerSegments": [
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "tags": [
+        "한류",
+        "한류 팬",
+        "친구 여행자"
+      ],
+      "recommendationReason": "한류 팬가 K-콘텐츠 관심을 실제 방문 맥락으로 연결할 수 있는 영상 영감입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-culture",
+      "qualityScore": 69,
+      "sourceRank": 78
+    },
+    {
+      "id": "yt-rUzkUn7GX1Y",
+      "sourceVideoId": "rUzkUn7GX1Y",
+      "episode": "EP.246",
+      "contentType": "영상 영감",
+      "title": "누구보다 학생들을 사랑하는 참스승 제임스! 탈북민 영어 교사 제임스의 하루~",
+      "fullTitle": "누구보다 학생들을 사랑하는 참스승 제임스! 탈북민 영어 교사 제임스의 하루~",
+      "sourceUrl": "https://www.youtube.com/watch?v=rUzkUn7GX1Y",
+      "durationString": "26:58",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 7
+    },
+    {
+      "id": "yt--ruU9IkAxCw",
+      "sourceVideoId": "-ruU9IkAxCw",
+      "episode": "EP.353",
+      "contentType": "영상 영감",
+      "title": "6.25 특집 형제의 나라 그리스, 한국 전쟁을 기리기 위해 대한민국 방문한 그리스인 (+참…",
+      "fullTitle": "6.25 특집 형제의 나라 그리스, 한국 전쟁을 기리기 위해 대한민국 방문한 그리스인 (+참전 용사가 들려주는 그날)",
+      "sourceUrl": "https://www.youtube.com/watch?v=-ruU9IkAxCw",
+      "durationString": "46:38",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 16
+    },
+    {
+      "id": "yt-CCZwfQ37Ba8",
+      "sourceVideoId": "CCZwfQ37Ba8",
+      "episode": "EP.56",
+      "contentType": "영상 영감",
+      "title": "잊어선 안 되는 형제의 나라 터키와 6.25, UN 추모 공원을 찾은 터키인들",
+      "fullTitle": "잊어선 안 되는 형제의 나라 터키와 6.25, UN 추모 공원을 찾은 터키인들",
+      "sourceUrl": "https://www.youtube.com/watch?v=CCZwfQ37Ba8",
+      "durationString": "10:57",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 17
+    },
+    {
+      "id": "yt-nxN4MjN3lpA",
+      "sourceVideoId": "nxN4MjN3lpA",
+      "episode": "EP.89",
+      "contentType": "영상 영감",
+      "title": "'생각보다 평범한데?' 닭한마리 필살 양념에 푹 찍어 먹고 바로 장화 신은 고양이로 돌변한…",
+      "fullTitle": "'생각보다 평범한데?' 닭한마리 필살 양념에 푹 찍어 먹고 바로 장화 신은 고양이로 돌변한 남아공 사람들 ㅋㅋ",
+      "sourceUrl": "https://www.youtube.com/watch?v=nxN4MjN3lpA",
+      "durationString": "17:40",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 18
+    },
+    {
+      "id": "yt-aNZ3oQPsjW8",
+      "sourceVideoId": "aNZ3oQPsjW8",
+      "episode": "EP.136",
+      "contentType": "영상 영감",
+      "title": "'한국살이란 말이야~' 후배들 기강 제대로 잡는 스윗한 외국인 선배",
+      "fullTitle": "'한국살이란 말이야~' 후배들 기강 제대로 잡는 스윗한 외국인 선배",
+      "sourceUrl": "https://www.youtube.com/watch?v=aNZ3oQPsjW8",
+      "durationString": "10:59",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 19
+    },
+    {
+      "id": "yt-B0TbO0FYg6Q",
+      "sourceVideoId": "B0TbO0FYg6Q",
+      "episode": "EP.136",
+      "contentType": "영상 영감",
+      "title": "\"능력 있으면 넷은 낳아야 애국자야~\" 장인어른 말에 힘입은 크리스!!",
+      "fullTitle": "\"능력 있으면 넷은 낳아야 애국자야~\" 장인어른 말에 힘입은 크리스!!",
+      "sourceUrl": "https://www.youtube.com/watch?v=B0TbO0FYg6Q",
+      "durationString": "9:37",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 30
+    },
+    {
+      "id": "yt-qk86W8SWJak",
+      "sourceVideoId": "qk86W8SWJak",
+      "episode": "EP.37",
+      "contentType": "영상 영감",
+      "title": "네프탈리가 한국에 미용 도구를 챙겨온 이유는?? (친구들 감동)",
+      "fullTitle": "네프탈리가 한국에 미용 도구를 챙겨온 이유는?? (친구들 감동)",
+      "sourceUrl": "https://www.youtube.com/watch?v=qk86W8SWJak",
+      "durationString": "8:45",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 37
+    },
+    {
+      "id": "yt-LCq87RifpLs",
+      "sourceVideoId": "LCq87RifpLs",
+      "episode": "EP.141",
+      "contentType": "영상 영감",
+      "title": "이 재료까지 넣어요?! 기력 충전 삼계탕 만들기!!",
+      "fullTitle": "이 재료까지 넣어요?! 기력 충전 삼계탕 만들기!!",
+      "sourceUrl": "https://www.youtube.com/watch?v=LCq87RifpLs",
+      "durationString": "13:35",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 48
+    },
+    {
+      "id": "yt-IwbDGC4W-ec",
+      "sourceVideoId": "IwbDGC4W-ec",
+      "episode": "EP.47",
+      "contentType": "영상 영감",
+      "title": "(1시간) 월드컵 시즌 시작 팀코리아 모여라! 거리 응원부터 축덕들 스타디움 투어까지 월드컵…",
+      "fullTitle": "(1시간) 월드컵 시즌 시작 팀코리아 모여라! 거리 응원부터 축덕들 스타디움 투어까지 월드컵 특집!| EP.47 외",
+      "sourceUrl": "https://www.youtube.com/watch?v=IwbDGC4W-ec",
+      "durationString": "52:01",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 52
+    },
+    {
+      "id": "yt-kNJiEdZFADI",
+      "sourceVideoId": "kNJiEdZFADI",
+      "episode": "EP.1",
+      "contentType": "영상 영감",
+      "title": "물 건너온 축구팬도 환호성 터진 짜릿한 승부 그 결과는??",
+      "fullTitle": "물 건너온 축구팬도 환호성 터진 짜릿한 승부 그 결과는??",
+      "sourceUrl": "https://www.youtube.com/watch?v=kNJiEdZFADI",
+      "durationString": "11:59",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 55
+    },
+    {
+      "id": "yt-bPQX7LGKsko",
+      "sourceVideoId": "bPQX7LGKsko",
+      "episode": "EP.134",
+      "contentType": "영상 영감",
+      "title": "2미터가 넘는 대나무찜을 보고 깜짝 놀란 외국인들! 과연 그 맛은?",
+      "fullTitle": "2미터가 넘는 대나무찜을 보고 깜짝 놀란 외국인들! 과연 그 맛은?",
+      "sourceUrl": "https://www.youtube.com/watch?v=bPQX7LGKsko",
+      "durationString": "13:21",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 63
+    },
+    {
+      "id": "yt-Ore4J7x5DiY",
+      "sourceVideoId": "Ore4J7x5DiY",
+      "episode": "EP.136",
+      "contentType": "영상 영감",
+      "title": "\"돈을 아껴야 해!!\" 미국에서 온 대학생 민규 씨의 만 원의 행복️",
+      "fullTitle": "\"돈을 아껴야 해!!\" 미국에서 온 대학생 민규 씨의 만 원의 행복️",
+      "sourceUrl": "https://www.youtube.com/watch?v=Ore4J7x5DiY",
+      "durationString": "9:52",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 66
+    },
+    {
+      "id": "yt-aIVONjLmmT4",
+      "sourceVideoId": "aIVONjLmmT4",
+      "episode": "EP.417",
+      "contentType": "영상 영감",
+      "title": "처음으로 가본 호텔! 엘리베이터, 가운 모든 게 신기한 라이&타망| EP.417외",
+      "fullTitle": "처음으로 가본 호텔! 엘리베이터, 가운 모든 게 신기한 라이&타망| EP.417외",
+      "sourceUrl": "https://www.youtube.com/watch?v=aIVONjLmmT4",
+      "durationString": "17:18",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 63,
+      "sourceRank": 69
+    },
+    {
+      "id": "yt-yTBZQXgxoZQ",
+      "sourceVideoId": "yTBZQXgxoZQ",
+      "episode": "",
+      "contentType": "관광지",
+      "title": "[미방분] '13척으로 133척 격파요?' 가슴이 웅장해지는 피터슨 교수의 이순신 특강",
+      "fullTitle": "[미방분] '13척으로 133척 격파요?' 가슴이 웅장해지는 피터슨 교수의 이순신 특강",
+      "sourceUrl": "https://www.youtube.com/watch?v=yTBZQXgxoZQ",
+      "durationString": "3:43",
+      "regions": [],
+      "foods": [],
+      "styles": [
+        "교육"
+      ],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "교육",
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 한국 문화와 배경지식을 여행 전후로 이해하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 58,
+      "sourceRank": 14
+    },
+    {
+      "id": "yt-vp8UjdWQhPw",
+      "sourceVideoId": "vp8UjdWQhPw",
+      "episode": "",
+      "contentType": "영상 영감",
+      "title": "\"얘 취한 거 같은데ㅋㅋ?\" 앉자마자 소주 시키고 구수한 능이오리백숙 흡입! 한국 여행에 소…",
+      "fullTitle": "\"얘 취한 거 같은데ㅋㅋ?\" 앉자마자 소주 시키고 구수한 능이오리백숙 흡입! 한국 여행에 소주는 선택이 아닌 필수",
+      "sourceUrl": "https://www.youtube.com/watch?v=vp8UjdWQhPw",
+      "durationString": "12:26",
+      "regions": [],
+      "foods": [],
+      "styles": [],
+      "travelerSegments": [
+        "첫 방문 여행자"
+      ],
+      "tags": [
+        "첫 방문 여행자"
+      ],
+      "recommendationReason": "첫 방문 여행자가 영상에서 생긴 관심을 여행정보로 전환하기 좋은 콘텐츠입니다.",
+      "imageStatus": "placeholder",
+      "rightsPolicy": "link-only",
+      "tone": "tone-sea",
+      "qualityScore": 58,
+      "sourceRank": 65
+    }
+  ],
+  "queryObservations": [
+    {
+      "id": "obs-youtube-aejeong-gyeolpib",
+      "query": "애정결핍",
+      "observedAt": "2026-07-01T12:05:00+09:00",
+      "source": "YouTube keyword search",
+      "searchUrl": "https://www.youtube.com/results?search_query=%EC%95%A0%EC%A0%95%EA%B2%B0%ED%95%8D&sp=CAI%253D",
+      "status": "source-observed",
+      "reviewState": "needs-domain-fit-review",
+      "freshnessNote": "사용자 관측상 최신 영상이 존재하며, 업로드일은 운영 검수 단계에서 확정 필요",
+      "reason": "여행 콘텐츠 후보 DB에는 아직 매칭되지 않았지만, 최신 YouTube 검색에서는 관련 원천 영상이 관측됨",
+      "entries": [
+        {
+          "rank": 1,
+          "sourceVideoId": "AEbnilrEy7M",
+          "title": "애정결핍의 근본적인 원인을 파헤쳐봅니다! | 사랑받고 싶은 마음 | 내면의 목소리",
+          "sourceUrl": "https://www.youtube.com/watch?v=AEbnilrEy7M",
+          "durationString": "11:33",
+          "channel": "내면의 목소리 : 마음분석",
+          "rightsPolicy": "link-only"
+        },
+        {
+          "rank": 2,
+          "sourceVideoId": "Ek41VNKghBE",
+          "title": "애정결핍이 있으면 충동, 정서조절이 어렵다, 건강한 관계 맺는 법",
+          "sourceUrl": "https://www.youtube.com/watch?v=Ek41VNKghBE",
+          "durationString": "12:20",
+          "channel": "상담심리사웃따",
+          "rightsPolicy": "link-only"
+        },
+        {
+          "rank": 3,
+          "sourceVideoId": "SfqCkKxYvmM",
+          "title": "[마음우체국]애정결핍 치유하는 법 알려드립니다(by. 정신과의사)",
+          "sourceUrl": "https://www.youtube.com/watch?v=SfqCkKxYvmM",
+          "durationString": "5:51",
+          "channel": "정신의학신문",
+          "rightsPolicy": "link-only"
+        }
+      ]
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "sourceVideoId": "yTBZQXgxoZQ",
+      "title": "[미방분] '13척으로 133척 격파요?' 가슴이 웅장해지는 피터슨 교수의 이순신 특강",
+      "reason": "insufficient travel tags",
+      "score": 58
+    },
+    {
+      "sourceVideoId": "vp8UjdWQhPw",
+      "title": "\"얘 취한 거 같은데ㅋㅋ?\" 앉자마자 소주 시키고 구수한 능이오리백숙 흡입! 한국 여행에 소주는 선택이 아닌 필수",
+      "reason": "insufficient travel tags",
+      "score": 58
+    }
+  ]
+};

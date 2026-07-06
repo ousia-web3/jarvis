@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>처음한국 트립 아틀라스</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="#home" data-screen-link="home" aria-label="처음한국 트립 아틀라스 홈">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>
+          <strong>처음한국 트립 아틀라스</strong>
+          <small>여행정보 큐레이션</small>
+        </span>
+      </a>
+
+      <nav class="top-nav" aria-label="주요 화면">
+        <button class="nav-button is-active" type="button" data-screen-link="home">홈</button>
+        <button class="nav-button" type="button" data-screen-link="explore">탐색</button>
+        <button class="nav-button" type="button" data-screen-link="detail">상세</button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="ghost-button" type="button">저장함</button>
+        <button class="solid-button" type="button">코스 보기</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="screen is-active" id="screen-home" aria-labelledby="home-title">
+        <div class="home-shell">
+          <div class="search-panel">
+            <p class="eyebrow">외국인 여행자용 한국 여행정보</p>
+            <h1 id="home-title">국적, 동행, 관심사로 여행 후보를 찾습니다</h1>
+            <form class="search-box" aria-label="여행정보 검색">
+              <label class="sr-only" for="home-search">여행정보 검색</label>
+              <input id="home-search" type="search" placeholder="지역, 음식, 최신 영상 근거를 검색" />
+              <button class="solid-button" type="submit">검색</button>
+            </form>
+
+            <div class="segment-grid" aria-label="추천 조건">
+              <div class="segment-group">
+                <span class="field-label">국적/권역</span>
+                <div class="chip-row" role="list">
+                  <button class="chip is-selected" type="button">일본</button>
+                  <button class="chip" type="button">동남아</button>
+                  <button class="chip" type="button">미주</button>
+                </div>
+              </div>
+              <div class="segment-group">
+                <span class="field-label">동행 유형</span>
+                <div class="chip-row" role="list">
+                  <button class="chip is-selected" type="button">친구</button>
+                  <button class="chip" type="button">가족</button>
+                  <button class="chip" type="button">부모 동반</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="daily-panel" aria-labelledby="daily-title">
+            <span class="status-badge status-public">검수 완료</span>
+            <h2 id="daily-title">오늘의 추천 흐름</h2>
+            <div class="data-metrics" aria-label="콘텐츠 데이터 현황">
+              <span><strong id="source-count">80</strong>개 원천 영상</span>
+              <span><strong id="content-count">80</strong>개 콘텐츠 후보</span>
+            </div>
+            <ol class="route-list" id="route-list">
+              <li><strong>강릉</strong><span>바다 산책과 시장 음식</span></li>
+              <li><strong>초당두부</strong><span>맵지 않은 지역 음식</span></li>
+              <li><strong>중앙시장</strong><span>처음 가도 쉬운 동선</span></li>
+            </ol>
+            <p class="source-note">YouTube 메타데이터는 링크/분석 근거로만 사용하며 썸네일은 표시하지 않습니다.</p>
+          </aside>
+        </div>
+
+        <section class="content-band" aria-labelledby="home-recommend-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">추천 콘텐츠</p>
+              <h2 id="home-recommend-title">이런 여행자에게 좋아요</h2>
+            </div>
+            <button class="text-button" type="button" data-screen-link="explore">더 보기</button>
+          </div>
+
+          <div class="card-grid" id="home-card-grid">
+            <article class="content-card">
+              <div class="visual-slot tone-sea" role="img" aria-label="강릉 바다 산책 대표 이미지 준비중">
+                <span>이미지 준비중</span>
+              </div>
+              <div class="card-body">
+                <span class="type-badge">지역</span>
+                <h3>강릉 바다 산책 루트</h3>
+                <p>친구와 처음 방문해도 이동 부담이 낮은 해안 코스입니다.</p>
+                <button class="ghost-button" type="button">코스에 담기</button>
+              </div>
+            </article>
+
+            <article class="content-card">
+              <div class="visual-slot tone-food" role="img" aria-label="초당두부 음식 이미지 준비중">
+                <span>이미지 준비중</span>
+              </div>
+              <div class="card-body">
+                <span class="type-badge">음식</span>
+                <h3>초당두부와 순한 한식</h3>
+                <p>맵기 걱정이 적고 가족 여행자에게 설명하기 쉬운 메뉴입니다.</p>
+                <button class="ghost-button" type="button">코스에 담기</button>
+              </div>
+            </article>
+
+            <article class="content-card">
+              <div class="visual-slot tone-culture" role="img" aria-label="시장 체험 이미지 준비중">
+                <span>이미지 준비중</span>
+              </div>
+              <div class="card-body">
+                <span class="type-badge">영상 영감</span>
+                <h3>영상에서 발견한 시장 음식</h3>
+                <p>원본 링크와 분석 태그를 여행정보로 연결한 콘텐츠입니다.</p>
+                <button class="ghost-button" type="button">영상에서 보기</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="screen" id="screen-explore" aria-labelledby="explore-title">
+        <div class="page-title-row">
+          <div>
+            <p class="eyebrow">통합 탐색</p>
+            <h1 id="explore-title">지역, 음식, 관광지를 한 번에 비교합니다</h1>
+          </div>
+          <button class="filter-trigger solid-button" type="button" data-filter-open>필터</button>
+        </div>
+
+        <div class="explore-layout">
+          <aside class="filter-panel" data-filter-panel aria-label="검색 필터">
+            <div class="filter-header">
+              <h2>필터</h2>
+              <button class="iconless-button" type="button" data-filter-close>닫기</button>
+            </div>
+            <fieldset>
+              <legend>지역</legend>
+              <label><input type="checkbox" checked /> 강원</label>
+              <label><input type="checkbox" /> 서울</label>
+              <label><input type="checkbox" /> 부산</label>
+            </fieldset>
+            <fieldset>
+              <legend>여행 상황</legend>
+              <label><input type="checkbox" checked /> 친구</label>
+              <label><input type="checkbox" /> 가족</label>
+              <label><input type="checkbox" /> 부모 동반</label>
+            </fieldset>
+            <fieldset>
+              <legend>음식 난이도</legend>
+              <label><input type="radio" name="spice" checked /> 순한 메뉴</label>
+              <label><input type="radio" name="spice" /> 매운 메뉴 포함</label>
+            </fieldset>
+          </aside>
+
+          <section class="results-panel" aria-label="탐색 결과">
+            <div class="results-toolbar">
+              <strong id="results-count">메타 기반 콘텐츠 후보 80개</strong>
+              <select id="result-sort" aria-label="정렬">
+                <option value="recommend">추천순</option>
+                <option value="latest">최신 영상 근거순</option>
+                <option value="easy">이동 쉬운 순</option>
+              </select>
+            </div>
+
+            <div class="result-grid" id="result-grid">
+              <article class="result-card">
+                <div class="visual-slot compact tone-sea" role="img" aria-label="강릉 해안 산책 이미지 준비중">
+                  <span>이미지 준비중</span>
+                </div>
+                <div>
+                  <span class="type-badge">지역</span>
+                  <h3>강릉 해안 산책</h3>
+                  <p>바다, 카페, 시장을 하루 동선으로 묶기 쉽습니다.</p>
+                  <div class="meta-row"><span>이동 쉬움</span><span>검수 7일 전</span></div>
+                </div>
+              </article>
+
+              <article class="result-card">
+                <div class="visual-slot compact tone-food" role="img" aria-label="순한 한식 메뉴 이미지 준비중">
+                  <span>이미지 준비중</span>
+                </div>
+                <div>
+                  <span class="type-badge">음식</span>
+                  <h3>순한 한식 첫 메뉴</h3>
+                  <p>재료 설명과 주문 난이도를 함께 보여줍니다.</p>
+                  <div class="meta-row"><span>맵기 낮음</span><span>알레르기 메모</span></div>
+                </div>
+              </article>
+
+              <article class="result-card">
+                <div class="visual-slot compact tone-culture" role="img" aria-label="전통시장 이미지 준비중">
+                  <span>이미지 준비중</span>
+                </div>
+                <div>
+                  <span class="type-badge">관광지</span>
+                  <h3>전통시장 체험</h3>
+                  <p>짧은 방문에도 지역 분위기를 느끼기 좋은 장소입니다.</p>
+                  <div class="meta-row"><span>실내외 혼합</span><span>영상 연결</span></div>
+                </div>
+              </article>
+
+              <article class="result-card">
+                <div class="visual-slot compact tone-nature" role="img" aria-label="하동 녹차밭 이미지 준비중">
+                  <span>이미지 준비중</span>
+                </div>
+                <div>
+                  <span class="type-badge">지역</span>
+                  <h3>하동 녹차밭과 로컬 코스</h3>
+                  <p>자연, 차 문화, 조용한 산책을 함께 구성합니다.</p>
+                  <div class="meta-row"><span>자연</span><span>권리 확인중</span></div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-detail" aria-labelledby="detail-title">
+        <article class="detail-shell">
+          <div class="visual-slot hero tone-nature" role="img" aria-label="하동 녹차밭 대표 이미지 준비중">
+            <span>이미지 준비중</span>
+          </div>
+
+          <div class="detail-layout">
+            <section class="detail-main">
+              <div class="detail-heading">
+                <span class="type-badge">지역 상세</span>
+                <h1 id="detail-title">하동 녹차밭과 화개장터 로컬 코스</h1>
+                <p id="detail-summary">자연 풍경, 차 문화, 시장 음식을 차분한 이동 동선으로 연결한 추천 후보입니다.</p>
+              </div>
+
+              <div class="tag-row" id="detail-tags" aria-label="핵심 태그">
+                <span>자연</span>
+                <span>가족</span>
+                <span>순한 음식</span>
+                <span>영상 영감</span>
+              </div>
+
+              <section class="info-section" aria-labelledby="reason-title">
+                <h2 id="reason-title">추천 이유</h2>
+                <p id="detail-reason">짧은 일정 안에서도 풍경, 음식, 산책을 모두 경험할 수 있고 이동 난이도가 비교적 낮습니다.</p>
+              </section>
+
+              <section class="info-section" aria-labelledby="linked-title">
+                <h2 id="linked-title">연결된 여행정보</h2>
+                <div class="linked-list" id="linked-list">
+                  <a href="#">화개장터 시장 음식</a>
+                  <a href="#">녹차 체험 장소</a>
+                  <a href="#">영상에서 발견한 포인트</a>
+                </div>
+              </section>
+            </section>
+
+            <aside class="detail-side" aria-label="기본 정보">
+              <dl class="fact-list" id="detail-facts">
+                <div><dt>권장 시간</dt><dd>반나절</dd></div>
+                <div><dt>이동 난이도</dt><dd>낮음</dd></div>
+                <div><dt>음식 난이도</dt><dd>순한 메뉴 가능</dd></div>
+                <div><dt>이미지 상태</dt><dd>placeholder</dd></div>
+                <div><dt>검수일</dt><dd>2026-06-30</dd></div>
+              </dl>
+              <a class="source-link" id="detail-source-link" href="#" target="_blank" rel="noreferrer">원본 영상에서 보기</a>
+              <button class="solid-button full" type="button">코스에 담기</button>
+              <button class="ghost-button full" type="button">공유 링크 만들기</button>
+            </aside>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div class="mobile-action-bar" aria-label="모바일 빠른 실행" hidden>
+      <button type="button" data-screen-link="explore">탐색</button>
+      <button type="button">저장함</button>
+      <button type="button">코스</button>
+    </div>
+
+    <div class="scrim" data-scrim hidden></div>
+    <script src="./data/content-seed.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

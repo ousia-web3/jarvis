@@ -58,8 +58,11 @@ Subject: [Task ID] 완료 보고
 
 다페이지 웹·랜딩·소개 사이트·공개 UI가 포함된 요청은 Friday가 아래 순서로 태스크를 분해한다. 단일 화면 목업·기존 스펙 구현·IA가 이미 확정된 작업은 Friday가 생략할 수 있다.
 
+SI 업무 화면은 리서치 깊이를 먼저 고른다. R0는 단일 화면 목업이나 기존 화면 미세 수정에 쓰며 Joi/TARS가 축약 `source-analysis`로 대체할 수 있다. R1 이상은 Friday가 TASK-RESEARCH를 별도 배정한다. R2는 다화면, 연동, RFP 대조처럼 근거 팩 전체가 필요한 경우에만 사용한다.
+
 | Task ID | 태스크명 | Owner(To) | CC | 선행 | 산출물 | 완료 기준 |
 | --- | --- | --- | --- | --- | --- | --- |
+| TASK-RESEARCH | SI 소스 분석 / EVE 리서치 | EVE | Joi, TARS, Friday | Human Brief, 접근 가능한 화면/자료 | `source-analysis.md` 또는 `eve-si-research-pack.md` | R0/R1/R2 깊이, 확인 근거, 미확인 영역, 필드/버튼/그리드 후보 기록 |
 | TASK-IA | 정보설계(IA) | Joi | TARS, Jarvis | Human Brief, Strategy | `ia-brief.md` (`templates/ia-brief-template.md`) | 사이트맵, 내비 모델, 라벨 사전, IA DoD 충족 |
 | TASK-UX | UX Brief / User Flow | Joi | C3PO, TARS | TASK-IA | Joi UX Brief, User Flow | Primary Flow, Key Screens, IA 연결 |
 | TASK-WEB | 웹 구현 | TARS | Joi, C3PO | TASK-IA, TASK-UX | HTML/CSS/JS 등 | IA·UX Brief와 내비/라벨 일치, 로컬 검증 |

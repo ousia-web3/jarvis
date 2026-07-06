@@ -12,8 +12,8 @@
 | Friday | 태스크 분해, Owner/CC 지정 | `templates/friday-task-breakdown-template.md`, `templates/specialized-agent-call-card.md` | Dispatch, DoD, 검증 명령 | Jarvis | `ops` |
 | EVE | 리서치, 공식 출처 수집 | `docs/data-research-tooling-guidelines.md` | Source Notes, 출처 한계 | Data, KITT/TRON | `research` |
 | Data | KPI, 시뮬레이션, 백테스트 | `docs/data-analysis-pipeline.md` | Analysis Report, Confidence, Limitations | KITT/TRON, Diagnostic Agent | `analysis` |
-| TARS | 구현, 테스트, 로컬 검증 | `docs/development-execution-checklist.md` | 변경 파일, 실행법, 테스트 결과 | Data, KITT/TRON, Joi | `implementation` |
-| Joi | UX/UI, IA, 화면 품질 | `templates/ia-brief-template.md`, User Flow, Design QA | IA Brief, Flow, UI Review, UX·IA Risks | TARS, C3PO | `design` |
+| TARS | 구현, 테스트, 로컬 검증, 랜딩·포트폴리오 시각 구현 | `docs/development-execution-checklist.md`, `docs/design-taste-skill-guide.md`, `.agents/skills/design-taste-frontend/SKILL.md` (Primary, 상황별 교체) | 변경 파일, 실행법, 테스트 결과, Design Read | Data, KITT/TRON, Joi | `implementation` |
+| Joi | UX/UI, IA, 화면 품질, Design QA, 브랜드·리디자인 기획 | `templates/ia-brief-template.md`, `docs/design-taste-skill-guide.md`, User Flow, Design QA | IA Brief, Flow, Design Read, UI Review, UX·IA Risks | TARS, C3PO | `design` |
 | C3PO | 카피, 보고, 현지화 | Messaging Brief, 금지 주장 목록 | Copy Options, Risky Claims | KITT/TRON, Joi | `copy` |
 | KITT/TRON | 보안, 개인정보, 금융, 릴리스 | `docs/risk-shield.md`, `docs/release-risk-gate.md` | Pass/Blocked 판정 | Jarvis, Human Conductor | `risk` |
 | Diagnostic Agent | 반복 실패, 과신, 완료 불일치 | `docs/drift-diagnosis-checklist.md` | Diagnostic Review, Recovery Plan | Jarvis, Friday | `diagnostic` |

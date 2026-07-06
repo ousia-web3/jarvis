@@ -18,6 +18,7 @@
 - 변경 내역과 실행 방법을 기록한다.
 - 보안·개인정보 영향이 있으면 KITT/TRON을 CC로 호출한다.
 - UI 구현 결과는 Joi 검토를 받는다.
+- 랜딩·포트폴리오·마케팅 페이지 시각 구현 시 `docs/design-taste-skill-guide.md`의 Primary Skill을 실행 전에 읽고 따른다.
 
 ## 권한
 

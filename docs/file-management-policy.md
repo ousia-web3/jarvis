@@ -22,6 +22,7 @@
 | 추출 보존 자료 | `docs/opendataloader-extract/` | 별도 보관된 원본 PDF에서 추출한 이미지, JSON, Markdown | 일상 편집 대상 아님 |
 | 브라우저 검증 산출물 | `.playwright-mcp/` | 브라우저 스냅샷, 콘솔 로그, 임시 복사본 | `.gitignore` 대상, 필요한 것만 evidence로 복사 |
 | 임시 로그 | `tmp/` | 로컬 서버 stdout/stderr 등 | `.gitignore` 대상, 필요한 것만 evidence로 복사 |
+| 로컬 전용 제품 워크스페이스 | `hnt_cob-brand/`, `catbook/`, `stock-auto-trader/`, `packages/` | Jarvis 운영체계와 분리된 제품·실험 코드 | `ousia-web3/jarvis`에는 올리지 않음, `.gitignore` 대상 |
 
 ## 루트 검색 규칙
 

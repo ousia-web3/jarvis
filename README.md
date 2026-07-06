@@ -150,7 +150,7 @@ Jarvis는 항상 다음 4단계 구조를 유지합니다.
 | [decisions/](decisions/) | 승인과 의사결정 기록 |
 | [assets/](assets/) | 공용 시각 자료와 리소스 |
 
-`stock-auto-trader/` 같은 하위 프로젝트와 개인 작업 큐 성격의 폴더는 각 폴더의 전용 README나 작업 요청 문서에서 별도로 관리합니다. `packages/`는 로컬 전용 패키지로 GitHub에 올리지 않습니다.
+`stock-auto-trader/`, `hnt_cob-brand/`, `catbook/` 같은 하위 프로젝트와 개인 작업 큐 성격의 폴더는 각 폴더의 전용 README나 작업 요청 문서에서 별도로 관리합니다. `packages/`는 로컬 전용 패키지로 GitHub에 올리지 않습니다.
 
 ## 핵심 문서
 

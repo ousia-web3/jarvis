@@ -19,10 +19,20 @@ if (-not (Test-Path -LiteralPath $tmpDir)) {
   New-Item -ItemType Directory -Force -Path $tmpDir | Out-Null
 }
 
+function Test-StoreStub([string] $Source) {
+  if (-not $Source) { return $false }
+  return $Source -match "\\Microsoft\\WindowsApps\\"
+}
+
 function Get-PythonSpec {
   $python = Get-Command python -ErrorAction SilentlyContinue
-  if ($python) {
+  if ($python -and -not (Test-StoreStub $python.Source)) {
     return [pscustomobject]@{ File = $python.Source; Args = @() }
+  }
+
+  $python3 = Get-Command python3 -ErrorAction SilentlyContinue
+  if ($python3 -and -not (Test-StoreStub $python3.Source)) {
+    return [pscustomobject]@{ File = $python3.Source; Args = @() }
   }
 
   $py = Get-Command py -ErrorAction SilentlyContinue
@@ -129,7 +139,7 @@ $result = [ordered]@{
   dashboardPath = $dashboardPath
   serverLog = $serverLog
   serverErrorLog = $serverErrorLog
-  aiToolBrowserInstruction = "Open url with the active AI tool browser or preview surface, such as Codex Browser iab, Cursor browser, Antigravity browser, or VS Code Simple Browser/Webview. Do not use the OS default browser as the primary path."
+  aiToolBrowserInstruction = "Open the returned url directly in the active AI tool browser or preview surface. Reuse the selected/existing tab when available; do not create a separate about:blank window or tab first. Do not use the OS default browser as the primary path."
   fallbackInstruction = "If the active AI tool has no callable browser, keep the server running and show this url to the user."
 }
 

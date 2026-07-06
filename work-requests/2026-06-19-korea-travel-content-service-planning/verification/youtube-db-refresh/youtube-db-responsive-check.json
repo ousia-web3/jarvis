@@ -1,0 +1,131 @@
+{
+  "url": "file:///C:/Users/HANA/Desktop/gemini/jarvis/work-requests/2026-06-19-korea-travel-content-service-planning/web/responsive-prototype/index.html",
+  "checks": [
+    {
+      "width": 360,
+      "home": {
+        "cards": 6,
+        "sourceCount": "80",
+        "contentCount": "80",
+        "noHorizontalScroll": true
+      },
+      "explore": {
+        "cards": 80,
+        "countText": "메타 기반 콘텐츠 후보 80개 / 원천 영상 80개",
+        "noHorizontalScroll": true
+      },
+      "filterWorks": true,
+      "detail": {
+        "title": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에…",
+        "facts": 6,
+        "noHorizontalScroll": true,
+        "sourceHref": "https://www.youtube.com/watch?v=F4tVLdwBuKQ"
+      }
+    },
+    {
+      "width": 390,
+      "home": {
+        "cards": 6,
+        "sourceCount": "80",
+        "contentCount": "80",
+        "noHorizontalScroll": true
+      },
+      "explore": {
+        "cards": 80,
+        "countText": "메타 기반 콘텐츠 후보 80개 / 원천 영상 80개",
+        "noHorizontalScroll": true
+      },
+      "filterWorks": true,
+      "detail": {
+        "title": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에…",
+        "facts": 6,
+        "noHorizontalScroll": true,
+        "sourceHref": "https://www.youtube.com/watch?v=F4tVLdwBuKQ"
+      }
+    },
+    {
+      "width": 430,
+      "home": {
+        "cards": 6,
+        "sourceCount": "80",
+        "contentCount": "80",
+        "noHorizontalScroll": true
+      },
+      "explore": {
+        "cards": 80,
+        "countText": "메타 기반 콘텐츠 후보 80개 / 원천 영상 80개",
+        "noHorizontalScroll": true
+      },
+      "filterWorks": true,
+      "detail": {
+        "title": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에…",
+        "facts": 6,
+        "noHorizontalScroll": true,
+        "sourceHref": "https://www.youtube.com/watch?v=F4tVLdwBuKQ"
+      }
+    },
+    {
+      "width": 768,
+      "home": {
+        "cards": 6,
+        "sourceCount": "80",
+        "contentCount": "80",
+        "noHorizontalScroll": true
+      },
+      "explore": {
+        "cards": 80,
+        "countText": "메타 기반 콘텐츠 후보 80개 / 원천 영상 80개",
+        "noHorizontalScroll": true
+      },
+      "filterWorks": true,
+      "detail": {
+        "title": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에…",
+        "facts": 6,
+        "noHorizontalScroll": true,
+        "sourceHref": "https://www.youtube.com/watch?v=F4tVLdwBuKQ"
+      }
+    },
+    {
+      "width": 1024,
+      "home": {
+        "cards": 6,
+        "sourceCount": "80",
+        "contentCount": "80",
+        "noHorizontalScroll": true
+      },
+      "explore": {
+        "cards": 80,
+        "countText": "메타 기반 콘텐츠 후보 80개 / 원천 영상 80개",
+        "noHorizontalScroll": true
+      },
+      "filterWorks": true,
+      "detail": {
+        "title": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에…",
+        "facts": 6,
+        "noHorizontalScroll": true,
+        "sourceHref": "https://www.youtube.com/watch?v=F4tVLdwBuKQ"
+      }
+    },
+    {
+      "width": 1280,
+      "home": {
+        "cards": 6,
+        "sourceCount": "80",
+        "contentCount": "80",
+        "noHorizontalScroll": true
+      },
+      "explore": {
+        "cards": 80,
+        "countText": "메타 기반 콘텐츠 후보 80개 / 원천 영상 80개",
+        "noHorizontalScroll": true
+      },
+      "filterWorks": true,
+      "detail": {
+        "title": "[요약] 입이 떡 벌어지는 경치! 하동 화개장터 먹방부터 최참판댁까지~~ 한국의 전통 문화에…",
+        "facts": 6,
+        "noHorizontalScroll": true,
+        "sourceHref": "https://www.youtube.com/watch?v=F4tVLdwBuKQ"
+      }
+    }
+  ]
+}

@@ -11,6 +11,24 @@ description: Jarvis AI 에이전트 팀을 역할 중심 다중 에이전트 협
 
 사용자는 복잡한 Human Brief를 먼저 작성하지 않는다. 짧은 자연어 요청만 입력해도 에이전트 팀이 사용자 원문을 기준으로 Human Brief 초안을 자동 생성하고, 전략화, 태스크 분해, 실행, 리스크 검토, 완료 보고까지 이어간다.
 
+## 실행 트랙 선택
+
+Jarvis와 Friday는 요청을 받으면 먼저 실행 트랙을 정한다. 목표는 오버헤드를 줄이면서도 추적 가능한 작업은 놓치지 않는 것이다.
+
+| 트랙 | 조건 | 최소 루프 | 필수 산출물 |
+| --- | --- | --- | --- |
+| L0 경량 | Low, 1~2파일, 버그/문구, 기존 스펙 구현 | 실행 → diff/스크린샷 확인 → Done 이벤트 1줄 | README 한 줄 또는 Work Log 선택 |
+| L1 표준 | Medium 이하 일반 작업, 단일 화면 목업, 문서/스크립트 보강 | `start-jarvis-request` → 실행 → 검증 → Work Log | 작업 README, 검증 메모 |
+| L2 풀 | SI 웹, High, 신규 MVP, Design Review, 아키텍처 결정 | 4훅 + 전문 호출 + validate + IA/리서치 | IA Brief, verification, validate Pass, Episodic Memory |
+
+- Design Review 8문서는 L2 중 신규 MVP, 고위험 기능, 아키텍처·스택·데이터 모델 확정 작업에만 쓴다.
+- 표준 PRD 6섹션 작성·기생성 PRD/TASKS 보강은 `skills/jarvis-prd-planning/SKILL.md`를 따른다.
+- Medium 이상 웹서비스·다페이지·랜딩·공개 내비게이션 작업은 `templates/ia-brief-template.md` 기준의 IA Draft를 준비한다.
+- SI 리서치는 R0/R1/R2로 나누며, R2 전체 Pack은 다화면·연동·RFP 대조처럼 근거 깊이가 필요한 경우에만 쓴다.
+- validate는 기본 보고용으로 실행하고, `-Strict`는 High/Critical 또는 외부 릴리스 전 차단 게이트로 사용한다.
+- 2026-06-19 이후 신규/진행 요청부터 JSONL 이벤트를 충실히 남기며, 과거 로그 전량 백필은 기본 보류한다.
+- 자세한 판단 기준은 `docs/execution-mode-guide.md`를 따른다.
+
 ## 기본 워크플로우
 
 1. 사용자 원문 요청 또는 기존 Human Brief에서 시작한다.
@@ -68,7 +86,7 @@ description: Jarvis AI 에이전트 팀을 역할 중심 다중 에이전트 협
 - 신규 MVP, 고위험 기능, 아키텍처 결정, 8개 문서 산출: Jarvis Design Review Mode (`../jarvis-design-review/SKILL.md`)
 - 일정, 태스크 분해, 담당자 지정, 진행 관리: Friday
 - 시장 조사, 자료 수집, 벤치마킹: EVE
-- UX/UI, 프론트엔드 경험, 감성 품질: Joi
+- UX/UI, 프론트엔드 경험, 감성 품질: Joi (`docs/design-taste-skill-guide.md`, `.agents/skills/` — IA 선행, taste-skill은 시각 구현)
 - 개발, 구현, 기술 검증: TARS
 - 카피, 메시지, 현지화, 커뮤니케이션: C3PO
 - 데이터 분석, KPI, 실험 설계, 시뮬레이션: Data
@@ -87,6 +105,7 @@ description: Jarvis AI 에이전트 팀을 역할 중심 다중 에이전트 협
 - 작업 진행 상황을 시각화해야 할 때는 `dashboards/task-events.jsonl`에 역할별 이벤트를 JSONL로 append하고, 스키마는 `dashboards/task-event-schema.md`를 따른다.
 - Jarvis가 직접 모든 일을 처리하지 않도록, 작업 성격이 갈라지는 순간 `docs/specialized-agent-invocation-playbook.md`와 `templates/specialized-agent-call-card.md`를 사용해 전문 스킬/에이전트 호출로 분리한다.
 - 에이전트별 호출 기준은 `docs/agent-skill-call-matrix.md`를 따른다.
+- 랜딩·포트폴리오·리디자인·브랜드 키트 시각 작업은 `docs/design-taste-skill-guide.md`와 `.agents/skills/` taste-skill을 Joi/TARS 단계에서 호출한다. 분석 대시보드·업무 그리드는 생략한다.
 - 금융/AI 트레이딩 고위험 작업은 `docs/high-risk-finance-ai-trading-protocol.md`를 따른다.
 - 전문 호출 이벤트는 `scripts/invoke-jarvis-agent.ps1`로 남기며, `skill`, `cc`, `delegationType` 필드를 포함할 수 있다.
 - CC 검토자는 `cc` 배열뿐 아니라 `Assignment=CC` 별도 이벤트로도 남긴다.

@@ -41,9 +41,19 @@
 
 1. `templates/ia-brief-template.md` 기준 **IA Brief** (`ia-brief.md`)
 2. 아래 **Joi UX Brief** (User Flow, Key Screens, CTA)
-3. TARS 구현 및 IA/UX 검수
+3. **Design Read** 한 줄 선언 (페이지 종류·오디언스·비주얼 방향)
+4. TARS 시각 구현 — `docs/design-taste-skill-guide.md`의 Primary Skill 지정 (기본 `design-taste-frontend`)
+5. IA/UX·시각 일치 **Design QA**
 
-단일 화면·기존 스펙 구현·업무 포털 단일 화면 목업처럼 IA가 불필요한 작업은 Friday가 TASK-IA를 생략할 수 있다.
+단일 화면·기존 스펙 구현·업무 포털 단일 화면 목업처럼 IA가 불필요한 작업은 Friday가 TASK-IA를 생략할 수 있다. 분석 대시보드·데이터 테이블·다단계 업무 UI는 taste-skill을 생략하고 IA+TARS만 사용한다.
+
+## Design Taste Skill 연계
+
+- SSOT: `docs/design-taste-skill-guide.md`
+- 기본 Primary Skill: `design-taste-frontend` (`.agents/skills/design-taste-frontend/SKILL.md`)
+- Joi Owner: 브랜드 키트(`brandkit`), 리디자인 감사(`redesign-existing-projects`), 고급 비주얼(`high-end-visual-design`)
+- TARS Owner: HTML/CSS/프레임워크 구현, `image-to-code`, 스타일 변형(`minimalist-ui`, `industrial-brutalist-ui`)
+- 호출 기록: `scripts/invoke-jarvis-agent.ps1` `-Skill "<skill-id>"` `-Channel design`
 
 ## 산출 형식
 

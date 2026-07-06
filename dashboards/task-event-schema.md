@@ -101,7 +101,7 @@ cd c:\Users\HANA\Desktop\gemini\jarvis
 powershell -ExecutionPolicy Bypass -File scripts/start-jarvis-request.ps1 -RequestId <request-slug> -Task "<요청 요약>"
 ```
 
-스크립트는 로컬 서버를 시작하거나 기존 서버를 재사용하고, 첫 작업 이벤트를 `dashboards/task-events.jsonl`에 append합니다. 반환된 URL은 OS 기본 브라우저가 아니라 활성 AI툴 브라우저/프리뷰에서 엽니다.
+스크립트는 로컬 서버를 시작하거나 기존 서버를 재사용하고, 첫 작업 이벤트를 `dashboards/task-events.jsonl`에 append합니다. 반환된 URL은 OS 기본 브라우저가 아니라 활성 AI툴 브라우저/프리뷰에서 바로 엽니다. 가능하면 선택된 기존 탭/프리뷰를 재사용하고 별도 `about:blank` 창이나 탭을 먼저 만들지 않습니다.
 
 서버만 수동 실행할 때는 다음 명령을 사용합니다.
 

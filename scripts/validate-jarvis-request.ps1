@@ -4,6 +4,7 @@ param(
   [string] $RequestId,
   [string] $EventLog = "dashboards/task-events.jsonl",
   [string] $WorkRequestsRoot = "work-requests",
+  [string[]] $AdditionalWorkRequestRoots = @("catbook/project-records/work-requests"),
   [string] $MemoryRoot = "memory",
   [switch] $Strict
 )
@@ -14,6 +15,15 @@ $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $repoRoot = Resolve-Path (Join-Path $scriptRoot "..")
 $eventLogPath = Join-Path $repoRoot $EventLog
 $workRootPath = Join-Path $repoRoot $WorkRequestsRoot
+$workRootPaths = @($workRootPath)
+foreach ($root in @($AdditionalWorkRequestRoots)) {
+  if ([string]::IsNullOrWhiteSpace($root)) { continue }
+  if ([System.IO.Path]::IsPathRooted($root)) {
+    $workRootPaths += $root
+  } else {
+    $workRootPaths += (Join-Path $repoRoot $root)
+  }
+}
 $memoryRootPath = Join-Path $repoRoot $MemoryRoot
 
 function Read-JsonLines([string] $Path) {
@@ -63,10 +73,14 @@ function Test-FileLike([string] $Root, [string] $Filter) {
   ).Count -gt 0
 }
 
-function Find-WorkRequestFolder([string] $Root, [string] $Id) {
-  if (-not (Test-Path -LiteralPath $Root)) { return $null }
-  return Get-ChildItem -LiteralPath $Root -Directory |
-    Where-Object { $_.Name -eq $Id -or $_.Name -like "*-$Id" } |
+function Find-WorkRequestFolder([string[]] $Roots, [string] $Id) {
+  $matches = @()
+  foreach ($root in @($Roots)) {
+    if (-not (Test-Path -LiteralPath $root)) { continue }
+    $matches += Get-ChildItem -LiteralPath $root -Directory |
+      Where-Object { $_.Name -eq $Id -or $_.Name -like "*-$Id" }
+  }
+  return $matches |
     Sort-Object LastWriteTime -Descending |
     Select-Object -First 1
 }
@@ -85,7 +99,7 @@ $events = Read-JsonLines $eventLogPath
 $requestEvents = @($events | Where-Object { $_.requestId -eq $RequestId })
 $ordered = @($requestEvents | Sort-Object { Get-EventTime $_ } -Descending)
 $latest = $ordered | Select-Object -First 1
-$workFolder = Find-WorkRequestFolder $workRootPath $RequestId
+$workFolder = Find-WorkRequestFolder $workRootPaths $RequestId
 $readmePath = if ($workFolder) { Join-Path $workFolder.FullName "README.md" } else { $null }
 $readme = if ($readmePath -and (Test-Path -LiteralPath $readmePath)) { Get-Content -Encoding UTF8 -Raw -LiteralPath $readmePath } else { "" }
 

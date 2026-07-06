@@ -9,6 +9,7 @@
 - PRD: `PRD-ai-agent-collaboration-architecture.md`
 - TASK: `TASK-ai-agent-collaboration-architecture.md`
 - 상세 HTML 매뉴얼: `project-user-manual.html`
+- 실행 모드 가이드: `execution-mode-guide.md`
 - 매뉴얼 버전 기록: `project-user-manual-version-history.md`
 - 65개+ 운영 자산 인벤토리: `operating-assets-inventory-65.md`
 - 파일 관리 정책: `file-management-policy.md`
@@ -26,13 +27,14 @@
 
 - Codex/에이전트 공통: `../AGENTS.md`
 - Cursor: `../.cursor/rules/jarvis-agent-team.mdc`
+- Antigravity: `../.agents/rules/jarvis-agent-team.md`
 - GitHub Copilot: `../.github/copilot-instructions.md`
 - Windsurf: `../.windsurfrules`
 - Cline/Roo 계열: `../.clinerules`, `../.clinerule`
 
 새 작업은 작업 요청만 입력하면 됩니다. 에이전트는 먼저 `../work-requests/YYYY-MM-DD-request-slug/` 신규 작업 폴더를 만들고 관련 자료를 보관한 뒤, Human Brief 초안을 자동 생성하고 Jarvis 전략, Friday 태스크 분해, 실무 실행, 리스크 쉴드, 완료 보고 순서로 진행합니다.
 
-신규 작업 요청을 받으면 요청 슬러그를 정한 직후 프로젝트 루트에서 `scripts/start-jarvis-request.ps1`를 실행해 운영 대시보드 서버와 첫 이벤트 로그를 준비합니다. 스크립트가 반환하는 URL은 OS 기본 브라우저가 아니라 현재 AI툴 브라우저 또는 프리뷰 표면에서 엽니다. 예: Codex Browser `iab`, Cursor 브라우저/프리뷰, Antigravity 브라우저, VS Code Simple Browser/Webview. AI툴 브라우저를 호출할 수 없는 환경에서는 서버를 유지한 채 URL을 사용자에게 보고합니다.
+신규 작업 요청을 받으면 요청 슬러그를 정한 직후 프로젝트 루트에서 `scripts/start-jarvis-request.ps1`를 실행해 운영 대시보드 서버와 첫 이벤트 로그를 준비합니다. 스크립트가 반환하는 URL은 OS 기본 브라우저가 아니라 현재 AI툴 브라우저 또는 프리뷰 표면에서 바로 엽니다. 가능하면 선택된 기존 탭/프리뷰를 재사용하고 별도 `about:blank` 창이나 탭을 먼저 만들지 않습니다. AI툴 브라우저를 호출할 수 없는 환경에서는 서버를 유지한 채 URL을 사용자에게 보고합니다.
 
 완료된 대화창이나 완료된 작업 요청에서 추가 작업을 이어서 받으면 기존 `requestId`를 재사용해 `scripts/start-jarvis-request.ps1`를 다시 실행합니다. 시작 훅은 최신 상태가 `Done`인 요청을 자동으로 재개 이벤트로 표시하고 `In Progress` 상태를 기록하므로, 대시보드와 Virtual Office 시각화가 다시 작업 중 상태로 돌아와야 합니다.
 
@@ -68,6 +70,7 @@
 - 전문 스킬 및 에이전트 호출 플레이북: `specialized-agent-invocation-playbook.md`
 - 에이전트별 스킬 호출 매트릭스: `agent-skill-call-matrix.md`
 - Dynamic Workflow: `dynamic-workflow.md`
+- 실행 모드 가이드: `execution-mode-guide.md`
 - 고위험 금융/AI 트레이딩 프로토콜: `high-risk-finance-ai-trading-protocol.md`
 - 봇 시뮬레이션: `bot-simulation-design.md`
 - 파일럿 킥오프: `pilot-youtube-shop-kickoff.md`
@@ -86,7 +89,7 @@
 - 에이전트 분장 대시보드: `../dashboards/agent-assignment-dashboard.html`
   - Codex 작업 요청 시 에이전트별 To/CC, 작업 내용, 리스크, 예상 산출물을 시각화한다.
   - 작업 시작 훅: `powershell -ExecutionPolicy Bypass -File scripts/start-jarvis-request.ps1 -RequestId <request-slug> -Task "<요청 요약>"`
-  - 반환 URL은 활성 AI툴 브라우저/프리뷰에서 열며, OS 기본 브라우저 자동 실행은 기본값으로 사용하지 않는다.
+  - 반환 URL은 활성 AI툴 브라우저/프리뷰에서 바로 열며, 가능하면 선택된 기존 탭/프리뷰를 재사용하고 별도 `about:blank` 창이나 탭을 먼저 만들지 않는다. OS 기본 브라우저 자동 실행은 기본값으로 사용하지 않는다.
   - `../dashboards/task-events.jsonl`을 2초 간격으로 읽어 역할별 작업 이벤트 로그를 표시한다.
   - 완료된 요청에 추가 작업이 들어오면 같은 `requestId`의 새 `In Progress` 이벤트를 최신 상태로 표시해 완료 상태를 재진행 상태로 되돌린다.
   - 텍스트 안내 포맷은 `../dashboards/agent-assignment-dashboard.md`를 따른다.
@@ -105,6 +108,8 @@
 - 인간 대표 입력: `../templates/human-brief-template.md`
 - Jarvis 지휘: `../templates/jarvis-command-protocol.md`
 - Friday 태스크 분해: `../templates/friday-task-breakdown-template.md`
+- SI 소스 분석 템플릿: `../templates/source-analysis-template.md`
+- EVE SI 리서치 Pack: `../templates/eve-si-research-pack.md`
 - 전문 에이전트 호출 카드: `../templates/specialized-agent-call-card.md`
 - Dynamic Workflow Task Graph: `../templates/dynamic-workflow-task-graph.json`
 - Dynamic Worker Manifest: `../templates/dynamic-worker-manifest.json`
@@ -131,11 +136,18 @@
 - Jarvis Design Review Mode: `../skills/jarvis-design-review/SKILL.md`
   - 신규 MVP, 고위험 기능, 아키텍처 결정, 8개 문서(PRD, TRD, IA, User Flow, ERD, Design System, TASKS, Coding Convention) 산출이 필요한 경우에만 사용한다.
   - Jarvis 기본 역할을 덮어쓰지 않고 Decision Log, SSOT, MVP 캡슐, 스택 결정 프로토콜을 보조 모드로 제공한다.
+- Jarvis PRD 기획: `../skills/jarvis-prd-planning/SKILL.md`
+  - 업무/SI 과제의 표준 PRD 6섹션(`../templates/prd-planning-template.md`) 신규 작성 또는 기생성 PRD·TASKS md 누락 섹션 보강에 사용한다.
+  - Design Review 8문서와 병행 가능하며, PRD 본문 품질·섹션 완성도에 집중한다.
+- Design Taste Skills: `design-taste-skill-guide.md`
+  - `.agents/skills/` taste-skill 13종. Joi IA 선행 후 TARS/Joi 시각 구현.
+  - 랜딩·포트폴리오·리디자인·브랜드 키트에 적용. 분석 대시보드·업무 그리드는 비적용.
+  - 선택·호출 SSOT: `../docs/design-taste-skill-guide.md`, 잠금: `../skills-lock.json`
 
 ## 기본 실행 순서
 
 1. 인간 대표는 작업 요청만 입력해도 된다. 예시는 `../templates/simple-start-request.md`를 따른다.
-2. 요청 슬러그를 정하고 프로젝트 루트에서 `scripts/start-jarvis-request.ps1`로 대시보드 서버를 준비한 뒤 반환 URL을 활성 AI툴 브라우저/프리뷰에서 연다.
+2. 요청 슬러그를 정하고 프로젝트 루트에서 `scripts/start-jarvis-request.ps1`로 대시보드 서버를 준비한 뒤 반환 URL을 활성 AI툴 브라우저/프리뷰에서 바로 연다. 가능하면 선택된 기존 탭/프리뷰를 재사용하고 별도 `about:blank` 창이나 탭을 먼저 만들지 않는다.
 3. 신규 작업 폴더를 `../work-requests/YYYY-MM-DD-request-slug/`로 만들고 관련 자료 보관 위치를 먼저 정한다.
 4. Jarvis와 Friday가 사용자 원문을 기준으로 `../templates/human-brief-template.md` 형식의 Human Brief 초안을 자동 생성한다.
 5. Jarvis가 `../templates/jarvis-command-protocol.md`로 전략 브리프를 만든다.

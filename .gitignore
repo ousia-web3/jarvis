@@ -1,6 +1,30 @@
 # Local-only packages (not published to GitHub)
 packages/
 
+# Local-only product workspaces (separate from Jarvis operating system)
+hnt_cob-brand/
+catbook/
+stock-auto-trader/
+
+# Local-only root verification screenshots
+chart-tooltip-*.png
+trend-year-filter-*.png
+schoolpick-*.png
+
+# Product-specific work requests (tracked locally only)
+work-requests/*hnt-cob-brand*/
+work-requests/*dashboard*/
+work-requests/*chart-tooltip*/
+work-requests/*hide-*/
+work-requests/*nyantology*/
+work-requests/*sidebar-menu*/
+work-requests/*local-upload*/
+work-requests/*reservation-date*/
+work-requests/*trend-year*/
+
+# Product CI workflows (belong with product repos)
+.github/workflows/catbook-rdf-owl.yml
+
 # Jarvis local/generated artifacts
 .playwright-mcp/
 tmp/
@@ -32,6 +56,9 @@ coverage/
 *.sqlite-journal
 *.sqlite3
 *.sqlite3-journal
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp
 
 # Virtual environments
 .venv/

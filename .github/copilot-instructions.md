@@ -17,7 +17,7 @@ For every meaningful new work request, first choose a request slug and start the
 powershell -ExecutionPolicy Bypass -File scripts/start-jarvis-request.ps1 -RequestId <request-slug> -Task "<request summary>"
 ```
 
-Open the returned `url` in the active AI tool browser or preview surface, such as VS Code Simple Browser/Webview when available. Do not use the OS default browser as the primary path. If no AI browser is callable, keep the server running and report the URL.
+Open the returned `url` directly in the active AI tool browser or preview surface, such as VS Code Simple Browser/Webview when available. Reuse the selected/existing tab or preview when possible; do not create a separate `about:blank` window or tab first. Do not use the OS default browser as the primary path. If no AI browser is callable, keep the server running and report the URL.
 
 Then create `work-requests/YYYY-MM-DD-request-slug/` before execution and store the Human Brief draft, references, deliverables, local run notes, and verification evidence there.
 

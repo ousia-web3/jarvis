@@ -7,25 +7,29 @@ alwaysApply: true
 
 # Jarvis AI Agent Team Rule
 
-Do not require the user to repeat "read the docs first" or "follow the 4-stage architecture" on every request. In this project, that is the default.
+`@AGENTS.md`가 이 프로젝트의 SSOT입니다. Cursor 규칙은 본문을 복제하지 않고, 새 세션에서 Jarvis 운영 모델을 자동으로 참조하도록 연결만 제공합니다.
 
-For any user work request:
+## 시작 순서
 
-1. Start with `docs/README.md`.
-2. Apply `templates/simple-start-request.md`.
-3. Apply `skills/agent-team-orchestration/SKILL.md`.
-4. Use `agents/00-agent-management-index.md` for role routing.
-5. For a new work request, choose a request slug and immediately run `powershell -ExecutionPolicy Bypass -File scripts/start-jarvis-request.ps1 -RequestId <request-slug> -Task "<request summary>"`.
-6. Open the returned `url` in the active AI tool browser or preview surface, such as Cursor browser/preview. Do not use the OS default browser as the primary path.
-7. For a new work request, create `work-requests/YYYY-MM-DD-request-slug/` before execution and store the Human Brief draft, references, deliverables, and verification evidence there.
-8. If no Human Brief exists, create a Human Brief draft from the raw user request.
-9. Continue through Jarvis strategy, Friday task breakdown, execution, Risk Shield review, and completion report.
+1. 먼저 `@AGENTS.md`와 `docs/README.md`를 확인합니다.
+2. 쉬운 시작 규칙은 `templates/simple-start-request.md`를 따릅니다.
+3. 핵심 운영 스킬은 `skills/agent-team-orchestration/SKILL.md`입니다.
+4. 역할 라우팅은 `agents/00-agent-management-index.md`를 기준으로 합니다.
+5. 실행 트랙 선택은 `docs/execution-mode-guide.md`를 따릅니다.
+6. 랜딩·포트폴리오·리디자인 시각 작업은 `docs/design-taste-skill-guide.md`와 `.agents/skills/` taste-skill을 Joi/TARS 단계에서 사용합니다.
 
-Always preserve:
+## 실행 트랙 요약
 
-- SYS.01 Dream Team
-- SYS.02 Virtual Office
-- SYS.03 Agent Brain
-- SYS.04 Human Conductor
+| 트랙 | 적용 | Cursor에서의 기본 행동 |
+| --- | --- | --- |
+| L0 경량 | Low, 1~2파일, 버그/문구 | 전체 4훅을 강제하지 않고 diff/검증 중심으로 처리 |
+| L1 표준 | 일반 작업, 단일 화면 목업, 문서/스크립트 보강 | `start-jarvis-request.ps1` 후 실행·검증·Work Log |
+| L2 풀 | SI 웹, High, 신규 MVP, 아키텍처 결정 | 전문 호출, IA/리서치, validate, Risk Shield 포함 |
 
-Ask the user only for blocking risks: deletion, external release, public deployment, data transfer, secrets, payments, personal data, legal/security exposure, or major strategy changes.
+## 브라우저와 대시보드
+
+`scripts/start-jarvis-request.ps1`가 반환한 `url`은 Cursor 브라우저/프리뷰에서 바로 엽니다. 가능하면 선택된 기존 탭/프리뷰를 재사용하고 별도 `about:blank` 창이나 탭을 먼저 만들지 않습니다. OS 기본 브라우저 자동 실행은 사용자가 명시적으로 원할 때만 사용합니다.
+
+## 가드레일
+
+삭제, 대량 이름 변경, 외부 배포, 워크스페이스 밖 전송, 비밀키, 결제, 개인정보, 법무/보안 판단, 큰 전략 변경은 Human Conductor 확인 없이는 진행하지 않습니다.

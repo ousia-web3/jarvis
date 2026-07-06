@@ -49,7 +49,7 @@ description: Jarvis가 신규 MVP, 고위험 기능, 아키텍처 결정, 대규
 - TARS: TRD, 아키텍처, 모듈 경계, 구현 가능성 검토
 - Data: 지표, 실험 설계, 데이터 품질, KPI 검증
 - KITT/TRON: 보안, 개인정보, 법무, API 약관, 외부 공개 리스크
-- Joi: Information Architecture(IA), User Flow, Design System, UX·IA 리스크
+- Joi: Information Architecture(IA), User Flow, Design System, UX·IA 리스크, Design Read, Design Taste Skill 선택(`docs/design-taste-skill-guide.md`)
 - C3PO: PRD 문장, 사용자 커뮤니케이션, 오해 방지 표현
 - Human Conductor: 최종 스택, MVP 범위, 고위험 승격 승인
 
@@ -130,12 +130,12 @@ MVP가 확정되면 아래 12줄을 모든 주요 문서 상단에 반복한다.
 
 설계 라운드가 완료되면 필요에 따라 아래 문서를 생성한다.
 
-1. PRD
+1. PRD — 업무/SI 과제의 PRD 본문(6섹션: 개요·범위·개선 사항·정책·특이사항·시안)은 `skills/jarvis-prd-planning/SKILL.md`와 `templates/prd-planning-template.md`를 우선 따른다. 기생성 PRD·TASKS가 있으면 갭 분석 후 누락 섹션만 보강한다.
 2. TRD
 3. Information Architecture (`templates/ia-brief-template.md` — Site Map, Content Hierarchy, Navigation Model, Label Dictionary)
 4. User Flow(Mermaid)
 5. Database Design(Mermaid ERD)
-6. Design System
+6. Design System — 시각 토큰·컴포넌트 톤은 `docs/design-taste-skill-guide.md`의 Primary Skill로 보조 구현 가능. IA Brief·Label Dictionary와 충돌하지 않아야 함.
 7. TASKS
 8. Coding Convention & AI Collaboration Guide
 

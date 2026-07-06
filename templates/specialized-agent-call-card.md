@@ -10,8 +10,21 @@
 - Owner(To):
 - CC:
 - 사용 스킬:
+- Design Taste Skill ID (시각 작업 시, `docs/design-taste-skill-guide.md` 참조):
+- Design Read (한 줄, 시각 작업 시):
 - 작업 채널:
 - 리스크:
+
+### Design Taste Skill 빠른 선택
+
+| 상황 | Skill ID |
+| --- | --- |
+| 랜딩·포트폴리오 (기본) | `design-taste-frontend` |
+| 기존 프로젝트 리디자인 | `redesign-existing-projects` |
+| 브랜드 키트 | `brandkit` |
+| 미니멀 / 브루탈리스트 | `minimalist-ui` / `industrial-brutalist-ui` |
+| 스크린샷 → 코드 | `image-to-code` |
+| 분석 대시보드·업무 그리드 | *(생략)* |
 
 ## 작업 지시
 

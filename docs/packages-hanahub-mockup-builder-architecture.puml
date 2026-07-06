@@ -1,0 +1,139 @@
+@startuml packages_hanahub_mockup_builder_architecture
+title packages/hanahub-mockup-builder architecture
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam defaultFontName Malgun Gothic
+skinparam ArrowColor #4B5563
+skinparam BorderColor #4B5563
+skinparam component {
+  BackgroundColor #F8FAFC
+  BorderColor #64748B
+}
+skinparam folder {
+  BackgroundColor #EEF6FF
+  BorderColor #2563EB
+}
+skinparam artifact {
+  BackgroundColor #FFFBEB
+  BorderColor #D97706
+}
+skinparam note {
+  BackgroundColor #ECFDF5
+  BorderColor #059669
+}
+
+actor "AI 도구 사용자" as user
+node "AI 도구\nCodex / Cursor / Claude Code" as ai_tool
+cloud "HanaHub 포털\nportal.hanatour.com" as hanahub
+
+folder "개인 스킬 경로\n%USERPROFILE%\\.codex\\skills\\hanahub-mockup-builder\\" as personal_skill
+
+package "packages/hanahub-mockup-builder\n배포 패키지 루트" as package_root {
+  artifact "README.md\n패키지 구성, 설치, 사용 안내" as package_readme
+  component "install-skill.ps1\nCodex 개인 스킬 경로로 복사" as installer
+
+  folder "hanahub-mockup-builder/\n실제 AI 스킬 번들" as skill_bundle {
+    artifact "SKILL.md\n트리거, 작업 흐름, 산출물 기준, 안전 규칙" as skill_md
+
+    folder "references/" as references {
+      artifact "screen-inspection-checklist.md\nHanaHub/Nexacro 화면 점검 기준" as checklist
+    }
+
+    folder "scripts/" as scripts {
+      component "init_hanahub_mockup_request.py\n목업 프로젝트 폴더 생성" as init_script
+    }
+
+    folder "agents/" as agents {
+      artifact "openai.yaml\n표시명, 설명, 기본 프롬프트" as openai_yaml
+    }
+  }
+
+  folder "docs/" as package_docs {
+    artifact "hanahub-mockup-manual.html\n통합 매뉴얼과 예시 링크" as manual_html
+  }
+
+  folder "example-project/\n기준 예시 목업 프로젝트" as example_project {
+    artifact "README.md\n예시 프로젝트 안내" as example_readme
+
+    folder "outputs/" as example_outputs {
+      artifact "hanatour-sales-product-mockup.html\n기준 HTML 목업" as example_mockup
+    }
+
+    folder "references/" as example_references {
+      artifact "source-analysis.md\n화면 구조/Nexacro 분석 메모" as example_source
+    }
+
+    folder "evidence/" as example_evidence {
+      artifact "verification.md\n검증 요약" as example_verification
+      artifact "verification-history.md\n검증 변경 이력" as example_history
+    }
+  }
+}
+
+folder "생성되는 목업 프로젝트\nhanahub-mockup-<screen-slug>/" as generated_project {
+  folder "outputs/" as generated_outputs {
+    artifact "<screen-slug>-mockup.html\n화면기획 HTML 목업" as generated_mockup
+  }
+
+  folder "references/" as generated_references {
+    artifact "source-analysis.md\n실제 화면 분석 결과" as generated_source
+  }
+
+  folder "evidence/" as generated_evidence {
+    artifact "verification.md\n브라우저/구조 검증 기록" as generated_verification
+    artifact "<screen-slug>-desktop.png\n검증 스크린샷" as generated_screenshot
+  }
+}
+
+database "저장 금지 데이터\nID / 비밀번호 / OTP / 쿠키 / 세션 / 실업무 데이터" as sensitive_data
+
+user --> ai_tool : "$hanahub-mockup-builder 사용" 요청
+ai_tool --> personal_skill : 스킬 검색/로드
+installer --> personal_skill : skill_bundle 복사
+package_readme --> installer : 설치 명령 안내
+package_readme --> manual_html : 매뉴얼 확인 안내
+package_readme --> example_project : 예시 목업 확인 안내
+
+personal_skill --> skill_md : SKILL.md 실행 기준 사용
+skill_md --> checklist : 복잡한 그리드/마커/반응형 점검 시 참조
+skill_md --> init_script : 새 목업 프로젝트 scaffold
+openai_yaml --> ai_tool : 표시명과 기본 프롬프트 제공
+
+ai_tool --> hanahub : 화면 확인, DOM/Nexacro 구조 분석
+hanahub --> generated_source : 실제 화면 구조 기록
+init_script --> generated_project : outputs/references/evidence 생성
+skill_md --> generated_mockup : HTML 목업 생성/갱신
+skill_md --> generated_verification : 검증 기준 기록
+skill_md --> generated_screenshot : 시각 검증 증거 저장
+
+manual_html --> example_mockup : 예시 목업 링크
+manual_html --> example_verification : 검증 기록 링크
+example_mockup --> generated_mockup : 마커/장표/JSON UI 참고
+example_source --> generated_source : 분석 문서 형식 참고
+example_verification --> generated_verification : 검증 항목 참고
+example_history --> generated_verification : 변경 이력 참고
+
+sensitive_data ..> skill_md : 안전 규칙으로 저장/전송 금지
+sensitive_data ..> generated_project : 산출물에 포함 금지
+
+note right of package_root
+  현재 packages/ 아래에는 단일 배포 패키지만 존재한다.
+  루트 package.json, pnpm-workspace, npm workspace 구성은 없다.
+end note
+
+note bottom of generated_project
+  init_hanahub_mockup_request.py의 기본 산출 구조는
+  outputs/, references/, evidence/ 세 폴더다.
+end note
+
+legend right
+  |= 표기 |= 의미 |
+  | 파란 folder | 디렉터리 |
+  | 노란 artifact | 문서/산출 파일 |
+  | 회색 component | 실행 스크립트 또는 기능 단위 |
+endlegend
+
+@enduml

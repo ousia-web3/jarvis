@@ -22,7 +22,7 @@
 - 전략, 방향성, 우선순위 충돌: Jarvis
 - 일정, 태스크 분해, 산출물 취합: Friday
 - 리서치와 데이터 수집: EVE
-- UX/UI, 화면 흐름, 감성 품질: Joi
+- UX/UI, 화면 흐름, 감성 품질, Design Taste Skill 선택: Joi (`docs/design-taste-skill-guide.md`)
 - 개발, 테스트, Git 변경: TARS
 - 마케팅 카피, 고객 심리 메시지: C3PO
 - 분석, KPI, 시뮬레이션: Data
