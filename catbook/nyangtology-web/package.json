@@ -1,0 +1,37 @@
+{
+  "name": "nyangtology-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:device": "next dev --hostname 0.0.0.0 --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "ait:build": "node scripts/run-apps-in-toss-build.mjs",
+    "ait:console-values": "node scripts/print-apps-in-toss-console-values.mjs",
+    "lint": "eslint .",
+    "test:apps-in-toss": "node scripts/check-apps-in-toss-compliance.mjs",
+    "test:ontology": "node scripts/check-ontology-hash.mjs",
+    "test:e2e": "playwright test",
+    "ci": "npm run lint && npm run test:apps-in-toss && npm run test:ontology && npm run build && npm run test:e2e"
+  },
+  "dependencies": {
+    "@apps-in-toss/web-framework": "^2.10.4",
+    "next": "15.5.20",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "4.4.3"
+  },
+  "overrides": {
+    "postcss": "8.5.10"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "15.5.20",
+    "typescript": "latest"
+  }
+}

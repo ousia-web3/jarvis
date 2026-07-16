@@ -1,0 +1,80 @@
+{
+  "status": "done",
+  "updated_at": "2026-07-01T13:21:53+09:00",
+  "distribution_profile": "sanitized-mcp-upload",
+  "detail": "YouTube metadata, ontology graph, RDF/OWL, and SHACL validation refreshed. Local build paths and command logs are intentionally removed from the upload package.",
+  "progress": {
+    "percent": 100,
+    "stage": "done",
+    "label": "complete",
+    "step": 4,
+    "total_steps": 4
+  },
+  "latest_meta": "youtube_meta_all_tabs_2026-07-01.json",
+  "graph": {
+    "nodes": 956,
+    "edges": 4099,
+    "content_total": 1304,
+    "matched_content": 820,
+    "generated_from": [
+      "youtube_meta_all_tabs_2026-07-01.json"
+    ],
+    "missing_inputs": [
+      "content_atlas.json"
+    ],
+    "source_collected_at": "2026-07-01T13:19:06+09:00",
+    "source_node_limit": 2000,
+    "source_node_count": 820
+  },
+  "rdf": {
+    "status": "pass",
+    "triples": 98586,
+    "shacl": true,
+    "sparql_queries": 8,
+    "inferred_triples": 987
+  },
+  "stages": [
+    {
+      "stage": "fetch_youtube_meta",
+      "returncode": 0,
+      "elapsed_seconds": 87.25,
+      "summary": {
+        "combined_unique_count": 1304,
+        "videos_tab_count": 653,
+        "shorts_tab_count": 651,
+        "shortform_or_under_60_count": 657,
+        "duration_under_60_known_count": 6,
+        "duration_unknown_count": 651,
+        "new_vs_previous_count": 1304,
+        "missing_from_current_count": 0
+      }
+    },
+    {
+      "stage": "compile_pipeline",
+      "returncode": 0,
+      "elapsed_seconds": 0.44
+    },
+    {
+      "stage": "build_ontology_graph",
+      "returncode": 0,
+      "elapsed_seconds": 28.33,
+      "summary": {
+        "rdf_triples": 98586,
+        "nodes": 956,
+        "edges": 4099,
+        "content_index": 1304,
+        "matched_content_count": 820
+      }
+    },
+    {
+      "stage": "validate_rdf_owl",
+      "returncode": 0,
+      "elapsed_seconds": 51.33,
+      "summary": {
+        "status": "pass",
+        "failures": 0,
+        "sparql_queries": 8
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "cat-signal-explorer-content",
+  "service_name": "냥톨로지",
+  "tagline": "고양이 행동 신호를 근거와 함께 풀어주는 관찰 도우미",
+  "assistant_persona_name": "고집사",
+  "service_id": "cat-signal-explorer",
+  "legacy_service_id": "catbook-mcp",
+  "snapshot_date": "2026-07-06",
+  "source": "catbook ontology build copied into nyangtology-web/ontology_runtime/content for standalone web deployment",
+  "counts": {
+    "nodes": 956,
+    "edges": 4099,
+    "content_items": 1304,
+    "content_matches": 4664,
+    "rdf_triples": 98586,
+    "owl_triples": 98586,
+    "shape_triples": 108,
+    "sparql_presets": 8,
+    "safety_sensitive_concepts": 13,
+    "sources": 1304,
+    "relation_assertions": 8763
+  },
+  "rdf_status": "pass",
+  "runtime_content_root": "ontology_runtime/content",
+  "sqlite": "data/catbook_ontology.sqlite",
+  "rdf_cache": {
+    "turtle": "data/catbook_ontology.ttl",
+    "owl": "data/catbook_ontology.owl",
+    "shapes": "data/catbook_shapes.ttl",
+    "rdf_status": "data/catbook_rdf_status.json",
+    "refresh_status": "data/ontology_refresh_status.json"
+  },
+  "graph_artifacts": {
+    "json": "research/cat_ontology_graph.json",
+    "report": "research/cat-ontology-graph-report.md"
+  },
+  "sparql_presets": [
+    "research/queries/01_scenario_entry_points.rq",
+    "research/queries/02_health_observation_safety.rq",
+    "research/queries/03_top_evidence_sources.rq",
+    "research/queries/04_content_topics.rq",
+    "research/queries/05_inferred_safety_sensitive_concepts.rq",
+    "research/queries/06_relation_assertion_integrity.rq",
+    "research/queries/07_non_diagnostic_safety_controls.rq",
+    "research/queries/08_source_url_coverage.rq"
+  ],
+  "notes": [
+    "This snapshot lets reviewers verify the web deployment without relying on an external catbook/mcp folder.",
+    "The web bridge reads this packaged SQLite snapshot in read-only mode."
+  ]
+}

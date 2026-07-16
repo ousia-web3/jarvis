@@ -1,0 +1,32 @@
+node_modules/
+.next/
+out/
+.vercel/
+
+.env*.local
+
+test-results/
+playwright-report/
+tsconfig.tsbuildinfo
+
+*.log
+
+__pycache__/
+*.py[cod]
+
+# Local generation and QA artifacts
+artifacts/
+nyangtology.ait
+
+# Legacy generated PNG sets. Runtime uses optimized /public/images/v2/*.webp.
+public/images/brand/
+public/images/scenarios/
+public/images/concepts/
+public/images/chapters/
+
+# Large ontology source/runtime files not needed by the Next.js app bundle
+ontology_runtime/content/data/*.owl
+ontology_runtime/content/data/*.sqlite
+ontology_runtime/content/data/*.ttl
+ontology_runtime/content/data/*.db
+ontology_runtime/content/data/*.db-journal

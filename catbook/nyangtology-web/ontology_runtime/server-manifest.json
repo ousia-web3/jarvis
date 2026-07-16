@@ -1,0 +1,49 @@
+{
+  "name": "nyangtology-web-ontology-runtime",
+  "service_name": "냥톨로지",
+  "purpose": "Standalone ontology runtime bundled with the nyangtology-web deployment.",
+  "runtime_root": "ontology_runtime",
+  "content_root": "ontology_runtime/content",
+  "read_only": true,
+  "source_package": "catbook/mcp content snapshot",
+  "content_snapshot": {
+    "verified_at": "2026-07-06",
+    "nodes": 956,
+    "edges": 4099,
+    "content_items": 1304,
+    "content_matches": 4664,
+    "rdf_triples": 98586,
+    "owl_triples": 98586,
+    "shape_triples": 108,
+    "sparql_presets": 8,
+    "safety_sensitive_concepts": 13,
+    "sources": 1304,
+    "relation_assertions": 8763,
+    "rdf_status": "pass"
+  },
+  "required_files": [
+    "ontology_store.py",
+    "safety.py",
+    "content/ontology-snapshot.json",
+    "content/data/catbook_ontology.sqlite",
+    "content/data/catbook_ontology.ttl",
+    "content/data/catbook_ontology.owl",
+    "content/data/catbook_shapes.ttl",
+    "content/data/catbook_rdf_status.json",
+    "content/data/ontology_refresh_status.json",
+    "content/research/cat_ontology_graph.json",
+    "content/research/cat-ontology-graph-report.md",
+    "content/research/queries/01_scenario_entry_points.rq",
+    "content/research/queries/02_health_observation_safety.rq",
+    "content/research/queries/03_top_evidence_sources.rq",
+    "content/research/queries/04_content_topics.rq",
+    "content/research/queries/05_inferred_safety_sensitive_concepts.rq",
+    "content/research/queries/06_relation_assertion_integrity.rq",
+    "content/research/queries/07_non_diagnostic_safety_controls.rq",
+    "content/research/queries/08_source_url_coverage.rq"
+  ],
+  "deployment_notes": [
+    "This directory is committed with nyangtology-web so GitHub and Vercel deployments do not depend on ../mcp.",
+    "The Python bridge opens the SQLite database in read-only mode."
+  ]
+}
