@@ -3,16 +3,12 @@ node_modules/
 out/
 .vercel/
 
-.env*.local
+.env*
+*.log
+tsconfig.tsbuildinfo
 
 test-results/
 playwright-report/
-tsconfig.tsbuildinfo
-
-*.log
-
-__pycache__/
-*.py[cod]
 
 # Local generation and QA artifacts
 artifacts/
@@ -30,6 +26,5 @@ ontology_runtime/content/data/*.sqlite
 ontology_runtime/content/data/*.ttl
 ontology_runtime/content/data/*.db
 ontology_runtime/content/data/*.db-journal
-
-.vercel
-.env*
+ontology_runtime/content/research/queries/
+ontology_runtime/__pycache__/

@@ -11,7 +11,7 @@ import { TossBannerAd } from '@/components/toss-banner-ad';
 import { getScenario, getScenarios } from '@/lib/ontology';
 import { getScenarioIllustration } from '@/lib/scenario-assets';
 
-export const revalidate = 300;
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const scenarios = await getScenarios();

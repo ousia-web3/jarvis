@@ -10,7 +10,7 @@ import { TossBannerAd } from '@/components/toss-banner-ad';
 import { getConcept, getStaticConceptSlugs } from '@/lib/ontology';
 import { getConceptIllustration } from '@/lib/scenario-assets';
 
-export const revalidate = 300;
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const slugs = await getStaticConceptSlugs();
