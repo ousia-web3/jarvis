@@ -3,7 +3,8 @@ packages/
 
 # Local-only product workspaces (separate from Jarvis operating system)
 hnt_cob-brand/
-catbook/
+catbook/*
+!catbook/nyangtology-web/
 stock-auto-trader/
 
 # Local-only root verification screenshots
